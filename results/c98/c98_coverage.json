@@ -1,0 +1,623 @@
+{
+ "pcv_class": {
+  "fold A": {
+   "records": 480,
+   "faulty_records": 300,
+   "spoke": 47,
+   "spoke_share": 0.09791666666666667,
+   "spoke_share_faulty": 0.15666666666666668,
+   "precision_when_speaking": 0.9787234042553191,
+   "bearings_engaged": 2,
+   "faulty_bearings": 5,
+   "per_bearing_share": {
+    "KA22": 0.0,
+    "KA30": 0.016666666666666666,
+    "KI17": 0.0,
+    "KI18": 0.75,
+    "KI21": 0.0
+   }
+  },
+  "fold B": {
+   "records": 540,
+   "faulty_records": 360,
+   "spoke": 114,
+   "spoke_share": 0.2111111111111111,
+   "spoke_share_faulty": 0.3138888888888889,
+   "precision_when_speaking": 0.9912280701754386,
+   "bearings_engaged": 3,
+   "faulty_bearings": 6,
+   "per_bearing_share": {
+    "KA04": 0.6833333333333333,
+    "KA15": 0.0,
+    "KA16": 0.6666666666666666,
+    "KI04": 0.0,
+    "KI14": 0.0,
+    "KI16": 0.5333333333333333
+   }
+  },
+  "S00": {
+   "records": 480,
+   "faulty_records": 300,
+   "spoke": 42,
+   "spoke_share": 0.0875,
+   "spoke_share_faulty": 0.13666666666666666,
+   "precision_when_speaking": 0.9761904761904762,
+   "bearings_engaged": 1,
+   "faulty_bearings": 5,
+   "per_bearing_share": {
+    "KA04": 0.6833333333333333,
+    "KA15": 0.0,
+    "KI14": 0.0,
+    "KI17": 0.0,
+    "KI21": 0.0
+   }
+  },
+  "S01": {
+   "records": 480,
+   "faulty_records": 300,
+   "spoke": 158,
+   "spoke_share": 0.32916666666666666,
+   "spoke_share_faulty": 0.5266666666666666,
+   "precision_when_speaking": 1.0,
+   "bearings_engaged": 4,
+   "faulty_bearings": 5,
+   "per_bearing_share": {
+    "KA04": 0.6833333333333333,
+    "KA16": 0.6666666666666666,
+    "KI14": 0.0,
+    "KI16": 0.5333333333333333,
+    "KI18": 0.75
+   }
+  },
+  "S02": {
+   "records": 480,
+   "faulty_records": 300,
+   "spoke": 86,
+   "spoke_share": 0.17916666666666667,
+   "spoke_share_faulty": 0.2866666666666667,
+   "precision_when_speaking": 1.0,
+   "bearings_engaged": 2,
+   "faulty_bearings": 5,
+   "per_bearing_share": {
+    "KA04": 0.6833333333333333,
+    "KA22": 0.0,
+    "KI04": 0.0,
+    "KI14": 0.0,
+    "KI18": 0.75
+   }
+  },
+  "S03": {
+   "records": 480,
+   "faulty_records": 300,
+   "spoke": 2,
+   "spoke_share": 0.004166666666666667,
+   "spoke_share_faulty": 0.006666666666666667,
+   "precision_when_speaking": 0.5,
+   "bearings_engaged": 1,
+   "faulty_bearings": 5,
+   "per_bearing_share": {
+    "KA15": 0.0,
+    "KA30": 0.016666666666666666,
+    "KI04": 0.0,
+    "KI14": 0.0,
+    "KI17": 0.0
+   }
+  },
+  "S04": {
+   "records": 480,
+   "faulty_records": 300,
+   "spoke": 73,
+   "spoke_share": 0.15208333333333332,
+   "spoke_share_faulty": 0.24333333333333335,
+   "precision_when_speaking": 1.0,
+   "bearings_engaged": 2,
+   "faulty_bearings": 5,
+   "per_bearing_share": {
+    "KA04": 0.6833333333333333,
+    "KA22": 0.0,
+    "KI16": 0.5333333333333333,
+    "KI17": 0.0,
+    "KI21": 0.0
+   }
+  },
+  "S05": {
+   "records": 480,
+   "faulty_records": 300,
+   "spoke": 78,
+   "spoke_share": 0.1625,
+   "spoke_share_faulty": 0.25666666666666665,
+   "precision_when_speaking": 0.9871794871794872,
+   "bearings_engaged": 2,
+   "faulty_bearings": 5,
+   "per_bearing_share": {
+    "KA15": 0.0,
+    "KA22": 0.0,
+    "KI14": 0.0,
+    "KI16": 0.5333333333333333,
+    "KI18": 0.75
+   }
+  },
+  "S06": {
+   "records": 480,
+   "faulty_records": 300,
+   "spoke": 73,
+   "spoke_share": 0.15208333333333332,
+   "spoke_share_faulty": 0.24333333333333335,
+   "precision_when_speaking": 1.0,
+   "bearings_engaged": 2,
+   "faulty_bearings": 5,
+   "per_bearing_share": {
+    "KA04": 0.6833333333333333,
+    "KA15": 0.0,
+    "KI14": 0.0,
+    "KI16": 0.5333333333333333,
+    "KI21": 0.0
+   }
+  },
+  "S07": {
+   "records": 480,
+   "faulty_records": 300,
+   "spoke": 48,
+   "spoke_share": 0.1,
+   "spoke_share_faulty": 0.15666666666666668,
+   "precision_when_speaking": 0.9583333333333334,
+   "bearings_engaged": 2,
+   "faulty_bearings": 5,
+   "per_bearing_share": {
+    "KA15": 0.0,
+    "KA30": 0.016666666666666666,
+    "KI17": 0.0,
+    "KI18": 0.75,
+    "KI21": 0.0
+   }
+  },
+  "S08": {
+   "records": 480,
+   "faulty_records": 300,
+   "spoke": 126,
+   "spoke_share": 0.2625,
+   "spoke_share_faulty": 0.42,
+   "precision_when_speaking": 1.0,
+   "bearings_engaged": 3,
+   "faulty_bearings": 5,
+   "per_bearing_share": {
+    "KA04": 0.6833333333333333,
+    "KA16": 0.6666666666666666,
+    "KI14": 0.0,
+    "KI17": 0.0,
+    "KI18": 0.75
+   }
+  },
+  "S09": {
+   "records": 480,
+   "faulty_records": 300,
+   "spoke": 47,
+   "spoke_share": 0.09791666666666667,
+   "spoke_share_faulty": 0.15666666666666668,
+   "precision_when_speaking": 0.9787234042553191,
+   "bearings_engaged": 2,
+   "faulty_bearings": 5,
+   "per_bearing_share": {
+    "KA22": 0.0,
+    "KA30": 0.016666666666666666,
+    "KI04": 0.0,
+    "KI14": 0.0,
+    "KI18": 0.75
+   }
+  }
+ },
+ "comb_class": {
+  "fold A": {
+   "records": 480,
+   "faulty_records": 300,
+   "spoke": 45,
+   "spoke_share": 0.09375,
+   "spoke_share_faulty": 0.14,
+   "precision_when_speaking": 0.8888888888888888,
+   "bearings_engaged": 1,
+   "faulty_bearings": 5,
+   "per_bearing_share": {
+    "KA22": 0.0,
+    "KA30": 0.0,
+    "KI17": 0.0,
+    "KI18": 0.6666666666666666,
+    "KI21": 0.0
+   }
+  },
+  "fold B": {
+   "records": 540,
+   "faulty_records": 360,
+   "spoke": 99,
+   "spoke_share": 0.18333333333333332,
+   "spoke_share_faulty": 0.25833333333333336,
+   "precision_when_speaking": 0.8686868686868687,
+   "bearings_engaged": 4,
+   "faulty_bearings": 6,
+   "per_bearing_share": {
+    "KA04": 0.38333333333333336,
+    "KA15": 0.0,
+    "KA16": 0.65,
+    "KI04": 0.06666666666666667,
+    "KI14": 0.0,
+    "KI16": 0.3333333333333333
+   }
+  },
+  "S00": {
+   "records": 480,
+   "faulty_records": 300,
+   "spoke": 25,
+   "spoke_share": 0.052083333333333336,
+   "spoke_share_faulty": 0.07666666666666666,
+   "precision_when_speaking": 0.92,
+   "bearings_engaged": 1,
+   "faulty_bearings": 5,
+   "per_bearing_share": {
+    "KA04": 0.38333333333333336,
+    "KA15": 0.0,
+    "KI14": 0.0,
+    "KI17": 0.0,
+    "KI21": 0.0
+   }
+  },
+  "S01": {
+   "records": 480,
+   "faulty_records": 300,
+   "spoke": 136,
+   "spoke_share": 0.2833333333333333,
+   "spoke_share_faulty": 0.43,
+   "precision_when_speaking": 0.8970588235294118,
+   "bearings_engaged": 4,
+   "faulty_bearings": 5,
+   "per_bearing_share": {
+    "KA04": 0.38333333333333336,
+    "KA16": 0.65,
+    "KI14": 0.0,
+    "KI16": 0.3333333333333333,
+    "KI18": 0.6666666666666666
+   }
+  },
+  "S02": {
+   "records": 480,
+   "faulty_records": 300,
+   "spoke": 72,
+   "spoke_share": 0.15,
+   "spoke_share_faulty": 0.22333333333333333,
+   "precision_when_speaking": 0.9305555555555556,
+   "bearings_engaged": 3,
+   "faulty_bearings": 5,
+   "per_bearing_share": {
+    "KA04": 0.38333333333333336,
+    "KA22": 0.0,
+    "KI04": 0.06666666666666667,
+    "KI14": 0.0,
+    "KI18": 0.6666666666666666
+   }
+  },
+  "S03": {
+   "records": 480,
+   "faulty_records": 300,
+   "spoke": 11,
+   "spoke_share": 0.022916666666666665,
+   "spoke_share_faulty": 0.02,
+   "precision_when_speaking": 0.36363636363636365,
+   "bearings_engaged": 1,
+   "faulty_bearings": 5,
+   "per_bearing_share": {
+    "KA15": 0.0,
+    "KA30": 0.0,
+    "KI04": 0.06666666666666667,
+    "KI14": 0.0,
+    "KI17": 0.0
+   }
+  },
+  "S04": {
+   "records": 480,
+   "faulty_records": 300,
+   "spoke": 55,
+   "spoke_share": 0.11458333333333333,
+   "spoke_share_faulty": 0.16666666666666666,
+   "precision_when_speaking": 0.7818181818181819,
+   "bearings_engaged": 2,
+   "faulty_bearings": 5,
+   "per_bearing_share": {
+    "KA04": 0.38333333333333336,
+    "KA22": 0.0,
+    "KI16": 0.3333333333333333,
+    "KI17": 0.0,
+    "KI21": 0.0
+   }
+  },
+  "S05": {
+   "records": 480,
+   "faulty_records": 300,
+   "spoke": 71,
+   "spoke_share": 0.14791666666666667,
+   "spoke_share_faulty": 0.22333333333333333,
+   "precision_when_speaking": 0.8450704225352113,
+   "bearings_engaged": 2,
+   "faulty_bearings": 5,
+   "per_bearing_share": {
+    "KA15": 0.0,
+    "KA22": 0.0,
+    "KI14": 0.0,
+    "KI16": 0.3333333333333333,
+    "KI18": 0.6666666666666666
+   }
+  },
+  "S06": {
+   "records": 480,
+   "faulty_records": 300,
+   "spoke": 55,
+   "spoke_share": 0.11458333333333333,
+   "spoke_share_faulty": 0.16666666666666666,
+   "precision_when_speaking": 0.7818181818181819,
+   "bearings_engaged": 2,
+   "faulty_bearings": 5,
+   "per_bearing_share": {
+    "KA04": 0.38333333333333336,
+    "KA15": 0.0,
+    "KI14": 0.0,
+    "KI16": 0.3333333333333333,
+    "KI21": 0.0
+   }
+  },
+  "S07": {
+   "records": 480,
+   "faulty_records": 300,
+   "spoke": 46,
+   "spoke_share": 0.09583333333333334,
+   "spoke_share_faulty": 0.14,
+   "precision_when_speaking": 0.8695652173913043,
+   "bearings_engaged": 1,
+   "faulty_bearings": 5,
+   "per_bearing_share": {
+    "KA15": 0.0,
+    "KA30": 0.0,
+    "KI17": 0.0,
+    "KI18": 0.6666666666666666,
+    "KI21": 0.0
+   }
+  },
+  "S08": {
+   "records": 480,
+   "faulty_records": 300,
+   "spoke": 107,
+   "spoke_share": 0.22291666666666668,
+   "spoke_share_faulty": 0.34,
+   "precision_when_speaking": 0.9532710280373832,
+   "bearings_engaged": 3,
+   "faulty_bearings": 5,
+   "per_bearing_share": {
+    "KA04": 0.38333333333333336,
+    "KA16": 0.65,
+    "KI14": 0.0,
+    "KI17": 0.0,
+    "KI18": 0.6666666666666666
+   }
+  },
+  "S09": {
+   "records": 480,
+   "faulty_records": 300,
+   "spoke": 51,
+   "spoke_share": 0.10625,
+   "spoke_share_faulty": 0.15333333333333332,
+   "precision_when_speaking": 0.8627450980392157,
+   "bearings_engaged": 2,
+   "faulty_bearings": 5,
+   "per_bearing_share": {
+    "KA22": 0.0,
+    "KA30": 0.0,
+    "KI04": 0.06666666666666667,
+    "KI14": 0.0,
+    "KI18": 0.6666666666666666
+   }
+  }
+ },
+ "eagle_class": {
+  "fold A": {
+   "records": 480,
+   "faulty_records": 300,
+   "spoke": 141,
+   "spoke_share": 0.29375,
+   "spoke_share_faulty": 0.24333333333333335,
+   "precision_when_speaking": 0.46099290780141844,
+   "bearings_engaged": 3,
+   "faulty_bearings": 5,
+   "per_bearing_share": {
+    "KA22": 0.0,
+    "KA30": 0.016666666666666666,
+    "KI17": 0.06666666666666667,
+    "KI18": 1.0,
+    "KI21": 0.0
+   }
+  },
+  "fold B": {
+   "records": 540,
+   "faulty_records": 360,
+   "spoke": 279,
+   "spoke_share": 0.5166666666666667,
+   "spoke_share_faulty": 0.5722222222222222,
+   "precision_when_speaking": 0.5089605734767025,
+   "bearings_engaged": 5,
+   "faulty_bearings": 6,
+   "per_bearing_share": {
+    "KA04": 1.0,
+    "KA15": 0.31666666666666665,
+    "KA16": 1.0,
+    "KI04": 0.03333333333333333,
+    "KI14": 0.016666666666666666,
+    "KI16": 0.0
+   }
+  },
+  "S00": {
+   "records": 480,
+   "faulty_records": 300,
+   "spoke": 139,
+   "spoke_share": 0.28958333333333336,
+   "spoke_share_faulty": 0.3,
+   "precision_when_speaking": 0.60431654676259,
+   "bearings_engaged": 4,
+   "faulty_bearings": 5,
+   "per_bearing_share": {
+    "KA04": 1.0,
+    "KA15": 0.31666666666666665,
+    "KI14": 0.016666666666666666,
+    "KI17": 0.06666666666666667,
+    "KI21": 0.0
+   }
+  },
+  "S01": {
+   "records": 480,
+   "faulty_records": 300,
+   "spoke": 328,
+   "spoke_share": 0.6833333333333333,
+   "spoke_share_faulty": 0.81,
+   "precision_when_speaking": 0.551829268292683,
+   "bearings_engaged": 4,
+   "faulty_bearings": 5,
+   "per_bearing_share": {
+    "KA04": 1.0,
+    "KA16": 1.0,
+    "KI14": 0.016666666666666666,
+    "KI16": 0.0,
+    "KI18": 1.0
+   }
+  },
+  "S02": {
+   "records": 480,
+   "faulty_records": 300,
+   "spoke": 223,
+   "spoke_share": 0.46458333333333335,
+   "spoke_share_faulty": 0.43666666666666665,
+   "precision_when_speaking": 0.5515695067264574,
+   "bearings_engaged": 4,
+   "faulty_bearings": 5,
+   "per_bearing_share": {
+    "KA04": 1.0,
+    "KA22": 0.0,
+    "KI04": 0.03333333333333333,
+    "KI14": 0.016666666666666666,
+    "KI18": 1.0
+   }
+  },
+  "S03": {
+   "records": 480,
+   "faulty_records": 300,
+   "spoke": 118,
+   "spoke_share": 0.24583333333333332,
+   "spoke_share_faulty": 0.11,
+   "precision_when_speaking": 0.2288135593220339,
+   "bearings_engaged": 5,
+   "faulty_bearings": 5,
+   "per_bearing_share": {
+    "KA15": 0.31666666666666665,
+    "KA30": 0.016666666666666666,
+    "KI04": 0.03333333333333333,
+    "KI14": 0.016666666666666666,
+    "KI17": 0.06666666666666667
+   }
+  },
+  "S04": {
+   "records": 480,
+   "faulty_records": 300,
+   "spoke": 200,
+   "spoke_share": 0.4166666666666667,
+   "spoke_share_faulty": 0.44,
+   "precision_when_speaking": 0.32,
+   "bearings_engaged": 2,
+   "faulty_bearings": 5,
+   "per_bearing_share": {
+    "KA04": 1.0,
+    "KA22": 0.0,
+    "KI16": 0.0,
+    "KI17": 0.06666666666666667,
+    "KI21": 0.0
+   }
+  },
+  "S05": {
+   "records": 480,
+   "faulty_records": 300,
+   "spoke": 208,
+   "spoke_share": 0.43333333333333335,
+   "spoke_share_faulty": 0.5,
+   "precision_when_speaking": 0.38461538461538464,
+   "bearings_engaged": 3,
+   "faulty_bearings": 5,
+   "per_bearing_share": {
+    "KA15": 0.31666666666666665,
+    "KA22": 0.0,
+    "KI14": 0.016666666666666666,
+    "KI16": 0.0,
+    "KI18": 1.0
+   }
+  },
+  "S06": {
+   "records": 480,
+   "faulty_records": 300,
+   "spoke": 214,
+   "spoke_share": 0.44583333333333336,
+   "spoke_share_faulty": 0.48,
+   "precision_when_speaking": 0.37383177570093457,
+   "bearings_engaged": 3,
+   "faulty_bearings": 5,
+   "per_bearing_share": {
+    "KA04": 1.0,
+    "KA15": 0.31666666666666665,
+    "KI14": 0.016666666666666666,
+    "KI16": 0.0,
+    "KI21": 0.0
+   }
+  },
+  "S07": {
+   "records": 480,
+   "faulty_records": 300,
+   "spoke": 146,
+   "spoke_share": 0.30416666666666664,
+   "spoke_share_faulty": 0.29333333333333333,
+   "precision_when_speaking": 0.5753424657534246,
+   "bearings_engaged": 4,
+   "faulty_bearings": 5,
+   "per_bearing_share": {
+    "KA15": 0.31666666666666665,
+    "KA30": 0.016666666666666666,
+    "KI17": 0.06666666666666667,
+    "KI18": 1.0,
+    "KI21": 0.0
+   }
+  },
+  "S08": {
+   "records": 480,
+   "faulty_records": 300,
+   "spoke": 257,
+   "spoke_share": 0.5354166666666667,
+   "spoke_share_faulty": 0.63,
+   "precision_when_speaking": 0.7198443579766537,
+   "bearings_engaged": 5,
+   "faulty_bearings": 5,
+   "per_bearing_share": {
+    "KA04": 1.0,
+    "KA16": 1.0,
+    "KI14": 0.016666666666666666,
+    "KI17": 0.06666666666666667,
+    "KI18": 1.0
+   }
+  },
+  "S09": {
+   "records": 480,
+   "faulty_records": 300,
+   "spoke": 164,
+   "spoke_share": 0.3416666666666667,
+   "spoke_share_faulty": 0.24,
+   "precision_when_speaking": 0.3902439024390244,
+   "bearings_engaged": 4,
+   "faulty_bearings": 5,
+   "per_bearing_share": {
+    "KA22": 0.0,
+    "KA30": 0.016666666666666666,
+    "KI04": 0.03333333333333333,
+    "KI14": 0.016666666666666666,
+    "KI18": 1.0
+   }
+  }
+ }
+}

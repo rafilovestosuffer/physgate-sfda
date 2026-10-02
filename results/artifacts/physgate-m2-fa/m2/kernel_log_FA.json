@@ -1,0 +1,42 @@
+{
+  "env": {
+    "device": "Tesla T4",
+    "capability": [
+      7,
+      5
+    ],
+    "src_fold": "A"
+  },
+  "runs": [
+    {
+      "gate": "none",
+      "rc": 0,
+      "seconds": 2493
+    },
+    {
+      "gate": "c30",
+      "rc": 0,
+      "seconds": 2195
+    },
+    {
+      "gate": "v2",
+      "rc": 0,
+      "seconds": 2192
+    },
+    {
+      "gate": "pcv",
+      "rc": 0,
+      "seconds": 2195
+    },
+    {
+      "gate": "eagle",
+      "rc": 0,
+      "seconds": 2202
+    },
+    {
+      "gate": "oracle",
+      "rc": 0,
+      "seconds": 2189
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+\begin{table}[htbp]
+\centering
+\caption{Paderborn: accuracy (\%) of SDALR (final checkpoint, seed 2024) on leaky and bearing-disjoint (clean) targets, the same gap for the source model before adaptation, and the clean target with the envelope threshold gate and with the oracle pseudo-label filter. Each entry is the mean over the six condition pairs of that split.}
+\label{tab:collapse}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Split & Leaky & Clean & $\Delta_{\mathrm{leak}}$ & Source-only $\Delta$ & Gated & Gain & Oracle & Recov.\ (\%) \\
+\midrule
+S00 & 91.5 & 66.5 & 25.0 & 34.8 & 69.7 & +3.1 & 89.0 & 90 \\
+S01 & 96.1 & 39.8 & 56.3 & 50.6 & 62.5 & +22.6 & 95.1 & 98 \\
+S02 & 88.8 & 51.6 & 37.2 & 35.4 & 60.9 & +9.3 & 73.9 & 60 \\
+S03 & 93.8 & 58.6 & 35.2 & 29.3 & 57.2 & -1.5 & 75.5 & 48 \\
+S04 & 82.2 & 74.0 & 8.2 & 2.0 & 77.6 & +3.6 & 92.1 & 222 \\
+S05 & 98.0 & 36.4 & 61.6 & 64.3 & 45.4 & +9.0 & 85.1 & 79 \\
+S06 & 90.2 & 68.6 & 21.6 & 21.2 & 73.3 & +4.7 & 83.3 & 68 \\
+S07 & 99.2 & 51.5 & 47.8 & 41.1 & 52.1 & +0.7 & 91.9 & 85 \\
+S08 & 97.1 & 37.6 & 59.4 & 55.0 & 60.0 & +22.3 & 91.1 & 90 \\
+S09 & 89.5 & 60.1 & 29.4 & 24.4 & 64.4 & +4.3 & 82.5 & 76 \\
+\midrule
+fold A & 88.3 & 58.4 & 30.0 & 32.6 & 61.2 & +4.4 & 88.5 & -- \\
+fold B & 99.9 & 55.3 & 44.6 & 45.8 & 62.3 & +7.0 & 76.8 & -- \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{\linewidth}\vspace{2pt}\footnotesize Medians over the ten random splits, with split-cluster bootstrap 95\,\% intervals: $\Delta_{\mathrm{leak}}$ 36.2~pp [25.0, 56.3] (range 8.2--61.6, 10/10, exact sign-flip $p = 0.001$); source-only $\Delta$, before any adaptation step, 35.1~pp [24.4, 50.6]; gate gain +4.5~pp [2.5, 15.7] (positive in 9/10, $p=0.003$); recoverable share 82\,\% [68, 94]. Below the rule, the two mechanical folds: leaky, clean and source-only columns from the fold job; gated and oracle from the gating job, with the gain taken against that job's own ungated clean arm (56.8 and 55.3\,\%). The two jobs trained different source checkpoints (Section~\ref{sec:protocol}) and the gating job has no leaky arm, so no recoverable share is given for the folds. A share above 100\,\% (S04) means the oracle arm beats the leaky arm. Differences are computed before rounding.\end{minipage}
+\end{table}

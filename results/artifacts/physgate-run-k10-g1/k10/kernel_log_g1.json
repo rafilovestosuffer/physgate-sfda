@@ -1,0 +1,96 @@
+{
+  "env": {
+    "device": "Tesla T4",
+    "capability": [
+      7,
+      5
+    ],
+    "group": "g1"
+  },
+  "runs": [
+    {
+      "split": "S00",
+      "tgt": "S00",
+      "gate": "none",
+      "rc": 0,
+      "seconds": 2394
+    },
+    {
+      "split": "S00",
+      "tgt": "S00c",
+      "gate": "none",
+      "rc": 0,
+      "seconds": 2116
+    },
+    {
+      "split": "S00",
+      "tgt": "S00c",
+      "gate": "pcv",
+      "rc": 0,
+      "seconds": 2110
+    },
+    {
+      "split": "S00",
+      "tgt": "S00c",
+      "gate": "oracle",
+      "rc": 0,
+      "seconds": 2102
+    },
+    {
+      "split": "S01",
+      "tgt": "S01",
+      "gate": "none",
+      "rc": 0,
+      "seconds": 2377
+    },
+    {
+      "split": "S01",
+      "tgt": "S01c",
+      "gate": "none",
+      "rc": 0,
+      "seconds": 2099
+    },
+    {
+      "split": "S01",
+      "tgt": "S01c",
+      "gate": "pcv",
+      "rc": 0,
+      "seconds": 2091
+    },
+    {
+      "split": "S01",
+      "tgt": "S01c",
+      "gate": "oracle",
+      "rc": 0,
+      "seconds": 2081
+    },
+    {
+      "split": "S02",
+      "tgt": "S02",
+      "gate": "none",
+      "rc": 0,
+      "seconds": 2375
+    },
+    {
+      "split": "S02",
+      "tgt": "S02c",
+      "gate": "none",
+      "rc": 0,
+      "seconds": 2101
+    },
+    {
+      "split": "S02",
+      "tgt": "S02c",
+      "gate": "pcv",
+      "rc": 0,
+      "seconds": 2098
+    },
+    {
+      "split": "S02",
+      "tgt": "S02c",
+      "gate": "oracle",
+      "rc": 0,
+      "seconds": 2100
+    }
+  ]
+}

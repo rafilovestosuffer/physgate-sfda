@@ -1,0 +1,474 @@
+{
+ "entry": "C107",
+ "status": "post-hoc, descriptive",
+ "gate": "envelope threshold rule (pcv), z = 10",
+ "rows": [
+  {
+   "split": "S00",
+   "groups": {
+    "certified": {
+     "windows": 4168,
+     "share": 0.11577777777777777,
+     "acc_ungated": 51.19961612284069,
+     "acc_gated": 99.16026871401152,
+     "change": 47.960652591170835,
+     "contribution_pp": 5.552777777777779
+    },
+    "uncovered_faulty": {
+     "windows": 19900,
+     "share": 0.5527777777777778,
+     "acc_ungated": 59.51256281407035,
+     "acc_gated": 55.15577889447236,
+     "change": -4.356783919597987,
+     "contribution_pp": -2.408333333333332
+    },
+    "uncovered_healthy": {
+     "windows": 11932,
+     "share": 0.33144444444444443,
+     "acc_ungated": 83.52329869259135,
+     "acc_gated": 83.52329869259135,
+     "change": 0.0,
+     "contribution_pp": 0.0
+    }
+   },
+   "total": {
+    "ungated": 66.50833333333334,
+    "gated": 69.65277777777777
+   },
+   "certified_windows_by_bearing": {
+    "KA04": 4100,
+    "K002": 68
+   },
+   "gain": 3.146666666666661,
+   "headroom": 22.49666666666667,
+   "coverage_faulty": 0.13666666666666666,
+   "coverage_all_label_free": 0.0875
+  },
+  {
+   "split": "S01",
+   "groups": {
+    "certified": {
+     "windows": 13182,
+     "share": 0.36616666666666664,
+     "acc_ungated": 10.135032620239722,
+     "acc_gated": 70.33834016082537,
+     "change": 60.20330754058565,
+     "contribution_pp": 22.044444444444444
+    },
+    "uncovered_faulty": {
+     "windows": 10818,
+     "share": 0.3005,
+     "acc_ungated": 9.280828249214272,
+     "acc_gated": 11.212793492327602,
+     "change": 1.9319652431133303,
+     "contribution_pp": 0.5805555555555557
+    },
+    "uncovered_healthy": {
+     "windows": 12000,
+     "share": 0.3333333333333333,
+     "acc_ungated": 100.0,
+     "acc_gated": 100.0,
+     "change": 0.0,
+     "contribution_pp": 0.0
+    }
+   },
+   "total": {
+    "ungated": 39.833333333333336,
+    "gated": 62.458333333333336
+   },
+   "certified_windows_by_bearing": {
+    "KA16": 4000,
+    "KA04": 4100,
+    "KI18": 2970,
+    "KI16": 2112
+   },
+   "gain": 22.624999999999986,
+   "headroom": 55.27333333333333,
+   "coverage_faulty": 0.5266666666666666,
+   "coverage_all_label_free": 0.32916666666666666
+  },
+  {
+   "split": "S02",
+   "groups": {
+    "certified": {
+     "windows": 7070,
+     "share": 0.1963888888888889,
+     "acc_ungated": 29.773691654879773,
+     "acc_gated": 75.81329561527582,
+     "change": 46.03960396039605,
+     "contribution_pp": 9.04166666666667
+    },
+    "uncovered_faulty": {
+     "windows": 16930,
+     "share": 0.4702777777777778,
+     "acc_ungated": 26.320141760189014,
+     "acc_gated": 26.96396928529238,
+     "change": 0.6438275251033652,
+     "contribution_pp": 0.30277777777777704
+    },
+    "uncovered_healthy": {
+     "windows": 12000,
+     "share": 0.3333333333333333,
+     "acc_ungated": 99.99166666666666,
+     "acc_gated": 100.0,
+     "change": 0.008333333333339965,
+     "contribution_pp": 0.0027777777777799884
+    }
+   },
+   "total": {
+    "ungated": 51.55555555555556,
+    "gated": 60.90277777777778
+   },
+   "certified_windows_by_bearing": {
+    "KA04": 4100,
+    "KI18": 2970
+   },
+   "gain": 9.346666666666664,
+   "headroom": 22.33833333333333,
+   "coverage_faulty": 0.2866666666666667,
+   "coverage_all_label_free": 0.17916666666666667
+  },
+  {
+   "split": "S03",
+   "groups": {
+    "certified": {
+     "windows": 200,
+     "share": 0.005555555555555556,
+     "acc_ungated": 0.0,
+     "acc_gated": 0.5,
+     "change": 0.5,
+     "contribution_pp": 0.002777777777777778
+    },
+    "uncovered_faulty": {
+     "windows": 23800,
+     "share": 0.6611111111111111,
+     "acc_ungated": 38.38235294117647,
+     "acc_gated": 36.18487394957983,
+     "change": -2.1974789915966397,
+     "contribution_pp": -1.4527777777777784
+    },
+    "uncovered_healthy": {
+     "windows": 12000,
+     "share": 0.3333333333333333,
+     "acc_ungated": 99.7,
+     "acc_gated": 99.7,
+     "change": 0.0,
+     "contribution_pp": 0.0
+    }
+   },
+   "total": {
+    "ungated": 58.608333333333334,
+    "gated": 57.15833333333333
+   },
+   "certified_windows_by_bearing": {
+    "KA30": 200
+   },
+   "gain": -1.45000000000001,
+   "headroom": 16.926666666666655,
+   "coverage_faulty": 0.006666666666666667,
+   "coverage_all_label_free": 0.004166666666666667
+  },
+  {
+   "split": "S04",
+   "groups": {
+    "certified": {
+     "windows": 6276,
+     "share": 0.17433333333333334,
+     "acc_ungated": 50.478011472275334,
+     "acc_gated": 70.96876991714468,
+     "change": 20.49075844486935,
+     "contribution_pp": 3.5722222222222233
+    },
+    "uncovered_faulty": {
+     "windows": 17724,
+     "share": 0.49233333333333335,
+     "acc_ungated": 64.7878582712706,
+     "acc_gated": 64.79350033852404,
+     "change": 0.0056420672534471805,
+     "contribution_pp": 0.0027777777777804953
+    },
+    "uncovered_healthy": {
+     "windows": 12000,
+     "share": 0.3333333333333333,
+     "acc_ungated": 100.0,
+     "acc_gated": 100.0,
+     "change": 0.0,
+     "contribution_pp": 0.0
+    }
+   },
+   "total": {
+    "ungated": 74.03055555555555,
+    "gated": 77.60555555555555
+   },
+   "certified_windows_by_bearing": {
+    "KI16": 2176,
+    "KA04": 4100
+   },
+   "gain": 3.576666666666654,
+   "headroom": 18.093333333333334,
+   "coverage_faulty": 0.24333333333333335,
+   "coverage_all_label_free": 0.15208333333333332
+  },
+  {
+   "split": "S05",
+   "groups": {
+    "certified": {
+     "windows": 5148,
+     "share": 0.143,
+     "acc_ungated": 4.331779331779332,
+     "acc_gated": 55.73038073038073,
+     "change": 51.3986013986014,
+     "contribution_pp": 7.35
+    },
+    "uncovered_faulty": {
+     "windows": 18918,
+     "share": 0.5255,
+     "acc_ungated": 22.793107093773127,
+     "acc_gated": 22.814250977904642,
+     "change": 0.021143884131515023,
+     "contribution_pp": 0.011111111111111144
+    },
+    "uncovered_healthy": {
+     "windows": 11934,
+     "share": 0.3315,
+     "acc_ungated": 71.85352773588068,
+     "acc_gated": 76.74710910005028,
+     "change": 4.893581364169606,
+     "contribution_pp": 1.6222222222222245
+    }
+   },
+   "total": {
+    "ungated": 36.416666666666664,
+    "gated": 45.4
+   },
+   "certified_windows_by_bearing": {
+    "KI18": 2970,
+    "KI16": 2112,
+    "K002": 66
+   },
+   "gain": 8.983333333333334,
+   "headroom": 48.656666666666666,
+   "coverage_faulty": 0.25666666666666665,
+   "coverage_all_label_free": 0.1625
+  },
+  {
+   "split": "S06",
+   "groups": {
+    "certified": {
+     "windows": 6212,
+     "share": 0.17255555555555555,
+     "acc_ungated": 49.17900837089504,
+     "acc_gated": 74.0985189954926,
+     "change": 24.919510624597557,
+     "contribution_pp": 4.300000000000001
+    },
+    "uncovered_faulty": {
+     "windows": 17788,
+     "share": 0.4941111111111111,
+     "acc_ungated": 54.1432426354846,
+     "acc_gated": 55.031481897908705,
+     "change": 0.8882392624241078,
+     "contribution_pp": 0.4388888888888897
+    },
+    "uncovered_healthy": {
+     "windows": 12000,
+     "share": 0.3333333333333333,
+     "acc_ungated": 100.0,
+     "acc_gated": 100.0,
+     "change": 0.0,
+     "contribution_pp": 0.0
+    }
+   },
+   "total": {
+    "ungated": 68.57222222222222,
+    "gated": 73.31111111111112
+   },
+   "certified_windows_by_bearing": {
+    "KA04": 4100,
+    "KI16": 2112
+   },
+   "gain": 4.739999999999981,
+   "headroom": 14.698333333333323,
+   "coverage_faulty": 0.24333333333333335,
+   "coverage_all_label_free": 0.15208333333333332
+  },
+  {
+   "split": "S07",
+   "groups": {
+    "certified": {
+     "windows": 3236,
+     "share": 0.0898888888888889,
+     "acc_ungated": 38.62793572311496,
+     "acc_gated": 55.80964153275649,
+     "change": 17.181705809641528,
+     "contribution_pp": 1.544444444444444
+    },
+    "uncovered_faulty": {
+     "windows": 20830,
+     "share": 0.5786111111111111,
+     "acc_ungated": 29.495919347095537,
+     "acc_gated": 30.633701392222754,
+     "change": 1.1377820451272171,
+     "contribution_pp": 0.6583333333333314
+    },
+    "uncovered_healthy": {
+     "windows": 11934,
+     "share": 0.3315,
+     "acc_ungated": 93.31322272498743,
+     "acc_gated": 88.67940338528574,
+     "change": -4.633819339701688,
+     "contribution_pp": -1.5361111111111097
+    }
+   },
+   "total": {
+    "ungated": 51.47222222222222,
+    "gated": 52.138888888888886
+   },
+   "certified_windows_by_bearing": {
+    "KI18": 2970,
+    "KA30": 200,
+    "K002": 66
+   },
+   "gain": 0.6666666666666643,
+   "headroom": 40.44333333333334,
+   "coverage_faulty": 0.15666666666666668,
+   "coverage_all_label_free": 0.1
+  },
+  {
+   "split": "S08",
+   "groups": {
+    "certified": {
+     "windows": 11070,
+     "share": 0.3075,
+     "acc_ungated": 9.96386630532972,
+     "acc_gated": 80.38843721770552,
+     "change": 70.4245709123758,
+     "contribution_pp": 21.65555555555556
+    },
+    "uncovered_faulty": {
+     "windows": 12930,
+     "share": 0.3591666666666667,
+     "acc_ungated": 3.4725444702242845,
+     "acc_gated": 5.336426914153132,
+     "change": 1.8638824439288477,
+     "contribution_pp": 0.6694444444444445
+    },
+    "uncovered_healthy": {
+     "windows": 12000,
+     "share": 0.3333333333333333,
+     "acc_ungated": 100.0,
+     "acc_gated": 100.0,
+     "change": 0.0,
+     "contribution_pp": 0.0
+    }
+   },
+   "total": {
+    "ungated": 37.644444444444446,
+    "gated": 59.96944444444444
+   },
+   "certified_windows_by_bearing": {
+    "KA16": 4000,
+    "KA04": 4100,
+    "KI18": 2970
+   },
+   "gain": 22.326666666666668,
+   "headroom": 53.44,
+   "coverage_faulty": 0.42,
+   "coverage_all_label_free": 0.2625
+  },
+  {
+   "split": "S09",
+   "groups": {
+    "certified": {
+     "windows": 3170,
+     "share": 0.08805555555555555,
+     "acc_ungated": 7.413249211356467,
+     "acc_gated": 76.62460567823344,
+     "change": 69.21135646687696,
+     "contribution_pp": 6.094444444444443
+    },
+    "uncovered_faulty": {
+     "windows": 20830,
+     "share": 0.5786111111111111,
+     "acc_ungated": 45.10801728276524,
+     "acc_gated": 41.97791646663466,
+     "change": -3.130100816130579,
+     "contribution_pp": -1.8111111111111098
+    },
+    "uncovered_healthy": {
+     "windows": 12000,
+     "share": 0.3333333333333333,
+     "acc_ungated": 100.0,
+     "acc_gated": 100.0,
+     "change": 0.0,
+     "contribution_pp": 0.0
+    }
+   },
+   "total": {
+    "ungated": 60.08611111111111,
+    "gated": 64.36944444444444
+   },
+   "certified_windows_by_bearing": {
+    "KI18": 2970,
+    "KA30": 200
+   },
+   "gain": 4.285000000000004,
+   "headroom": 22.378333333333337,
+   "coverage_faulty": 0.15666666666666668,
+   "coverage_all_label_free": 0.09791666666666667
+  }
+ ],
+ "spillover_summary": {
+  "certified": {
+   "median_change_pp": 47.00012827578344,
+   "mean_change_pp": 40.83300677491151,
+   "positive": 10,
+   "n": 10,
+   "median_contribution_pp": 5.823611111111111,
+   "sum_contribution_pp": 81.15833333333335
+  },
+  "uncovered_faulty": {
+   "median_change_pp": 0.3324857046174401,
+   "mean_change_pp": -0.3191881256243375,
+   "positive": 7,
+   "n": 10,
+   "median_contribution_pp": 0.15694444444444408,
+   "sum_contribution_pp": -3.0083333333333298
+  },
+  "uncovered_healthy": {
+   "median_change_pp": 0.0,
+   "mean_change_pp": 0.026809535780125772,
+   "positive": 2,
+   "n": 10,
+   "median_contribution_pp": 0.0,
+   "sum_contribution_pp": 0.08888888888889479
+  },
+  "share_of_summed_gain_from_certified": 1.0373144926507136
+ },
+ "coverage": {
+  "faulty_denominator": {
+   "rho": 0.9512371959778024,
+   "p": 2.3317943367997814e-05,
+   "loo_min": 0.9328060455657798,
+   "loo_max": 0.9790880682441959,
+   "partial_rho_given_headroom": 0.9319081219490937,
+   "partial_p": 0.0002536669972500658,
+   "median_coverage": 0.24333333333333335
+  },
+  "label_free_all_records": {
+   "rho": 0.9300954818304988,
+   "p": 9.596084056886828e-05,
+   "loo_min": 0.903773601456181,
+   "loo_max": 0.9790880682441959,
+   "partial_rho_given_headroom": 0.9019129787470149,
+   "partial_p": 0.000883116801478395,
+   "median_coverage": 0.15208333333333332
+  },
+  "headroom": {
+   "rho": 0.5272727272727272,
+   "p": 0.1173080655502023,
+   "partial_rho_given_coverage_faulty": 0.04262278842194685,
+   "partial_p": 0.9133009151851778
+  }
+ }
+}

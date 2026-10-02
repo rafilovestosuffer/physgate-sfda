@@ -1,0 +1,223 @@
+{
+ "n_pairs": 11,
+ "n_task_pairs": 66,
+ "task_sd": 0.0,
+ "task_max_abs": 0.0,
+ "fold_mean_max_abs": 0.0,
+ "seed_fold_means": {
+  "A": [
+   56.76166666666668,
+   59.69,
+   56.473333333333336
+  ],
+  "B": [
+   55.31166666666667,
+   53.46333333333334,
+   55.29999999999999
+  ]
+ },
+ "seed_fold_mean_range": {
+  "A": 3.2166666666666615,
+  "B": 1.8483333333333292
+ },
+ "rows": [
+  {
+   "fold": "A",
+   "arm": "ungated",
+   "run1": "physgate-m2-fa",
+   "run2": "physgate-m2rep-fa-r1",
+   "mean1": 56.76166666666668,
+   "mean2": 56.76166666666668,
+   "fold_mean_diff": 0.0,
+   "max_abs_task_diff": 0.0,
+   "per_task": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "fold": "A",
+   "arm": "shaft-alias-guarded comb",
+   "run1": "physgate-m2-fa",
+   "run2": "physgate-m2rep-fa-r1",
+   "mean1": 60.711666666666666,
+   "mean2": 60.711666666666666,
+   "fold_mean_diff": 0.0,
+   "max_abs_task_diff": 0.0,
+   "per_task": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "fold": "A",
+   "arm": "envelope threshold rule",
+   "run1": "physgate-m2-fa",
+   "run2": "physgate-m2rep-fa-r1",
+   "mean1": 61.17333333333334,
+   "mean2": 61.17333333333334,
+   "fold_mean_diff": 0.0,
+   "max_abs_task_diff": 0.0,
+   "per_task": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "fold": "A",
+   "arm": "ungated",
+   "run1": "physgate-m2-fa",
+   "run2": "physgate-m2rep-fa-r2",
+   "mean1": 56.76166666666668,
+   "mean2": 56.76166666666668,
+   "fold_mean_diff": 0.0,
+   "max_abs_task_diff": 0.0,
+   "per_task": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "fold": "A",
+   "arm": "shaft-alias-guarded comb",
+   "run1": "physgate-m2-fa",
+   "run2": "physgate-m2rep-fa-r2",
+   "mean1": 60.711666666666666,
+   "mean2": 60.711666666666666,
+   "fold_mean_diff": 0.0,
+   "max_abs_task_diff": 0.0,
+   "per_task": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "fold": "A",
+   "arm": "envelope threshold rule",
+   "run1": "physgate-m2-fa",
+   "run2": "physgate-m2rep-fa-r2",
+   "mean1": 61.17333333333334,
+   "mean2": 61.17333333333334,
+   "fold_mean_diff": 0.0,
+   "max_abs_task_diff": 0.0,
+   "per_task": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "fold": "A",
+   "arm": "ungated",
+   "run1": "physgate-m2-fa",
+   "run2": "c103-pretrain_in_process",
+   "mean1": 56.76166666666668,
+   "mean2": 56.76166666666668,
+   "fold_mean_diff": 0.0,
+   "max_abs_task_diff": 0.0,
+   "per_task": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "fold": "A",
+   "arm": "ungated",
+   "run1": "physgate-m2-fa",
+   "run2": "c103-skip_pretrain",
+   "mean1": 56.76166666666668,
+   "mean2": 56.76166666666668,
+   "fold_mean_diff": 0.0,
+   "max_abs_task_diff": 0.0,
+   "per_task": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "fold": "B",
+   "arm": "ungated",
+   "run1": "physgate-m2-fb",
+   "run2": "physgate-m2rep-fb-r1",
+   "mean1": 55.31166666666667,
+   "mean2": 55.31166666666667,
+   "fold_mean_diff": 0.0,
+   "max_abs_task_diff": 0.0,
+   "per_task": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "fold": "B",
+   "arm": "shaft-alias-guarded comb",
+   "run1": "physgate-m2-fb",
+   "run2": "physgate-m2rep-fb-r1",
+   "mean1": 58.828333333333326,
+   "mean2": 58.828333333333326,
+   "fold_mean_diff": 0.0,
+   "max_abs_task_diff": 0.0,
+   "per_task": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "fold": "B",
+   "arm": "envelope threshold rule",
+   "run1": "physgate-m2-fb",
+   "run2": "physgate-m2rep-fb-r1",
+   "mean1": 62.30166666666667,
+   "mean2": 62.30166666666667,
+   "fold_mean_diff": 0.0,
+   "max_abs_task_diff": 0.0,
+   "per_task": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  }
+ ]
+}

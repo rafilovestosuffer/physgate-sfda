@@ -1,0 +1,56 @@
+{
+  "CWRU|measured": {
+    "J2": {
+      "ball_detected": 0,
+      "ball_n": 16,
+      "healthy_FA": 0,
+      "healthy_n": 4,
+      "false_ball_calls_on_nonball": 0,
+      "changed_nonball_verdicts": 1
+    },
+    "J0": {
+      "ball_detected": 0,
+      "ball_n": 16,
+      "healthy_FA": 0,
+      "healthy_n": 4,
+      "false_ball_calls_on_nonball": 1,
+      "changed_nonball_verdicts": 1
+    }
+  },
+  "UORED|logged": {
+    "J2": {
+      "ball_detected": 0,
+      "ball_n": 10,
+      "healthy_FA": 0,
+      "healthy_n": 20,
+      "false_ball_calls_on_nonball": 1,
+      "changed_nonball_verdicts": 6
+    },
+    "J0": {
+      "ball_detected": 0,
+      "ball_n": 10,
+      "healthy_FA": 0,
+      "healthy_n": 20,
+      "false_ball_calls_on_nonball": 5,
+      "changed_nonball_verdicts": 6
+    }
+  },
+  "UORED|ftf": {
+    "J2": {
+      "ball_detected": 0,
+      "ball_n": 4,
+      "healthy_FA": 0,
+      "healthy_n": 5,
+      "false_ball_calls_on_nonball": 0,
+      "changed_nonball_verdicts": 0
+    },
+    "J0": {
+      "ball_detected": 0,
+      "ball_n": 4,
+      "healthy_FA": 0,
+      "healthy_n": 5,
+      "false_ball_calls_on_nonball": 0,
+      "changed_nonball_verdicts": 0
+    }
+  }
+}

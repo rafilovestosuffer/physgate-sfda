@@ -1,0 +1,15 @@
+6203_PU_2905 outer_race true 0.0010 unmasked 0.0006 True masked 0.0006 True lock False False
+6203_PU_2905 outer_race true 0.0100 unmasked 0.0092 True masked 0.0092 True lock False False
+6203_PU_2905 outer_race true 0.0178 unmasked 0.0164 True masked 0.0164 True lock False False
+6203_PU_2905 outer_race true 0.0230 unmasked 0.0223 True masked 0.0249 False lock True True
+6203_PU_2905 outer_race true 0.0400 unmasked 0.0392 True masked 0.0392 True lock False False
+6203_PU_2905 inner_race true 0.0010 unmasked -0.0000 True masked -0.0000 True lock False False
+6203_PU_2905 inner_race true 0.0100 unmasked 0.0092 True masked 0.0092 True lock False False
+6203_PU_2905 inner_race true 0.0178 unmasked 0.0167 True masked 0.0167 True lock False False
+6203_PU_2905 inner_race true 0.0230 unmasked 0.0213 True masked 0.0250 True lock True True
+6203_PU_2905 inner_race true 0.0400 unmasked 0.0388 True masked 0.0388 True lock False False
+6203_PU_2855 outer_race true 0.0010 unmasked -0.0006 True masked -0.0006 True lock False False
+6203_PU_2855 outer_race true 0.0100 unmasked 0.0087 True masked 0.0087 True lock False False
+6203_PU_2855 outer_race true 0.0178 unmasked 0.0171 True masked 0.0150 True lock True True
+6203_PU_2855 outer_race true 0.0230 unmasked 0.0218 True masked 0.0218 True lock True True
+6203_PU_2855 outer_race true 0.0400 unmasked 0.0389 True masked 0.0389 True lock False False

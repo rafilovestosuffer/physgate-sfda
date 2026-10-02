@@ -1,0 +1,27 @@
+{
+  "dataset": "PU",
+  "variant": "as_released",
+  "seed": 2,
+  "smoke": false,
+  "src_fold": null,
+  "tgt_fold": null,
+  "leaky": true,
+  "hyperparameters": {
+    "lr": "0.0005",
+    "threshold": "0.6",
+    "K": "0.6"
+  },
+  "adapters": [
+    "npz_io",
+    "tsne_stub"
+  ],
+  "source_only": {},
+  "adapted": {
+    "A3->A2": 97.82,
+    "A1->A2": 90.14
+  },
+  "seconds": {
+    "A3->A2": 934,
+    "A1->A2": 941
+  }
+}

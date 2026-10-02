@@ -1,0 +1,17 @@
+[
+  {
+    "gate": "none",
+    "rc": 0,
+    "seconds": 2463
+  },
+  {
+    "gate": "v2",
+    "rc": 0,
+    "seconds": 2164
+  },
+  {
+    "gate": "pcv",
+    "rc": 0,
+    "seconds": 2161
+  }
+]

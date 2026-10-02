@@ -1,0 +1,146 @@
+# Bearing geometry. EVERY number carries a source. Nothing is estimated.
+#
+# CONVENTION WARNING [C13] -- "BSF" names TWO different quantities in the literature:
+#   BSF  = (Pd/2Bd)(1-r^2)   true ball/roller SPIN frequency
+#   BPFB = 2 * BSF           ball DEFECT line (a ball defect strikes both raceways per revolution)
+# Sources disagree about which they tabulate under the label "BSF":
+#   CWRU Bearing Data Center table .... tabulates 4.7135 (6205) / 3.9874 (6203) == BPFB (2x spin)
+#   Smith & Randall 2015 (MSSP 64-65) . reports 1.994 (6203)                    == BSF  (true spin)
+#   hustcxl GitHub mirror ............. reports 2.357 (6205) / 1.994 (6203)     == BSF  (true spin)
+# => Unit tests assert against the CLOSED-FORM FORMULA ONLY, never against a published table.
+#    BPFO / BPFI / FTF are unambiguous and ARE asserted against CWRU's published values.
+
+defaults:
+  alpha_deg: 0.0          # deep-groove ball and cylindrical roller bearings: zero contact angle
+
+bearings:
+
+  "6205":
+    designation: SKF 6205-2RS JEM
+    role: CWRU drive end
+    n: 9
+    Bd_in: 0.3126
+    Pd_in: 1.537
+    alpha_deg: 0.0
+    verified: true
+    # source: CWRU Bearing Data Center bearing-information page.
+    # VALIDATION: this geometry reproduces CWRU's published multipliers to 4 dp --
+    #   BPFO 3.5848  BPFI 5.4152  FTF 0.39828  BPFB 4.7135 (published "BSF")
+    # NOTE Pd = 1.537 in = 39.04 mm, which is NOT (25+52)/2 = 38.5 mm.
+    #      Never infer pitch diameter from bore and OD.
+
+  "6203":
+    designation: SKF 6203-2RS JEM
+    role: CWRU fan end ONLY, 17x40x12 mm. NOT Paderborn -- see 6203_PU_* below (C35).
+    n: 8                  # n=9 gives BPFO 3.4348 and FAILS to reproduce CWRU's table. n=8 is correct.
+    Bd_in: 0.2656
+    Pd_in: 1.122
+    alpha_deg: 0.0
+    verified: true
+    # source: CWRU Bearing Data Center bearing-information page (fan end).
+    # VALIDATION: reproduces BPFO 3.0530  BPFI 4.9469  FTF 0.3817  BPFB 3.9874.
+    # Pd = 1.122 in = 28.499 mm which HAPPENS to equal (17+40)/2 = 28.5 mm. Coincidence, not a rule.
+    #
+    # SHAFT-HARMONIC LOCK -- see PLAN.md 0.2 and physics/feasibility.py.
+    # Smith & Randall 2015: "Three of the bearing characteristic frequencies for the SKF 6203-2RS JEM
+    # deep groove bearing are close to integer multiples of shaft speed, with values of 4.947, 3.053
+    # and 1.994 (x fr) for BPFI, BPFO and BSF ... the bearing frequencies appear to lock onto these
+    # shaft harmonics, making it difficult to establish a definite diagnosis."
+    # BPFO +1.77% from 3x, BPFB -0.31% from 4x, BPFI -1.06% from 5x. No slip window separates them.
+
+  # ---------------------------------------------------------------------------
+  # PADERBORN [C35]. Geometry is PER BEARING, read from the dataset's own per-bearing damage
+  # profiles data/pu/<ID>/<ID>.pdf ("Profile of rolling bearing damage", Lessmeier, KAt Paderborn),
+  # 2026-09-13. Until C35 every PU record was (wrongly) mapped to CWRU's SKF "6203". Two geometries:
+  #   Pd 29.05 mm : IBU (K001-K006, KA05-KA09, KA22, KI05, KI07, KI08)
+  #                 MTK (KA01, KA03, KA16, KA30, KB23, KI01, KI03, KI04, KI14, KI17, KI18)
+  #   Pd 28.55 mm : FAG (KA04, KA15, KB24, KB27, KI16, KI21)   [raceways 24.00 / 33.10 mm given]
+  # All: 8 balls, ball diameter 6.75 mm, nominal pressure angle 0.
+  # LOCK CONSEQUENCE: on Pd 29.05, BPFO is +2.35% of 3xf_r and BPFI -1.41% of 5xf_r, so at
+  # s_max=0.02 the shaft harmonic lies OUTSIDE both one-sided slip windows (by 0.137-0.229 Hz,
+  # < 1 native bin at T_A=3 s). BPFB (+1.78% of 4xf_r) still collides. On Pd 28.55 all three collide.
+  # The map bearing_id -> key lives in configs/datasets.yaml datasets.PU.geometry.
+  # ---------------------------------------------------------------------------
+
+  "6203_PU_2905":
+    designation: 6203 deep groove ball (IBU / MTK), Paderborn
+    n: 8
+    Bd_mm: 6.75
+    Pd_mm: 29.05
+    alpha_deg: 0.0
+    verified: true
+    source: "data/pu/K001/K001.pdf (and the 25 other IBU/MTK profiles; identical geometry rows)"
+
+  "6203_PU_2855":
+    designation: 6203 deep groove ball (FAG), Paderborn
+    n: 8
+    Bd_mm: 6.75
+    Pd_mm: 28.55
+    alpha_deg: 0.0
+    verified: true
+    source: "data/pu/KA04/KA04.pdf (and KA15, KB24, KB27, KI16, KI21); raceways 24.00 / 33.10 mm, (24+33.1)/2 = 28.55 consistent"
+
+  "6203_UORED":
+    designation: NSK 6203ZZ (bearings 1-5) and FAFNIR 203KD (bearings 6-20), UORED-VAFCLS drive end
+    n: 8
+    Bd_mm: 6.77
+    Pd_mm: 28.50
+    alpha_deg: 0.0
+    verified: true
+    source: "Sehri, Dumond & Bouchard, Data in Brief 49:109327 (2023), Table 2 (both models: pitch 28.50 mm, ball 6.77 mm, 8 balls); PMC10331275, CC BY. Model change after test 5 stated in Sec. 3."
+    # C54. Lock: BPFO 3.0498 (+1.66% of 3xf_r), BPFI 4.9502 (-1.00% of 5xf_r) -> both inside s_max=0.02 windows.
+
+  # ---------------------------------------------------------------------------
+  # BLOCKED. kinematics.py RAISES UnverifiedBearingError for every entry below.
+  # ---------------------------------------------------------------------------
+
+  "N205":
+    designation: N205 cylindrical roller
+    role: JNU -- normal, outer race, roller  (Li et al., Sensors 2013, 13(6):8013-8041,
+          doi 10.3390/s130608013, verbatim "The N205 with separable out-race is used for normal,
+          outer-race defect and roller element defect states.")
+    # WARNING: several widely-cited secondary papers (e.g. ClassBD, arXiv 2404.15341) state the
+    # REVERSE assignment. They are wrong. N-type has no flanges on the OUTER ring (outer ring
+    # separable); NU-type has no flanges on the INNER ring. You separate a ring to expose a raceway
+    # for wire-cutting, which confirms Li et al.
+    envelope_mm: [25, 52, 15]
+    raceway_E_mm: 46.5      # outer raceway diameter  } NTN catalogue, UNCONFIRMED second source
+    raceway_F_mm: 31.5      # inner raceway diameter  }
+    Dw_mm_derived: 7.5      # (E-F)/2
+    Pd_mm_derived: 39.0     # (E+F)/2
+    # PRIMARY (2026-09-13, PDF read): Li et al. 2013 Table 1 gives 10 rollers, roller diameter 7 mm,
+    # contact angle 0, and NO pitch diameter. The NTN raceway figures above (and a second NTN reading of
+    # Ew 45.0 / Fw 32.0 mm reported externally) disagree with each other and with Dw = 7 mm, and are a
+    # different manufacturer. Li et al. also describe 400-800 rpm variable speed on a Mitsubishi motor,
+    # while the public JNU files are 600/800/1000 rpm: the link between that paper's rig and the public
+    # files rests on secondary sources (e.g. Sun & Gao, Sensors 2024 24:5700 Table 6).
+    n_primary: 10
+    Dw_mm_primary: 7.0
+    n: null                 # kept null: kinematics need Pd, which no primary source gives
+    verified: false
+    blocked_on: "pitch diameter unpublished in the primary source; JNU is Track R only (C25), so this blocks nothing scheduled"
+
+  "NU205":
+    designation: NU205 cylindrical roller
+    role: JNU -- inner race only (Li et al. 2013, "The NU205 with separable inner-race is used for
+          inner-race defect state.")
+    envelope_mm: [25, 52, 15]
+    n_primary: 11           # Li et al. 2013 Table 1 -- DIFFERS from N205 (10): JNU kinematics are PER CLASS (C45)
+    Dw_mm_primary: 7.0
+    n: null
+    verified: false
+    blocked_on: "pitch diameter unpublished; JNU inner-race records would need their own kinematics"
+
+  "6204": {designation: deep groove ball, role: HUST, envelope_mm: [20, 47, 14], n: null, verified: false, blocked_on: "PITCH DIAMETER ONLY (C76): ball count and ball diameter ARE published in BMC Res Notes 16:138; Pd is not, which is what blocks H2 and B4"}
+  "6206": {designation: deep groove ball, role: HUST, envelope_mm: [30, 62, 16], n: null, verified: false, blocked_on: "PITCH DIAMETER ONLY (C76): ball count and ball diameter ARE published in BMC Res Notes 16:138; Pd is not, which is what blocks H2 and B4"}
+  "6207": {designation: deep groove ball, role: HUST, envelope_mm: [35, 72, 17], n: null, verified: false, blocked_on: "PITCH DIAMETER ONLY (C76): ball count and ball diameter ARE published in BMC Res Notes 16:138; Pd is not, which is what blocks H2 and B4"}
+  "6208": {designation: deep groove ball, role: HUST, envelope_mm: [40, 80, 18], n: null, verified: false, blocked_on: "PITCH DIAMETER ONLY (C76): ball count and ball diameter ARE published in BMC Res Notes 16:138; Pd is not, which is what blocks H2 and B4"}
+
+  # HUST parts are KG Bearing (India), not SKF. Registered separately; none verified.
+  # C76 (primary, BMC Res Notes 16:138): ball diameter / ball count 6204 7.6mm/8, 6205 7.8/9, 6206 9.0/9, 6207 11.0/9,
+  # 6208 12.0/9. NO pitch diameter published -> still blocked (never infer Pd from bore/OD).
+  "6204_HUST": {designation: KG 6204 deep groove ball, role: HUST, envelope_mm: [20, 47, 14], n: null, verified: false, blocked_on: "PITCH DIAMETER ONLY: the dataset paper publishes 8 balls of 7.6 mm; Pd is unpublished and must never be inferred from bore/OD"}
+  "6205_HUST": {designation: KG 6205 deep groove ball, role: HUST, envelope_mm: [25, 52, 15], n: null, verified: false, blocked_on: "manufacturer is KG not SKF; SKF 6205 geometry (n=9, Bd=0.3126in) is likely but NOT confirmed for this part"}
+  "6206_HUST": {designation: KG 6206 deep groove ball, role: HUST, envelope_mm: [30, 62, 16], n: null, verified: false, blocked_on: "PITCH DIAMETER ONLY: the dataset paper publishes 9 balls of 9.0 mm; Pd is unpublished"}
+  "6207_HUST": {designation: KG 6207 deep groove ball, role: HUST, envelope_mm: [35, 72, 17], n: null, verified: false, blocked_on: "PITCH DIAMETER ONLY: the dataset paper publishes 9 balls of 11.0 mm; Pd is unpublished"}
+  "6208_HUST": {designation: KG 6208 deep groove ball, role: HUST, envelope_mm: [40, 80, 18], n: null, verified: false, blocked_on: "PITCH DIAMETER ONLY: the dataset paper publishes 9 balls of 12.0 mm; Pd is unpublished"}

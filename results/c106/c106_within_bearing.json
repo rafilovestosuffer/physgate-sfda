@@ -1,0 +1,567 @@
+{
+ "entry": "C106",
+ "status": "post-hoc, descriptive",
+ "method": "SDALR final_checkpoint seed 2024, ungated",
+ "rows": [
+  {
+   "bearing": "K001",
+   "seen_acc": 100.0,
+   "unseen_acc": 90.47619047619048,
+   "diff": 9.523809523809518,
+   "n_splits_seen": 3,
+   "n_splits_unseen": 7,
+   "records_adapt_conditions": 60,
+   "fault_verdicts_adapt_conditions": {
+    "pcv": 0,
+    "v2": 0,
+    "c30": 3,
+    "eagle": 37
+   },
+   "correct_fault_verdicts_adapt_conditions": {
+    "pcv": 60,
+    "v2": 60,
+    "c30": 57,
+    "eagle": 23
+   },
+   "manufacturer": "IBU",
+   "pitch_mm": "29.05",
+   "mode": "",
+   "symptom": "",
+   "extent": "",
+   "length_mm": "",
+   "width_mm": "",
+   "characteristic": "",
+   "combination": ""
+  },
+  {
+   "bearing": "K002",
+   "seen_acc": 100.0,
+   "unseen_acc": 82.33164983164983,
+   "diff": 17.668350168350173,
+   "n_splits_seen": 7,
+   "n_splits_unseen": 3,
+   "records_adapt_conditions": 60,
+   "fault_verdicts_adapt_conditions": {
+    "pcv": 1,
+    "v2": 0,
+    "c30": 0,
+    "eagle": 1
+   },
+   "correct_fault_verdicts_adapt_conditions": {
+    "pcv": 59,
+    "v2": 60,
+    "c30": 60,
+    "eagle": 59
+   },
+   "manufacturer": "IBU",
+   "pitch_mm": "29.05",
+   "mode": "",
+   "symptom": "",
+   "extent": "",
+   "length_mm": "",
+   "width_mm": "",
+   "characteristic": "",
+   "combination": ""
+  },
+  {
+   "bearing": "K003",
+   "seen_acc": 100.0,
+   "unseen_acc": 100.0,
+   "diff": 0.0,
+   "n_splits_seen": 7,
+   "n_splits_unseen": 3,
+   "records_adapt_conditions": 60,
+   "fault_verdicts_adapt_conditions": {
+    "pcv": 0,
+    "v2": 0,
+    "c30": 3,
+    "eagle": 35
+   },
+   "correct_fault_verdicts_adapt_conditions": {
+    "pcv": 60,
+    "v2": 60,
+    "c30": 57,
+    "eagle": 25
+   },
+   "manufacturer": "IBU",
+   "pitch_mm": "29.05",
+   "mode": "",
+   "symptom": "",
+   "extent": "",
+   "length_mm": "",
+   "width_mm": "",
+   "characteristic": "",
+   "combination": ""
+  },
+  {
+   "bearing": "K004",
+   "seen_acc": 100.0,
+   "unseen_acc": 100.0,
+   "diff": 0.0,
+   "n_splits_seen": 3,
+   "n_splits_unseen": 7,
+   "records_adapt_conditions": 60,
+   "fault_verdicts_adapt_conditions": {
+    "pcv": 0,
+    "v2": 0,
+    "c30": 1,
+    "eagle": 20
+   },
+   "correct_fault_verdicts_adapt_conditions": {
+    "pcv": 60,
+    "v2": 60,
+    "c30": 59,
+    "eagle": 40
+   },
+   "manufacturer": "IBU",
+   "pitch_mm": "29.05",
+   "mode": "",
+   "symptom": "",
+   "extent": "",
+   "length_mm": "",
+   "width_mm": "",
+   "characteristic": "",
+   "combination": ""
+  },
+  {
+   "bearing": "K005",
+   "seen_acc": 100.0,
+   "unseen_acc": 94.29713804713805,
+   "diff": 5.7028619528619515,
+   "n_splits_seen": 4,
+   "n_splits_unseen": 6,
+   "records_adapt_conditions": 60,
+   "fault_verdicts_adapt_conditions": {
+    "pcv": 0,
+    "v2": 0,
+    "c30": 1,
+    "eagle": 13
+   },
+   "correct_fault_verdicts_adapt_conditions": {
+    "pcv": 60,
+    "v2": 60,
+    "c30": 59,
+    "eagle": 47
+   },
+   "manufacturer": "IBU",
+   "pitch_mm": "29.05",
+   "mode": "",
+   "symptom": "",
+   "extent": "",
+   "length_mm": "",
+   "width_mm": "",
+   "characteristic": "",
+   "combination": ""
+  },
+  {
+   "bearing": "K006",
+   "seen_acc": 100.0,
+   "unseen_acc": 100.0,
+   "diff": 0.0,
+   "n_splits_seen": 6,
+   "n_splits_unseen": 4,
+   "records_adapt_conditions": 60,
+   "fault_verdicts_adapt_conditions": {
+    "pcv": 0,
+    "v2": 0,
+    "c30": 1,
+    "eagle": 35
+   },
+   "correct_fault_verdicts_adapt_conditions": {
+    "pcv": 60,
+    "v2": 60,
+    "c30": 59,
+    "eagle": 25
+   },
+   "manufacturer": "IBU",
+   "pitch_mm": "29.05",
+   "mode": "",
+   "symptom": "",
+   "extent": "",
+   "length_mm": "",
+   "width_mm": "",
+   "characteristic": "",
+   "combination": ""
+  },
+  {
+   "bearing": "KA04",
+   "seen_acc": 87.45710784313725,
+   "unseen_acc": 24.99722222222222,
+   "diff": 62.45988562091503,
+   "n_splits_seen": 4,
+   "n_splits_unseen": 6,
+   "records_adapt_conditions": 60,
+   "fault_verdicts_adapt_conditions": {
+    "pcv": 41,
+    "v2": 23,
+    "c30": 23,
+    "eagle": 60
+   },
+   "correct_fault_verdicts_adapt_conditions": {
+    "pcv": 41,
+    "v2": 23,
+    "c30": 23,
+    "eagle": 60
+   },
+   "manufacturer": "FAG",
+   "pitch_mm": "28.55",
+   "mode": "fatigue",
+   "symptom": "Pitting",
+   "extent": "1",
+   "length_mm": "2",
+   "width_mm": "3",
+   "characteristic": "single point",
+   "combination": "S"
+  },
+  {
+   "bearing": "KA15",
+   "seen_acc": 68.09284016636958,
+   "unseen_acc": 29.363333333333337,
+   "diff": 38.72950683303625,
+   "n_splits_seen": 5,
+   "n_splits_unseen": 5,
+   "records_adapt_conditions": 60,
+   "fault_verdicts_adapt_conditions": {
+    "pcv": 0,
+    "v2": 0,
+    "c30": 0,
+    "eagle": 21
+   },
+   "correct_fault_verdicts_adapt_conditions": {
+    "pcv": 0,
+    "v2": 0,
+    "c30": 0,
+    "eagle": 19
+   },
+   "manufacturer": "FAG",
+   "pitch_mm": "28.55",
+   "mode": "plastic deformation",
+   "symptom": "particle-caused",
+   "extent": "1",
+   "length_mm": "<1",
+   "width_mm": "<1",
+   "characteristic": "single point",
+   "combination": "S"
+  },
+  {
+   "bearing": "KA16",
+   "seen_acc": 74.96871286393345,
+   "unseen_acc": 0.03333333333333333,
+   "diff": 74.93537953060012,
+   "n_splits_seen": 8,
+   "n_splits_unseen": 2,
+   "records_adapt_conditions": 60,
+   "fault_verdicts_adapt_conditions": {
+    "pcv": 40,
+    "v2": 39,
+    "c30": 39,
+    "eagle": 60
+   },
+   "correct_fault_verdicts_adapt_conditions": {
+    "pcv": 40,
+    "v2": 39,
+    "c30": 39,
+    "eagle": 60
+   },
+   "manufacturer": "MTK",
+   "pitch_mm": "29.05",
+   "mode": "fatigue",
+   "symptom": "Pitting",
+   "extent": "2",
+   "length_mm": "2",
+   "width_mm": "total",
+   "characteristic": "single point",
+   "combination": "R"
+  },
+  {
+   "bearing": "KA22",
+   "seen_acc": 99.9452861952862,
+   "unseen_acc": 55.35,
+   "diff": 44.5952861952862,
+   "n_splits_seen": 6,
+   "n_splits_unseen": 4,
+   "records_adapt_conditions": 60,
+   "fault_verdicts_adapt_conditions": {
+    "pcv": 0,
+    "v2": 0,
+    "c30": 0,
+    "eagle": 6
+   },
+   "correct_fault_verdicts_adapt_conditions": {
+    "pcv": 0,
+    "v2": 0,
+    "c30": 0,
+    "eagle": 0
+   },
+   "manufacturer": "IBU / IBB",
+   "pitch_mm": "29.05",
+   "mode": "fatigue",
+   "symptom": "Pitting",
+   "extent": "1",
+   "length_mm": "< 2",
+   "width_mm": "1",
+   "characteristic": "single point",
+   "combination": "S"
+  },
+  {
+   "bearing": "KA30",
+   "seen_acc": 93.85281385281385,
+   "unseen_acc": 0.011111111111111112,
+   "diff": 93.84170274170275,
+   "n_splits_seen": 7,
+   "n_splits_unseen": 3,
+   "records_adapt_conditions": 60,
+   "fault_verdicts_adapt_conditions": {
+    "pcv": 2,
+    "v2": 1,
+    "c30": 2,
+    "eagle": 1
+   },
+   "correct_fault_verdicts_adapt_conditions": {
+    "pcv": 1,
+    "v2": 0,
+    "c30": 0,
+    "eagle": 1
+   },
+   "manufacturer": "MTK",
+   "pitch_mm": "29.05",
+   "mode": "plastic deformation",
+   "symptom": "particle-caused",
+   "extent": "1",
+   "length_mm": "<1",
+   "width_mm": "<1",
+   "characteristic": "distributed",
+   "combination": "R"
+  },
+  {
+   "bearing": "KI04",
+   "seen_acc": 84.11064425770307,
+   "unseen_acc": 60.808823529411775,
+   "diff": 23.301820728291297,
+   "n_splits_seen": 7,
+   "n_splits_unseen": 3,
+   "records_adapt_conditions": 60,
+   "fault_verdicts_adapt_conditions": {
+    "pcv": 0,
+    "v2": 2,
+    "c30": 4,
+    "eagle": 2
+   },
+   "correct_fault_verdicts_adapt_conditions": {
+    "pcv": 0,
+    "v2": 2,
+    "c30": 4,
+    "eagle": 2
+   },
+   "manufacturer": "MTK",
+   "pitch_mm": "29.05",
+   "mode": "fatigue",
+   "symptom": "Pitting",
+   "extent": "1",
+   "length_mm": "2",
+   "width_mm": "1",
+   "characteristic": "single point",
+   "combination": "M"
+  },
+  {
+   "bearing": "KI14",
+   "seen_acc": 86.50252525252525,
+   "unseen_acc": 42.60165998217469,
+   "diff": 43.90086527035056,
+   "n_splits_seen": 2,
+   "n_splits_unseen": 8,
+   "records_adapt_conditions": 60,
+   "fault_verdicts_adapt_conditions": {
+    "pcv": 0,
+    "v2": 0,
+    "c30": 0,
+    "eagle": 3
+   },
+   "correct_fault_verdicts_adapt_conditions": {
+    "pcv": 0,
+    "v2": 0,
+    "c30": 0,
+    "eagle": 1
+   },
+   "manufacturer": "MTK",
+   "pitch_mm": "29.05",
+   "mode": "fatigue",
+   "symptom": "Pitting",
+   "extent": "1",
+   "length_mm": "1",
+   "width_mm": "1",
+   "characteristic": "single point",
+   "combination": "M"
+  },
+  {
+   "bearing": "KI16",
+   "seen_acc": 95.13554664289958,
+   "unseen_acc": 41.00657308377897,
+   "diff": 54.12897355912062,
+   "n_splits_seen": 6,
+   "n_splits_unseen": 4,
+   "records_adapt_conditions": 60,
+   "fault_verdicts_adapt_conditions": {
+    "pcv": 32,
+    "v2": 27,
+    "c30": 27,
+    "eagle": 60
+   },
+   "correct_fault_verdicts_adapt_conditions": {
+    "pcv": 32,
+    "v2": 27,
+    "c30": 20,
+    "eagle": 0
+   },
+   "manufacturer": "FAG",
+   "pitch_mm": "28.55",
+   "mode": "fatigue",
+   "symptom": "Pitting",
+   "extent": "3",
+   "length_mm": "6",
+   "width_mm": "total",
+   "characteristic": "single point",
+   "combination": "S"
+  },
+  {
+   "bearing": "KI17",
+   "seen_acc": 95.54040404040406,
+   "unseen_acc": 20.85873440285205,
+   "diff": 74.681669637552,
+   "n_splits_seen": 5,
+   "n_splits_unseen": 5,
+   "records_adapt_conditions": 60,
+   "fault_verdicts_adapt_conditions": {
+    "pcv": 0,
+    "v2": 0,
+    "c30": 0,
+    "eagle": 6
+   },
+   "correct_fault_verdicts_adapt_conditions": {
+    "pcv": 0,
+    "v2": 0,
+    "c30": 0,
+    "eagle": 4
+   },
+   "manufacturer": "MTK",
+   "pitch_mm": "29.05",
+   "mode": "fatigue",
+   "symptom": "Pitting",
+   "extent": "1",
+   "length_mm": "1",
+   "width_mm": "2",
+   "characteristic": "single point",
+   "combination": "R"
+  },
+  {
+   "bearing": "KI18",
+   "seen_acc": 96.18055555555554,
+   "unseen_acc": 31.064814814814806,
+   "diff": 65.11574074074073,
+   "n_splits_seen": 4,
+   "n_splits_unseen": 6,
+   "records_adapt_conditions": 60,
+   "fault_verdicts_adapt_conditions": {
+    "pcv": 45,
+    "v2": 40,
+    "c30": 40,
+    "eagle": 60
+   },
+   "correct_fault_verdicts_adapt_conditions": {
+    "pcv": 45,
+    "v2": 40,
+    "c30": 40,
+    "eagle": 60
+   },
+   "manufacturer": "MTK",
+   "pitch_mm": "29.05",
+   "mode": "fatigue",
+   "symptom": "Pitting",
+   "extent": "2",
+   "length_mm": "2.5",
+   "width_mm": "total",
+   "characteristic": "single point",
+   "combination": "S"
+  },
+  {
+   "bearing": "KI21",
+   "seen_acc": 99.99579124579125,
+   "unseen_acc": 74.36868686868688,
+   "diff": 25.627104377104374,
+   "n_splits_seen": 6,
+   "n_splits_unseen": 4,
+   "records_adapt_conditions": 60,
+   "fault_verdicts_adapt_conditions": {
+    "pcv": 0,
+    "v2": 0,
+    "c30": 0,
+    "eagle": 0
+   },
+   "correct_fault_verdicts_adapt_conditions": {
+    "pcv": 0,
+    "v2": 0,
+    "c30": 0,
+    "eagle": 0
+   },
+   "manufacturer": "FAG",
+   "pitch_mm": "28.55",
+   "mode": "fatigue",
+   "symptom": "Pitting",
+   "extent": "1",
+   "length_mm": "1",
+   "width_mm": "2",
+   "characteristic": "single point",
+   "combination": "S"
+  }
+ ],
+ "summary": {
+  "n_bearings": 17,
+  "median_diff": 38.72950683303625,
+  "ci_median_diff": [
+   9.523809523809518,
+   62.45988562091503
+  ],
+  "positive": 14,
+  "ties_abs_lt_0.05": 3,
+  "negative": 0,
+  "p_sign_flip_greater": 6.103515625e-05,
+  "p_sign_flip_two_sided": 0.0001220703125
+ },
+ "per_class": {
+  "healthy": {
+   "n": 6,
+   "median": 2.8514309764309758,
+   "values": [
+    9.52,
+    17.67,
+    0.0,
+    0.0,
+    5.7,
+    0.0
+   ]
+  },
+  "outer": {
+   "n": 5,
+   "median": 62.45988562091503,
+   "values": [
+    62.46,
+    38.73,
+    74.94,
+    44.6,
+    93.84
+   ]
+  },
+  "inner": {
+   "n": 6,
+   "median": 49.01491941473559,
+   "values": [
+    23.3,
+    43.9,
+    54.13,
+    74.68,
+    65.12,
+    25.63
+   ]
+  }
+ }
+}

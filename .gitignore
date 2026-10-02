@@ -1,0 +1,12 @@
+# credentials -- never commit
+kaggle.json
+.kaggle/
+# raw datasets and bulky run caches (~29 GB): listed in DATA_MANIFEST.csv with sources
+data/
+runs/
+results/*.tmp
+*.pt
+__pycache__/
+.venv/
+third_party/.SDALR.git/
+paper/submission/

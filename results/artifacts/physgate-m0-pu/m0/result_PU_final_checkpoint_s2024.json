@@ -1,0 +1,36 @@
+{
+  "dataset": "PU",
+  "variant": "final_checkpoint",
+  "seed": 2024,
+  "smoke": false,
+  "src_fold": null,
+  "tgt_fold": null,
+  "leaky": true,
+  "hyperparameters": {
+    "lr": "0.0005",
+    "threshold": "0.4",
+    "K": "0.6"
+  },
+  "adapters": [
+    "npz_io",
+    "tsne_stub",
+    "final_checkpoint_patch"
+  ],
+  "source_only": {},
+  "adapted": {
+    "A1->A3": 99.92,
+    "A1->A2": 87.56,
+    "A3->A1": 99.96,
+    "A3->A2": 87.41,
+    "A2->A1": 99.62,
+    "A2->A3": 99.78
+  },
+  "seconds": {
+    "A1->A3": 929,
+    "A1->A2": 941,
+    "A3->A1": 928,
+    "A3->A2": 942,
+    "A2->A1": 934,
+    "A2->A3": 932
+  }
+}

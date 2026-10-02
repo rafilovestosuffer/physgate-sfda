@@ -1,0 +1,28 @@
+{
+  "env": {
+    "device": "Tesla T4",
+    "capability": [
+      7,
+      5
+    ],
+    "torch": "2.10.0+cu128",
+    "python": "3.12.13",
+    "src_fold": "A"
+  },
+  "runs": [
+    {
+      "variant": "shot",
+      "src": "A",
+      "tgt": "A",
+      "rc": 0,
+      "seconds": 2277
+    },
+    {
+      "variant": "shot",
+      "src": "A",
+      "tgt": "B",
+      "rc": 0,
+      "seconds": 1993
+    }
+  ]
+}

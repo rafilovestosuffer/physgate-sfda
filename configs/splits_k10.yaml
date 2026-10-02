@@ -1,0 +1,263 @@
+rule: 'C88: uniform without replacement over 4,000 3/3/3 draws minus M1 fold A, numpy
+  default_rng(20260915)'
+splits:
+  S00:
+    source:
+      normal:
+      - K001
+      - K003
+      - K004
+      outer_race:
+      - KA16
+      - KA22
+      - KA30
+      inner_race:
+      - KI04
+      - KI16
+      - KI18
+    target:
+      normal:
+      - K002
+      - K005
+      - K006
+      outer_race:
+      - KA04
+      - KA15
+      inner_race:
+      - KI14
+      - KI17
+      - KI21
+  S01:
+    source:
+      normal:
+      - K002
+      - K004
+      - K006
+      outer_race:
+      - KA15
+      - KA22
+      - KA30
+      inner_race:
+      - KI04
+      - KI17
+      - KI21
+    target:
+      normal:
+      - K001
+      - K003
+      - K005
+      outer_race:
+      - KA04
+      - KA16
+      inner_race:
+      - KI14
+      - KI16
+      - KI18
+  S02:
+    source:
+      normal:
+      - K002
+      - K003
+      - K005
+      outer_race:
+      - KA15
+      - KA16
+      - KA30
+      inner_race:
+      - KI16
+      - KI17
+      - KI21
+    target:
+      normal:
+      - K001
+      - K004
+      - K006
+      outer_race:
+      - KA04
+      - KA22
+      inner_race:
+      - KI04
+      - KI14
+      - KI18
+  S03:
+    source:
+      normal:
+      - K002
+      - K003
+      - K004
+      outer_race:
+      - KA04
+      - KA16
+      - KA22
+      inner_race:
+      - KI16
+      - KI18
+      - KI21
+    target:
+      normal:
+      - K001
+      - K005
+      - K006
+      outer_race:
+      - KA15
+      - KA30
+      inner_race:
+      - KI04
+      - KI14
+      - KI17
+  S04:
+    source:
+      normal:
+      - K001
+      - K002
+      - K006
+      outer_race:
+      - KA15
+      - KA16
+      - KA30
+      inner_race:
+      - KI04
+      - KI14
+      - KI18
+    target:
+      normal:
+      - K003
+      - K004
+      - K005
+      outer_race:
+      - KA04
+      - KA22
+      inner_race:
+      - KI16
+      - KI17
+      - KI21
+  S05:
+    source:
+      normal:
+      - K003
+      - K005
+      - K006
+      outer_race:
+      - KA04
+      - KA16
+      - KA30
+      inner_race:
+      - KI04
+      - KI17
+      - KI21
+    target:
+      normal:
+      - K001
+      - K002
+      - K004
+      outer_race:
+      - KA15
+      - KA22
+      inner_race:
+      - KI14
+      - KI16
+      - KI18
+  S06:
+    source:
+      normal:
+      - K002
+      - K003
+      - K006
+      outer_race:
+      - KA16
+      - KA22
+      - KA30
+      inner_race:
+      - KI04
+      - KI17
+      - KI18
+    target:
+      normal:
+      - K001
+      - K004
+      - K005
+      outer_race:
+      - KA04
+      - KA15
+      inner_race:
+      - KI14
+      - KI16
+      - KI21
+  S07:
+    source:
+      normal:
+      - K003
+      - K005
+      - K006
+      outer_race:
+      - KA04
+      - KA16
+      - KA22
+      inner_race:
+      - KI04
+      - KI14
+      - KI16
+    target:
+      normal:
+      - K001
+      - K002
+      - K004
+      outer_race:
+      - KA15
+      - KA30
+      inner_race:
+      - KI17
+      - KI18
+      - KI21
+  S08:
+    source:
+      normal:
+      - K001
+      - K002
+      - K006
+      outer_race:
+      - KA15
+      - KA22
+      - KA30
+      inner_race:
+      - KI04
+      - KI16
+      - KI21
+    target:
+      normal:
+      - K003
+      - K004
+      - K005
+      outer_race:
+      - KA04
+      - KA16
+      inner_race:
+      - KI14
+      - KI17
+      - KI18
+  S09:
+    source:
+      normal:
+      - K002
+      - K003
+      - K005
+      outer_race:
+      - KA04
+      - KA15
+      - KA16
+      inner_race:
+      - KI16
+      - KI17
+      - KI21
+    target:
+      normal:
+      - K001
+      - K004
+      - K006
+      outer_race:
+      - KA22
+      - KA30
+      inner_race:
+      - KI04
+      - KI14
+      - KI18

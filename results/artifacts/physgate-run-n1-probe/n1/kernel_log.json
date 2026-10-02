@@ -1,0 +1,21 @@
+{
+  "env": {
+    "device": "Tesla T4",
+    "capability": [
+      7,
+      5
+    ]
+  },
+  "runs": [
+    {
+      "src": "A",
+      "rc": 0,
+      "seconds": 313
+    },
+    {
+      "src": "B",
+      "rc": 0,
+      "seconds": 310
+    }
+  ]
+}

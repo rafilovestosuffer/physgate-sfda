@@ -1,0 +1,20 @@
+\begin{table}[htbp]
+\centering
+\caption{The collapse is not specific to one method: two source-free methods and four non-adaptive random forests on Paderborn, leaky versus bearing-disjoint targets (accuracy, \%).}
+\label{tab:methods}
+\begin{tabular}{lrrrr}
+\toprule
+Method & Leaky & Clean & $\Delta_{\mathrm{leak}}$ & $p$ \\
+\midrule
+SDALR, as released (target-label checkpoint) & 94.7 & 57.8 & 36.9 & 0.0002 \\
+SDALR, final checkpoint & 94.1 & 56.8 & 37.3 & 0.0002 \\
+SHOT, final iterate & 87.2 & 65.1 & 22.1 & 0.0012 \\
+\midrule
+Random forest, 10 time statistics & 88.8 & 63.6 & 25.2 & 0.0017 \\
+Random forest, 64 spectral bands & 93.2 & 52.6 & 40.6 & 0.0002 \\
+Random forest, envelope spectrum & 76.7 & 43.1 & 33.5 & 0.0002 \\
+Random forest, all three feature sets & 95.4 & 60.3 & 35.1 & 0.0002 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{\linewidth}\vspace{2pt}\footnotesize All rows use the same windows, the same two mechanical folds and the same 12 paired tasks; the random forests use no adaptation and no target data. $p$ is a one-sided Wilcoxon signed-rank test over those tasks, for which the smallest attainable value is $2^{-12}=0.00024$. Tasks within a fold share source checkpoints, so these $p$-values are descriptive; cluster-level tests are reported in Section~\ref{sec:protocol}. Differences are computed before rounding.\end{minipage}
+\end{table}

@@ -1,0 +1,27 @@
+\begin{table}[htbp]
+\centering
+\caption{Per-bearing view of the Paderborn real-damage specimens: what each one is, how SDALR scores it when it was and was not in the source, and how often the envelope gate certifies it.}
+\label{tab:bearings}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lllllrrrr}
+\toprule
+Bearing & Mfr. & Damage & Extent & Size (mm) & Seen & Unseen & Diff. & Gate \\
+\midrule
+KA04 & FAG & pitting & 1 & 2 $\times$ 3 & 87 & 25 & +62 & 41/60 \\
+KA15 & FAG & indentation & 1 & $<$1 $\times$ $<$1 & 68 & 29 & +39 & 0/60 \\
+KA16 & MTK & pitting & 2 & 2 $\times$ full & 75 & 0 & +75 & 40/60 \\
+KA22 & IBU/IBB & pitting & 1 & $<$2 $\times$ 1 & 100 & 55 & +45 & 0/60 \\
+KA30 & MTK & indentation & 1 & $<$1 $\times$ $<$1 & 94 & 0 & +94 & 1/60 \\
+KI04 & MTK & pitting & 1 & 2 $\times$ 1 & 84 & 61 & +23 & 0/60 \\
+KI14 & MTK & pitting & 1 & 1 $\times$ 1 & 87 & 43 & +44 & 0/60 \\
+KI16 & FAG & pitting & 3 & 6 $\times$ full & 95 & 41 & +54 & 32/60 \\
+KI17 & MTK & pitting & 1 & 1 $\times$ 2 & 96 & 21 & +75 & 0/60 \\
+KI18 & MTK & pitting & 2 & 2.5 $\times$ full & 96 & 31 & +65 & 45/60 \\
+KI21 & FAG & pitting & 1 & 1 $\times$ 2 & 100 & 74 & +26 & 0/60 \\
+\midrule
+K001--K006 & IBU & healthy & -- & -- & 100 & 95 & +5 & 1/360$^{b}$ \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{\linewidth}\vspace{2pt}\footnotesize Manufacturer (page~1), damage mode, extent class (1--3) and damage length $\times$ width in mm (page~2) are read from each bearing's own Paderborn datasheet; pitting = fatigue pitting, indentation = particle-caused plastic deformation. Seen / unseen: SDALR window accuracy (\%) on that bearing over the ten splits in which it was in the source (scored in the leaky arm) or in the clean target. Gate: correct fault verdicts of the envelope threshold rule at the three adaptation conditions. $^{b}$ False acceptances. Over all 17 bearings the within-bearing difference has median 38.7~pp (95\,\% CI 9.5--62.5): 14 positive, 3 ties, 0 negative.\end{minipage}
+\end{table}

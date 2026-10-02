@@ -1,0 +1,110 @@
+200/2319 45s
+400/2319 86s
+600/2319 127s
+800/2319 161s
+1000/2319 224s
+1200/2319 282s
+1400/2319 323s
+1600/2319 357s
+1800/2319 397s
+2000/2319 430s
+2200/2319 466s
+{
+ "comb_class": {
+  "all": {
+   "outer_precision": 0.9548387096774194,
+   "outer_precision_ci95": [
+    0.9097222525368989,
+    0.9779545273494785
+   ],
+   "says_outer": 155,
+   "at_chance": false,
+   "materially_above": true
+  },
+  "6203_PU_2855": {
+   "outer_precision": 0.8055555555555556,
+   "outer_precision_ci95": [
+    0.6497163793648479,
+    0.9024702798054665
+   ],
+   "says_outer": 36,
+   "at_chance": false,
+   "materially_above": true
+  },
+  "6203_PU_2905": {
+   "outer_precision": 1.0,
+   "outer_precision_ci95": [
+    0.9687272064186726,
+    1.0
+   ],
+   "says_outer": 119,
+   "at_chance": false,
+   "materially_above": true
+  }
+ },
+ "pcv_class": {
+  "all": {
+   "outer_precision": 0.994475138121547,
+   "outer_precision_ci95": [
+    0.969372639878709,
+    0.999024084668146
+   ],
+   "says_outer": 181,
+   "at_chance": false,
+   "materially_above": true
+  },
+  "6203_PU_2855": {
+   "outer_precision": 1.0,
+   "outer_precision_ci95": [
+    0.936858991216536,
+    0.9999999999999999
+   ],
+   "says_outer": 57,
+   "at_chance": false,
+   "materially_above": true
+  },
+  "6203_PU_2905": {
+   "outer_precision": 0.9919354838709677,
+   "outer_precision_ci95": [
+    0.9557309233977271,
+    0.9985750302198744
+   ],
+   "says_outer": 124,
+   "at_chance": false,
+   "materially_above": true
+  }
+ },
+ "eagle_class": {
+  "all": {
+   "outer_precision": 0.6297117516629712,
+   "outer_precision_ci95": [
+    0.5842247731842876,
+    0.6730076347572904
+   ],
+   "says_outer": 451,
+   "at_chance": false,
+   "materially_above": true
+  },
+  "6203_PU_2855": {
+   "outer_precision": 0.620253164556962,
+   "outer_precision_ci95": [
+    0.5425716625199488,
+    0.692225818473813
+   ],
+   "says_outer": 158,
+   "at_chance": false,
+   "materially_above": false
+  },
+  "6203_PU_2905": {
+   "outer_precision": 0.6348122866894198,
+   "outer_precision_ci95": [
+    0.5782658266778107,
+    0.6878693780913323
+   ],
+   "says_outer": 293,
+   "at_chance": false,
+   "materially_above": true
+  }
+ }
+}
+H7_supported False

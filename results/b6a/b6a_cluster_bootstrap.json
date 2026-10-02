@@ -1,0 +1,16 @@
+{
+  "n_bearings": 13,
+  "bearings_with_any_acceptance": [
+    "cwru_inner_race_0.007_na",
+    "cwru_inner_race_0.014_na",
+    "cwru_inner_race_0.021_na",
+    "cwru_outer_race_0.007_opposite_12",
+    "cwru_outer_race_0.007_orthogonal_3",
+    "cwru_outer_race_0.021_centered_6",
+    "cwru_outer_race_0.021_orthogonal_3"
+  ],
+  "cluster_boot95": [
+    0.11538461538461539,
+    0.40384615384615385
+  ]
+}

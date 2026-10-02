@@ -1,0 +1,36 @@
+{
+  "env": {
+    "device": "Tesla T4",
+    "capability": [
+      7,
+      5
+    ],
+    "group": "g3"
+  },
+  "runs": [
+    {
+      "split": "S06",
+      "tgt": "S06",
+      "rc": 0,
+      "seconds": 2296
+    },
+    {
+      "split": "S06",
+      "tgt": "S06c",
+      "rc": 0,
+      "seconds": 2004
+    },
+    {
+      "split": "S07",
+      "tgt": "S07",
+      "rc": 0,
+      "seconds": 2286
+    },
+    {
+      "split": "S07",
+      "tgt": "S07c",
+      "rc": 0,
+      "seconds": 2001
+    }
+  ]
+}

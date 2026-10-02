@@ -1,0 +1,47 @@
+{
+  "env": {
+    "device": "Tesla T4",
+    "capability": [
+      7,
+      5
+    ]
+  },
+  "runs": [
+    {
+      "seed": "0",
+      "threshold": "0.4",
+      "rc": 0,
+      "seconds": 2663
+    },
+    {
+      "seed": "0",
+      "threshold": "0.6",
+      "rc": 0,
+      "seconds": 1892
+    },
+    {
+      "seed": "1",
+      "threshold": "0.4",
+      "rc": 0,
+      "seconds": 2649
+    },
+    {
+      "seed": "1",
+      "threshold": "0.6",
+      "rc": 0,
+      "seconds": 1885
+    },
+    {
+      "seed": "2",
+      "threshold": "0.4",
+      "rc": 0,
+      "seconds": 2646
+    },
+    {
+      "seed": "2",
+      "threshold": "0.6",
+      "rc": 0,
+      "seconds": 1883
+    }
+  ]
+}

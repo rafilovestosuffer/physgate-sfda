@@ -1,0 +1,48 @@
+{
+  "env": {
+    "device": "Tesla T4",
+    "capability": [
+      7,
+      5
+    ],
+    "group": "g2"
+  },
+  "runs": [
+    {
+      "split": "S03",
+      "tgt": "S03",
+      "rc": 0,
+      "seconds": 2333
+    },
+    {
+      "split": "S03",
+      "tgt": "S03c",
+      "rc": 0,
+      "seconds": 2052
+    },
+    {
+      "split": "S04",
+      "tgt": "S04",
+      "rc": 0,
+      "seconds": 2336
+    },
+    {
+      "split": "S04",
+      "tgt": "S04c",
+      "rc": 0,
+      "seconds": 2047
+    },
+    {
+      "split": "S05",
+      "tgt": "S05",
+      "rc": 0,
+      "seconds": 2334
+    },
+    {
+      "split": "S05",
+      "tgt": "S05c",
+      "rc": 0,
+      "seconds": 2044
+    }
+  ]
+}

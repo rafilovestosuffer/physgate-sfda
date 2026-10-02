@@ -1,0 +1,18 @@
+\begin{table}[htbp]
+\centering
+\caption{Gate safety on real healthy bearings. A false acceptance is a healthy recording given a fault verdict.}
+\label{tab:gates}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrr}
+\toprule
+Gate (swept parameter) & Operating point & Healthy false acceptance & Correct verdicts & At zero FA \\
+\midrule
+Envelope threshold rule (PCV-style), $z$ & 10 & 1/480 & 366 & 351 \\
+Shaft-alias-guarded comb (comb\_v2), $\alpha$ & 0.05 & 0/480 & 312 & 312 \\
+Surrogate-null comb test, $\alpha$ & 0.05 & 9/480 & 309 & -- \\
+Raw-spectrum band rule (EAGLE-style), $z$ & 2 & 214/480 & 429 & 0 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{\linewidth}\vspace{2pt}\footnotesize Population: 2{,}319 Paderborn recordings (480 healthy, 1{,}839 single inner- or outer-race). Operating points are the values fixed before the gates were evaluated. The last column sweeps each gate's parameter and reports the largest number of correct fault verdicts reachable while accepting no healthy recording. Full operating curves: Supplementary~S2. The population spans 29 physical bearings -- 6 healthy, 11 real-damage and 12 artificial-damage -- at all four operating conditions; coverage by damage origin is given in Section~\ref{sec:res-gating}.\end{minipage}
+\end{table}

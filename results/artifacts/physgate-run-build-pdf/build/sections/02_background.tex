@@ -1,0 +1,69 @@
+\section{Background and related work}
+\label{sec:background}
+
+\subsection{Leakage in bearing-diagnosis evaluation}
+
+Hendriks, Dumond and Knox showed that the conventional condition-wise split of the CWRU data places the same physical
+bearings in training and test sets, and proposed benchmarking with independent sets of bearings \cite{hendriks2022}. Wheat et
+al.\ compared run-to-run, day-to-day and part-to-part splits for classical pipelines and found the gap between them large
+enough to change method rankings \cite{wheat2024leakage}. Vieira et al.\ generalised bearing-wise partitioning across four
+datasets, reformulated diagnosis as multi-label detection and measured the inflation caused by bearing- and
+segmentation-level leakage over 100 evaluation splits \cite{vieira2026}; their study is supervised, and cross-domain and
+source-free settings are stated as out of scope. Matania et al.\ \cite{matania2024leakage} make the same case for
+condition-based maintenance generally, showing how test--training separation should be constructed. Knap et al.\ published a
+leakage-safe cross-domain benchmark on CWRU and Paderborn with six fixed source--target scenarios
+\cite{knap2026leakagesafe}; separation there is enforced at
+\emph{recording} level, which removes window leakage but still permits the same physical bearing on both sides of a transfer
+task, and no source-free method is evaluated.
+
+Beyond this field, Kapoor and Narayanan \cite{kapoor2023leakage} document leakage as a systemic failure across 17
+scientific disciplines and give the taxonomy we adopt, and Geirhos et al.\ \cite{geirhos2020shortcut} name the underlying
+learning behaviour: a shortcut that succeeds on the benchmark and fails under the intended shift.
+
+This paper takes the bearing-wise principle from that line of work and applies it where it has not been applied: to
+source-free adaptation, with the source model shared between the leaky and the clean target so that the two differ in
+bearing overlap and nothing else, and with the split treated as the statistical unit.
+
+\subsection{Source-free domain adaptation for bearings}
+
+SHOT established the template on which most later methods build: freeze the source classifier, maximise information at the
+target and refine centroid-based pseudo-labels \cite{liang2020shot}. SDALR extends it by separating reliable from unreliable
+target predictions, using the reliable ones as supervision and the unreliable ones through an entropy term, and reports
+\SI{96.8}{\percent} mean accuracy across Paderborn operating conditions \cite{sdalr2025}. Jeong et al.\ combine
+speed-normalised order spectra with a variational autoencoder and test-time training, and find that order normalisation alone
+accounts for most of their target gain \cite{jeong2025}. Published audits of SFDA stability in this field address other
+failure modes, such as collapse under industrial noise, rather than bearing overlap. In all of this work the target domain is
+a different operating condition of the same physical bearings.
+
+\subsection{Physics priors inside adaptation}
+
+Characteristic frequencies computed from geometry and speed are the natural prior for bearing diagnosis, and recent
+physics-guided methods use them to steer adaptation. PCTL scores predicted classes against envelope-spectrum energy at
+characteristic frequencies and trains a confidence predictor, using a small set of labelled target data \cite{pctl2026}.
+Bio-SFDA gates and weights pseudo-labels with band-energy and signal-to-noise predicates at BPFO, BPFI and BSF computed on a
+short-time Fourier transform, with thresholds adapted online from unlabelled target statistics \cite{yoon2026biosfda}. These
+modules are evaluated through end accuracy; the rate at which they accept a fault label on a healthy bearing is not reported.
+Because the Bio-SFDA task definition for Paderborn cannot be reconstructed from the article --- a ball class is listed, and
+the Paderborn real-damage set contains no rolling-element damage, and the split is not described --- we evaluate the gating
+\emph{mechanism as described, as we implemented it}, and make no comparison against the accuracy reported there.
+
+\subsection{Envelope analysis and the statistics of detection}
+
+The squared envelope spectrum is the standard carrier of second-order cyclostationary bearing signatures \cite{randall2011},
+usually after a band selection such as the fast kurtogram \cite{antoni2007kurtogram} and, where discrete components
+dominate, after discrete/random separation. Borghesani et al.\ derived the statistics of the squared envelope spectrum under
+coloured noise and the corresponding thresholds for testing cyclostationarity \cite{borghesani2013}. The gates compared here
+are built from those ingredients; none of them is claimed as new. Matania et al.\ project order-domain envelope spectra onto
+kinematic harmonic positions to obtain a machine-invariant representation \cite{matania2025}, which is the same idea as the
+harmonic coordinates used internally by our comb tests, and is cited as such rather than claimed.
+
+\subsection{Invariance to a nuisance that carries the label}
+
+Removing a nuisance factor from a representation by adversarial training is standard, but when the nuisance carries label
+information, unconditional invariance conflicts with classification: aligning the marginal feature distribution under label
+shift induces concept shift and, at the invariant optimum, mixes the classes \cite{liu2021labelshift}. Class-conditional
+adversaries restore compatibility by removing the nuisance \emph{within} each class \cite{li2018ciddg}, and
+subject-adversarial training plays the same role in EEG decoding \cite{ozdenizci2020eeg}. A bearing source set is the extreme
+case of the conflict, because each physical bearing carries exactly one fault class, so class is a deterministic function of
+bearing identity. Section~\ref{sec:res-probe} measures how strongly that identity is present; the corresponding remedy is
+left as future work and is not claimed here.

@@ -1,0 +1,219 @@
+{
+  "dataset": "PU_M1",
+  "variant": "final_checkpoint",
+  "seed": 2024,
+  "smoke": false,
+  "src_fold": "S05",
+  "tgt_fold": "S05c",
+  "leaky": false,
+  "hyperparameters": {
+    "lr": "0.0005",
+    "threshold": "0.4",
+    "K": "0.6"
+  },
+  "adapters": [
+    "npz_io",
+    "tsne_stub",
+    "final_checkpoint_patch"
+  ],
+  "source_only": {},
+  "adapted": {
+    "A1->A3": 93.05,
+    "A1->A2": 66.2,
+    "A3->A1": 96.25,
+    "A3->A2": 60.88,
+    "A2->A1": 97.17,
+    "A2->A3": 96.9
+  },
+  "seconds": {
+    "A1->A3": 371,
+    "A1->A2": 369,
+    "A3->A1": 370,
+    "A3->A2": 370,
+    "A2->A1": 369,
+    "A2->A3": 370
+  },
+  "gate_log": {
+    "A1->A3": [
+      {
+        "sdalr_rejected": 254,
+        "hook_rejected": 4286,
+        "precision_before": 0.25408980160111383,
+        "precision_after": 1.0,
+        "n": 6000
+      },
+      {
+        "sdalr_rejected": 479,
+        "hook_rejected": 1241,
+        "precision_before": 0.7752218800941858,
+        "precision_after": 1.0,
+        "n": 6000
+      },
+      {
+        "sdalr_rejected": 5,
+        "hook_rejected": 995,
+        "precision_before": 0.8340283569641368,
+        "precision_after": 1.0,
+        "n": 6000
+      },
+      {
+        "sdalr_rejected": 29,
+        "hook_rejected": 915,
+        "precision_before": 0.8467593367945068,
+        "precision_after": 1.0,
+        "n": 6000
+      }
+    ],
+    "A1->A2": [
+      {
+        "sdalr_rejected": 153,
+        "hook_rejected": 3478,
+        "precision_before": 0.40516504190183,
+        "precision_after": 1.0,
+        "n": 6000
+      },
+      {
+        "sdalr_rejected": 36,
+        "hook_rejected": 2961,
+        "precision_before": 0.5035211267605634,
+        "precision_after": 1.0,
+        "n": 6000
+      },
+      {
+        "sdalr_rejected": 196,
+        "hook_rejected": 2803,
+        "precision_before": 0.5170572019297036,
+        "precision_after": 1.0,
+        "n": 6000
+      },
+      {
+        "sdalr_rejected": 223,
+        "hook_rejected": 2774,
+        "precision_before": 0.5198199757659685,
+        "precision_after": 1.0,
+        "n": 6000
+      }
+    ],
+    "A3->A1": [
+      {
+        "sdalr_rejected": 147,
+        "hook_rejected": 3551,
+        "precision_before": 0.3933025798735691,
+        "precision_after": 1.0,
+        "n": 6000
+      },
+      {
+        "sdalr_rejected": 36,
+        "hook_rejected": 2831,
+        "precision_before": 0.5253185781354796,
+        "precision_after": 1.0,
+        "n": 6000
+      },
+      {
+        "sdalr_rejected": 123,
+        "hook_rejected": 1654,
+        "precision_before": 0.7185638931427599,
+        "precision_after": 1.0,
+        "n": 6000
+      },
+      {
+        "sdalr_rejected": 47,
+        "hook_rejected": 760,
+        "precision_before": 0.8723332773391568,
+        "precision_after": 1.0,
+        "n": 6000
+      }
+    ],
+    "A3->A2": [
+      {
+        "sdalr_rejected": 71,
+        "hook_rejected": 3124,
+        "precision_before": 0.47309833024118736,
+        "precision_after": 1.0,
+        "n": 6000
+      },
+      {
+        "sdalr_rejected": 202,
+        "hook_rejected": 2285,
+        "precision_before": 0.6058985857192135,
+        "precision_after": 1.0,
+        "n": 6000
+      },
+      {
+        "sdalr_rejected": 33,
+        "hook_rejected": 2948,
+        "precision_before": 0.5059493883023295,
+        "precision_after": 1.0,
+        "n": 6000
+      },
+      {
+        "sdalr_rejected": 155,
+        "hook_rejected": 2841,
+        "precision_before": 0.5139435414884517,
+        "precision_after": 1.0,
+        "n": 6000
+      }
+    ],
+    "A2->A1": [
+      {
+        "sdalr_rejected": 121,
+        "hook_rejected": 4238,
+        "precision_before": 0.27912910358904575,
+        "precision_after": 1.0,
+        "n": 6000
+      },
+      {
+        "sdalr_rejected": 33,
+        "hook_rejected": 2692,
+        "precision_before": 0.5488520194402547,
+        "precision_after": 1.0,
+        "n": 6000
+      },
+      {
+        "sdalr_rejected": 11,
+        "hook_rejected": 1025,
+        "precision_before": 0.8288528969777926,
+        "precision_after": 1.0,
+        "n": 6000
+      },
+      {
+        "sdalr_rejected": 74,
+        "hook_rejected": 212,
+        "precision_before": 0.9642254471819103,
+        "precision_after": 1.0,
+        "n": 6000
+      }
+    ],
+    "A2->A3": [
+      {
+        "sdalr_rejected": 179,
+        "hook_rejected": 4437,
+        "precision_before": 0.23775983507988319,
+        "precision_after": 1.0,
+        "n": 6000
+      },
+      {
+        "sdalr_rejected": 33,
+        "hook_rejected": 2684,
+        "precision_before": 0.5501927266633149,
+        "precision_after": 1.0,
+        "n": 6000
+      },
+      {
+        "sdalr_rejected": 16,
+        "hook_rejected": 1023,
+        "precision_before": 0.8290441176470589,
+        "precision_after": 1.0,
+        "n": 6000
+      },
+      {
+        "sdalr_rejected": 86,
+        "hook_rejected": 470,
+        "precision_before": 0.9205275617179574,
+        "precision_after": 1.0,
+        "n": 6000
+      }
+    ]
+  },
+  "gate": "oracle"
+}

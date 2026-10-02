@@ -1,0 +1,74 @@
+{
+ "family": [
+  {
+   "effect": "collapse, two folds",
+   "task_p": 0.000244140625,
+   "cluster_p": 0.25,
+   "bh": 0.25,
+   "by": 0.7322420634920634
+  },
+  {
+   "effect": "Collapse, ten random splits",
+   "task_p": 0.0009765625,
+   "cluster_p": 0.0009765625,
+   "bh": 0.001953125,
+   "by": 0.005720641121031746
+  },
+  {
+   "effect": "Gate gain, ten random splits",
+   "task_p": 0.0029296875,
+   "cluster_p": 0.0029296875,
+   "bh": 0.0048828125,
+   "by": 0.014301602802579364
+  },
+  {
+   "effect": "Shaft-alias-guarded comb gain, two folds (seed 2024)",
+   "task_p": 0.0068359375,
+   "cluster_p": 0.25,
+   "bh": 0.25,
+   "by": 0.7322420634920634
+  },
+  {
+   "effect": "Envelope threshold rule gain, two folds (seed 2024)",
+   "task_p": 0.0009765625,
+   "cluster_p": 0.25,
+   "bh": 0.25,
+   "by": 0.7322420634920634
+  },
+  {
+   "effect": "RF (10 time statistics) collapse, ten splits",
+   "task_p": 4.209032994443089e-11,
+   "cluster_p": 0.0009765625,
+   "bh": 0.001953125,
+   "by": 0.005720641121031746
+  },
+  {
+   "effect": "RF (time + spectral + envelope) collapse, ten splits",
+   "task_p": 8.147778971559672e-12,
+   "cluster_p": 0.0009765625,
+   "bh": 0.001953125,
+   "by": 0.005720641121031746
+  },
+  {
+   "effect": "HUST collapse, six type-disjoint splits",
+   "task_p": 8.151593824052444e-08,
+   "cluster_p": 0.015625,
+   "bh": 0.022321428571428572,
+   "by": 0.06537875566893424
+  },
+  {
+   "effect": "Same-condition RF collapse, ten splits (C104)",
+   "task_p": 1.862645149230957e-09,
+   "cluster_p": 0.0009765625,
+   "bh": 0.001953125,
+   "by": 0.005720641121031746
+  },
+  {
+   "effect": "SHOT collapse, 10 splits",
+   "task_p": 2.1198498235597423e-09,
+   "cluster_p": 0.0009765625,
+   "bh": 0.001953125,
+   "by": 0.005720641121031746
+  }
+ ]
+}

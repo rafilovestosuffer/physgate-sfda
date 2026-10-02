@@ -1,0 +1,63 @@
+\section{Introduction}
+\label{sec:intro}
+
+Rolling-element bearings fail in service, and the vibration signature of a spall or a crack is well understood: an impact
+train at a kinematic frequency fixed by the bearing geometry and the shaft speed, modulated by load and smeared by cage slip
+\cite{randall2011}. Condition-monitoring practice turns that signature into a decision --- replace the bearing, or leave it
+--- and the value of an automated diagnosis is the reliability of that decision on a machine the diagnostic system has not
+seen before.
+
+Data-driven diagnosis has moved towards transfer learning to meet exactly that requirement. Unsupervised domain adaptation
+transfers a model trained under one operating condition to another without target labels \cite{zhao2021udtl}, and source-free
+domain adaptation (SFDA) goes further: during adaptation only the trained source model and unlabelled target recordings are
+available, which suits a fleet operator who cannot ship raw data between sites \cite{liang2020shot,sdalr2025}. Reported
+accuracies are high. In a survey of 18 bearing-diagnosis papers published in 2025, every one reported above
+\SI{94}{\percent} and six reported \SI{100}{\percent} \cite{vieira2026}. None of the 18 evaluated on bearings that were
+absent from training.
+
+That omission matters because a vibration dataset carries two kinds of information at once. One is the fault physics that
+should transfer: the impact train at the outer-race or inner-race passing frequency. The other is the acoustic identity of an
+individual specimen --- its clearance, mounting, surface finish, resonances and the particular way its damage was produced.
+When a model may see the same physical bearing in training and in test, identity is sufficient to score well, and no
+experiment in that protocol can tell the two apart. Splitting by physical bearing removes the shortcut, and in supervised
+single-bench settings it has already been shown to change conclusions \cite{hendriks2022,wheat2024leakage,vieira2026}.
+
+SFDA deserves separate scrutiny, for a reason specific to how it works. Adaptation is driven by the source model's own
+predictions on target data: pseudo-labels, centroids or neighbourhood structure, refined over iterations. If the source
+representation has learned to recognise the individual bearings it was trained on, then on a new bearing there is nothing
+correct to refine --- the procedure sharpens a decision that was never about the fault. Whether this happens, how much
+performance it costs, and whether anything can repair it are empirical questions that a leaky protocol cannot ask.
+
+Physics offers a natural remedy and is increasingly used as one: characteristic-frequency evidence can filter pseudo-labels
+during adaptation, as in the EAGLE module of Bio-SFDA \cite{yoon2026biosfda} or the consistency validator of PCTL
+\cite{pctl2026}. Such filters are usually justified by end accuracy on the same leaky protocols. Their false acceptance on
+healthy bearings --- the rate at which they certify a fault that is not there, which is what makes them safe or unsafe inside
+an adaptation loop --- is rarely reported, and the amount of damage a perfect filter could repair has not been measured.
+
+This paper follows one thread through those questions, with the evaluation apparatus fixed before the experiments were run.
+
+\begin{enumerate}
+  \item \textbf{How much survives.} A paired design holds the source model and the target operating condition fixed and
+        changes only bearing overlap, so the leaky--clean difference is attributable to that overlap alone
+        (Section~\ref{sec:protocol}). We measure it on two mechanical folds, ten pre-registered random bearing splits and a
+        second test rig, for two SFDA methods and for non-adaptive baselines (Sections~\ref{sec:res-collapse}
+        and~\ref{sec:res-second}).
+  \item \textbf{What the model learned instead.} Saved per-window predictions and a linear probe on the frozen source
+        features locate the failure: the representation separates same-class bearings almost perfectly, and the adapted
+        model assigns one label to each physical bearing (Sections~\ref{sec:res-mechanism} and \ref{sec:res-probe}).
+  \item \textbf{What could be repaired at best.} An oracle filter that keeps only correct pseudo-labels splits the collapse
+        into a filter-recoverable part and a part carried by the source representation, which bounds every pseudo-label
+        filter, physical or statistical (Section~\ref{sec:res-decomp}).
+  \item \textbf{What physics gating actually buys.} Four gates are compared by false acceptance on 480 real healthy
+        recordings and over their full operating curves, then inserted into the adaptation loop and evaluated as paired
+        differences against the oracle ceiling (Section~\ref{sec:res-gating}).
+  \item \textbf{Kinematic housekeeping.} We report per-manufacturer Paderborn geometry, a measured cage-slip distribution
+        that settles when 6203 fault lines can lock onto shaft orders (Section~\ref{sec:res-slip}), and dataset corrections
+        in the supplementary material.
+\end{enumerate}
+
+We claim no new network, no new detector and no new adaptation algorithm. Statistical envelope thresholds are established
+\cite{borghesani2013,randall2011}, harmonic-coordinate features close to the ones used here were published by Matania et al.
+\cite{matania2025}, and class-conditional adversarial invariance is standard in domain generalisation \cite{li2018ciddg}. The
+contribution is the leakage-controlled evaluation of source-free adaptation, the measured mechanism behind its failure, the
+ceiling that bounds physics gating, and the evidence a result in this area should carry before it is believed.

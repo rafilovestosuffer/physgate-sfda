@@ -1,0 +1,24 @@
+\begin{table}[htbp]
+\centering
+\caption{Where the envelope-gate gain comes from: clean-target accuracy (\%) on certified and silent recordings.}
+\label{tab:gateacc}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrrrr}
+\toprule
+Split & Cert.\ (\%) & Certified & Silent faulty & Silent healthy & Gain & from cert. & from silent \\
+\midrule
+S00 & 12 & 51.2 $\to$ 99.2 & 59.5 $\to$ 55.2 & 83.5 $\to$ 83.5 & +3.1 & +5.6 & -2.4 \\
+S01 & 37 & 10.1 $\to$ 70.3 & 9.3 $\to$ 11.2 & 100.0 $\to$ 100.0 & +22.6 & +22.0 & +0.6 \\
+S02 & 20 & 29.8 $\to$ 75.8 & 26.3 $\to$ 27.0 & 100.0 $\to$ 100.0 & +9.3 & +9.0 & +0.3 \\
+S03 & 1 & 0.0 $\to$ 0.5 & 38.4 $\to$ 36.2 & 99.7 $\to$ 99.7 & -1.5 & +0.0 & -1.5 \\
+S04 & 17 & 50.5 $\to$ 71.0 & 64.8 $\to$ 64.8 & 100.0 $\to$ 100.0 & +3.6 & +3.6 & +0.0 \\
+S05 & 14 & 4.3 $\to$ 55.7 & 22.8 $\to$ 22.8 & 71.9 $\to$ 76.7 & +9.0 & +7.3 & +1.6 \\
+S06 & 17 & 49.2 $\to$ 74.1 & 54.1 $\to$ 55.0 & 100.0 $\to$ 100.0 & +4.7 & +4.3 & +0.4 \\
+S07 & 9 & 38.6 $\to$ 55.8 & 29.5 $\to$ 30.6 & 93.3 $\to$ 88.7 & +0.7 & +1.5 & -0.9 \\
+S08 & 31 & 10.0 $\to$ 80.4 & 3.5 $\to$ 5.3 & 100.0 $\to$ 100.0 & +22.3 & +21.7 & +0.7 \\
+S09 & 9 & 7.4 $\to$ 76.6 & 45.1 $\to$ 42.0 & 100.0 $\to$ 100.0 & +4.3 & +6.1 & -1.8 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{\linewidth}\vspace{2pt}\footnotesize Clean target of each split, SDALR ungated $\to$ with the envelope threshold gate, windows grouped by the gate verdict of their recording. Certified: a fault verdict; silent faulty and silent healthy: no verdict. The split's gain is the sum of the last two columns (group share $\times$ within-group change). Over the ten splits, certified windows gain a median 47~pp, silent faulty windows +0.3~pp; certified windows carry 104\,\% of the summed gain. SFDA is scored on the windows it adapts on, so the certified column partly returns the gate's own labels (C107).\end{minipage}
+\end{table}

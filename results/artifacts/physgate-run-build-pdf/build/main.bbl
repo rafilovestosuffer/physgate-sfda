@@ -1,0 +1,194 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{randall2011}
+R.~B. Randall, J.~Antoni, Rolling element bearing diagnostics---a tutorial,
+  Mechanical Systems and Signal Processing 25~(2) (2011) 485--520.
+\newblock \href {https://doi.org/10.1016/j.ymssp.2010.07.017}
+  {\path{doi:10.1016/j.ymssp.2010.07.017}}.
+
+\bibitem{zhao2021udtl}
+Z.~Zhao, Q.~Zhang, X.~Yu, C.~Sun, S.~Wang, R.~Yan, X.~Chen, Applications of
+  unsupervised deep transfer learning to intelligent fault diagnosis: A survey
+  and comparative study, IEEE Transactions on Instrumentation and Measurement
+  70 (2021) 3525828.
+\newblock \href {https://doi.org/10.1109/TIM.2021.3116309}
+  {\path{doi:10.1109/TIM.2021.3116309}}.
+
+\bibitem{liang2020shot}
+J.~Liang, D.~Hu, J.~Feng, Do we really need to access the source data? source
+  hypothesis transfer for unsupervised domain adaptation, in: Proceedings of
+  the 37th International Conference on Machine Learning (ICML), 2020.
+
+\bibitem{sdalr2025}
+W.~Wu, H.~Zhang, Z.~Wei, X.-Y. Jing, Q.~Zhang, S.~Wu, Both reliable and
+  unreliable predictions matter: Domain adaptation for bearing fault diagnosis
+  without source data, Neurocomputing 657 (2025) 131661, preprint
+  arXiv:2503.08749; code github.com/BdLab405/SDALR (commit fb9c379).
+
+\bibitem{vieira2026}
+J.~P. Vieira, V.~A. Bauler, R.~K. Rosa, D.~Silva, Towards a more realistic
+  evaluation of machine learning models for bearing fault diagnosis, Mechanical
+  Systems and Signal Processing 258 (2026) 114640, arXiv:2509.22267.
+\newblock \href {https://doi.org/10.1016/j.ymssp.2026.114640}
+  {\path{doi:10.1016/j.ymssp.2026.114640}}.
+
+\bibitem{hendriks2022}
+J.~Hendriks, P.~Dumond, D.~A. Knox, Towards better benchmarking using the
+  {CWRU} bearing fault dataset, Mechanical Systems and Signal Processing 169
+  (2022) 108732.
+\newblock \href {https://doi.org/10.1016/j.ymssp.2021.108732}
+  {\path{doi:10.1016/j.ymssp.2021.108732}}.
+
+\bibitem{wheat2024leakage}
+L.~Wheat, M.~von Mohrenschildt, S.~Habibi, D.~Al-Ani, Impact of data leakage in
+  vibration signals used for bearing fault diagnosis, IEEE Access 12 (2024)
+  169577--169593, run-to-run, day-to-day and part-to-part splits; PCA/SPCA/LDA
+  pipelines.
+\newblock \href {https://doi.org/10.1109/ACCESS.2024.3497716}
+  {\path{doi:10.1109/ACCESS.2024.3497716}}.
+
+\bibitem{yoon2026biosfda}
+T.~Yoon, J.~Lee, J.~Park, B.~Park, J.~Jeong, Bio--{SFDA}: Physics-guided
+  multimodal source-free domain adaptation for reliable bearing fault
+  diagnosis, Results in Engineering 30 (2026) 111105.
+\newblock \href {https://doi.org/10.1016/j.rineng.2026.111105}
+  {\path{doi:10.1016/j.rineng.2026.111105}}.
+
+\bibitem{pctl2026}
+X.~Jiao, J.~Zhang, J.~Cao, A physics-guided transfer learning framework with
+  consistency verification for cross-domain bearing fault diagnosis,
+  Eksploatacja i Niezawodnosc -- Maintenance and Reliability 28~(2) (2026)
+  211797, verified on the publisher page 2026-09-19.
+\newblock \href {https://doi.org/10.17531/ein/211797}
+  {\path{doi:10.17531/ein/211797}}.
+
+\bibitem{borghesani2013}
+P.~Borghesani, P.~Pennacchi, R.~Ricci, S.~Chatterton, Testing second order
+  cyclostationarity in the squared envelope spectrum of non-white vibration
+  signals, Mechanical Systems and Signal Processing 40 (2013) 38--55.
+\newblock \href {https://doi.org/10.1016/j.ymssp.2013.05.012}
+  {\path{doi:10.1016/j.ymssp.2013.05.012}}.
+
+\bibitem{matania2025}
+O.~Matania, R.~Cohen, E.~Bechhoefer, J.~Bortman, Zero-fault-shot learning for
+  bearing spall type classification by hybrid approach, Mechanical Systems and
+  Signal Processing 224 (2025) 112117.
+\newblock \href {https://doi.org/10.1016/j.ymssp.2024.112117}
+  {\path{doi:10.1016/j.ymssp.2024.112117}}.
+
+\bibitem{li2018ciddg}
+Y.~Li, X.~Tian, M.~Gong, Y.~Liu, T.~Liu, K.~Zhang, D.~Tao, Deep domain
+  generalization via conditional invariant adversarial networks, in:
+  Proceedings of the European Conference on Computer Vision (ECCV), 2018, pp.
+  624--639.
+\newblock \href {https://doi.org/10.1007/978-3-030-01267-0_38}
+  {\path{doi:10.1007/978-3-030-01267-0_38}}.
+
+\bibitem{matania2024leakage}
+O.~Matania, R.~Cohen, E.~Bechhoefer, J.~Bortman, Test-training leakage in
+  evaluation of machine learning algorithms for condition-based maintenance,
+  in: PHM Society European Conference, Vol.~8, 2024.
+\newblock \href {https://doi.org/10.36001/phme.2024.v8i1.4125}
+  {\path{doi:10.36001/phme.2024.v8i1.4125}}.
+
+\bibitem{knap2026leakagesafe}
+P.~Knap, U.~Jachymczyk, K.~Lalik, Leakage-safe, reproducible benchmarking for
+  vibration-based fault diagnosis, in: PHM Society European Conference, Vol.~9,
+  2026, pp. 1--8, code github.com/1Sensor/pdm-bench; recording-level
+  separation, six fixed source--target scenarios.
+
+\bibitem{kapoor2023leakage}
+S.~Kapoor, A.~Narayanan, Leakage and the reproducibility crisis in
+  machine-learning-based science, Patterns 4~(9) (2023) 100804.
+\newblock \href {https://doi.org/10.1016/j.patter.2023.100804}
+  {\path{doi:10.1016/j.patter.2023.100804}}.
+
+\bibitem{geirhos2020shortcut}
+R.~Geirhos, J.-H. Jacobsen, C.~Michaelis, R.~Zemel, W.~Brendel, M.~Bethge,
+  F.~A. Wichmann, Shortcut learning in deep neural networks, Nature Machine
+  Intelligence 2~(11) (2020) 665--673.
+\newblock \href {https://doi.org/10.1038/s42256-020-00257-z}
+  {\path{doi:10.1038/s42256-020-00257-z}}.
+
+\bibitem{jeong2025}
+H.~Jeong, S.~Kim, D.~Seo, J.~Kwon, Source-free domain adaptation framework for
+  rotary machine fault diagnosis, Sensors 25~(14) (2025) 4383.
+\newblock \href {https://doi.org/10.3390/s25144383}
+  {\path{doi:10.3390/s25144383}}.
+
+\bibitem{antoni2007kurtogram}
+J.~Antoni, Fast computation of the kurtogram for the detection of transient
+  faults, Mechanical Systems and Signal Processing 21~(1) (2007) 108--124.
+\newblock \href {https://doi.org/10.1016/j.ymssp.2005.12.002}
+  {\path{doi:10.1016/j.ymssp.2005.12.002}}.
+
+\bibitem{liu2021labelshift}
+X.~Liu, Z.~Guo, S.~Li, F.~Xing, J.~You, C.-C.~J. Kuo, G.~El~Fakhri, J.~Woo,
+  Adversarial unsupervised domain adaptation with conditional and label shift:
+  Infer, align and iterate, in: Proceedings of the IEEE/CVF International
+  Conference on Computer Vision (ICCV), 2021, pp. 10347--10356.
+\newblock \href {https://doi.org/10.1109/ICCV48922.2021.01020}
+  {\path{doi:10.1109/ICCV48922.2021.01020}}.
+
+\bibitem{ozdenizci2020eeg}
+O.~{\"O}zdenizci, Y.~Wang, T.~Koike-Akino, D.~Erdo{\u{g}}mu{\c{s}}, Learning
+  invariant representations from {EEG} via adversarial inference, IEEE Access 8
+  (2020) 27074--27085.
+\newblock \href {https://doi.org/10.1109/ACCESS.2020.2971600}
+  {\path{doi:10.1109/ACCESS.2020.2971600}}.
+
+\bibitem{lessmeier2016}
+C.~Lessmeier, J.~K. Kimotho, D.~Zimmer, W.~Sextro, Condition monitoring of
+  bearing damage in electromechanical drive systems by using motor current
+  signals of electric motors: A benchmark data set for data-driven
+  classification, in: Proceedings of the European Conference of the Prognostics
+  and Health Management Society, Bilbao, Spain, 2016, pp. 05--08 July.
+
+\bibitem{thuan2023hust}
+N.~D. Thuan, H.~S. Hong, {HUST} bearing: a practical dataset for ball bearing
+  fault diagnosis, BMC Research Notes 16~(1) (2023) 138.
+\newblock \href {https://doi.org/10.1186/s13104-023-06400-4}
+  {\path{doi:10.1186/s13104-023-06400-4}}.
+
+\bibitem{smith2015}
+W.~A. Smith, R.~B. Randall, Rolling element bearing diagnostics using the {Case
+  Western Reserve University} data: A benchmark study, Mechanical Systems and
+  Signal Processing 64--65 (2015) 100--131.
+\newblock \href {https://doi.org/10.1016/j.ymssp.2015.04.021}
+  {\path{doi:10.1016/j.ymssp.2015.04.021}}.
+
+\bibitem{sehri2023uored}
+M.~Sehri, P.~Dumond, M.~Bouchard, University of {Ottawa} constant load and
+  speed rolling-element bearing vibration and acoustic fault signature
+  datasets, Data in Brief 49 (2023) 109327.
+\newblock \href {https://doi.org/10.1016/j.dib.2023.109327}
+  {\path{doi:10.1016/j.dib.2023.109327}}.
+
+\bibitem{li2013jnu}
+K.~Li, X.~Ping, H.~Wang, P.~Chen, Y.~Cao, Sequential fuzzy diagnosis method for
+  motor roller bearing in variable operating conditions based on vibration
+  analysis, Sensors 13~(6) (2013) 8013--8041.
+\newblock \href {https://doi.org/10.3390/s130608013}
+  {\path{doi:10.3390/s130608013}}.
+
+\bibitem{benjamini2001}
+Y.~Benjamini, D.~Yekutieli, The control of the false discovery rate in multiple
+  testing under dependency, The Annals of Statistics 29~(4) (2001) 1165--1188.
+\newblock \href {https://doi.org/10.1214/aos/1013699998}
+  {\path{doi:10.1214/aos/1013699998}}.
+
+\bibitem{pedregosa2011sklearn}
+F.~Pedregosa, G.~Varoquaux, A.~Gramfort, V.~Michel, B.~Thirion, O.~Grisel,
+  et~al., Scikit-learn: Machine learning in {Python}, Journal of Machine
+  Learning Research 12 (2011) 2825--2830.
+
+\bibitem{patent10168248}
+Vibration measurement and analysis, uS Patent 10,168,248 B1; see also US
+  10,598,568 B1 (2019).
+
+\end{thebibliography}

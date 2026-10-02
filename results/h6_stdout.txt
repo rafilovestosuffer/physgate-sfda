@@ -1,0 +1,123 @@
+100/2319 records, 38s
+200/2319 records, 69s
+300/2319 records, 101s
+400/2319 records, 134s
+500/2319 records, 169s
+600/2319 records, 199s
+700/2319 records, 230s
+800/2319 records, 259s
+900/2319 records, 307s
+1000/2319 records, 355s
+1100/2319 records, 403s
+1200/2319 records, 468s
+1300/2319 records, 518s
+1400/2319 records, 558s
+1500/2319 records, 597s
+1600/2319 records, 634s
+1700/2319 records, 679s
+1800/2319 records, 713s
+1900/2319 records, 752s
+2000/2319 records, 790s
+2100/2319 records, 828s
+2200/2319 records, 863s
+2300/2319 records, 902s
+{
+  "arms": {
+    "none": {
+      "n_records": 2319,
+      "outer_prevalence": 0.41354031910306166,
+      "gate_says_outer": 255,
+      "outer_precision": 0.6901960784313725,
+      "outer_precision_ci95": [
+        0.6309688437920894,
+        0.7437777193569562
+      ],
+      "at_chance": false,
+      "materially_above": true,
+      "inner_prevalence": 0.3794739111686072,
+      "gate_says_inner": 200,
+      "inner_precision": 0.87,
+      "inner_precision_ci95": [
+        0.8163353692726989,
+        0.9097185863477437
+      ],
+      "confusion_true_to_gate": {
+        "normal": {
+          "normal": 462,
+          "inner_race": 18,
+          "outer_race": 0
+        },
+        "inner_race": {
+          "normal": 627,
+          "inner_race": 174,
+          "outer_race": 79
+        },
+        "outer_race": {
+          "normal": 775,
+          "inner_race": 8,
+          "outer_race": 176
+        }
+      },
+      "fraction_called_normal": 0.8037947391116861,
+      "healthy_false_acceptance": {
+        "n": 480,
+        "false": 18,
+        "rate": 0.0375,
+        "ci95": [
+          0.023849870455207985,
+          0.05849443396177476
+        ]
+      }
+    },
+    "cepstrum": {
+      "n_records": 2319,
+      "outer_prevalence": 0.41354031910306166,
+      "gate_says_outer": 156,
+      "outer_precision": 0.9551282051282052,
+      "outer_precision_ci95": [
+        0.9102825541627867,
+        0.9780969415379571
+      ],
+      "at_chance": false,
+      "materially_above": true,
+      "inner_prevalence": 0.3794739111686072,
+      "gate_says_inner": 191,
+      "inner_precision": 0.8795811518324608,
+      "inner_precision_ci95": [
+        0.8257900149678224,
+        0.9184042433425178
+      ],
+      "confusion_true_to_gate": {
+        "normal": {
+          "normal": 465,
+          "inner_race": 15,
+          "outer_race": 0
+        },
+        "inner_race": {
+          "normal": 705,
+          "inner_race": 168,
+          "outer_race": 7
+        },
+        "outer_race": {
+          "normal": 802,
+          "inner_race": 8,
+          "outer_race": 149
+        }
+      },
+      "fraction_called_normal": 0.8503665373005606,
+      "healthy_false_acceptance": {
+        "n": 480,
+        "false": 15,
+        "rate": 0.03125,
+        "ci95": [
+          0.019027613680897237,
+          0.050915938093071766
+        ]
+      }
+    }
+  },
+  "H6_supported": false,
+  "decision_rule": "PROTOCOL C28 via C31",
+  "alpha": 0.05,
+  "seconds": 909
+}

@@ -1,0 +1,13 @@
+[{"stream_name":"stdout","time":5.756742293,"data":"splits ['S08', 'S09']\n"}
+,{"stream_name":"stdout","time":47.186750061,"data":"S08 T 88.99 53.09 41 s\n"}
+,{"stream_name":"stdout","time":124.020757911,"data":"S08 TFE 96.6 32.28 118 s\n"}
+,{"stream_name":"stdout","time":160.431770357,"data":"S09 T 84.75 58.06 155 s\n"}
+,{"stream_name":"stdout","time":228.24328033,"data":"S09 TFE 86.74 63.64 222 s\n"}
+,{"stream_name":"stdout","time":228.243848976,"data":"done 222 s\n"}
+,{"stream_name":"stderr","time":231.447380041,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":231.447443945,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":231.859035294,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":231.859085633,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":233.728897843,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":235.467667496,"data":"[NbConvertApp] Writing 293156 bytes to __results__.html\n"}
+]

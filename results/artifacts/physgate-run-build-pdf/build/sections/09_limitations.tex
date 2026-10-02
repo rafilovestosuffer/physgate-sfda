@@ -1,0 +1,38 @@
+\section{Limitations}
+\label{sec:limitations}
+
+The experiments concern cross-condition transfer with bearing-disjoint targets on two test rigs; no cross-machine claim is
+made, and the two rigs play different roles --- Paderborn carries the full analysis, HUST only the replication of the
+collapse. The HUST splits change bearing size together with bearing identity, so they confirm the effect without isolating
+its cause, and HUST's unpublished pitch diameter keeps it out of every kinematic analysis.
+
+Bearing-disjoint splits on Paderborn move more than bearing identity. Among the real-damage outer-race bearings, KA04, KA16
+and KA22 carry fatigue pitting while KA15 and KA30 carry plastic deformation from indentation, so a split can place one
+damage mechanism mostly on one side. The design controls the operating condition exactly, not the mechanism or the
+difficulty of the individual specimen; ten random splits average over that variation but do not remove it, and a
+same-condition control that varies only the bearing set would isolate it further.
+
+Seeds and splits are traded against each other: three seeds on the two mechanical folds, one seed on each of the ten random
+splits and six HUST splits. The paired design makes this affordable, since the quantity of interest is a within-job
+difference, but a full seeds-within-splits grid was outside the compute budget and would tighten the split-level intervals.
+
+Statistically, the two mechanical folds provide only two clusters, so their task-level $p$-values are descriptive and the
+inference rests on the ten random splits (Section~
+ef{sec:protocol}). The identity probes are measured on held-out
+recordings of bearings the source model was trained on, so they establish what the representation encodes, not how it
+behaves on unseen specimens.
+
+Two source-free methods are evaluated. Neighbourhood-based methods such as NRC and AaD, and 2026-generation bearing-specific
+methods, remain to be tested under this protocol; nothing here predicts that they behave differently, but nothing here
+demonstrates it either.
+
+The gating results inherit the coverage limit of envelope analysis on this dataset: the envelope gate engages 7 of the 11
+real-damage bearings and fires on about a quarter of their recordings, ball faults are absent from the Paderborn real-damage label space, and no gate we tested detects rolling-element
+faults on CWRU or UORED. Slip was measurable on \SI{16}{\percent} of 6203 fault recordings, namely those with at least two
+lit harmonics, and UORED is excluded from the slip analysis for lack of an independent speed reference.
+
+Finally, the raw-spectrum band rule is our implementation of a published description, not the authors' code, which was not
+available; we therefore report it as a mechanism and never compare it against the accuracy published for the method it comes
+from. A remedy that removes bearing identity from the source representation --- for example a class-conditional adversary,
+which the probe of Section~\ref{sec:res-probe} motivates directly --- was pre-registered but cut for budget before any
+outcome was observed, and is left as the obvious next experiment.

@@ -1,0 +1,88 @@
+{
+  "excluded_speed_compromised": [
+    "H_7_0",
+    "H_8_0",
+    "O_7_1",
+    "O_7_2",
+    "O_8_1",
+    "O_8_2"
+  ],
+  "cepstrum_logged_sensitivity": {
+    "outer_race": {
+      "says": 4,
+      "precision_wilson": [
+        1.0,
+        0.5100999795960008,
+        1.0
+      ],
+      "recall": 0.6666666666666666,
+      "recall_by_state": {
+        "developing": 0.4,
+        "faulty": 0.4
+      }
+    },
+    "inner_race": {
+      "says": 5,
+      "precision_wilson": [
+        1.0,
+        0.5655085052479191,
+        1.0000000000000002
+      ],
+      "recall": 0.5,
+      "recall_by_state": {
+        "developing": 0.4,
+        "faulty": 0.6
+      }
+    },
+    "ball": {
+      "says": 1,
+      "precision_wilson": [
+        0.0,
+        0.0,
+        0.7934567085261071
+      ],
+      "recall": 0.0,
+      "recall_by_state": {
+        "developing": 0.0,
+        "faulty": 0.0
+      }
+    },
+    "healthy_false_acceptance": {
+      "n": 18,
+      "false": 0,
+      "wilson": [
+        0.0,
+        0.0,
+        0.1758845505823749
+      ]
+    },
+    "inner_to_outer": 0,
+    "outer_to_inner": 0,
+    "H8": {
+      "R_c": 0.9,
+      "R_f": 0.6538461538461539,
+      "fisher_one_sided_p": 0.1438203201191489,
+      "supported": false
+    },
+    "confusion_true_to_gate": {
+      "normal": {
+        "normal": 18
+      },
+      "inner_race": {
+        "normal": 5,
+        "inner_race": 5
+      },
+      "outer_race": {
+        "normal": 2,
+        "outer_race": 4
+      },
+      "ball": {
+        "normal": 10
+      },
+      "cage": {
+        "normal": 9,
+        "ball": 1
+      }
+    }
+  }
+}

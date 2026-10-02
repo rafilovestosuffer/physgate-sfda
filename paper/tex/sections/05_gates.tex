@@ -1,0 +1,46 @@
+\section{Physics gates}
+\label{sec:gates}
+
+Four gates are compared. All operate on the first 249\,600 samples of a single recording, return a verdict for the label
+space of Section~\ref{sec:data}, and use kinematics resolved for that specimen (Section~\ref{sec:kinematics}) with the shaft
+speed measured for that recording. Cage slip is accommodated by a one-sided window below the nominal outer-race order and
+above the nominal inner-race order, of relative width $s_{\max} = \SI{2}{\percent}$ fixed in advance. The slips we measure on
+these rigs are far smaller (Supplementary~S5: median \SI{0.06}{\percent} on the IBU/MTK specimens), so the window is
+generous rather than tight.
+
+\paragraph{Comb test (statistical).} The signal is pre-whitened by cepstrum editing to suppress deterministic shaft
+content, band-selected by the fast kurtogram \cite{antoni2007kurtogram} and converted to a squared envelope spectrum
+\cite{randall2011}. The spectrum is divided by a running-median floor over \SI{25}{Hz} (scaled so that a noise-only bin has
+unit median). For each family (outer, inner with $\pm2$ shaft sidebands) a harmonic comb of $K=5$ harmonics is scored at the
+best common slip offset, with saturation so that one strong stray line cannot outscore a family. The score is ranked against
+499 surrogate combs at non-kinematic orders, which gives a null specific to that recording; a family is admissible if its
+surrogate $p$-value passes $\alpha/n_{\mathrm{families}}$ and at least two of its positions exceed 20 times the floor. The
+surviving family with the strongest evidence becomes the verdict.
+
+\paragraph{Shaft-alias-guarded comb (comb\_v2).} As above, with two additions: a family is rejected when at least half of
+its lit positions fall within 1.5 native bins of an integer shaft order, and ties are arbitrated by the fraction of aligned
+lit positions rather than by raw excess. On a 6203 bearing the race lines sit within about 2\,\% of integer shaft orders
+(BPFO 3.07, BPFI 4.93), so a strong shaft comb can otherwise light a fault family that is not there.
+
+\paragraph{Envelope threshold rule (PCV-like).} A deliberately simple rule with no pre-whitening and no statistical null.
+The same kurtogram band selection and floor-normalised squared envelope spectrum are used; a harmonic counts as present if
+the normalised spectrum exceeds $z$ anywhere inside that harmonic's slip window, and a family is declared when at least two
+of its first three harmonics are present. It stands for threshold-on-envelope validators. PCTL's physics consistency value
+\cite{pctl2026}, which inspired it, is a continuous score on a predicted envelope spectrum used to supervise confidence; our
+rule thresholds the measured spectrum and is our construction.
+
+\paragraph{Raw-spectrum band rule (EAGLE-style).} Our implementation of the mechanism described for Bio-SFDA
+\cite{yoon2026biosfda}: band energy and peak-to-neighbourhood ratio at BPFO, BPFI and BSF measured on a short-time Fourier
+transform of the raw signal, robustly $z$-scored across recordings, with a fault declared when the predicates pass. It
+differs from the other three in operating on the raw spectrum rather than the envelope spectrum. It is not Bio-SFDA's
+module: there the band thresholds are rescaled online so that band-activation rates stay in a conservative range, a
+controller (SPIDER) applies bounded factors to those thresholds and adjusts the acceptance thresholds of the
+teacher--student gate, envelope peak counts enter the features, and the band verdict is combined with teacher confidence;
+ours keeps fixed thresholds, a subset of the band features and no controller. Its false acceptance below characterises the
+raw-spectrum mechanism as we implemented it; we note only that bounding how often a band fires does not by itself bound how
+often it fires on a healthy bearing. The published controller may well suppress much of the false acceptance we
+measure; we did not test it.
+
+A gate is useful inside adaptation only if it is safe on healthy machinery: a verdict of ``inner race'' on a healthy bearing
+injects a wrong pseudo-label with high confidence. Each gate is therefore characterised by its false acceptance on real
+healthy recordings and by its full operating curve before it is used (Section~\ref{sec:res-gating}).

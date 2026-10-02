@@ -1,0 +1,14 @@
+Source-free domain adaptation (SFDA) reports near-ceiling accuracy for rolling-bearing diagnosis, yet the evaluation
+protocols behind those numbers place the same physical bearings on both sides of a transfer task. We re-evaluate a published
+SFDA method (SDALR) for cross-condition transfer using a paired design in which only bearing overlap changes. On Paderborn,
+bearing-disjoint targets lower mean accuracy from \SI{94.1}{\percent} to \SI{56.8}{\percent} on two mechanical folds and by a
+median of 36.2 percentage points (range 8.2--61.6, $p=0.001$) over ten pre-registered random bearing splits; on a second rig
+(HUST bearing) six type-disjoint splits lose a median of 33.5 points. SHOT collapses likewise, and so does a random forest on
+ten time-domain statistics that uses no adaptation at all --- that baseline exceeds the adapted model on bearing-disjoint
+targets by a median of 8.9 points. Saved predictions show the adapted model labelling each physical bearing as a whole, and a
+probe recovers the individual bearing among same-class bearings in 507 of 508 held-out recordings. An oracle filter that keeps
+only correct pseudo-labels recovers a median \SI{82}{\percent} of the collapse, which bounds what any pseudo-label filter can
+achieve. Kinematic envelope gates, selected by their false acceptance on 480 real healthy recordings (at most
+\SI{2}{\percent}, against \SI{45}{\percent} for a raw-spectrum band rule of the kind used in recent physics-guided SFDA), add
+4--7 points in paired comparisons and close a median \SI{19}{\percent} of that gap, while the raw-spectrum rule lowers
+accuracy. We conclude with the evaluation evidence a source-free bearing-diagnosis result should carry.

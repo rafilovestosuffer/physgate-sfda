@@ -1,0 +1,26 @@
+\begin{table}[htbp]
+\centering
+\caption{The collapse is not specific to one method: two source-free methods and four non-adaptive random forests on Paderborn, leaky versus bearing-disjoint targets (accuracy, \%).}
+\label{tab:methods}
+\begin{tabular}{lrrr}
+\toprule
+Method & Leaky & Clean & $\Delta_{\mathrm{leak}}$ \\
+\midrule
+SDALR, as released (target-label checkpoint) & 94.7 & 57.8 & 36.9 \\
+SDALR, final checkpoint & 94.1 & 56.8 & 37.3 \\
+SHOT, final iterate & 87.2 & 65.1 & 22.1 \\
+\midrule
+Random forest, 10 time statistics & 88.8 & 63.6 & 25.2 \\
+Random forest, 64 spectral bands & 93.2 & 52.6 & 40.6 \\
+Random forest, envelope spectrum & 76.7 & 43.1 & 33.5 \\
+Random forest, all three feature sets & 95.4 & 60.3 & 35.1 \\
+\midrule
+Source model only (before adaptation), ten splits & 90.5 & 54.7 & 35.8 \\
+Random forest, 10 time statistics, ten splits & 87.0 & 63.6 & 23.4 \\
+Random forest, all three feature sets, ten splits & 93.1 & 57.6 & 35.5 \\
+Random forest, 13 kinematic envelope features, ten splits & 67.4 & 54.3 & 13.1 \\
+SHOT, final iterate, 10 splits & 82.7 & 57.4 & 25.3 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{\linewidth}\vspace{2pt}\footnotesize All rows above the second rule use the same windows, the same two mechanical folds and the same 12 paired tasks; the random forests use no adaptation and no target data. No $p$-value is quoted for them: the tasks of a fold share a source checkpoint, so the unit is the fold, and two clusters cannot reach below $p = 0.25$ (Section~\ref{sec:protocol}). The rows below the second rule are means over the ten pre-registered splits, where the split is the unit; the time-statistics and combined forests collapse in 10 of 10 splits (exact sign-flip $p = 0.001$, $p_{\mathrm{BH}} = 0.002$). Source model only: batch-0 accuracy of the SDALR/SHOT source checkpoint before any adaptation step (median $\Delta$ 35.1~pp). Kinematic forest: record-level, maxima of the normalised envelope spectrum at the specimen's own BPFO/BPFI harmonics and shaft orders (median $\Delta_{\mathrm{leak}}$ 8.4~pp). SHOT over 10 splits: median $\Delta_{\mathrm{leak}}$ 21.7~pp, positive in 10 of 10 (exact sign-flip $p = 0.001$, $p_{\mathrm{BH}} = 0.002$). Differences are computed before rounding.\end{minipage}
+\end{table}

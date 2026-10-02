@@ -1,0 +1,58 @@
+读取源域路径：/kaggle/working/shot_k10/S06/weight_PU_M1_shot_FS06toS06c_s2024/NEW_PU/Source-源域/log&pt/(B2)N15_M07_F10
+excel输出位置：/kaggle/working/shot_k10/S06/weight_PU_M1_shot_FS06toS06c_s2024/NEW_PU/Target-目标域
+特征图片输出位置：/kaggle/working/shot_k10/S06/weight_PU_M1_shot_FS06toS06c_s2024/NEW_PU/Picture-特征图/2026年09月22日04时56分/(B2)N15_M07_F10
+现在选取:(B2)N15_M07_F10 进行训练的源模型
+现在进行：(B2)N15_M07_F10→(B1)N15_M01_F10 的迁移任务
+log&pt输出位置：/kaggle/working/shot_k10/S06/weight_PU_M1_shot_FS06toS06c_s2024/NEW_PU/Target-目标域/log&pt/(B2)N15_M07_F10→(B1)N15_M01_F10
+任务: (B2)N15_M07_F10→(B1)N15_M01_F10; 批次:····0/·1880;  总正确率: 75.43%
+类型1 正确率： 100.00% -> 1   99.55%, 2    0.05%, 3    0.40%
+类型2 正确率：  77.00% -> 1    0.00%, 2   76.55%, 3   23.45%
+类型3 正确率：  50.00% -> 1    0.00%, 2   49.80%, 3   50.20%
+
+
+SHOT pseudo-labels: model 75.43% -> centroid 74.17%
+轮次:··1/·20 || cls:1.094 || im:-0.880 || 耗时：21.63s
+SHOT pseudo-labels: model 79.55% -> centroid 90.77%
+轮次:··2/·20 || cls:1.310 || im:-0.825 || 耗时：16.07s
+SHOT pseudo-labels: model 85.22% -> centroid 88.67%
+轮次:··3/·20 || cls:0.956 || im:-0.774 || 耗时：15.82s
+SHOT pseudo-labels: model 81.50% -> centroid 78.43%
+轮次:··4/·20 || cls:0.640 || im:-0.646 || 耗时：15.69s
+SHOT pseudo-labels: model 80.95% -> centroid 72.68%
+轮次:··5/·20 || cls:0.582 || im:-0.605 || 耗时：15.69s
+SHOT pseudo-labels: model 80.00% -> centroid 69.95%
+轮次:··6/·20 || cls:0.573 || im:-0.601 || 耗时：15.73s
+SHOT pseudo-labels: model 80.05% -> centroid 63.73%
+轮次:··7/·20 || cls:0.787 || im:-0.583 || 耗时：15.84s
+SHOT pseudo-labels: model 80.28% -> centroid 76.97%
+轮次:··8/·20 || cls:0.754 || im:-0.640 || 耗时：15.82s
+SHOT pseudo-labels: model 81.05% -> centroid 75.22%
+轮次:··9/·20 || cls:0.809 || im:-0.693 || 耗时：15.76s
+SHOT pseudo-labels: model 81.70% -> centroid 71.72%
+轮次:·10/·20 || cls:0.591 || im:-0.681 || 耗时：15.76s
+SHOT pseudo-labels: model 82.23% -> centroid 62.38%
+轮次:·11/·20 || cls:0.765 || im:-0.653 || 耗时：15.74s
+SHOT pseudo-labels: model 81.63% -> centroid 64.30%
+轮次:·12/·20 || cls:0.677 || im:-0.679 || 耗时：15.75s
+SHOT pseudo-labels: model 82.27% -> centroid 65.07%
+轮次:·13/·20 || cls:0.760 || im:-0.728 || 耗时：15.77s
+SHOT pseudo-labels: model 84.28% -> centroid 71.32%
+轮次:·14/·20 || cls:0.674 || im:-0.562 || 耗时：15.76s
+SHOT pseudo-labels: model 84.53% -> centroid 63.27%
+轮次:·15/·20 || cls:0.757 || im:-0.622 || 耗时：15.78s
+SHOT pseudo-labels: model 84.93% -> centroid 61.78%
+轮次:·16/·20 || cls:0.604 || im:-0.614 || 耗时：15.78s
+SHOT pseudo-labels: model 86.65% -> centroid 61.63%
+轮次:·17/·20 || cls:0.714 || im:-0.677 || 耗时：15.78s
+SHOT pseudo-labels: model 86.75% -> centroid 62.38%
+轮次:·18/·20 || cls:0.829 || im:-0.633 || 耗时：15.78s
+SHOT pseudo-labels: model 88.20% -> centroid 61.28%
+轮次:·19/·20 || cls:0.700 || im:-0.682 || 耗时：15.76s
+SHOT pseudo-labels: model 87.85% -> centroid 61.23%
+轮次:·20/·20 || cls:0.586 || im:-0.608 || 耗时：15.77s
+测试集任务: (B2)N15_M07_F10→(B1)N15_M01_F10; 总正确率 = 88.43%
+类型1 正确率：  98.00% -> 1   98.05%, 2    1.25%, 3    0.70%
+类型2 正确率：  80.00% -> 1    0.00%, 2   80.20%, 3   19.80%
+类型3 正确率：  87.00% -> 1    1.60%, 2   11.35%, 3   87.05%
+
+

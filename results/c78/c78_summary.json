@@ -1,0 +1,105 @@
+{
+  "none|c30": {
+    "FE_6203": {
+      "n_IO": 33,
+      "confusions": 6,
+      "rate": 0.18181818181818182,
+      "correct_IO": 23,
+      "ball_detected": 0,
+      "ball_n": 12,
+      "c30_admitted": 29,
+      "c30_admitted_shaft_aliased": 3
+    },
+    "DE_6205": {
+      "n_IO": 44,
+      "confusions": 3,
+      "rate": 0.06818181818181818,
+      "correct_IO": 17,
+      "ball_detected": 3,
+      "ball_n": 16,
+      "c30_admitted": 30,
+      "c30_admitted_shaft_aliased": 0
+    },
+    "fisher_one_sided_p": 0.1200046541971715,
+    "aliased_fraction_FE_DE": [
+      0.10344827586206896,
+      0.0
+    ],
+    "supported": false
+  },
+  "none|v2": {
+    "FE_6203": {
+      "n_IO": 33,
+      "confusions": 5,
+      "rate": 0.15151515151515152,
+      "correct_IO": 24,
+      "ball_detected": 0,
+      "ball_n": 12,
+      "c30_admitted": 29,
+      "c30_admitted_shaft_aliased": 3
+    },
+    "DE_6205": {
+      "n_IO": 44,
+      "confusions": 3,
+      "rate": 0.06818181818181818,
+      "correct_IO": 17,
+      "ball_detected": 3,
+      "ball_n": 16,
+      "c30_admitted": 30,
+      "c30_admitted_shaft_aliased": 0
+    },
+    "fisher_one_sided_p": 0.20876705376030083
+  },
+  "cepstrum|c30": {
+    "FE_6203": {
+      "n_IO": 33,
+      "confusions": 0,
+      "rate": 0.0,
+      "correct_IO": 10,
+      "ball_detected": 0,
+      "ball_n": 12,
+      "c30_admitted": 10,
+      "c30_admitted_shaft_aliased": 0
+    },
+    "DE_6205": {
+      "n_IO": 44,
+      "confusions": 0,
+      "rate": 0.0,
+      "correct_IO": 17,
+      "ball_detected": 0,
+      "ball_n": 16,
+      "c30_admitted": 17,
+      "c30_admitted_shaft_aliased": 0
+    },
+    "fisher_one_sided_p": 1.0,
+    "aliased_fraction_FE_DE": [
+      0.0,
+      0.0
+    ],
+    "supported": false
+  },
+  "cepstrum|v2": {
+    "FE_6203": {
+      "n_IO": 33,
+      "confusions": 0,
+      "rate": 0.0,
+      "correct_IO": 10,
+      "ball_detected": 0,
+      "ball_n": 12,
+      "c30_admitted": 10,
+      "c30_admitted_shaft_aliased": 0
+    },
+    "DE_6205": {
+      "n_IO": 44,
+      "confusions": 0,
+      "rate": 0.0,
+      "correct_IO": 17,
+      "ball_detected": 0,
+      "ball_n": 16,
+      "c30_admitted": 17,
+      "c30_admitted_shaft_aliased": 0
+    },
+    "fisher_one_sided_p": 1.0
+  },
+  "decision": "PROTOCOL C78: primary = none|c30"
+}

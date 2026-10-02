@@ -1,0 +1,35 @@
+\section{What a source-free bearing-diagnosis result should carry}
+\label{sec:recommendations}
+
+The measurements above suggest six pieces of evidence that separate a transferable result from a leaky one. None requires
+new hardware or a larger dataset; together they cost a few additional runs.
+
+\begin{enumerate}
+  \item \textbf{Bearing-disjoint targets.} Report accuracy on physical bearings absent from source training. If the dataset
+        cannot support this --- CWRU's healthy class is effectively one specimen, for example --- say so, and treat the
+        published number as an upper bound rather than an estimate.
+  \item \textbf{A distribution over splits, not one split.} Which bearings fall in the source set moved clean accuracy
+        between \SI{36}{} and \SI{74}{\percent} here. A single split cannot distinguish a method effect from a draw effect;
+        ten pre-registered draws are affordable and make the uncertainty visible.
+  \item \textbf{Paired differences for any add-on module.} Gates, regularisers and losses should be compared against the
+        base method trained from the \emph{same} source checkpoint with the same seed, and reported as the distribution of
+        per-task differences. The relevant variance is that of the difference, which here is roughly half the variance of
+        the accuracies themselves.
+  \item \textbf{An oracle pseudo-label ceiling.} One extra run per configuration, replacing the pseudo-label rule by the
+        true label, converts a bare gain into a share of what was achievable and exposes the part of the gap that lives in
+        the source representation.
+  \item \textbf{A non-adaptive shallow baseline under the identical split.} Cheap, and it calibrates the claim: on our
+        splits it beat the adapted method.
+  \item \textbf{False acceptance for any physics module, measured on healthy recordings from the target rig.} A gate that
+        certifies faults on healthy machinery will inject confident wrong labels; this is measurable before adaptation and
+        predicted the sign of the effect in every case we tested.
+\end{enumerate}
+
+For deployment the same list reads as a risk assessment. A diagnosis system that has only been validated with the monitored
+bearing present in training has not been validated for the bearing it will meet in service; the drop measured here, on two
+rigs and with three model families, was 22--41 points. Where a kinematic gate is available and its false acceptance has been
+characterised on healthy machinery, it is a low-risk addition --- consistent, small and essentially never harmful in our
+runs --- but it is not a substitute for source data that spans enough physical specimens. For supervised models, Vieira et al.\ \cite{vieira2026} report that the number
+of unique training bearings is the decisive factor for robustness. Our splits hold that number fixed at three bearings per
+class, so we cannot test it here; whether a larger source pool would close the gap measured in this paper is the obvious
+next experiment, and our results are consistent with their finding without being evidence for it.

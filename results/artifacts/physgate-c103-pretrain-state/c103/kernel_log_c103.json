@@ -1,0 +1,21 @@
+{
+  "env": {
+    "device": "Tesla T4",
+    "capability": [
+      7,
+      5
+    ]
+  },
+  "runs": [
+    {
+      "arm": "pretrain_in_process",
+      "rc": 0,
+      "seconds": 2343
+    },
+    {
+      "arm": "skip_pretrain",
+      "rc": 0,
+      "seconds": 2058
+    }
+  ]
+}

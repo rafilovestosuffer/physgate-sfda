@@ -1,0 +1,31 @@
+dataset,rung,backbone,in_channels,length,values,params,receptive_field_samples,receptive_field_fraction_of_input,axis_unit,est_train_windows_smallest_class
+PU,L0 raw,resnet18_1d,1,192000,192000,3845443,435,0.0023,0.0156 ms/sample,480
+PU,L0 raw,wdcnn,1,192000,192000,40803,1520,0.0079,0.0156 ms/sample,480
+PU,"L1-L2.5 SES (Hz axis, 0-30 x f_r)",resnet18_1d,1,2250,2250,3845443,435,0.1933,0.333 Hz/bin,480
+PU,"L1-L2.5 SES (Hz axis, 0-30 x f_r)",wdcnn,1,2250,2250,40803,1520,0.6756,0.333 Hz/bin,480
+PU,L3 order SES (0-30 orders),resnet18_1d,1,2250,2250,3845443,435,0.1933,0.0133 order/bin,480
+PU,L3 order SES (0-30 orders),wdcnn,1,2250,2250,40803,1520,0.6756,0.0133 order/bin,480
+PU,L4 KNEOS-HC J=0,resnet18_1d,5,45,225,3845955,109,1.0,k x sub-bin,480
+PU,L4 KNEOS-HC J=0,wdcnn,5,45,225,40019,94,1.0,k x sub-bin,480
+PU,L5 KNEOS-HC J=2 (C63),resnet18_1d,13,45,585,3847491,109,1.0,k x sub-bin,480
+PU,L5 KNEOS-HC J=2 (C63),wdcnn,13,45,585,40403,94,1.0,k x sub-bin,480
+CWRU,L0 raw,resnet18_1d,1,36000,36000,3845443,435,0.0121,0.0833 ms/sample,
+CWRU,L0 raw,wdcnn,1,36000,36000,40803,1520,0.0422,0.0833 ms/sample,
+CWRU,"L1-L2.5 SES (Hz axis, 0-30 x f_r)",resnet18_1d,1,2658,2658,3845443,435,0.1637,0.333 Hz/bin,
+CWRU,"L1-L2.5 SES (Hz axis, 0-30 x f_r)",wdcnn,1,2658,2658,40803,1520,0.5719,0.333 Hz/bin,
+CWRU,L3 order SES (0-30 orders),resnet18_1d,1,2658,2658,3845443,435,0.1637,0.0113 order/bin,
+CWRU,L3 order SES (0-30 orders),wdcnn,1,2658,2658,40803,1520,0.5719,0.0113 order/bin,
+CWRU,L4 KNEOS-HC J=0,resnet18_1d,5,45,225,3845955,109,1.0,k x sub-bin,
+CWRU,L4 KNEOS-HC J=0,wdcnn,5,45,225,40019,94,1.0,k x sub-bin,
+CWRU,L5 KNEOS-HC J=2 (C63),resnet18_1d,13,45,585,3847491,109,1.0,k x sub-bin,
+CWRU,L5 KNEOS-HC J=2 (C63),wdcnn,13,45,585,40403,94,1.0,k x sub-bin,
+UORED,L0 raw,resnet18_1d,1,126000,126000,3845443,435,0.0035,0.0238 ms/sample,48
+UORED,L0 raw,wdcnn,1,126000,126000,40803,1520,0.0121,0.0238 ms/sample,48
+UORED,"L1-L2.5 SES (Hz axis, 0-30 x f_r)",resnet18_1d,1,2625,2625,3845443,435,0.1657,0.333 Hz/bin,48
+UORED,"L1-L2.5 SES (Hz axis, 0-30 x f_r)",wdcnn,1,2625,2625,40803,1520,0.579,0.333 Hz/bin,48
+UORED,L3 order SES (0-30 orders),resnet18_1d,1,2625,2625,3845443,435,0.1657,0.0114 order/bin,48
+UORED,L3 order SES (0-30 orders),wdcnn,1,2625,2625,40803,1520,0.579,0.0114 order/bin,48
+UORED,L4 KNEOS-HC J=0,resnet18_1d,5,45,225,3845955,109,1.0,k x sub-bin,48
+UORED,L4 KNEOS-HC J=0,wdcnn,5,45,225,40019,94,1.0,k x sub-bin,48
+UORED,L5 KNEOS-HC J=2 (C63),resnet18_1d,13,45,585,3847491,109,1.0,k x sub-bin,48
+UORED,L5 KNEOS-HC J=2 (C63),wdcnn,13,45,585,40403,94,1.0,k x sub-bin,48

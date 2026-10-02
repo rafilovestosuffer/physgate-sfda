@@ -1,0 +1,110 @@
+# Dataset registry. Paths are set by the human; everything else is verified or BLOCKED.
+# licence / redistribution fields are mandatory [C15]. All Kaggle Datasets are PRIVATE, never public.
+
+tracks:
+  R: {window_samples: 2048, overlap: 0.0, note: "reproduction only (SDALR as published). NOT valid for KNEOS-HC or the gate -- see PLAN 0.3."}
+  A:
+    window_seconds: 3.0          # DERIVED by physics/feasibility.py, not chosen. See C21.
+    step_seconds: 1.0            # -> 2 windows per 4 s PU record, 8 per 10 s CWRU record
+    overlap: 0.6667              # within-record only; NEVER across a record or split boundary
+    note: >-
+      Smallest window at which NO deciding family on ANY certified condition is even marginally
+      separated from a shaft harmonic. T=2.0s also passes the hard constraints but leaves PU N09
+      at 1.59 bins (MARGINAL); the shorter window was rejected because selecting it would trade
+      resolution for training-sample count. The statistical unit is the RECORD (C17), so window
+      count is a training-augmentation choice and never enters an error bar.
+
+datasets:
+
+  CWRU:
+    full_name: Case Western Reserve University Bearing Data Center
+    band_search_hz: [0, null]      # induction motor on mains; no inverter -> full band up to Nyquist
+    path: null                     # <-- human sets
+    fs_hz: 12000                   # 60 fault records at 12 kHz; the 4 NORMAL records are 48 kHz
+    channel: DE                    # fan end is a 6203 -- DIFFERENT bearing, different multipliers
+    bearing: "6205"
+    record_seconds: 10.0           # approx; per-file length is read at ingest, never assumed
+    classes: [normal, inner_race, outer_race, ball]
+    conditions:                    # load_hp -> nominal rpm. USE PER-FILE RPM AT INGEST, not these.
+      0: 1797
+      1: 1772
+      2: 1750
+      3: 1730
+    healthy_bearing_wise_splittable: false   # effectively ONE healthy configuration. Stated limitation.
+    licence: "CWRU Bearing Data Center, freely downloadable for research. Attribute the Data Center."
+    redistribution: "private Kaggle Dataset only"
+    notes: "Nominal RPM only, no tachometer -> angular resampling is near a scalar rescale (H4 confound)."
+
+  PU:
+    full_name: Paderborn University (Lessmeier et al. 2016)
+    # C33. Lessmeier et al. 2016 (PHME), verbatim: motor 'operated by a frequency inverter (KEB Combivert
+    # 07F5E 1D-2B0A) with a switching frequency of 16 kHz'; accelerometer PCB 336C04 with a Kistler 5015A
+    # charge amplifier 'with a low-pass filter at 30 kHz'. Bands must stay below the switching content.
+    band_search_hz: [0, 15000]
+    path: null
+    fs_hz: 64000
+    bearing: "6203_PU_2905"          # majority geometry (26/32); used ONLY for dataset-level feasibility.
+    # C35: kinematics resolve PER BEARING. Source: per-bearing profile PDFs in data/pu/<ID>/<ID>.pdf.
+    geometry:
+      "6203_PU_2855": [KA04, KA15, KB24, KB27, KI16, KI21]     # FAG
+      "6203_PU_2905": [K001, K002, K003, K004, K005, K006, KA01, KA03, KA05, KA06, KA07, KA08, KA09,
+                       KA16, KA22, KA30, KB23, KI01, KI03, KI04, KI05, KI07, KI08, KI14, KI17, KI18]  # IBU/MTK
+    record_seconds: 4.0
+    measurements_per_bearing_condition: 20
+    classes: [healthy, inner_race, outer_race]        # L3 -- PU HAS NO BALL CLASS
+    conditions:
+      N15_M01_F10: {rpm: 1500, torque_Nm: 0.1, radial_N: 1000}
+      N15_M07_F04: {rpm: 1500, torque_Nm: 0.7, radial_N: 400}
+      N15_M07_F10: {rpm: 1500, torque_Nm: 0.7, radial_N: 1000}
+      N09_M07_F10: {rpm: 900,  torque_Nm: 0.7, radial_N: 1000}   # worst case for feasibility
+    bearings:
+      healthy:    [K001, K002, K003, K004, K005, K006]
+      artificial_outer: [KA01, KA03, KA05, KA06, KA07, KA08, KA09]
+      artificial_inner: [KI01, KI03, KI05, KI07, KI08]
+      real_outer: [KA04, KA15, KA16, KA22, KA30]
+      real_inner: [KI04, KI14, KI16, KI17, KI18, KI21]
+      combined:   [KB23, KB24, KB27]      # excluded from main tables (out-of-label-space stress)
+    healthy_bearing_wise_splittable: true
+    licence: "Paderborn KAt-DataCenter, free for research WITH CITATION CONDITIONS. Cite Lessmeier et al. 2016."
+    redistribution: "private Kaggle Dataset only; citation condition must be reproduced"
+
+  JNU:
+    full_name: Jiangnan University
+    band_search_hz: [0, null]      # drive undocumented
+    path: null
+    fs_hz: 50000
+    record_seconds: {fault: 10.01, normal: 30.03}   # VERIFIED on files; literature's "20 s" is wrong
+    records_per_class_speed: 1                       # => ONE physical bearing per class; no bearing-wise split exists
+    classes: [normal, inner_race, outer_race, roller]
+    conditions: {600: 600, 800: 800, 1000: 1000}
+    bearing_per_class:              # Li et al., Sensors 2013 13(6):8013-8041. Secondary sources REVERSE this.
+      normal: "N205"
+      outer_race: "N205"
+      roller: "N205"
+      inner_race: "NU205"
+    blocked: true
+    blocked_on: "N205/NU205 roller count n unknown -> no kinematics, no gate, no KNEOS-HC. SFDA baselines only."
+    licence: "publicly distributed; confirm terms before redistribution"
+    redistribution: "HOLD -- licence unconfirmed"
+
+  HUST:
+    full_name: Hanoi University of Science and Technology (Thuan & Hong, BMC Res Notes 16(1):138, 2023)
+    band_search_hz: [0, null]      # drive undocumented
+    path: null
+    fs_hz: 51200                   # BMC published version. A survey (arXiv 2504.11581) says 25600/20s -- WRONG, trust BMC.
+    record_seconds: 10.0
+    n_signals: 99                  # BMC published. The arXiv preprint says 90; it is FLAGGED, not withdrawn.
+    classes: [normal, inner_race, outer_race, ball]   # + pairwise compounds, reported separately
+    bearings: ["6204", "6205", "6206", "6207", "6208"]   # kinematics resolve PER FILE, not per dataset
+    conditions_W: [0, 200, 400]
+    rpm_per_condition: null
+    blocked: true
+    blocked_on: "per-load shaft RPM unknown (may be in the Mendeley per-file 'rpm' field); 6204/6206/6207/6208 geometry unknown -> blocks H2 and B4"
+    licence: "Mendeley Data doi:10.17632/cbv7jyx4p9, CC BY 4.0"
+    redistribution: "permitted with attribution; keep private anyway"
+
+external_metadata:
+  smith_randall_stratification:
+    source: "predictive-maintenance-mcp (github.com/LGDiMaggio), benchmarks/cwru/labels.json + records_ops.json"
+    licence: "CC BY-NC-SA 4.0 -- NON-COMMERCIAL, SHARE-ALIKE. Attribute explicitly; ShareAlike is viral for derived data."
+    caveat: "single collapsed sr2015_grade; per-method (method1/2/3) columns still require human transcription from Smith & Randall 2015 Table 4"

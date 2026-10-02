@@ -1,0 +1,42 @@
+{
+  "env": {
+    "device": "Tesla T4",
+    "capability": [
+      7,
+      5
+    ],
+    "torch": "2.10.0+cu128",
+    "python": "3.12.13",
+    "src_fold": "A"
+  },
+  "runs": [
+    {
+      "variant": "as_released",
+      "src": "A",
+      "tgt": "A",
+      "rc": 0,
+      "seconds": 2247
+    },
+    {
+      "variant": "as_released",
+      "src": "A",
+      "tgt": "B",
+      "rc": 0,
+      "seconds": 1971
+    },
+    {
+      "variant": "final_checkpoint",
+      "src": "A",
+      "tgt": "A",
+      "rc": 0,
+      "seconds": 1964
+    },
+    {
+      "variant": "final_checkpoint",
+      "src": "A",
+      "tgt": "B",
+      "rc": 0,
+      "seconds": 1972
+    }
+  ]
+}

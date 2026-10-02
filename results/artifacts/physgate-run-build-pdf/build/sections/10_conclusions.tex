@@ -1,0 +1,26 @@
+\section{Conclusions}
+\label{sec:conclusions}
+
+Source-free adaptation results for rolling bearings do not survive evaluation on bearings the source model has never seen.
+On Paderborn the published method loses 37.3 points on two mechanical folds and a median of 36.2 points over ten
+pre-registered random bearing splits; on a second rig it loses a median of 33.5 points; a second source-free method loses
+22.1 points, and non-adaptive random forests on the same windows lose 25--41 points. Near-ceiling accuracy under the
+conventional protocol and roughly \SI{60}{\percent} accuracy under a bearing-disjoint one are the same models measured two
+ways.
+
+The mechanism is identifiable rather than diffuse. The frozen source representation identifies the individual physical
+bearing among same-class specimens in 507 of 508 held-out recordings, and the adapted model assigns a single label to each
+unseen specimen as a whole. Adaptation cannot correct this, because it refines the source model's own decisions.
+
+Physics helps within a ceiling that can be measured. An oracle pseudo-label filter recovers a median \SI{82}{\percent} of
+the collapse, so the remainder lies in the representation and is beyond any filter. Kinematic envelope gates selected for
+low false acceptance on real healthy recordings --- 1 in 480, against 214 in 480 for a raw-spectrum band rule of the kind
+used in recent physics-guided adaptation --- add 4--7 points in paired comparisons, in every seed and in 9 of 10 splits,
+closing about a fifth of the achievable gap, while the unsafe rule makes adaptation worse. Measured cage slip on these rigs
+is about \SI{0.06}{\percent}, an order of magnitude below the slip at which 6203 race lines would lock onto shaft orders, so
+that particular hazard is not active here.
+
+For practice the implication is procedural. Bearing-disjoint targets, a distribution over bearing splits, paired
+differences on a shared source model, an oracle ceiling, a shallow non-adaptive baseline and a measured false-acceptance
+rate for any physics module together cost a handful of extra runs, and they are what separates a transferable diagnosis
+from a memorised one.

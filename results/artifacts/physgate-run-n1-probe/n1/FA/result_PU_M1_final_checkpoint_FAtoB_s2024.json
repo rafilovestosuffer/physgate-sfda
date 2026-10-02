@@ -1,0 +1,154 @@
+{
+  "dataset": "PU_M1",
+  "variant": "final_checkpoint",
+  "seed": 2024,
+  "smoke": false,
+  "src_fold": "A",
+  "tgt_fold": "B",
+  "leaky": false,
+  "hyperparameters": {
+    "lr": "0.0005",
+    "threshold": "0.4",
+    "K": "0.6"
+  },
+  "adapters": [
+    "npz_io",
+    "tsne_stub",
+    "final_checkpoint_patch"
+  ],
+  "source_only": {
+    "A1->A3": 98.82,
+    "A1->A2": 75.12,
+    "A3->A1": 99.83,
+    "A3->A2": 86.62,
+    "A2->A1": 85.43,
+    "A2->A3": 87.91
+  },
+  "adapted": {},
+  "seconds": {
+    "pretrain": 294
+  },
+  "bist": {
+    "enabled": false,
+    "log": [],
+    "probes": [
+      {
+        "n_train": 602,
+        "n_test": 598,
+        "n_bearings": 9,
+        "all_bearings": {
+          "window_acc": 0.9949832775919732,
+          "record_correct": 92,
+          "record_n": 92,
+          "chance": 0.1111111111111111,
+          "class_only_ceiling": 0.3333333333333333
+        },
+        "within_class": {
+          "per_class": {
+            "0": {
+              "n_bearings": 3,
+              "window_acc": 0.9896373056994818,
+              "record_correct": 30,
+              "record_n": 30
+            },
+            "1": {
+              "n_bearings": 3,
+              "window_acc": 0.9951690821256038,
+              "record_correct": 31,
+              "record_n": 31
+            },
+            "2": {
+              "n_bearings": 3,
+              "window_acc": 1.0,
+              "record_correct": 31,
+              "record_n": 31
+            }
+          },
+          "record_correct": 92,
+          "record_n": 92,
+          "pooled_chance": 0.33333333333333337,
+          "record_acc": 1.0,
+          "mean_window_acc": 0.9949354626083619
+        }
+      },
+      {
+        "n_train": 571,
+        "n_test": 629,
+        "n_bearings": 9,
+        "all_bearings": {
+          "window_acc": 0.9936406995230525,
+          "record_correct": 91,
+          "record_n": 91,
+          "chance": 0.1111111111111111,
+          "class_only_ceiling": 0.33333333333333337
+        },
+        "within_class": {
+          "per_class": {
+            "0": {
+              "n_bearings": 3,
+              "window_acc": 0.9846938775510204,
+              "record_correct": 31,
+              "record_n": 31
+            },
+            "1": {
+              "n_bearings": 3,
+              "window_acc": 1.0,
+              "record_correct": 30,
+              "record_n": 30
+            },
+            "2": {
+              "n_bearings": 3,
+              "window_acc": 0.9953703703703703,
+              "record_correct": 30,
+              "record_n": 30
+            }
+          },
+          "record_correct": 91,
+          "record_n": 91,
+          "pooled_chance": 0.33333333333333337,
+          "record_acc": 1.0,
+          "mean_window_acc": 0.9933547493071302
+        }
+      },
+      {
+        "n_train": 605,
+        "n_test": 595,
+        "n_bearings": 9,
+        "all_bearings": {
+          "window_acc": 0.9663865546218487,
+          "record_correct": 87,
+          "record_n": 88,
+          "chance": 0.1111111111111111,
+          "class_only_ceiling": 0.3333333333333333
+        },
+        "within_class": {
+          "per_class": {
+            "0": {
+              "n_bearings": 3,
+              "window_acc": 0.9121951219512195,
+              "record_correct": 29,
+              "record_n": 30
+            },
+            "1": {
+              "n_bearings": 3,
+              "window_acc": 1.0,
+              "record_correct": 29,
+              "record_n": 29
+            },
+            "2": {
+              "n_bearings": 3,
+              "window_acc": 1.0,
+              "record_correct": 29,
+              "record_n": 29
+            }
+          },
+          "record_correct": 87,
+          "record_n": 88,
+          "pooled_chance": 0.33333333333333326,
+          "record_acc": 0.9886363636363636,
+          "mean_window_acc": 0.9707317073170731
+        }
+      }
+    ]
+  }
+}

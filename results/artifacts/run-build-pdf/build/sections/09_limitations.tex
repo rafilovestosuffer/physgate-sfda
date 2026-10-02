@@ -1,0 +1,38 @@
+\section{Limitations}
+\label{sec:limitations}
+
+The experiments concern cross-condition transfer with bearing-disjoint targets on two test rigs; no cross-machine claim is
+made. Paderborn carries the full analysis; HUST only replicates the collapse, and its splits change bearing size together
+with the specimen. HUST's unpublished pitch diameter keeps it out of every kinematic analysis.
+
+Two source-free methods are evaluated, SDALR from its released code and SHOT in our implementation from the same source
+checkpoint. Neighbourhood-based methods such as NRC \cite{yang2021nrc} and AaD \cite{yang2022aad} remain to be tested; since
+the gap is already in the source model, we expect them to inherit it --- they refine neighbourhoods of the source representation, and on an unseen
+specimen those neighbourhoods are the specimen's own windows, which are already labelled as a block --- but this is not
+shown. Every statement about
+source-free adaptation here is a statement about these two methods under this protocol. The networks use SDALR's 2048-sample
+windows, which cannot represent the kinematic signature; a source-free method on order-domain inputs of full recordings was
+not run, and only a forest tested that representation.
+
+Seeds and splits are traded against each other: three seeds on the two folds and one seed on each of the ten random splits and
+six HUST splits. The splits share bearings, so their cluster-level $p$-values assume an exchangeability that holds only
+approximately and apply to draws from this pool of 17 bearings. The two folds ran in two jobs that trained different source
+checkpoints; no reported comparison crosses them, and the fold-level oracle decomposition is withdrawn for that reason. The
+analyses added in this revision --- source-only arm, within-bearing contrast, spillover, purity, intervals --- are post-hoc and
+descriptive; the source-diversity curve and the kinematic-feature forest were pre-registered.
+
+A bearing-disjoint split changes the damage along with the specimen. Of the five real outer-race bearings, KA04, KA16 and KA22
+carry fatigue pitting while KA15 and KA30 carry particle-caused plastic deformation; all six real inner-race bearings carry
+fatigue pitting (\cite{lessmeier2016}, Table~5, corresponding to ISO~15243 clauses 5.1 and 5.5 \cite{iso15243}). Damage extent
+ranges from class 1 to 3 (Table~\ref{tab:bearings}). Ten random splits average over this variation but do not remove it, and
+each bearing was recorded in its own session and mounting, which no design here crosses. The same-condition control and the
+source-diversity curve use a forest on time statistics; SDALR and SHOT were not run at a fixed condition or with more source
+specimens, so whether adaptation changes those results is not measured. The source-diversity curve can only reach four
+specimens per class on a rig with five or six; whether accuracy keeps rising beyond that is open.
+
+The gating results inherit the detectability of envelope analysis on these specimens: four of the eleven real-damage bearings
+carry a visible signature at the adaptation conditions, ball faults are absent from the Paderborn real-damage label space, and
+the raw-spectrum band rule is our implementation of a published description, not the authors' code; we never compare it with
+the accuracy published for the method it comes from. A remedy that removes specimen identity from the source representation
+was pre-registered but cut for budget before any outcome was observed; the source-diversity curve suggests that source
+diversity is the larger lever.

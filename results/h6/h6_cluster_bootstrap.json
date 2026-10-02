@@ -1,0 +1,65 @@
+{
+  "none": {
+    "outer_precision": 0.6901960784313725,
+    "prevalence": 0.41354031910306166,
+    "cluster_boot95_precision": [
+      0.0,
+      1.0
+    ],
+    "cluster_boot95_precision_minus_prevalence": [
+      -0.31032252308515856,
+      0.6212051027617821
+    ],
+    "resamples_with_no_outer_call": 36,
+    "n_bearings": 29,
+    "fault_bearings_with_any_fault_verdict": [
+      "KA01",
+      "KA04",
+      "KA05",
+      "KA07",
+      "KA08",
+      "KA09",
+      "KA16",
+      "KA22",
+      "KI01",
+      "KI04",
+      "KI05",
+      "KI07",
+      "KI08",
+      "KI16",
+      "KI17",
+      "KI18"
+    ]
+  },
+  "cepstrum": {
+    "outer_precision": 0.9551282051282052,
+    "prevalence": 0.41354031910306166,
+    "cluster_boot95_precision": [
+      0.0,
+      1.0
+    ],
+    "cluster_boot95_precision_minus_prevalence": [
+      -0.20689655172413793,
+      0.712985680510327
+    ],
+    "resamples_with_no_outer_call": 160,
+    "n_bearings": 29,
+    "fault_bearings_with_any_fault_verdict": [
+      "KA01",
+      "KA03",
+      "KA04",
+      "KA07",
+      "KA08",
+      "KA09",
+      "KA16",
+      "KI01",
+      "KI04",
+      "KI05",
+      "KI07",
+      "KI08",
+      "KI16",
+      "KI17",
+      "KI18"
+    ]
+  }
+}

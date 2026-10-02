@@ -1,0 +1,25 @@
+{
+  "env": {
+    "device": "Tesla T4",
+    "capability": [
+      7,
+      5
+    ],
+    "torch": "2.10.0+cu128",
+    "python": "3.12.13"
+  },
+  "runs": [
+    {
+      "dataset": "JNU",
+      "variant": "as_released",
+      "rc": 0,
+      "seconds": 3077
+    },
+    {
+      "dataset": "JNU",
+      "variant": "final_checkpoint",
+      "rc": 0,
+      "seconds": 2695
+    }
+  ]
+}

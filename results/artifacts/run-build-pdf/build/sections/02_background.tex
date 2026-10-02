@@ -1,0 +1,66 @@
+\section{Background and related work}
+\label{sec:background}
+
+\subsection{Leakage in bearing-diagnosis evaluation}
+
+Hendriks, Dumond and Knox showed that the conventional condition-wise split of the CWRU data places the same physical
+bearings in training and test sets, and proposed benchmarking with independent sets of bearings \cite{hendriks2022}. Wheat et
+al.\ compared run-to-run, day-to-day and part-to-part splits for classical pipelines and found accuracy falling by more than
+40\,\% between the most and least separated splits \cite{wheat2024leakage}. Vieira et al.\ generalised bearing-wise
+partitioning, reformulated diagnosis as multi-label detection, and measured the inflation caused by segmentation-level and
+bearing-level leakage on UORED, Paderborn and CWRU with the training set held fixed and only the test set changed
+\cite{vieira2026}. On Paderborn their repetition-wise split --- training and test recordings from the same bearing at the
+same condition --- scores near-perfect Macro-AUROC against 54--77\,\% without leakage \cite[Table~12]{vieira2026}. Their study
+is supervised and, in their words, concerns ``training and testing within a single testbench''; it does not evaluate
+adaptation. Matania et al.\ \cite{matania2024leakage} show how test--training separation should be constructed for bearing
+fault classification. Knap et al.\ published a leakage-safe cross-domain benchmark on CWRU and Paderborn with six fixed
+scenarios \cite{knap2026leakagesafe}; its default rule separates \emph{recordings}, and one scenario holds out bearings,
+which they report among the hardest. Kaya and Jobani report a fall from about 0.86 to 0.56 macro-F1 when Paderborn
+bearings are made disjoint in a supervised pipeline \cite{kaya2026}. Concurrently, Nagaswetha and Pathak adapt across
+Paderborn conditions with held-out bearings and find that an order-domain representation decides whether alignment helps
+\cite{nagaswetha2026}; they use source data and no leaky baseline.
+
+Beyond this field, Kapoor and Narayanan document leakage across 17 scientific disciplines and give the taxonomy we adopt
+\cite{kapoor2023leakage}, Saeb et al.\ show the record-wise versus subject-wise analogue in clinical prediction
+\cite{saeb2017}, and Geirhos et al.\ name the learning behaviour at stake: a shortcut that succeeds on the benchmark and fails
+under the intended shift \cite{geirhos2020shortcut}.
+
+\subsection{Source-free domain adaptation for bearings}
+
+SHOT established the template on which most later methods build: freeze the source classifier, maximise information at the
+target and refine centroid-based pseudo-labels \cite{liang2020shot}. SDALR extends it by separating reliable from unreliable
+target predictions, using the reliable ones as supervision and the unreliable ones through an entropy term, and reports
+\SI{96.8}{\percent} mean accuracy across Paderborn operating conditions \cite{sdalr2025}. Its Paderborn task has eight
+classes, each a single physical bearing (K001, KA04, KA15, KA22, KA30, KI14, KI17, KI21), and the same eight specimens form
+the source and the target, so the reported transfer is between operating conditions of known bearings. Other source-free
+work crosses rigs: Jeong et al.\ combine order normalisation with test-time training and evaluate on a test-only machine
+\cite{jeong2025}, and Bio-SFDA reports a CWRU-to-Paderborn task \cite{yoon2026biosfda}. A cross-rig target is
+bearing-disjoint by construction, but it changes rig, bearing type, sensor and often label space at once, so it cannot say
+how much of the loss is the specimen. Neither design asks how a source-free method fares on unseen bearings of the rig it
+was trained on, which is the question here.
+
+\subsection{Physics priors inside adaptation}
+
+Characteristic frequencies computed from geometry and speed are the natural prior for bearing diagnosis. PIUDA builds
+physical labels from fault-characteristic spectral energy and aligns them into pseudo-labels for transfer between different machines
+\cite{jia2024piuda}. Bio-SFDA gates and weights pseudo-labels with band-energy and signal-to-noise predicates at BPFO, BPFI
+and BSF computed on a short-time Fourier transform, with thresholds rescaled online from unlabelled target statistics
+\cite{yoon2026biosfda}. PCTL scores the envelope spectrum predicted from the model's features against characteristic
+frequencies and uses that score to supervise a confidence predictor while fine-tuning on a small labelled target set
+\cite{pctl2026}; it does not filter pseudo-labels. In none of these works is the rate at which the module accepts a fault on
+a healthy bearing reported. Because the Bio-SFDA task definition for Paderborn cannot be reconstructed from the article --- a
+ball class is listed although the Paderborn real-damage set contains no rolling-element damage --- we evaluate the gating
+\emph{mechanism as described, as we implemented it}, and make no comparison against the accuracy reported there.
+Schlachter et al.\ simulate pseudo-labelling with ground truth in source-free universal adaptation and report the upper
+level that perfect pseudo-labels reach \cite{schlachter2025}; our oracle filter is the keep-or-withhold version of that
+instrument.
+
+\subsection{Envelope analysis and the statistics of detection}
+
+The squared envelope spectrum is the standard carrier of second-order cyclostationary bearing signatures \cite{randall2011},
+usually after a band selection such as the fast kurtogram \cite{antoni2007kurtogram} and, where discrete components
+dominate, after discrete/random separation. Borghesani et al.\ derived the statistics of the squared envelope spectrum under
+coloured noise and the corresponding thresholds for testing cyclostationarity \cite{borghesani2013}. The gates compared here
+are built from those ingredients; none is claimed as new. Matania et al.\ project order-domain envelope spectra onto
+kinematic positions to obtain a machine-invariant representation \cite{matania2025}, the same idea as the harmonic
+coordinates used inside our comb tests and our kinematic-feature control.

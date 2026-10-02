@@ -1,0 +1,1045 @@
+[{"stream_name":"stdout","time":0.970572356,"data":"runner: /kaggle/input/datasets/rhrhrhrhrh/physgate-m0-code/sdalr_runner.py \n"}
+,{"stream_name":"stdout","time":0.971257027,"data":"sdalr: /kaggle/input/datasets/rhrhrhrhrh/physgate-m0-code \n"}
+,{"stream_name":"stdout","time":0.971263486,"data":"m1: /kaggle/input/datasets/rhrhrhrhrh/physgate-m1-data\n"}
+,{"stream_name":"stdout","time":7.506571988,"data":"{'device': 'Tesla T4', 'capability': [7, 5], 'torch': '2.10.0+cu128', 'python': '3.12.13', 'src_fold': 'B'}\n"}
+,{"stream_name":"stdout","time":7.5066096810000005,"data":"RUN /usr/bin/python3 -u /kaggle/input/datasets/rhrhrhrhrh/physgate-m0-code/sdalr_runner.py --sdalr /kaggle/input/datasets/rhrhrhrhrh/physgate-m0-code --m0 /kaggle/input/datasets/rhrhrhrhrh/physgate-m1-data --dataset PU_M1 --src-fold B --tgt-fold B --variant shot --work /kaggle/working/shot --seed 2024\n"}
+,{"stream_name":"stdout","time":23.269382289,"data":"\n"}
+,{"stream_name":"stdout","time":23.26941755,"data":"\n"}
+,{"stream_name":"stdout","time":23.269504456,"data":"现在开始拿源域训练集：(B1)N15_M01_F10 进行训练\n"}
+,{"stream_name":"stdout","time":23.269511092,"data":"源域读取路径：/kaggle/working/shot/sdalr_PU_shot/DATA_foldB/PU_M1_L3/N15_M01_F10_label.txt\n"}
+,{"stream_name":"stdout","time":23.269515161,"data":"excel输出位置：/kaggle/working/shot/weight_src_PU_M1_FB_s2024/NEW_PU/Source-源域\n"}
+,{"stream_name":"stdout","time":23.269519434,"data":"log\u0026pt输出位置：/kaggle/working/shot/weight_src_PU_M1_FB_s2024/NEW_PU/Source-源域/log\u0026pt/(B1)N15_M01_F10\n"}
+,{"stream_name":"stdout","time":23.26996045,"data":"特征图片输出位置：/kaggle/working/shot/weight_src_PU_M1_FB_s2024/NEW_PU/Picture-特征图/2026年09月15日20时28分/(B1)N15_M01_F10\n"}
+,{"stream_name":"stderr","time":23.27122133,"data":"sh: 1: Syntax error: word unexpected (expecting \")\")\n"}
+,{"stream_name":"stdout","time":23.271787265,"data":"源域训练开始\n"}
+,{"stream_name":"stderr","time":25.357017914,"data":"/usr/local/lib/python3.12/dist-packages/torch/nn/utils/weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.\n"}
+,{"stream_name":"stderr","time":25.357058654,"data":"  WeightNorm.apply(module, name, dim)\n"}
+,{"stream_name":"stdout","time":34.555432743,"data":"轮次:··1/·10 || loss:0.015 || 耗时：9.13s\n"}
+,{"stream_name":"stdout","time":42.542828139,"data":"轮次:··2/·10 || loss:0.019 || 耗时：7.93s\n"}
+,{"stream_name":"stdout","time":50.615462137,"data":"轮次:··3/·10 || loss:0.012 || 耗时：8.01s\n"}
+,{"stream_name":"stdout","time":58.871919384,"data":"轮次:··4/·10 || loss:0.006 || 耗时：8.19s\n"}
+,{"stream_name":"stdout","time":67.288917991,"data":"轮次:··5/·10 || loss:0.002 || 耗时：8.35s\n"}
+,{"stream_name":"stdout","time":67.927829927,"data":"任务: (B1)N15_M01_F10; mix批次:····0; 批次:··330/··660; 总正确率 = 99.82%\n"}
+,{"stream_name":"stdout","time":67.927865278,"data":"类型1 正确率： 100.00% -\u003e 1  100.00%, 2    0.00%, 3    0.00%\n"}
+,{"stream_name":"stdout","time":67.927870208,"data":"类型2 正确率：  99.00% -\u003e 1    0.00%, 2   99.47%, 3    0.53%\n"}
+,{"stream_name":"stdout","time":67.92788783,"data":"类型3 正确率： 100.00% -\u003e 1    0.00%, 2    0.00%, 3  100.00%\n"}
+,{"stream_name":"stdout","time":67.927893355,"data":"\n"}
+,{"stream_name":"stdout","time":67.927898315,"data":"\n"}
+,{"stream_name":"stdout","time":76.535032486,"data":"轮次:··6/·10 || loss:0.008 || 耗时：8.50s\n"}
+,{"stream_name":"stdout","time":85.270588407,"data":"轮次:··7/·10 || loss:0.023 || 耗时：8.67s\n"}
+,{"stream_name":"stdout","time":94.192888569,"data":"轮次:··8/·10 || loss:0.018 || 耗时：8.86s\n"}
+,{"stream_name":"stdout","time":103.282334806,"data":"轮次:··9/·10 || loss:0.000 || 耗时：9.02s\n"}
+,{"stream_name":"stdout","time":112.595746343,"data":"轮次:·10/·10 || loss:0.001 || 耗时：9.24s\n"}
+,{"stream_name":"stdout","time":113.22846006,"data":"任务: (B1)N15_M01_F10; mix批次:····0; 批次:··660/··660; 总正确率 = 99.82%\n"}
+,{"stream_name":"stdout","time":113.228493939,"data":"类型1 正确率： 100.00% -\u003e 1  100.00%, 2    0.00%, 3    0.00%\n"}
+,{"stream_name":"stdout","time":113.228501271,"data":"类型2 正确率：  99.00% -\u003e 1    0.00%, 2   99.47%, 3    0.53%\n"}
+,{"stream_name":"stdout","time":113.228507245,"data":"类型3 正确率： 100.00% -\u003e 1    0.00%, 2    0.00%, 3  100.00%\n"}
+,{"stream_name":"stdout","time":113.228512791,"data":"\n"}
+,{"stream_name":"stdout","time":113.228517902,"data":"\n"}
+,{"stream_name":"stdout","time":114.578318756,"data":"测试集任务: (B1)N15_M01_F10; 总正确率 = 100.00%\n"}
+,{"stream_name":"stdout","time":114.578351998,"data":"类型1 正确率： 100.00% -\u003e 1  100.00%, 2    0.00%, 3    0.00%\n"}
+,{"stream_name":"stdout","time":114.578359382,"data":"类型2 正确率： 100.00% -\u003e 1    0.00%, 2  100.00%, 3    0.00%\n"}
+,{"stream_name":"stdout","time":114.578365389,"data":"类型3 正确率： 100.00% -\u003e 1    0.00%, 2    0.00%, 3  100.00%\n"}
+,{"stream_name":"stdout","time":114.578371189,"data":"\n"}
+,{"stream_name":"stdout","time":114.578376362,"data":"\n"}
+,{"stream_name":"stdout","time":114.592075294,"data":"源域训练结束\n"}
+,{"stream_name":"stdout","time":114.592097598,"data":"\n"}
+,{"stream_name":"stdout","time":114.59210311,"data":"训练好之后，测试目标域\n"}
+,{"stream_name":"stdout","time":114.592172715,"data":"目标域路径：/kaggle/working/shot/sdalr_PU_shot/DATA_foldB/PU_M1_L3/N15_M07_F10_label.txt\n"}
+,{"stream_name":"stderr","time":114.950372231,"data":"/usr/local/lib/python3.12/dist-packages/torch/nn/utils/weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.\n"}
+,{"stream_name":"stderr","time":114.950411137,"data":"  WeightNorm.apply(module, name, dim)\n"}
+,{"stream_name":"stdout","time":116.256872684,"data":"测试目标数据集结果如下：\n"}
+,{"stream_name":"stdout","time":116.256897402,"data":"任务: (B1)N15_M01_F10→(B2)N15_M07_F10, 正确率 = 100.00%\n"}
+,{"stream_name":"stdout","time":116.256903493,"data":"类型1 正确率： 100.00% -\u003e 1  100.00%, 2    0.00%, 3    0.00%\n"}
+,{"stream_name":"stdout","time":116.256908786,"data":"类型2 正确率： 100.00% -\u003e 1    0.00%, 2  100.00%, 3    0.00%\n"}
+,{"stream_name":"stdout","time":116.256913976,"data":"类型3 正确率： 100.00% -\u003e 1    0.00%, 2    0.00%, 3  100.00%\n"}
+,{"stream_name":"stdout","time":116.256919108,"data":"\n"}
+,{"stream_name":"stdout","time":116.25738273,"data":"目标域路径：/kaggle/working/shot/sdalr_PU_shot/DATA_foldB/PU_M1_L3/N15_M07_F04_label.txt\n"}
+,{"stream_name":"stderr","time":116.613589836,"data":"/usr/local/lib/python3.12/dist-packages/torch/nn/utils/weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.\n"}
+,{"stream_name":"stderr","time":116.613630129,"data":"  WeightNorm.apply(module, name, dim)\n"}
+,{"stream_name":"stdout","time":117.924415723,"data":"测试目标数据集结果如下：\n"}
+,{"stream_name":"stdout","time":117.924465194,"data":"任务: (B1)N15_M01_F10→(B3)N15_M07_F04, 正确率 = 97.53%\n"}
+,{"stream_name":"stdout","time":117.924497895,"data":"类型1 正确率： 100.00% -\u003e 1  100.00%, 2    0.00%, 3    0.00%\n"}
+,{"stream_name":"stdout","time":117.924503316,"data":"类型2 正确率：  93.00% -\u003e 1    0.00%, 2   93.10%, 3    6.90%\n"}
+,{"stream_name":"stdout","time":117.924507704,"data":"类型3 正确率：  99.00% -\u003e 1    0.52%, 2    0.00%, 3   99.48%\n"}
+,{"stream_name":"stdout","time":117.924511829,"data":"\n"}
+,{"stream_name":"stdout","time":117.924604005,"data":"\n"}
+,{"stream_name":"stdout","time":117.924610475,"data":"\n"}
+,{"stream_name":"stdout","time":117.924613993,"data":"现在开始拿源域训练集：(B2)N15_M07_F10 进行训练\n"}
+,{"stream_name":"stdout","time":117.92461835,"data":"源域读取路径：/kaggle/working/shot/sdalr_PU_shot/DATA_foldB/PU_M1_L3/N15_M07_F10_label.txt\n"}
+,{"stream_name":"stdout","time":117.924622191,"data":"excel输出位置：/kaggle/working/shot/weight_src_PU_M1_FB_s2024/NEW_PU/Source-源域\n"}
+,{"stream_name":"stdout","time":117.925023224,"data":"log\u0026pt输出位置：/kaggle/working/shot/weight_src_PU_M1_FB_s2024/NEW_PU/Source-源域/log\u0026pt/(B2)N15_M07_F10\n"}
+,{"stream_name":"stdout","time":117.925044671,"data":"特征图片输出位置：/kaggle/working/shot/weight_src_PU_M1_FB_s2024/NEW_PU/Picture-特征图/2026年09月15日20时28分/(B2)N15_M07_F10\n"}
+,{"stream_name":"stderr","time":117.926462937,"data":"sh: 1: Syntax error: word unexpected (expecting \")\")\n"}
+,{"stream_name":"stdout","time":117.927036025,"data":"源域训练开始\n"}
+,{"stream_name":"stderr","time":119.676519749,"data":"/usr/local/lib/python3.12/dist-packages/torch/nn/utils/weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.\n"}
+,{"stream_name":"stderr","time":119.6765591,"data":"  WeightNorm.apply(module, name, dim)\n"}
+,{"stream_name":"stdout","time":129.128702485,"data":"轮次:··1/·10 || loss:0.006 || 耗时：9.38s\n"}
+,{"stream_name":"stdout","time":138.461874538,"data":"轮次:··2/·10 || loss:0.011 || 耗时：9.26s\n"}
+,{"stream_name":"stdout","time":147.73304062,"data":"轮次:··3/·10 || loss:0.001 || 耗时：9.20s\n"}
+,{"stream_name":"stdout","time":156.840960789,"data":"轮次:··4/·10 || loss:0.001 || 耗时：9.04s\n"}
+,{"stream_name":"stdout","time":165.893225066,"data":"轮次:··5/·10 || loss:0.007 || 耗时：8.99s\n"}
+,{"stream_name":"stdout","time":166.497250196,"data":"任务: (B2)N15_M07_F10; mix批次:····0; 批次:··330/··660; 总正确率 = 99.46%\n"}
+,{"stream_name":"stdout","time":166.497280768,"data":"类型1 正确率： 100.00% -\u003e 1  100.00%, 2    0.00%, 3    0.00%\n"}
+,{"stream_name":"stdout","time":166.497286882,"data":"类型2 正确率：  98.00% -\u003e 1    0.00%, 2   98.39%, 3    1.61%\n"}
+,{"stream_name":"stdout","time":166.497291718,"data":"类型3 正确率： 100.00% -\u003e 1    0.00%, 2    0.00%, 3  100.00%\n"}
+,{"stream_name":"stdout","time":166.497296235,"data":"\n"}
+,{"stream_name":"stdout","time":166.497310015,"data":"\n"}
+,{"stream_name":"stdout","time":175.556121738,"data":"轮次:··6/·10 || loss:0.058 || 耗时：8.96s\n"}
+,{"stream_name":"stdout","time":184.623334438,"data":"轮次:··7/·10 || loss:0.002 || 耗时：9.00s\n"}
+,{"stream_name":"stdout","time":193.757531859,"data":"轮次:··8/·10 || loss:0.003 || 耗时：9.07s\n"}
+,{"stream_name":"stdout","time":202.982563458,"data":"轮次:··9/·10 || loss:0.001 || 耗时：9.16s\n"}
+,{"stream_name":"stdout","time":212.281284479,"data":"轮次:·10/·10 || loss:0.001 || 耗时：9.23s\n"}
+,{"stream_name":"stdout","time":212.89794856,"data":"任务: (B2)N15_M07_F10; mix批次:····0; 批次:··660/··660; 总正确率 = 100.00%\n"}
+,{"stream_name":"stdout","time":212.898027698,"data":"类型1 正确率： 100.00% -\u003e 1  100.00%, 2    0.00%, 3    0.00%\n"}
+,{"stream_name":"stdout","time":212.898036539,"data":"类型2 正确率： 100.00% -\u003e 1    0.00%, 2  100.00%, 3    0.00%\n"}
+,{"stream_name":"stdout","time":212.898041102,"data":"类型3 正确率： 100.00% -\u003e 1    0.00%, 2    0.00%, 3  100.00%\n"}
+,{"stream_name":"stdout","time":212.898051091,"data":"\n"}
+,{"stream_name":"stdout","time":212.898054037,"data":"\n"}
+,{"stream_name":"stdout","time":214.197818168,"data":"测试集任务: (B2)N15_M07_F10; 总正确率 = 99.84%\n"}
+,{"stream_name":"stdout","time":214.197847889,"data":"类型1 正确率： 100.00% -\u003e 1  100.00%, 2    0.00%, 3    0.00%\n"}
+,{"stream_name":"stdout","time":214.197853893,"data":"类型2 正确率： 100.00% -\u003e 1    0.00%, 2   99.75%, 3    0.25%\n"}
+,{"stream_name":"stdout","time":214.197858279,"data":"类型3 正确率： 100.00% -\u003e 1    0.24%, 2    0.00%, 3   99.76%\n"}
+,{"stream_name":"stdout","time":214.197862581,"data":"\n"}
+,{"stream_name":"stdout","time":214.197866355,"data":"\n"}
+,{"stream_name":"stdout","time":214.206836974,"data":"源域训练结束\n"}
+,{"stream_name":"stdout","time":214.206857869,"data":"\n"}
+,{"stream_name":"stdout","time":214.206861588,"data":"训练好之后，测试目标域\n"}
+,{"stream_name":"stdout","time":214.206865001,"data":"目标域路径：/kaggle/working/shot/sdalr_PU_shot/DATA_foldB/PU_M1_L3/N15_M01_F10_label.txt\n"}
+,{"stream_name":"stderr","time":214.570553887,"data":"/usr/local/lib/python3.12/dist-packages/torch/nn/utils/weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.\n"}
+,{"stream_name":"stderr","time":214.570594782,"data":"  WeightNorm.apply(module, name, dim)\n"}
+,{"stream_name":"stdout","time":215.831843808,"data":"测试目标数据集结果如下：\n"}
+,{"stream_name":"stdout","time":215.831878215,"data":"任务: (B2)N15_M07_F10→(B1)N15_M01_F10, 正确率 = 99.83%\n"}
+,{"stream_name":"stdout","time":215.831884277,"data":"类型1 正确率： 100.00% -\u003e 1  100.00%, 2    0.00%, 3    0.00%\n"}
+,{"stream_name":"stdout","time":215.831889701,"data":"类型2 正确率： 100.00% -\u003e 1    0.00%, 2   99.75%, 3    0.25%\n"}
+,{"stream_name":"stdout","time":215.831895007,"data":"类型3 正确率： 100.00% -\u003e 1    0.25%, 2    0.00%, 3   99.75%\n"}
+,{"stream_name":"stdout","time":215.831900051,"data":"\n"}
+,{"stream_name":"stdout","time":215.832340275,"data":"目标域路径：/kaggle/working/shot/sdalr_PU_shot/DATA_foldB/PU_M1_L3/N15_M07_F04_label.txt\n"}
+,{"stream_name":"stderr","time":216.178446839,"data":"/usr/local/lib/python3.12/dist-packages/torch/nn/utils/weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.\n"}
+,{"stream_name":"stderr","time":216.178483554,"data":"  WeightNorm.apply(module, name, dim)\n"}
+,{"stream_name":"stdout","time":217.437019192,"data":"测试目标数据集结果如下：\n"}
+,{"stream_name":"stdout","time":217.437053003,"data":"任务: (B2)N15_M07_F10→(B3)N15_M07_F04, 正确率 = 96.57%\n"}
+,{"stream_name":"stdout","time":217.437057854,"data":"类型1 正确率： 100.00% -\u003e 1  100.00%, 2    0.00%, 3    0.00%\n"}
+,{"stream_name":"stdout","time":217.43706251,"data":"类型2 正确率：  91.00% -\u003e 1    0.00%, 2   90.78%, 3    9.22%\n"}
+,{"stream_name":"stdout","time":217.43706666,"data":"类型3 正确率：  99.00% -\u003e 1    1.06%, 2    0.00%, 3   98.94%\n"}
+,{"stream_name":"stdout","time":217.437092589,"data":"\n"}
+,{"stream_name":"stdout","time":217.437453914,"data":"\n"}
+,{"stream_name":"stdout","time":217.437460258,"data":"\n"}
+,{"stream_name":"stdout","time":217.437553088,"data":"现在开始拿源域训练集：(B3)N15_M07_F04 进行训练\n"}
+,{"stream_name":"stdout","time":217.437558363,"data":"源域读取路径：/kaggle/working/shot/sdalr_PU_shot/DATA_foldB/PU_M1_L3/N15_M07_F04_label.txt\n"}
+,{"stream_name":"stdout","time":217.43756157,"data":"excel输出位置：/kaggle/working/shot/weight_src_PU_M1_FB_s2024/NEW_PU/Source-源域\n"}
+,{"stream_name":"stdout","time":217.43756464,"data":"log\u0026pt输出位置：/kaggle/working/shot/weight_src_PU_M1_FB_s2024/NEW_PU/Source-源域/log\u0026pt/(B3)N15_M07_F04\n"}
+,{"stream_name":"stdout","time":217.437701951,"data":"特征图片输出位置：/kaggle/working/shot/weight_src_PU_M1_FB_s2024/NEW_PU/Picture-特征图/2026年09月15日20时28分/(B3)N15_M07_F04\n"}
+,{"stream_name":"stderr","time":217.439571405,"data":"sh: 1: Syntax error: word unexpected (expecting \")\")\n"}
+,{"stream_name":"stdout","time":217.440156337,"data":"源域训练开始\n"}
+,{"stream_name":"stderr","time":219.151651785,"data":"/usr/local/lib/python3.12/dist-packages/torch/nn/utils/weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.\n"}
+,{"stream_name":"stderr","time":219.151705164,"data":"  WeightNorm.apply(module, name, dim)\n"}
+,{"stream_name":"stdout","time":228.400120074,"data":"轮次:··1/·10 || loss:0.004 || 耗时：9.18s\n"}
+,{"stream_name":"stdout","time":237.661572025,"data":"轮次:··2/·10 || loss:0.003 || 耗时：9.19s\n"}
+,{"stream_name":"stdout","time":246.898064479,"data":"轮次:··3/·10 || loss:0.082 || 耗时：9.17s\n"}
+,{"stream_name":"stdout","time":256.120686787,"data":"轮次:··4/·10 || loss:0.019 || 耗时：9.15s\n"}
+,{"stream_name":"stdout","time":265.325164327,"data":"轮次:··5/·10 || loss:0.002 || 耗时：9.14s\n"}
+,{"stream_name":"stdout","time":265.934941821,"data":"任务: (B3)N15_M07_F04; mix批次:····0; 批次:··330/··660; 总正确率 = 99.65%\n"}
+,{"stream_name":"stdout","time":265.934973721,"data":"类型1 正确率： 100.00% -\u003e 1  100.00%, 2    0.00%, 3    0.00%\n"}
+,{"stream_name":"stdout","time":265.934980815,"data":"类型2 正确率： 100.00% -\u003e 1    0.00%, 2  100.00%, 3    0.00%\n"}
+,{"stream_name":"stdout","time":265.934986799,"data":"类型3 正确率：  99.00% -\u003e 1    0.00%, 2    1.04%, 3   98.96%\n"}
+,{"stream_name":"stdout","time":265.935009352,"data":"\n"}
+,{"stream_name":"stdout","time":265.935016115,"data":"\n"}
+,{"stream_name":"stdout","time":275.154398392,"data":"轮次:··6/·10 || loss:0.001 || 耗时：9.12s\n"}
+,{"stream_name":"stdout","time":284.350875416,"data":"轮次:··7/·10 || loss:0.001 || 耗时：9.13s\n"}
+,{"stream_name":"stdout","time":293.545357903,"data":"轮次:··8/·10 || loss:0.009 || 耗时：9.13s\n"}
+,{"stream_name":"stdout","time":302.743154534,"data":"轮次:··9/·10 || loss:0.001 || 耗时：9.13s\n"}
+,{"stream_name":"stdout","time":311.941897847,"data":"轮次:·10/·10 || loss:0.001 || 耗时：9.13s\n"}
+,{"stream_name":"stdout","time":312.550038245,"data":"任务: (B3)N15_M07_F04; mix批次:····0; 批次:··660/··660; 总正确率 = 99.65%\n"}
+,{"stream_name":"stdout","time":312.550072959,"data":"类型1 正确率： 100.00% -\u003e 1  100.00%, 2    0.00%, 3    0.00%\n"}
+,{"stream_name":"stdout","time":312.550079008,"data":"类型2 正确率： 100.00% -\u003e 1    0.00%, 2  100.00%, 3    0.00%\n"}
+,{"stream_name":"stdout","time":312.550083604,"data":"类型3 正确率：  99.00% -\u003e 1    0.00%, 2    1.04%, 3   98.96%\n"}
+,{"stream_name":"stdout","time":312.550100339,"data":"\n"}
+,{"stream_name":"stdout","time":312.55010377,"data":"\n"}
+,{"stream_name":"stdout","time":313.838026732,"data":"测试集任务: (B3)N15_M07_F04; 总正确率 = 100.00%\n"}
+,{"stream_name":"stdout","time":313.838051602,"data":"类型1 正确率： 100.00% -\u003e 1  100.00%, 2    0.00%, 3    0.00%\n"}
+,{"stream_name":"stdout","time":313.838055712,"data":"类型2 正确率： 100.00% -\u003e 1    0.00%, 2  100.00%, 3    0.00%\n"}
+,{"stream_name":"stdout","time":313.838059186,"data":"类型3 正确率： 100.00% -\u003e 1    0.00%, 2    0.00%, 3  100.00%\n"}
+,{"stream_name":"stdout","time":313.838062853,"data":"\n"}
+,{"stream_name":"stdout","time":313.838065877,"data":"\n"}
+,{"stream_name":"stdout","time":313.846202337,"data":"源域训练结束\n"}
+,{"stream_name":"stdout","time":313.846213929,"data":"\n"}
+,{"stream_name":"stdout","time":313.846217917,"data":"训练好之后，测试目标域\n"}
+,{"stream_name":"stdout","time":313.846221603,"data":"目标域路径：/kaggle/working/shot/sdalr_PU_shot/DATA_foldB/PU_M1_L3/N15_M01_F10_label.txt\n"}
+,{"stream_name":"stderr","time":314.225179642,"data":"/usr/local/lib/python3.12/dist-packages/torch/nn/utils/weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.\n"}
+,{"stream_name":"stderr","time":314.22521506,"data":"  WeightNorm.apply(module, name, dim)\n"}
+,{"stream_name":"stdout","time":315.469100917,"data":"测试目标数据集结果如下：\n"}
+,{"stream_name":"stdout","time":315.469131155,"data":"任务: (B3)N15_M07_F04→(B1)N15_M01_F10, 正确率 = 99.05%\n"}
+,{"stream_name":"stdout","time":315.469135145,"data":"类型1 正确率： 100.00% -\u003e 1   99.75%, 2    0.00%, 3    0.25%\n"}
+,{"stream_name":"stdout","time":315.469138767,"data":"类型2 正确率： 100.00% -\u003e 1    0.00%, 2  100.00%, 3    0.00%\n"}
+,{"stream_name":"stdout","time":315.469142049,"data":"类型3 正确率：  97.00% -\u003e 1    0.00%, 2    2.61%, 3   97.39%\n"}
+,{"stream_name":"stdout","time":315.469145156,"data":"\n"}
+,{"stream_name":"stdout","time":315.469488852,"data":"目标域路径：/kaggle/working/shot/sdalr_PU_shot/DATA_foldB/PU_M1_L3/N15_M07_F10_label.txt\n"}
+,{"stream_name":"stderr","time":315.834133001,"data":"/usr/local/lib/python3.12/dist-packages/torch/nn/utils/weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.\n"}
+,{"stream_name":"stderr","time":315.834172083,"data":"  WeightNorm.apply(module, name, dim)\n"}
+,{"stream_name":"stdout","time":317.073274283,"data":"测试目标数据集结果如下：\n"}
+,{"stream_name":"stdout","time":317.073308904,"data":"任务: (B3)N15_M07_F04→(B2)N15_M07_F10, 正确率 = 99.35%\n"}
+,{"stream_name":"stdout","time":317.073313111,"data":"类型1 正确率： 100.00% -\u003e 1  100.00%, 2    0.00%, 3    0.00%\n"}
+,{"stream_name":"stdout","time":317.073316817,"data":"类型2 正确率： 100.00% -\u003e 1    0.00%, 2  100.00%, 3    0.00%\n"}
+,{"stream_name":"stdout","time":317.073320014,"data":"类型3 正确率：  98.00% -\u003e 1    0.00%, 2    1.94%, 3   98.06%\n"}
+,{"stream_name":"stdout","time":317.073323139,"data":"\n"}
+,{"stream_name":"stdout","time":317.081944566,"data":"[src_pretrain_RES_PU.py --folder_root /kaggle/working/shot/sdalr_PU_shot/DATA_foldB --seed 2024 --class_num 3 --data_name PU_M1_L3 --output /kaggle/working/shot/weight_src_PU_M1_FB_s2024] 294s\n"}
+,{"stream_name":"stdout","time":317.122124864,"data":"读取源域路径：/kaggle/working/shot/weight_PU_M1_shot_FBtoB_s2024/NEW_PU/Source-源域/log\u0026pt/(B1)N15_M01_F10\n"}
+,{"stream_name":"stdout","time":317.122172124,"data":"excel输出位置：/kaggle/working/shot/weight_PU_M1_shot_FBtoB_s2024/NEW_PU/Target-目标域\n"}
+,{"stream_name":"stdout","time":317.122212603,"data":"特征图片输出位置：/kaggle/working/shot/weight_PU_M1_shot_FBtoB_s2024/NEW_PU/Picture-特征图/2026年09月15日20时33分/(B1)N15_M01_F10\n"}
+,{"stream_name":"stderr","time":317.155537025,"data":"/usr/local/lib/python3.12/dist-packages/torch/nn/utils/weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.\n"}
+,{"stream_name":"stderr","time":317.155558646,"data":"  WeightNorm.apply(module, name, dim)\n"}
+,{"stream_name":"stdout","time":317.191728714,"data":"现在选取:(B1)N15_M01_F10 进行训练的源模型\n"}
+,{"stream_name":"stdout","time":317.191753108,"data":"现在进行：(B1)N15_M01_F10→(B2)N15_M07_F10 的迁移任务\n"}
+,{"stream_name":"stdout","time":317.191759695,"data":"log\u0026pt输出位置：/kaggle/working/shot/weight_PU_M1_shot_FBtoB_s2024/NEW_PU/Target-目标域/log\u0026pt/(B1)N15_M01_F10→(B2)N15_M07_F10\n"}
+,{"stream_name":"stderr","time":317.193305704,"data":"sh: 1: Syntax error: word unexpected (expecting \")\")\n"}
+,{"stream_name":"stdout","time":328.349436152,"data":"任务: (B1)N15_M01_F10→(B2)N15_M07_F10; 批次:····0/·1880;  总正确率: 99.97%\n"}
+,{"stream_name":"stdout","time":328.349487506,"data":"类型1 正确率： 100.00% -\u003e 1  100.00%, 2    0.00%, 3    0.00%\n"}
+,{"stream_name":"stdout","time":328.34949507,"data":"类型2 正确率： 100.00% -\u003e 1    0.00%, 2   99.95%, 3    0.05%\n"}
+,{"stream_name":"stdout","time":328.34950073,"data":"类型3 正确率： 100.00% -\u003e 1    0.00%, 2    0.05%, 3   99.95%\n"}
+,{"stream_name":"stdout","time":328.349505331,"data":"\n"}
+,{"stream_name":"stdout","time":328.349509431,"data":"\n"}
+,{"stream_name":"stdout","time":331.652019811,"data":"SHOT pseudo-labels: model 99.97% -\u003e centroid 99.97%\n"}
+,{"stream_name":"stderr","time":344.970045869,"data":"/kaggle/working/shot/sdalr_PU_shot/tar_adaptation_RES_PU.py:114: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.\n"}
+,{"stream_name":"stderr","time":344.970081645,"data":"Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)\n"}
+,{"stream_name":"stderr","time":344.970099921,"data":"  iter_num // epoch_len, args.max_epoch, float(classifier_loss), float(im_loss), time.time() - start))\n"}
+,{"stream_name":"stdout","time":344.970052964,"data":"轮次:··1/·20 || cls:1.722 || im:-1.037 || 耗时：22.65s\n"}
+,{"stream_name":"stdout","time":348.324057337,"data":"SHOT pseudo-labels: model 99.97% -\u003e centroid 99.97%\n"}
+,{"stream_name":"stdout","time":361.619331489,"data":"轮次:··2/·20 || cls:1.761 || im:-0.900 || 耗时：16.65s\n"}
+,{"stream_name":"stdout","time":364.958101481,"data":"SHOT pseudo-labels: model 99.67% -\u003e centroid 99.93%\n"}
+,{"stream_name":"stdout","time":378.125724763,"data":"轮次:··3/·20 || cls:1.526 || im:-0.988 || 耗时：16.51s\n"}
+,{"stream_name":"stdout","time":381.427123983,"data":"SHOT pseudo-labels: model 99.08% -\u003e centroid 99.90%\n"}
+,{"stream_name":"stdout","time":394.447032057,"data":"轮次:··4/·20 || cls:1.116 || im:-0.839 || 耗时：16.32s\n"}
+,{"stream_name":"stdout","time":397.722061838,"data":"SHOT pseudo-labels: model 97.65% -\u003e centroid 97.98%\n"}
+,{"stream_name":"stdout","time":410.766157375,"data":"轮次:··5/·20 || cls:0.971 || im:-0.881 || 耗时：16.32s\n"}
+,{"stream_name":"stdout","time":414.047660882,"data":"SHOT pseudo-labels: model 96.53% -\u003e centroid 91.45%\n"}
+,{"stream_name":"stdout","time":427.223215274,"data":"轮次:··6/·20 || cls:0.889 || im:-0.814 || 耗时：16.46s\n"}
+,{"stream_name":"stdout","time":430.53205309,"data":"SHOT pseudo-labels: model 96.75% -\u003e centroid 86.93%\n"}
+,{"stream_name":"stdout","time":443.777464054,"data":"轮次:··7/·20 || cls:0.988 || im:-0.824 || 耗时：16.55s\n"}
+,{"stream_name":"stdout","time":447.085080591,"data":"SHOT pseudo-labels: model 97.02% -\u003e centroid 84.92%\n"}
+,{"stream_name":"stdout","time":460.223919835,"data":"轮次:··8/·20 || cls:0.934 || im:-0.843 || 耗时：16.45s\n"}
+,{"stream_name":"stdout","time":463.517189649,"data":"SHOT pseudo-labels: model 97.52% -\u003e centroid 84.25%\n"}
+,{"stream_name":"stdout","time":476.626319449,"data":"轮次:··9/·20 || cls:0.852 || im:-0.761 || 耗时：16.40s\n"}
+,{"stream_name":"stdout","time":479.908081923,"data":"SHOT pseudo-labels: model 98.25% -\u003e centroid 83.57%\n"}
+,{"stream_name":"stdout","time":493.010511359,"data":"轮次:·10/·20 || cls:0.605 || im:-0.805 || 耗时：16.38s\n"}
+,{"stream_name":"stdout","time":496.300047184,"data":"SHOT pseudo-labels: model 98.98% -\u003e centroid 83.82%\n"}
+,{"stream_name":"stdout","time":509.374844202,"data":"轮次:·11/·20 || cls:0.680 || im:-0.719 || 耗时：16.36s\n"}
+,{"stream_name":"stdout","time":512.666121781,"data":"SHOT pseudo-labels: model 99.43% -\u003e centroid 83.12%\n"}
+,{"stream_name":"stdout","time":525.736187894,"data":"轮次:·12/·20 || cls:0.819 || im:-0.802 || 耗时：16.36s\n"}
+,{"stream_name":"stdout","time":529.03006363,"data":"SHOT pseudo-labels: model 99.65% -\u003e centroid 82.77%\n"}
+,{"stream_name":"stdout","time":542.164973494,"data":"轮次:·13/·20 || cls:0.681 || im:-0.796 || 耗时：16.43s\n"}
+,{"stream_name":"stdout","time":545.475141072,"data":"SHOT pseudo-labels: model 99.83% -\u003e centroid 83.55%\n"}
+,{"stream_name":"stdout","time":558.639259199,"data":"轮次:·14/·20 || cls:0.647 || im:-0.739 || 耗时：16.47s\n"}
+,{"stream_name":"stdout","time":561.949056675,"data":"SHOT pseudo-labels: model 99.90% -\u003e centroid 83.10%\n"}
+,{"stream_name":"stdout","time":575.134040123,"data":"轮次:·15/·20 || cls:0.688 || im:-0.774 || 耗时：16.49s\n"}
+,{"stream_name":"stdout","time":578.437033839,"data":"SHOT pseudo-labels: model 99.92% -\u003e centroid 83.20%\n"}
+,{"stream_name":"stdout","time":591.635953393,"data":"轮次:·16/·20 || cls:0.686 || im:-0.784 || 耗时：16.50s\n"}
+,{"stream_name":"stdout","time":594.931057631,"data":"SHOT pseudo-labels: model 99.93% -\u003e centroid 82.98%\n"}
+,{"stream_name":"stdout","time":608.112588031,"data":"轮次:·17/·20 || cls:0.724 || im:-0.679 || 耗时：16.48s\n"}
+,{"stream_name":"stdout","time":611.415054206,"data":"SHOT pseudo-labels: model 99.92% -\u003e centroid 81.93%\n"}
+,{"stream_name":"stdout","time":624.560523539,"data":"轮次:·18/·20 || cls:0.835 || im:-0.774 || 耗时：16.45s\n"}
+,{"stream_name":"stdout","time":627.866103848,"data":"SHOT pseudo-labels: model 99.93% -\u003e centroid 83.45%\n"}
+,{"stream_name":"stdout","time":640.99909494,"data":"轮次:·19/·20 || cls:0.774 || im:-0.747 || 耗时：16.44s\n"}
+,{"stream_name":"stdout","time":644.300065181,"data":"SHOT pseudo-labels: model 99.92% -\u003e centroid 76.58%\n"}
+,{"stream_name":"stdout","time":657.439345845,"data":"轮次:·20/·20 || cls:0.668 || im:-0.791 || 耗时：16.44s\n"}
+,{"stream_name":"stdout","time":663.525529531,"data":"测试集任务: (B1)N15_M01_F10→(B2)N15_M07_F10; 总正确率 = 99.93%\n"}
+,{"stream_name":"stdout","time":663.525565858,"data":"类型1 正确率： 100.00% -\u003e 1  100.00%, 2    0.00%, 3    0.00%\n"}
+,{"stream_name":"stdout","time":663.525588506,"data":"类型2 正确率： 100.00% -\u003e 1    0.00%, 2   99.85%, 3    0.15%\n"}
+,{"stream_name":"stdout","time":663.525593379,"data":"类型3 正确率： 100.00% -\u003e 1    0.00%, 2    0.05%, 3   99.95%\n"}
+,{"stream_name":"stdout","time":663.52559809,"data":"\n"}
+,{"stream_name":"stdout","time":663.525602085,"data":"\n"}
+,{"stream_name":"stdout","time":663.541452587,"data":"[tar_adaptation_RES_PU.py --folder_root /kaggle/working/shot/sdalr_PU_shot/DATA_foldB --seed 2024 --class_num 3 --data_name PU_M1_L3 --output /kaggle/working/shot/weight_PU_M1_shot_FBtoB_s2024 --s 0 --t 1 --lr 0.0005 --threshold 0.4 --K 0.6] 346s\n"}
+,{"stream_name":"stdout","time":663.58422522,"data":"读取源域路径：/kaggle/working/shot/weight_PU_M1_shot_FBtoB_s2024/NEW_PU/Source-源域/log\u0026pt/(B1)N15_M01_F10\n"}
+,{"stream_name":"stdout","time":663.584246399,"data":"excel输出位置：/kaggle/working/shot/weight_PU_M1_shot_FBtoB_s2024/NEW_PU/Target-目标域\n"}
+,{"stream_name":"stdout","time":663.584261232,"data":"特征图片输出位置：/kaggle/working/shot/weight_PU_M1_shot_FBtoB_s2024/NEW_PU/Picture-特征图/2026年09月15日20时39分/(B1)N15_M01_F10\n"}
+,{"stream_name":"stderr","time":663.617557979,"data":"/usr/local/lib/python3.12/dist-packages/torch/nn/utils/weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.\n"}
+,{"stream_name":"stderr","time":663.617575477,"data":"  WeightNorm.apply(module, name, dim)\n"}
+,{"stream_name":"stdout","time":663.65387746,"data":"现在选取:(B1)N15_M01_F10 进行训练的源模型\n"}
+,{"stream_name":"stdout","time":663.653892856,"data":"现在进行：(B1)N15_M01_F10→(B3)N15_M07_F04 的迁移任务\n"}
+,{"stream_name":"stdout","time":663.653895875,"data":"log\u0026pt输出位置：/kaggle/working/shot/weight_PU_M1_shot_FBtoB_s2024/NEW_PU/Target-目标域/log\u0026pt/(B1)N15_M01_F10→(B3)N15_M07_F04\n"}
+,{"stream_name":"stderr","time":663.655331157,"data":"sh: 1: Syntax error: word unexpected (expecting \")\")\n"}
+,{"stream_name":"stdout","time":674.796658473,"data":"任务: (B1)N15_M01_F10→(B3)N15_M07_F04; 批次:····0/·1880;  总正确率: 97.50%\n"}
+,{"stream_name":"stdout","time":674.796690033,"data":"类型1 正确率： 100.00% -\u003e 1  100.00%, 2    0.00%, 3    0.00%\n"}
+,{"stream_name":"stdout","time":674.796695708,"data":"类型2 正确率：  93.00% -\u003e 1    0.00%, 2   93.20%, 3    6.80%\n"}
+,{"stream_name":"stdout","time":674.796700173,"data":"类型3 正确率：  99.00% -\u003e 1    0.70%, 2    0.00%, 3   99.30%\n"}
+,{"stream_name":"stdout","time":674.796704072,"data":"\n"}
+,{"stream_name":"stdout","time":674.796707961,"data":"\n"}
+,{"stream_name":"stdout","time":678.065040625,"data":"SHOT pseudo-labels: model 97.50% -\u003e centroid 98.78%\n"}
+,{"stream_name":"stdout","time":691.307508597,"data":"轮次:··1/·20 || cls:1.768 || im:-1.004 || 耗时：22.54s\n"}
+,{"stream_name":"stdout","time":694.657343741,"data":"SHOT pseudo-labels: model 99.20% -\u003e centroid 99.23%\n"}
+,{"stream_name":"stdout","time":707.960832043,"data":"轮次:··2/·20 || cls:1.776 || im:-0.931 || 耗时：16.65s\n"}
+,{"stream_name":"stdout","time":711.305022911,"data":"SHOT pseudo-labels: model 98.98% -\u003e centroid 99.12%\n"}
+,{"stream_name":"stdout","time":724.468557086,"data":"轮次:··3/·20 || cls:1.247 || im:-0.950 || 耗时：16.51s\n"}
+,{"stream_name":"stdout","time":727.754079613,"data":"SHOT pseudo-labels: model 95.85% -\u003e centroid 87.27%\n"}
+,{"stream_name":"stdout","time":740.75123702,"data":"轮次:··4/·20 || cls:0.966 || im:-0.831 || 耗时：16.28s\n"}
+,{"stream_name":"stdout","time":744.031047136,"data":"SHOT pseudo-labels: model 91.92% -\u003e centroid 80.42%\n"}
+,{"stream_name":"stdout","time":757.073622409,"data":"轮次:··5/·20 || cls:0.897 || im:-0.818 || 耗时：16.32s\n"}
+,{"stream_name":"stdout","time":760.371062587,"data":"SHOT pseudo-labels: model 90.27% -\u003e centroid 78.88%\n"}
+,{"stream_name":"stdout","time":773.533374432,"data":"轮次:··6/·20 || cls:0.695 || im:-0.729 || 耗时：16.46s\n"}
+,{"stream_name":"stdout","time":776.924102529,"data":"SHOT pseudo-labels: model 89.83% -\u003e centroid 78.30%\n"}
+,{"stream_name":"stdout","time":790.172146543,"data":"轮次:··7/·20 || cls:0.914 || im:-0.731 || 耗时：16.64s\n"}
+,{"stream_name":"stdout","time":793.549026974,"data":"SHOT pseudo-labels: model 89.23% -\u003e centroid 76.35%\n"}
+,{"stream_name":"stdout","time":806.794304376,"data":"轮次:··8/·20 || cls:0.941 || im:-0.795 || 耗时：16.62s\n"}
+,{"stream_name":"stdout","time":810.11010862,"data":"SHOT pseudo-labels: model 90.83% -\u003e centroid 76.48%\n"}
+,{"stream_name":"stdout","time":823.312343073,"data":"轮次:··9/·20 || cls:0.893 || im:-0.742 || 耗时：16.52s\n"}
+,{"stream_name":"stdout","time":826.636151691,"data":"SHOT pseudo-labels: model 91.65% -\u003e centroid 75.73%\n"}
+,{"stream_name":"stdout","time":839.769567691,"data":"轮次:·10/·20 || cls:0.515 || im:-0.718 || 耗时：16.46s\n"}
+,{"stream_name":"stdout","time":843.086131604,"data":"SHOT pseudo-labels: model 92.00% -\u003e centroid 74.10%\n"}
+,{"stream_name":"stdout","time":856.16189329,"data":"轮次:·11/·20 || cls:0.718 || im:-0.693 || 耗时：16.39s\n"}
+,{"stream_name":"stdout","time":859.440018342,"data":"SHOT pseudo-labels: model 92.15% -\u003e centroid 75.43%\n"}
+,{"stream_name":"stdout","time":872.50196996,"data":"轮次:·12/·20 || cls:0.722 || im:-0.786 || 耗时：16.34s\n"}
+,{"stream_name":"stdout","time":875.777041891,"data":"SHOT pseudo-labels: model 92.58% -\u003e centroid 75.28%\n"}
+,{"stream_name":"stdout","time":888.873396354,"data":"轮次:·13/·20 || cls:0.741 || im:-0.762 || 耗时：16.37s\n"}
+,{"stream_name":"stdout","time":892.170050609,"data":"SHOT pseudo-labels: model 94.38% -\u003e centroid 73.27%\n"}
+,{"stream_name":"stdout","time":905.257627841,"data":"轮次:·14/·20 || cls:0.733 || im:-0.740 || 耗时：16.38s\n"}
+,{"stream_name":"stdout","time":908.569077659,"data":"SHOT pseudo-labels: model 94.93% -\u003e centroid 75.58%\n"}
+,{"stream_name":"stdout","time":921.661781847,"data":"轮次:·15/·20 || cls:0.661 || im:-0.699 || 耗时：16.40s\n"}
+,{"stream_name":"stdout","time":924.956219714,"data":"SHOT pseudo-labels: model 95.63% -\u003e centroid 74.65%\n"}
+,{"stream_name":"stdout","time":938.0318681,"data":"轮次:·16/·20 || cls:0.662 || im:-0.716 || 耗时：16.37s\n"}
+,{"stream_name":"stdout","time":941.32860391,"data":"SHOT pseudo-labels: model 96.50% -\u003e centroid 75.48%\n"}
+,{"stream_name":"stdout","time":954.430286043,"data":"轮次:·17/·20 || cls:0.788 || im:-0.715 || 耗时：16.40s\n"}
+,{"stream_name":"stdout","time":957.728074597,"data":"SHOT pseudo-labels: model 96.95% -\u003e centroid 76.07%\n"}
+,{"stream_name":"stdout","time":970.808686582,"data":"轮次:·18/·20 || cls:0.814 || im:-0.796 || 耗时：16.38s\n"}
+,{"stream_name":"stdout","time":974.126071332,"data":"SHOT pseudo-labels: model 96.68% -\u003e centroid 74.10%\n"}
+,{"stream_name":"stdout","time":987.238788938,"data":"轮次:·19/·20 || cls:0.844 || im:-0.733 || 耗时：16.43s\n"}
+,{"stream_name":"stdout","time":990.543067851,"data":"SHOT pseudo-labels: model 97.77% -\u003e centroid 76.97%\n"}
+,{"stream_name":"stdout","time":1003.637535936,"data":"轮次:·20/·20 || cls:0.700 || im:-0.753 || 耗时：16.40s\n"}
+,{"stream_name":"stdout","time":1009.719869114,"data":"测试集任务: (B1)N15_M01_F10→(B3)N15_M07_F04; 总正确率 = 97.85%\n"}
+,{"stream_name":"stdout","time":1009.719905535,"data":"类型1 正确率： 100.00% -\u003e 1  100.00%, 2    0.00%, 3    0.00%\n"}
+,{"stream_name":"stdout","time":1009.719916766,"data":"类型2 正确率：  95.00% -\u003e 1    0.00%, 2   94.90%, 3    5.10%\n"}
+,{"stream_name":"stdout","time":1009.719920535,"data":"类型3 正确率：  99.00% -\u003e 1    0.35%, 2    1.00%, 3   98.65%\n"}
+,{"stream_name":"stdout","time":1009.719923736,"data":"\n"}
+,{"stream_name":"stdout","time":1009.719926631,"data":"\n"}
+,{"stream_name":"stdout","time":1009.740713465,"data":"[tar_adaptation_RES_PU.py --folder_root /kaggle/working/shot/sdalr_PU_shot/DATA_foldB --seed 2024 --class_num 3 --data_name PU_M1_L3 --output /kaggle/working/shot/weight_PU_M1_shot_FBtoB_s2024 --s 0 --t 2 --lr 0.0005 --threshold 0.4 --K 0.6] 346s\n"}
+,{"stream_name":"stdout","time":1009.782224684,"data":"读取源域路径：/kaggle/working/shot/weight_PU_M1_shot_FBtoB_s2024/NEW_PU/Source-源域/log\u0026pt/(B2)N15_M07_F10\n"}
+,{"stream_name":"stdout","time":1009.782247728,"data":"excel输出位置：/kaggle/working/shot/weight_PU_M1_shot_FBtoB_s2024/NEW_PU/Target-目标域\n"}
+,{"stream_name":"stdout","time":1009.782315477,"data":"特征图片输出位置：/kaggle/working/shot/weight_PU_M1_shot_FBtoB_s2024/NEW_PU/Picture-特征图/2026年09月15日20时45分/(B2)N15_M07_F10\n"}
+,{"stream_name":"stderr","time":1009.817004224,"data":"/usr/local/lib/python3.12/dist-packages/torch/nn/utils/weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.\n"}
+,{"stream_name":"stderr","time":1009.817030553,"data":"  WeightNorm.apply(module, name, dim)\n"}
+,{"stream_name":"stdout","time":1009.85444555,"data":"现在选取:(B2)N15_M07_F10 进行训练的源模型\n"}
+,{"stream_name":"stdout","time":1009.854467997,"data":"现在进行：(B2)N15_M07_F10→(B1)N15_M01_F10 的迁移任务\n"}
+,{"stream_name":"stdout","time":1009.854473943,"data":"log\u0026pt输出位置：/kaggle/working/shot/weight_PU_M1_shot_FBtoB_s2024/NEW_PU/Target-目标域/log\u0026pt/(B2)N15_M07_F10→(B1)N15_M01_F10\n"}
+,{"stream_name":"stderr","time":1009.855914419,"data":"sh: 1: Syntax error: word unexpected (expecting \")\")\n"}
+,{"stream_name":"stdout","time":1020.964215049,"data":"任务: (B2)N15_M07_F10→(B1)N15_M01_F10; 批次:····0/·1880;  总正确率: 99.88%\n"}
+,{"stream_name":"stdout","time":1020.964242274,"data":"类型1 正确率： 100.00% -\u003e 1  100.00%, 2    0.00%, 3    0.00%\n"}
+,{"stream_name":"stdout","time":1020.964249355,"data":"类型2 正确率： 100.00% -\u003e 1    0.00%, 2   99.70%, 3    0.30%\n"}
+,{"stream_name":"stdout","time":1020.964254797,"data":"类型3 正确率： 100.00% -\u003e 1    0.05%, 2    0.00%, 3   99.95%\n"}
+,{"stream_name":"stdout","time":1020.964264404,"data":"\n"}
+,{"stream_name":"stdout","time":1020.964269745,"data":"\n"}
+,{"stream_name":"stdout","time":1024.243002891,"data":"SHOT pseudo-labels: model 99.88% -\u003e centroid 99.87%\n"}
+,{"stream_name":"stdout","time":1037.470012561,"data":"轮次:··1/·20 || cls:1.667 || im:-1.032 || 耗时：22.57s\n"}
+,{"stream_name":"stdout","time":1040.80122505,"data":"SHOT pseudo-labels: model 99.93% -\u003e centroid 99.90%\n"}
+,{"stream_name":"stdout","time":1054.108456751,"data":"轮次:··2/·20 || cls:1.841 || im:-0.954 || 耗时：16.64s\n"}
+,{"stream_name":"stdout","time":1057.421067442,"data":"SHOT pseudo-labels: model 99.82% -\u003e centroid 99.83%\n"}
+,{"stream_name":"stdout","time":1070.615310941,"data":"轮次:··3/·20 || cls:1.305 || im:-0.922 || 耗时：16.51s\n"}
+,{"stream_name":"stdout","time":1073.896087217,"data":"SHOT pseudo-labels: model 98.70% -\u003e centroid 99.63%\n"}
+,{"stream_name":"stdout","time":1086.930097867,"data":"轮次:··4/·20 || cls:0.977 || im:-0.909 || 耗时：16.31s\n"}
+,{"stream_name":"stdout","time":1090.210660739,"data":"SHOT pseudo-labels: model 96.72% -\u003e centroid 96.10%\n"}
+,{"stream_name":"stdout","time":1103.251799183,"data":"轮次:··5/·20 || cls:0.934 || im:-0.842 || 耗时：16.32s\n"}
+,{"stream_name":"stdout","time":1106.542119334,"data":"SHOT pseudo-labels: model 96.88% -\u003e centroid 94.75%\n"}
+,{"stream_name":"stdout","time":1119.644703857,"data":"轮次:··6/·20 || cls:0.720 || im:-0.841 || 耗时：16.39s\n"}
+,{"stream_name":"stdout","time":1122.943048287,"data":"SHOT pseudo-labels: model 96.23% -\u003e centroid 87.38%\n"}
+,{"stream_name":"stdout","time":1136.09565592,"data":"轮次:··7/·20 || cls:0.928 || im:-0.764 || 耗时：16.45s\n"}
+,{"stream_name":"stdout","time":1139.405054506,"data":"SHOT pseudo-labels: model 97.05% -\u003e centroid 87.07%\n"}
+,{"stream_name":"stdout","time":1152.56735213,"data":"轮次:··8/·20 || cls:0.906 || im:-0.748 || 耗时：16.47s\n"}
+,{"stream_name":"stdout","time":1155.865117761,"data":"SHOT pseudo-labels: model 97.93% -\u003e centroid 89.53%\n"}
+,{"stream_name":"stdout","time":1169.106986558,"data":"轮次:··9/·20 || cls:0.832 || im:-0.843 || 耗时：16.54s\n"}
+,{"stream_name":"stdout","time":1172.42014313,"data":"SHOT pseudo-labels: model 98.63% -\u003e centroid 88.12%\n"}
+,{"stream_name":"stdout","time":1185.628939961,"data":"轮次:·10/·20 || cls:0.677 || im:-0.817 || 耗时：16.52s\n"}
+,{"stream_name":"stdout","time":1188.946068832,"data":"SHOT pseudo-labels: model 98.88% -\u003e centroid 88.52%\n"}
+,{"stream_name":"stdout","time":1202.141053783,"data":"轮次:·11/·20 || cls:0.843 || im:-0.751 || 耗时：16.51s\n"}
+,{"stream_name":"stdout","time":1205.448057884,"data":"SHOT pseudo-labels: model 98.67% -\u003e centroid 84.97%\n"}
+,{"stream_name":"stdout","time":1218.568664302,"data":"轮次:·12/·20 || cls:0.768 || im:-0.801 || 耗时：16.43s\n"}
+,{"stream_name":"stdout","time":1221.860992857,"data":"SHOT pseudo-labels: model 98.58% -\u003e centroid 83.98%\n"}
+,{"stream_name":"stdout","time":1234.944306558,"data":"轮次:·13/·20 || cls:0.844 || im:-0.820 || 耗时：16.38s\n"}
+,{"stream_name":"stdout","time":1238.229188014,"data":"SHOT pseudo-labels: model 99.60% -\u003e centroid 87.28%\n"}
+,{"stream_name":"stdout","time":1251.311230757,"data":"轮次:·14/·20 || cls:0.699 || im:-0.711 || 耗时：16.37s\n"}
+,{"stream_name":"stdout","time":1254.595104069,"data":"SHOT pseudo-labels: model 99.48% -\u003e centroid 85.75%\n"}
+,{"stream_name":"stdout","time":1267.676860372,"data":"轮次:·15/·20 || cls:0.617 || im:-0.712 || 耗时：16.37s\n"}
+,{"stream_name":"stdout","time":1270.951092542,"data":"SHOT pseudo-labels: model 99.83% -\u003e centroid 86.67%\n"}
+,{"stream_name":"stdout","time":1284.013013535,"data":"轮次:·16/·20 || cls:0.743 || im:-0.809 || 耗时：16.34s\n"}
+,{"stream_name":"stdout","time":1287.276102947,"data":"SHOT pseudo-labels: model 99.80% -\u003e centroid 87.02%\n"}
+,{"stream_name":"stdout","time":1300.342767005,"data":"轮次:·17/·20 || cls:0.822 || im:-0.684 || 耗时：16.33s\n"}
+,{"stream_name":"stdout","time":1303.640127937,"data":"SHOT pseudo-labels: model 99.63% -\u003e centroid 86.80%\n"}
+,{"stream_name":"stdout","time":1316.724654847,"data":"轮次:·18/·20 || cls:0.821 || im:-0.746 || 耗时：16.38s\n"}
+,{"stream_name":"stdout","time":1319.993134989,"data":"SHOT pseudo-labels: model 99.67% -\u003e centroid 86.55%\n"}
+,{"stream_name":"stdout","time":1333.069214121,"data":"轮次:·19/·20 || cls:0.899 || im:-0.754 || 耗时：16.34s\n"}
+,{"stream_name":"stdout","time":1336.371097386,"data":"SHOT pseudo-labels: model 99.83% -\u003e centroid 85.95%\n"}
+,{"stream_name":"stdout","time":1349.475688038,"data":"轮次:·20/·20 || cls:0.633 || im:-0.801 || 耗时：16.41s\n"}
+,{"stream_name":"stdout","time":1355.564595752,"data":"测试集任务: (B2)N15_M07_F10→(B1)N15_M01_F10; 总正确率 = 99.78%\n"}
+,{"stream_name":"stdout","time":1355.564632748,"data":"类型1 正确率： 100.00% -\u003e 1   99.70%, 2    0.00%, 3    0.30%\n"}
+,{"stream_name":"stdout","time":1355.564644087,"data":"类型2 正确率： 100.00% -\u003e 1    0.00%, 2   99.80%, 3    0.20%\n"}
+,{"stream_name":"stdout","time":1355.564647586,"data":"类型3 正确率： 100.00% -\u003e 1    0.10%, 2    0.05%, 3   99.85%\n"}
+,{"stream_name":"stdout","time":1355.564651069,"data":"\n"}
+,{"stream_name":"stdout","time":1355.564654055,"data":"\n"}
+,{"stream_name":"stdout","time":1355.586352842,"data":"[tar_adaptation_RES_PU.py --folder_root /kaggle/working/shot/sdalr_PU_shot/DATA_foldB --seed 2024 --class_num 3 --data_name PU_M1_L3 --output /kaggle/working/shot/weight_PU_M1_shot_FBtoB_s2024 --s 1 --t 0 --lr 0.0005 --threshold 0.4 --K 0.6] 346s\n"}
+,{"stream_name":"stdout","time":1355.616580324,"data":"读取源域路径：/kaggle/working/shot/weight_PU_M1_shot_FBtoB_s2024/NEW_PU/Source-源域/log\u0026pt/(B2)N15_M07_F10\n"}
+,{"stream_name":"stdout","time":1355.616612815,"data":"excel输出位置：/kaggle/working/shot/weight_PU_M1_shot_FBtoB_s2024/NEW_PU/Target-目标域\n"}
+,{"stream_name":"stdout","time":1355.61664342,"data":"特征图片输出位置：/kaggle/working/shot/weight_PU_M1_shot_FBtoB_s2024/NEW_PU/Picture-特征图/2026年09月15日20时50分/(B2)N15_M07_F10\n"}
+,{"stream_name":"stderr","time":1355.65146471,"data":"/usr/local/lib/python3.12/dist-packages/torch/nn/utils/weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.\n"}
+,{"stream_name":"stderr","time":1355.651497724,"data":"  WeightNorm.apply(module, name, dim)\n"}
+,{"stream_name":"stdout","time":1355.69014454,"data":"现在选取:(B2)N15_M07_F10 进行训练的源模型\n"}
+,{"stream_name":"stdout","time":1355.690186203,"data":"现在进行：(B2)N15_M07_F10→(B3)N15_M07_F04 的迁移任务\n"}
+,{"stream_name":"stdout","time":1355.690192231,"data":"log\u0026pt输出位置：/kaggle/working/shot/weight_PU_M1_shot_FBtoB_s2024/NEW_PU/Target-目标域/log\u0026pt/(B2)N15_M07_F10→(B3)N15_M07_F04\n"}
+,{"stream_name":"stderr","time":1355.691467328,"data":"sh: 1: Syntax error: word unexpected (expecting \")\")\n"}
+,{"stream_name":"stdout","time":1366.858724333,"data":"任务: (B2)N15_M07_F10→(B3)N15_M07_F04; 批次:····0/·1880;  总正确率: 95.90%\n"}
+,{"stream_name":"stdout","time":1366.858760056,"data":"类型1 正确率： 100.00% -\u003e 1  100.00%, 2    0.00%, 3    0.00%\n"}
+,{"stream_name":"stdout","time":1366.858767749,"data":"类型2 正确率：  89.00% -\u003e 1    0.00%, 2   88.95%, 3   11.05%\n"}
+,{"stream_name":"stdout","time":1366.858772709,"data":"类型3 正确率：  99.00% -\u003e 1    1.25%, 2    0.00%, 3   98.75%\n"}
+,{"stream_name":"stdout","time":1366.858777343,"data":"\n"}
+,{"stream_name":"stdout","time":1366.858781482,"data":"\n"}
+,{"stream_name":"stdout","time":1370.14306677,"data":"SHOT pseudo-labels: model 95.90% -\u003e centroid 96.80%\n"}
+,{"stream_name":"stdout","time":1383.369585774,"data":"轮次:··1/·20 || cls:1.658 || im:-1.020 || 耗时：22.56s\n"}
+,{"stream_name":"stdout","time":1386.720122603,"data":"SHOT pseudo-labels: model 98.58% -\u003e centroid 98.67%\n"}
+,{"stream_name":"stdout","time":1400.025326196,"data":"轮次:··2/·20 || cls:1.844 || im:-0.967 || 耗时：16.66s\n"}
+,{"stream_name":"stdout","time":1403.383053294,"data":"SHOT pseudo-labels: model 98.32% -\u003e centroid 98.25%\n"}
+,{"stream_name":"stdout","time":1416.534188826,"data":"轮次:··3/·20 || cls:1.170 || im:-0.938 || 耗时：16.51s\n"}
+,{"stream_name":"stdout","time":1419.828068367,"data":"SHOT pseudo-labels: model 94.52% -\u003e centroid 85.58%\n"}
+,{"stream_name":"stdout","time":1432.877727981,"data":"轮次:··4/·20 || cls:0.970 || im:-0.871 || 耗时：16.34s\n"}
+,{"stream_name":"stdout","time":1436.145098598,"data":"SHOT pseudo-labels: model 91.08% -\u003e centroid 79.13%\n"}
+,{"stream_name":"stdout","time":1449.22795203,"data":"轮次:··5/·20 || cls:0.836 || im:-0.833 || 耗时：16.35s\n"}
+,{"stream_name":"stdout","time":1452.529049217,"data":"SHOT pseudo-labels: model 90.07% -\u003e centroid 76.42%\n"}
+,{"stream_name":"stdout","time":1465.688313452,"data":"轮次:··6/·20 || cls:0.763 || im:-0.790 || 耗时：16.46s\n"}
+,{"stream_name":"stdout","time":1468.987098002,"data":"SHOT pseudo-labels: model 88.98% -\u003e centroid 75.28%\n"}
+,{"stream_name":"stdout","time":1482.205291389,"data":"轮次:··7/·20 || cls:0.853 || im:-0.705 || 耗时：16.52s\n"}
+,{"stream_name":"stdout","time":1485.510147058,"data":"SHOT pseudo-labels: model 88.40% -\u003e centroid 72.30%\n"}
+,{"stream_name":"stdout","time":1498.702612184,"data":"轮次:··8/·20 || cls:0.831 || im:-0.765 || 耗时：16.50s\n"}
+,{"stream_name":"stdout","time":1502.013999585,"data":"SHOT pseudo-labels: model 89.93% -\u003e centroid 72.35%\n"}
+,{"stream_name":"stdout","time":1515.142301371,"data":"轮次:··9/·20 || cls:0.888 || im:-0.708 || 耗时：16.44s\n"}
+,{"stream_name":"stdout","time":1518.447131232,"data":"SHOT pseudo-labels: model 90.13% -\u003e centroid 71.35%\n"}
+,{"stream_name":"stdout","time":1531.556199565,"data":"轮次:·10/·20 || cls:0.524 || im:-0.710 || 耗时：16.41s\n"}
+,{"stream_name":"stdout","time":1534.823050697,"data":"SHOT pseudo-labels: model 89.80% -\u003e centroid 68.87%\n"}
+,{"stream_name":"stdout","time":1547.927469812,"data":"轮次:·11/·20 || cls:0.798 || im:-0.699 || 耗时：16.37s\n"}
+,{"stream_name":"stdout","time":1551.215086681,"data":"SHOT pseudo-labels: model 89.07% -\u003e centroid 69.18%\n"}
+,{"stream_name":"stdout","time":1564.302675782,"data":"轮次:·12/·20 || cls:0.688 || im:-0.789 || 耗时：16.38s\n"}
+,{"stream_name":"stdout","time":1567.59006558,"data":"SHOT pseudo-labels: model 89.22% -\u003e centroid 68.12%\n"}
+,{"stream_name":"stdout","time":1580.654420554,"data":"轮次:·13/·20 || cls:0.832 || im:-0.747 || 耗时：16.35s\n"}
+,{"stream_name":"stdout","time":1583.928010792,"data":"SHOT pseudo-labels: model 90.42% -\u003e centroid 64.50%\n"}
+,{"stream_name":"stdout","time":1597.006473074,"data":"轮次:·14/·20 || cls:0.703 || im:-0.721 || 耗时：16.35s\n"}
+,{"stream_name":"stdout","time":1600.291097102,"data":"SHOT pseudo-labels: model 90.60% -\u003e centroid 67.37%\n"}
+,{"stream_name":"stdout","time":1613.376648512,"data":"轮次:·15/·20 || cls:0.681 || im:-0.662 || 耗时：16.37s\n"}
+,{"stream_name":"stdout","time":1616.661070789,"data":"SHOT pseudo-labels: model 90.77% -\u003e centroid 65.67%\n"}
+,{"stream_name":"stdout","time":1629.727533906,"data":"轮次:·16/·20 || cls:0.710 || im:-0.723 || 耗时：16.35s\n"}
+,{"stream_name":"stdout","time":1633.019966011,"data":"SHOT pseudo-labels: model 91.32% -\u003e centroid 64.85%\n"}
+,{"stream_name":"stdout","time":1646.115382749,"data":"轮次:·17/·20 || cls:0.768 || im:-0.721 || 耗时：16.39s\n"}
+,{"stream_name":"stdout","time":1649.407055437,"data":"SHOT pseudo-labels: model 91.73% -\u003e centroid 65.55%\n"}
+,{"stream_name":"stdout","time":1662.480902872,"data":"轮次:·18/·20 || cls:0.767 || im:-0.754 || 耗时：16.37s\n"}
+,{"stream_name":"stdout","time":1665.759035358,"data":"SHOT pseudo-labels: model 91.48% -\u003e centroid 64.12%\n"}
+,{"stream_name":"stdout","time":1678.840883136,"data":"轮次:·19/·20 || cls:0.814 || im:-0.696 || 耗时：16.36s\n"}
+,{"stream_name":"stdout","time":1682.138099735,"data":"SHOT pseudo-labels: model 93.12% -\u003e centroid 64.58%\n"}
+,{"stream_name":"stdout","time":1695.245179123,"data":"轮次:·20/·20 || cls:0.623 || im:-0.774 || 耗时：16.40s\n"}
+,{"stream_name":"stdout","time":1701.327095641,"data":"测试集任务: (B2)N15_M07_F10→(B3)N15_M07_F04; 总正确率 = 92.83%\n"}
+,{"stream_name":"stdout","time":1701.327123012,"data":"类型1 正确率： 100.00% -\u003e 1   99.95%, 2    0.00%, 3    0.05%\n"}
+,{"stream_name":"stdout","time":1701.327129181,"data":"类型2 正确率：  86.00% -\u003e 1    0.00%, 2   85.70%, 3   14.30%\n"}
+,{"stream_name":"stdout","time":1701.327134306,"data":"类型3 正确率：  93.00% -\u003e 1    0.30%, 2    6.85%, 3   92.85%\n"}
+,{"stream_name":"stdout","time":1701.327139138,"data":"\n"}
+,{"stream_name":"stdout","time":1701.327143555,"data":"\n"}
+,{"stream_name":"stdout","time":1701.345231745,"data":"[tar_adaptation_RES_PU.py --folder_root /kaggle/working/shot/sdalr_PU_shot/DATA_foldB --seed 2024 --class_num 3 --data_name PU_M1_L3 --output /kaggle/working/shot/weight_PU_M1_shot_FBtoB_s2024 --s 1 --t 2 --lr 0.0005 --threshold 0.4 --K 0.6] 346s\n"}
+,{"stream_name":"stdout","time":1701.371754278,"data":"读取源域路径：/kaggle/working/shot/weight_PU_M1_shot_FBtoB_s2024/NEW_PU/Source-源域/log\u0026pt/(B3)N15_M07_F04\n"}
+,{"stream_name":"stdout","time":1701.371774055,"data":"excel输出位置：/kaggle/working/shot/weight_PU_M1_shot_FBtoB_s2024/NEW_PU/Target-目标域\n"}
+,{"stream_name":"stdout","time":1701.371877669,"data":"特征图片输出位置：/kaggle/working/shot/weight_PU_M1_shot_FBtoB_s2024/NEW_PU/Picture-特征图/2026年09月15日20时56分/(B3)N15_M07_F04\n"}
+,{"stream_name":"stderr","time":1701.404596248,"data":"/usr/local/lib/python3.12/dist-packages/torch/nn/utils/weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.\n"}
+,{"stream_name":"stderr","time":1701.404616698,"data":"  WeightNorm.apply(module, name, dim)\n"}
+,{"stream_name":"stdout","time":1701.44067148,"data":"现在选取:(B3)N15_M07_F04 进行训练的源模型\n"}
+,{"stream_name":"stdout","time":1701.440709673,"data":"现在进行：(B3)N15_M07_F04→(B1)N15_M01_F10 的迁移任务\n"}
+,{"stream_name":"stdout","time":1701.440715762,"data":"log\u0026pt输出位置：/kaggle/working/shot/weight_PU_M1_shot_FBtoB_s2024/NEW_PU/Target-目标域/log\u0026pt/(B3)N15_M07_F04→(B1)N15_M01_F10\n"}
+,{"stream_name":"stderr","time":1701.442092231,"data":"sh: 1: Syntax error: word unexpected (expecting \")\")\n"}
+,{"stream_name":"stdout","time":1712.487818091,"data":"任务: (B3)N15_M07_F04→(B1)N15_M01_F10; 批次:····0/·1880;  总正确率: 99.47%\n"}
+,{"stream_name":"stdout","time":1712.487860318,"data":"类型1 正确率： 100.00% -\u003e 1  100.00%, 2    0.00%, 3    0.00%\n"}
+,{"stream_name":"stdout","time":1712.487867474,"data":"类型2 正确率： 100.00% -\u003e 1    0.00%, 2  100.00%, 3    0.00%\n"}
+,{"stream_name":"stdout","time":1712.487872964,"data":"类型3 正确率：  98.00% -\u003e 1    0.00%, 2    1.60%, 3   98.40%\n"}
+,{"stream_name":"stdout","time":1712.487878177,"data":"\n"}
+,{"stream_name":"stdout","time":1712.487883321,"data":"\n"}
+,{"stream_name":"stdout","time":1715.769034149,"data":"SHOT pseudo-labels: model 99.47% -\u003e centroid 99.62%\n"}
+,{"stream_name":"stdout","time":1729.019954437,"data":"轮次:··1/·20 || cls:1.539 || im:-1.032 || 耗时：22.57s\n"}
+,{"stream_name":"stdout","time":1732.387049029,"data":"SHOT pseudo-labels: model 98.97% -\u003e centroid 99.20%\n"}
+,{"stream_name":"stdout","time":1745.687687479,"data":"轮次:··2/·20 || cls:1.915 || im:-0.847 || 耗时：16.67s\n"}
+,{"stream_name":"stdout","time":1749.007116315,"data":"SHOT pseudo-labels: model 96.02% -\u003e centroid 98.30%\n"}
+,{"stream_name":"stdout","time":1762.257161542,"data":"轮次:··3/·20 || cls:1.426 || im:-0.913 || 耗时：16.57s\n"}
+,{"stream_name":"stdout","time":1765.539261957,"data":"SHOT pseudo-labels: model 94.37% -\u003e centroid 97.52%\n"}
+,{"stream_name":"stdout","time":1778.592569141,"data":"轮次:··4/·20 || cls:1.431 || im:-0.939 || 耗时：16.34s\n"}
+,{"stream_name":"stdout","time":1781.860050098,"data":"SHOT pseudo-labels: model 93.32% -\u003e centroid 96.93%\n"}
+,{"stream_name":"stdout","time":1794.900033547,"data":"轮次:··5/·20 || cls:0.980 || im:-0.774 || 耗时：16.31s\n"}
+,{"stream_name":"stdout","time":1798.169119434,"data":"SHOT pseudo-labels: model 92.55% -\u003e centroid 96.12%\n"}
+,{"stream_name":"stdout","time":1811.277859289,"data":"轮次:··6/·20 || cls:0.823 || im:-0.849 || 耗时：16.38s\n"}
+,{"stream_name":"stdout","time":1814.561046018,"data":"SHOT pseudo-labels: model 92.28% -\u003e centroid 95.50%\n"}
+,{"stream_name":"stdout","time":1827.750653264,"data":"轮次:··7/·20 || cls:1.233 || im:-0.793 || 耗时：16.47s\n"}
+,{"stream_name":"stdout","time":1831.052053092,"data":"SHOT pseudo-labels: model 92.30% -\u003e centroid 94.33%\n"}
+,{"stream_name":"stdout","time":1844.280739465,"data":"轮次:··8/·20 || cls:1.037 || im:-0.814 || 耗时：16.53s\n"}
+,{"stream_name":"stdout","time":1847.577089652,"data":"SHOT pseudo-labels: model 91.55% -\u003e centroid 94.33%\n"}
+,{"stream_name":"stdout","time":1860.760637965,"data":"轮次:··9/·20 || cls:0.686 || im:-0.809 || 耗时：16.48s\n"}
+,{"stream_name":"stdout","time":1864.070543692,"data":"SHOT pseudo-labels: model 91.70% -\u003e centroid 94.08%\n"}
+,{"stream_name":"stdout","time":1877.237366131,"data":"轮次:·10/·20 || cls:0.805 || im:-0.767 || 耗时：16.48s\n"}
+,{"stream_name":"stdout","time":1880.529110033,"data":"SHOT pseudo-labels: model 92.50% -\u003e centroid 89.07%\n"}
+,{"stream_name":"stdout","time":1893.674259131,"data":"轮次:·11/·20 || cls:0.823 || im:-0.705 || 耗时：16.44s\n"}
+,{"stream_name":"stdout","time":1896.981068409,"data":"SHOT pseudo-labels: model 92.68% -\u003e centroid 84.52%\n"}
+,{"stream_name":"stdout","time":1910.108716848,"data":"轮次:·12/·20 || cls:0.860 || im:-0.805 || 耗时：16.43s\n"}
+,{"stream_name":"stdout","time":1913.406004992,"data":"SHOT pseudo-labels: model 92.70% -\u003e centroid 83.07%\n"}
+,{"stream_name":"stdout","time":1926.532276765,"data":"轮次:·13/·20 || cls:0.747 || im:-0.756 || 耗时：16.42s\n"}
+,{"stream_name":"stdout","time":1929.808056432,"data":"SHOT pseudo-labels: model 93.73% -\u003e centroid 87.83%\n"}
+,{"stream_name":"stdout","time":1942.902908371,"data":"轮次:·14/·20 || cls:0.681 || im:-0.670 || 耗时：16.37s\n"}
+,{"stream_name":"stdout","time":1946.198075768,"data":"SHOT pseudo-labels: model 94.65% -\u003e centroid 83.98%\n"}
+,{"stream_name":"stdout","time":1959.301096606,"data":"轮次:·15/·20 || cls:0.762 || im:-0.719 || 耗时：16.40s\n"}
+,{"stream_name":"stdout","time":1962.591560455,"data":"SHOT pseudo-labels: model 95.35% -\u003e centroid 87.07%\n"}
+,{"stream_name":"stdout","time":1975.689845028,"data":"轮次:·16/·20 || cls:0.801 || im:-0.725 || 耗时：16.39s\n"}
+,{"stream_name":"stdout","time":1978.988058863,"data":"SHOT pseudo-labels: model 95.72% -\u003e centroid 86.47%\n"}
+,{"stream_name":"stdout","time":1992.089693628,"data":"轮次:·17/·20 || cls:0.778 || im:-0.669 || 耗时：16.40s\n"}
+,{"stream_name":"stdout","time":1995.358106146,"data":"SHOT pseudo-labels: model 96.37% -\u003e centroid 85.02%\n"}
+,{"stream_name":"stdout","time":2008.427672832,"data":"轮次:·18/·20 || cls:0.809 || im:-0.698 || 耗时：16.34s\n"}
+,{"stream_name":"stdout","time":2011.707022623,"data":"SHOT pseudo-labels: model 96.90% -\u003e centroid 82.70%\n"}
+,{"stream_name":"stdout","time":2024.775961289,"data":"轮次:·19/·20 || cls:0.905 || im:-0.715 || 耗时：16.35s\n"}
+,{"stream_name":"stdout","time":2028.049056049,"data":"SHOT pseudo-labels: model 97.32% -\u003e centroid 83.32%\n"}
+,{"stream_name":"stdout","time":2041.129307444,"data":"轮次:·20/·20 || cls:0.648 || im:-0.787 || 耗时：16.35s\n"}
+,{"stream_name":"stdout","time":2047.180299056,"data":"测试集任务: (B3)N15_M07_F04→(B1)N15_M01_F10; 总正确率 = 97.73%\n"}
+,{"stream_name":"stdout","time":2047.180345985,"data":"类型1 正确率： 100.00% -\u003e 1   99.65%, 2    0.00%, 3    0.35%\n"}
+,{"stream_name":"stdout","time":2047.180357767,"data":"类型2 正确率：  96.00% -\u003e 1    0.05%, 2   96.35%, 3    3.60%\n"}
+,{"stream_name":"stdout","time":2047.180367153,"data":"类型3 正确率：  97.00% -\u003e 1    0.00%, 2    2.80%, 3   97.20%\n"}
+,{"stream_name":"stdout","time":2047.180372388,"data":"\n"}
+,{"stream_name":"stdout","time":2047.180376996,"data":"\n"}
+,{"stream_name":"stdout","time":2047.202857863,"data":"[tar_adaptation_RES_PU.py --folder_root /kaggle/working/shot/sdalr_PU_shot/DATA_foldB --seed 2024 --class_num 3 --data_name PU_M1_L3 --output /kaggle/working/shot/weight_PU_M1_shot_FBtoB_s2024 --s 2 --t 0 --lr 0.0005 --threshold 0.4 --K 0.6] 346s\n"}
+,{"stream_name":"stdout","time":2047.237618752,"data":"读取源域路径：/kaggle/working/shot/weight_PU_M1_shot_FBtoB_s2024/NEW_PU/Source-源域/log\u0026pt/(B3)N15_M07_F04\n"}
+,{"stream_name":"stdout","time":2047.237641403,"data":"excel输出位置：/kaggle/working/shot/weight_PU_M1_shot_FBtoB_s2024/NEW_PU/Target-目标域\n"}
+,{"stream_name":"stdout","time":2047.237698997,"data":"特征图片输出位置：/kaggle/working/shot/weight_PU_M1_shot_FBtoB_s2024/NEW_PU/Picture-特征图/2026年09月15日21时02分/(B3)N15_M07_F04\n"}
+,{"stream_name":"stderr","time":2047.271202133,"data":"/usr/local/lib/python3.12/dist-packages/torch/nn/utils/weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.\n"}
+,{"stream_name":"stderr","time":2047.271226038,"data":"  WeightNorm.apply(module, name, dim)\n"}
+,{"stream_name":"stdout","time":2047.308356365,"data":"现在选取:(B3)N15_M07_F04 进行训练的源模型\n"}
+,{"stream_name":"stdout","time":2047.308379079,"data":"现在进行：(B3)N15_M07_F04→(B2)N15_M07_F10 的迁移任务\n"}
+,{"stream_name":"stdout","time":2047.308385693,"data":"log\u0026pt输出位置：/kaggle/working/shot/weight_PU_M1_shot_FBtoB_s2024/NEW_PU/Target-目标域/log\u0026pt/(B3)N15_M07_F04→(B2)N15_M07_F10\n"}
+,{"stream_name":"stderr","time":2047.309685841,"data":"sh: 1: Syntax error: word unexpected (expecting \")\")\n"}
+,{"stream_name":"stdout","time":2058.468554484,"data":"任务: (B3)N15_M07_F04→(B2)N15_M07_F10; 批次:····0/·1880;  总正确率: 99.17%\n"}
+,{"stream_name":"stdout","time":2058.468588289,"data":"类型1 正确率： 100.00% -\u003e 1   99.95%, 2    0.00%, 3    0.05%\n"}
+,{"stream_name":"stdout","time":2058.468600143,"data":"类型2 正确率： 100.00% -\u003e 1    0.00%, 2  100.00%, 3    0.00%\n"}
+,{"stream_name":"stdout","time":2058.46860387,"data":"类型3 正确率：  98.00% -\u003e 1    0.00%, 2    2.45%, 3   97.55%\n"}
+,{"stream_name":"stdout","time":2058.468607034,"data":"\n"}
+,{"stream_name":"stdout","time":2058.468622666,"data":"\n"}
+,{"stream_name":"stdout","time":2061.721109895,"data":"SHOT pseudo-labels: model 99.17% -\u003e centroid 99.37%\n"}
+,{"stream_name":"stdout","time":2074.941502553,"data":"轮次:··1/·20 || cls:1.490 || im:-0.991 || 耗时：22.47s\n"}
+,{"stream_name":"stdout","time":2078.280071001,"data":"SHOT pseudo-labels: model 98.67% -\u003e centroid 98.88%\n"}
+,{"stream_name":"stdout","time":2091.595614109,"data":"轮次:··2/·20 || cls:2.047 || im:-0.915 || 耗时：16.65s\n"}
+,{"stream_name":"stdout","time":2094.908324954,"data":"SHOT pseudo-labels: model 95.28% -\u003e centroid 97.55%\n"}
+,{"stream_name":"stdout","time":2108.110727105,"data":"轮次:··3/·20 || cls:1.507 || im:-0.897 || 耗时：16.52s\n"}
+,{"stream_name":"stdout","time":2111.412076181,"data":"SHOT pseudo-labels: model 92.95% -\u003e centroid 96.60%\n"}
+,{"stream_name":"stdout","time":2124.441823941,"data":"轮次:··4/·20 || cls:1.393 || im:-0.888 || 耗时：16.33s\n"}
+,{"stream_name":"stdout","time":2127.71409296,"data":"SHOT pseudo-labels: model 92.33% -\u003e centroid 95.58%\n"}
+,{"stream_name":"stdout","time":2140.774845989,"data":"轮次:··5/·20 || cls:1.194 || im:-0.859 || 耗时：16.33s\n"}
+,{"stream_name":"stdout","time":2144.062087208,"data":"SHOT pseudo-labels: model 92.75% -\u003e centroid 93.88%\n"}
+,{"stream_name":"stdout","time":2157.169445629,"data":"轮次:··6/·20 || cls:0.970 || im:-0.867 || 耗时：16.39s\n"}
+,{"stream_name":"stdout","time":2160.464062693,"data":"SHOT pseudo-labels: model 93.27% -\u003e centroid 94.32%\n"}
+,{"stream_name":"stdout","time":2173.591048257,"data":"轮次:··7/·20 || cls:1.358 || im:-0.825 || 耗时：16.42s\n"}
+,{"stream_name":"stdout","time":2176.895051116,"data":"SHOT pseudo-labels: model 93.62% -\u003e centroid 94.27%\n"}
+,{"stream_name":"stdout","time":2190.078645091,"data":"轮次:··8/·20 || cls:1.303 || im:-0.809 || 耗时：16.49s\n"}
+,{"stream_name":"stdout","time":2193.390055673,"data":"SHOT pseudo-labels: model 94.05% -\u003e centroid 92.52%\n"}
+,{"stream_name":"stdout","time":2206.560415758,"data":"轮次:··9/·20 || cls:0.858 || im:-0.812 || 耗时：16.48s\n"}
+,{"stream_name":"stdout","time":2209.856065259,"data":"SHOT pseudo-labels: model 93.98% -\u003e centroid 92.53%\n"}
+,{"stream_name":"stdout","time":2223.013004039,"data":"轮次:·10/·20 || cls:0.808 || im:-0.808 || 耗时：16.45s\n"}
+,{"stream_name":"stdout","time":2226.318058216,"data":"SHOT pseudo-labels: model 94.42% -\u003e centroid 93.70%\n"}
+,{"stream_name":"stdout","time":2239.483575156,"data":"轮次:·11/·20 || cls:0.818 || im:-0.734 || 耗时：16.47s\n"}
+,{"stream_name":"stdout","time":2242.805069148,"data":"SHOT pseudo-labels: model 94.60% -\u003e centroid 94.03%\n"}
+,{"stream_name":"stdout","time":2255.973545762,"data":"轮次:·12/·20 || cls:1.006 || im:-0.849 || 耗时：16.49s\n"}
+,{"stream_name":"stdout","time":2259.287059451,"data":"SHOT pseudo-labels: model 94.63% -\u003e centroid 91.88%\n"}
+,{"stream_name":"stdout","time":2272.489248399,"data":"轮次:·13/·20 || cls:0.633 || im:-0.731 || 耗时：16.52s\n"}
+,{"stream_name":"stdout","time":2275.785071474,"data":"SHOT pseudo-labels: model 94.87% -\u003e centroid 93.23%\n"}
+,{"stream_name":"stdout","time":2288.950129216,"data":"轮次:·14/·20 || cls:0.806 || im:-0.775 || 耗时：16.46s\n"}
+,{"stream_name":"stdout","time":2292.265086157,"data":"SHOT pseudo-labels: model 95.20% -\u003e centroid 93.47%\n"}
+,{"stream_name":"stdout","time":2305.416044297,"data":"轮次:·15/·20 || cls:0.726 || im:-0.761 || 耗时：16.47s\n"}
+,{"stream_name":"stdout","time":2308.710067771,"data":"SHOT pseudo-labels: model 95.42% -\u003e centroid 92.93%\n"}
+,{"stream_name":"stdout","time":2321.82457444,"data":"轮次:·16/·20 || cls:0.828 || im:-0.747 || 耗时：16.41s\n"}
+,{"stream_name":"stdout","time":2325.106065346,"data":"SHOT pseudo-labels: model 95.58% -\u003e centroid 91.07%\n"}
+,{"stream_name":"stdout","time":2338.232752112,"data":"轮次:·17/·20 || cls:0.897 || im:-0.691 || 耗时：16.41s\n"}
+,{"stream_name":"stdout","time":2341.523005353,"data":"SHOT pseudo-labels: model 96.10% -\u003e centroid 93.83%\n"}
+,{"stream_name":"stdout","time":2354.626792892,"data":"轮次:·18/·20 || cls:0.813 || im:-0.697 || 耗时：16.39s\n"}
+,{"stream_name":"stdout","time":2357.898079842,"data":"SHOT pseudo-labels: model 96.55% -\u003e centroid 96.50%\n"}
+,{"stream_name":"stdout","time":2371.010036196,"data":"轮次:·19/·20 || cls:0.841 || im:-0.705 || 耗时：16.38s\n"}
+,{"stream_name":"stdout","time":2374.303063278,"data":"SHOT pseudo-labels: model 96.57% -\u003e centroid 93.47%\n"}
+,{"stream_name":"stdout","time":2387.402138429,"data":"轮次:·20/·20 || cls:0.572 || im:-0.757 || 耗时：16.39s\n"}
+,{"stream_name":"stdout","time":2393.469267277,"data":"测试集任务: (B3)N15_M07_F04→(B2)N15_M07_F10; 总正确率 = 97.10%\n"}
+,{"stream_name":"stdout","time":2393.469300788,"data":"类型1 正确率： 100.00% -\u003e 1   99.90%, 2    0.00%, 3    0.10%\n"}
+,{"stream_name":"stdout","time":2393.469306967,"data":"类型2 正确率：  95.00% -\u003e 1    0.00%, 2   95.25%, 3    4.75%\n"}
+,{"stream_name":"stdout","time":2393.469311768,"data":"类型3 正确率：  96.00% -\u003e 1    0.00%, 2    3.85%, 3   96.15%\n"}
+,{"stream_name":"stdout","time":2393.469326875,"data":"\n"}
+,{"stream_name":"stdout","time":2393.469330215,"data":"\n"}
+,{"stream_name":"stdout","time":2393.4883257,"data":"[tar_adaptation_RES_PU.py --folder_root /kaggle/working/shot/sdalr_PU_shot/DATA_foldB --seed 2024 --class_num 3 --data_name PU_M1_L3 --output /kaggle/working/shot/weight_PU_M1_shot_FBtoB_s2024 --s 2 --t 1 --lr 0.0005 --threshold 0.4 --K 0.6] 346s\n"}
+,{"stream_name":"stdout","time":2393.505134629,"data":"{\n"}
+,{"stream_name":"stdout","time":2393.505150704,"data":"  \"dataset\": \"PU_M1\",\n"}
+,{"stream_name":"stdout","time":2393.505155976,"data":"  \"variant\": \"shot\",\n"}
+,{"stream_name":"stdout","time":2393.505160463,"data":"  \"seed\": 2024,\n"}
+,{"stream_name":"stdout","time":2393.505165524,"data":"  \"smoke\": false,\n"}
+,{"stream_name":"stdout","time":2393.50517001,"data":"  \"src_fold\": \"B\",\n"}
+,{"stream_name":"stdout","time":2393.505174946,"data":"  \"tgt_fold\": \"B\",\n"}
+,{"stream_name":"stdout","time":2393.505179779,"data":"  \"leaky\": true,\n"}
+,{"stream_name":"stdout","time":2393.505184782,"data":"  \"hyperparameters\": {\n"}
+,{"stream_name":"stdout","time":2393.505189891,"data":"    \"lr\": \"0.0005\",\n"}
+,{"stream_name":"stdout","time":2393.505194616,"data":"    \"threshold\": \"0.4\",\n"}
+,{"stream_name":"stdout","time":2393.505199066,"data":"    \"K\": \"0.6\"\n"}
+,{"stream_name":"stdout","time":2393.505203507,"data":"  },\n"}
+,{"stream_name":"stdout","time":2393.505207683,"data":"  \"adapters\": [\n"}
+,{"stream_name":"stdout","time":2393.505212037,"data":"    \"npz_io\",\n"}
+,{"stream_name":"stdout","time":2393.50521626,"data":"    \"tsne_stub\",\n"}
+,{"stream_name":"stdout","time":2393.505220531,"data":"    \"shot_patch\"\n"}
+,{"stream_name":"stdout","time":2393.505224831,"data":"  ],\n"}
+,{"stream_name":"stdout","time":2393.505229068,"data":"  \"source_only\": {\n"}
+,{"stream_name":"stdout","time":2393.505233444,"data":"    \"A1-\u003eA3\": 100.0,\n"}
+,{"stream_name":"stdout","time":2393.505243308,"data":"    \"A1-\u003eA2\": 97.53,\n"}
+,{"stream_name":"stdout","time":2393.505254596,"data":"    \"A3-\u003eA1\": 99.83,\n"}
+,{"stream_name":"stdout","time":2393.505257034,"data":"    \"A3-\u003eA2\": 96.57,\n"}
+,{"stream_name":"stdout","time":2393.505259251,"data":"    \"A2-\u003eA1\": 99.05,\n"}
+,{"stream_name":"stdout","time":2393.505261438,"data":"    \"A2-\u003eA3\": 99.35\n"}
+,{"stream_name":"stdout","time":2393.505263639,"data":"  },\n"}
+,{"stream_name":"stdout","time":2393.505265853,"data":"  \"adapted\": {\n"}
+,{"stream_name":"stdout","time":2393.505268144,"data":"    \"A1-\u003eA3\": 99.93,\n"}
+,{"stream_name":"stdout","time":2393.505270411,"data":"    \"A1-\u003eA2\": 97.85,\n"}
+,{"stream_name":"stdout","time":2393.505272605,"data":"    \"A3-\u003eA1\": 99.78,\n"}
+,{"stream_name":"stdout","time":2393.50527488,"data":"    \"A3-\u003eA2\": 92.83,\n"}
+,{"stream_name":"stdout","time":2393.505277063,"data":"    \"A2-\u003eA1\": 97.73,\n"}
+,{"stream_name":"stdout","time":2393.505279262,"data":"    \"A2-\u003eA3\": 97.1\n"}
+,{"stream_name":"stdout","time":2393.505281469,"data":"  },\n"}
+,{"stream_name":"stdout","time":2393.505283675,"data":"  \"seconds\": {\n"}
+,{"stream_name":"stdout","time":2393.505285863,"data":"    \"pretrain\": 294,\n"}
+,{"stream_name":"stdout","time":2393.505288125,"data":"    \"A1-\u003eA3\": 346,\n"}
+,{"stream_name":"stdout","time":2393.505290314,"data":"    \"A1-\u003eA2\": 346,\n"}
+,{"stream_name":"stdout","time":2393.505292499,"data":"    \"A3-\u003eA1\": 346,\n"}
+,{"stream_name":"stdout","time":2393.505294681,"data":"    \"A3-\u003eA2\": 346,\n"}
+,{"stream_name":"stdout","time":2393.505296866,"data":"    \"A2-\u003eA1\": 346,\n"}
+,{"stream_name":"stdout","time":2393.505299046,"data":"    \"A2-\u003eA3\": 346\n"}
+,{"stream_name":"stdout","time":2393.505301237,"data":"  },\n"}
+,{"stream_name":"stdout","time":2393.505303351,"data":"  \"gate_log\": {\n"}
+,{"stream_name":"stdout","time":2393.505305601,"data":"    \"A1-\u003eA3\": [],\n"}
+,{"stream_name":"stdout","time":2393.505307787,"data":"    \"A1-\u003eA2\": [],\n"}
+,{"stream_name":"stdout","time":2393.505309968,"data":"    \"A3-\u003eA1\": [],\n"}
+,{"stream_name":"stdout","time":2393.505312152,"data":"    \"A3-\u003eA2\": [],\n"}
+,{"stream_name":"stdout","time":2393.505314331,"data":"    \"A2-\u003eA1\": [],\n"}
+,{"stream_name":"stdout","time":2393.505316513,"data":"    \"A2-\u003eA3\": []\n"}
+,{"stream_name":"stdout","time":2393.505318768,"data":"  },\n"}
+,{"stream_name":"stdout","time":2393.505320921,"data":"  \"gate\": \"none\"\n"}
+,{"stream_name":"stdout","time":2393.505323217,"data":"}\n"}
+,{"stream_name":"stdout","time":2396.754167444,"data":"{'variant': 'shot', 'src': 'B', 'tgt': 'B', 'rc': 0, 'seconds': 2389}\n"}
+,{"stream_name":"stdout","time":2396.75492085,"data":"RUN /usr/bin/python3 -u /kaggle/input/datasets/rhrhrhrhrh/physgate-m0-code/sdalr_runner.py --sdalr /kaggle/input/datasets/rhrhrhrhrh/physgate-m0-code --m0 /kaggle/input/datasets/rhrhrhrhrh/physgate-m1-data --dataset PU_M1 --src-fold B --tgt-fold A --variant shot --work /kaggle/working/shot --seed 2024 --skip-pretrain\n"}
+,{"stream_name":"stdout","time":2404.270146397,"data":"读取源域路径：/kaggle/working/shot/weight_PU_M1_shot_FBtoA_s2024/NEW_PU/Source-源域/log\u0026pt/(B1)N15_M01_F10\n"}
+,{"stream_name":"stdout","time":2404.270175669,"data":"excel输出位置：/kaggle/working/shot/weight_PU_M1_shot_FBtoA_s2024/NEW_PU/Target-目标域\n"}
+,{"stream_name":"stdout","time":2404.270603762,"data":"特征图片输出位置：/kaggle/working/shot/weight_PU_M1_shot_FBtoA_s2024/NEW_PU/Picture-特征图/2026年09月15日21时08分/(B1)N15_M01_F10\n"}
+,{"stream_name":"stderr","time":2404.619272086,"data":"/usr/local/lib/python3.12/dist-packages/torch/nn/utils/weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.\n"}
+,{"stream_name":"stderr","time":2404.61931908,"data":"  WeightNorm.apply(module, name, dim)\n"}
+,{"stream_name":"stdout","time":2404.660099301,"data":"现在选取:(B1)N15_M01_F10 进行训练的源模型\n"}
+,{"stream_name":"stdout","time":2404.660131956,"data":"现在进行：(B1)N15_M01_F10→(B2)N15_M07_F10 的迁移任务\n"}
+,{"stream_name":"stdout","time":2404.660138464,"data":"log\u0026pt输出位置：/kaggle/working/shot/weight_PU_M1_shot_FBtoA_s2024/NEW_PU/Target-目标域/log\u0026pt/(B1)N15_M01_F10→(B2)N15_M07_F10\n"}
+,{"stream_name":"stderr","time":2404.66137241,"data":"sh: 1: Syntax error: word unexpected (expecting \")\")\n"}
+,{"stream_name":"stdout","time":2415.768515807,"data":"任务: (B1)N15_M01_F10→(B2)N15_M07_F10; 批次:····0/·1880;  总正确率: 55.95%\n"}
+,{"stream_name":"stdout","time":2415.768550019,"data":"类型1 正确率： 100.00% -\u003e 1   99.80%, 2    0.00%, 3    0.20%\n"}
+,{"stream_name":"stdout","time":2415.768555285,"data":"类型2 正确率：  35.00% -\u003e 1   22.45%, 2   35.05%, 3   42.50%\n"}
+,{"stream_name":"stdout","time":2415.768565038,"data":"类型3 正确率：  33.00% -\u003e 1    0.00%, 2   67.00%, 3   33.00%\n"}
+,{"stream_name":"stdout","time":2415.76856784,"data":"\n"}
+,{"stream_name":"stdout","time":2415.768570022,"data":"\n"}
+,{"stream_name":"stdout","time":2419.097336579,"data":"SHOT pseudo-labels: model 55.95% -\u003e centroid 55.30%\n"}
+,{"stream_name":"stdout","time":2432.465268465,"data":"轮次:··1/·20 || cls:1.502 || im:-0.917 || 耗时：22.93s\n"}
+,{"stream_name":"stderr","time":2432.46532718,"data":"/kaggle/working/shot/sdalr_PU_shot/tar_adaptation_RES_PU.py:114: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.\n"}
+,{"stream_name":"stderr","time":2432.465360876,"data":"Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)\n"}
+,{"stream_name":"stderr","time":2432.465366359,"data":"  iter_num // epoch_len, args.max_epoch, float(classifier_loss), float(im_loss), time.time() - start))\n"}
+,{"stream_name":"stdout","time":2435.859049891,"data":"SHOT pseudo-labels: model 64.67% -\u003e centroid 55.30%\n"}
+,{"stream_name":"stdout","time":2449.702085853,"data":"轮次:··2/·20 || cls:1.480 || im:-0.936 || 耗时：17.24s\n"}
+,{"stream_name":"stdout","time":2453.139046688,"data":"SHOT pseudo-labels: model 65.17% -\u003e centroid 55.17%\n"}
+,{"stream_name":"stdout","time":2466.40329814,"data":"轮次:··3/·20 || cls:0.902 || im:-0.768 || 耗时：16.70s\n"}
+,{"stream_name":"stdout","time":2469.701055459,"data":"SHOT pseudo-labels: model 64.48% -\u003e centroid 54.15%\n"}
+,{"stream_name":"stdout","time":2482.577052948,"data":"轮次:··4/·20 || cls:0.811 || im:-0.698 || 耗时：16.17s\n"}
+,{"stream_name":"stdout","time":2485.830329603,"data":"SHOT pseudo-labels: model 64.30% -\u003e centroid 51.10%\n"}
+,{"stream_name":"stdout","time":2498.652552157,"data":"轮次:··5/·20 || cls:0.677 || im:-0.649 || 耗时：16.08s\n"}
+,{"stream_name":"stdout","time":2501.92709353,"data":"SHOT pseudo-labels: model 63.47% -\u003e centroid 47.53%\n"}
+,{"stream_name":"stdout","time":2514.949434307,"data":"轮次:··6/·20 || cls:0.846 || im:-0.763 || 耗时：16.30s\n"}
+,{"stream_name":"stdout","time":2518.258051544,"data":"SHOT pseudo-labels: model 64.63% -\u003e centroid 54.00%\n"}
+,{"stream_name":"stdout","time":2531.532502003,"data":"轮次:··7/·20 || cls:0.747 || im:-0.704 || 耗时：16.58s\n"}
+,{"stream_name":"stdout","time":2534.868112878,"data":"SHOT pseudo-labels: model 64.85% -\u003e centroid 45.83%\n"}
+,{"stream_name":"stdout","time":2548.173743196,"data":"轮次:··8/·20 || cls:0.752 || im:-0.653 || 耗时：16.64s\n"}
+,{"stream_name":"stdout","time":2551.493111221,"data":"SHOT pseudo-labels: model 65.80% -\u003e centroid 53.42%\n"}
+,{"stream_name":"stdout","time":2564.632323478,"data":"轮次:··9/·20 || cls:0.699 || im:-0.628 || 耗时：16.46s\n"}
+,{"stream_name":"stdout","time":2567.938072581,"data":"SHOT pseudo-labels: model 66.58% -\u003e centroid 53.70%\n"}
+,{"stream_name":"stdout","time":2580.981080082,"data":"轮次:·10/·20 || cls:0.485 || im:-0.676 || 耗时：16.35s\n"}
+,{"stream_name":"stdout","time":2584.27157922,"data":"SHOT pseudo-labels: model 66.30% -\u003e centroid 54.35%\n"}
+,{"stream_name":"stdout","time":2597.352799176,"data":"轮次:·11/·20 || cls:0.509 || im:-0.526 || 耗时：16.37s\n"}
+,{"stream_name":"stdout","time":2600.65206088,"data":"SHOT pseudo-labels: model 66.93% -\u003e centroid 54.32%\n"}
+,{"stream_name":"stdout","time":2613.789405687,"data":"轮次:·12/·20 || cls:0.872 || im:-0.675 || 耗时：16.44s\n"}
+,{"stream_name":"stdout","time":2617.097115159,"data":"SHOT pseudo-labels: model 67.13% -\u003e centroid 54.58%\n"}
+,{"stream_name":"stdout","time":2630.298250381,"data":"轮次:·13/·20 || cls:0.756 || im:-0.738 || 耗时：16.51s\n"}
+,{"stream_name":"stdout","time":2633.605052547,"data":"SHOT pseudo-labels: model 67.17% -\u003e centroid 54.25%\n"}
+,{"stream_name":"stdout","time":2646.833371681,"data":"轮次:·14/·20 || cls:0.652 || im:-0.623 || 耗时：16.54s\n"}
+,{"stream_name":"stdout","time":2650.155065696,"data":"SHOT pseudo-labels: model 67.40% -\u003e centroid 54.63%\n"}
+,{"stream_name":"stdout","time":2663.349384366,"data":"轮次:·15/·20 || cls:0.649 || im:-0.649 || 耗时：16.52s\n"}
+,{"stream_name":"stdout","time":2666.662015473,"data":"SHOT pseudo-labels: model 67.05% -\u003e centroid 54.32%\n"}
+,{"stream_name":"stdout","time":2679.86776332,"data":"轮次:·16/·20 || cls:0.764 || im:-0.715 || 耗时：16.52s\n"}
+,{"stream_name":"stdout","time":2683.180044219,"data":"SHOT pseudo-labels: model 67.47% -\u003e centroid 54.32%\n"}
+,{"stream_name":"stdout","time":2696.359876234,"data":"轮次:·17/·20 || cls:0.780 || im:-0.650 || 耗时：16.49s\n"}
+,{"stream_name":"stdout","time":2699.655115974,"data":"SHOT pseudo-labels: model 68.00% -\u003e centroid 54.27%\n"}
+,{"stream_name":"stdout","time":2712.786655184,"data":"轮次:·18/·20 || cls:0.787 || im:-0.639 || 耗时：16.43s\n"}
+,{"stream_name":"stdout","time":2716.092147244,"data":"SHOT pseudo-labels: model 68.28% -\u003e centroid 54.32%\n"}
+,{"stream_name":"stdout","time":2729.189613244,"data":"轮次:·19/·20 || cls:0.814 || im:-0.607 || 耗时：16.40s\n"}
+,{"stream_name":"stdout","time":2732.495107998,"data":"SHOT pseudo-labels: model 68.12% -\u003e centroid 54.23%\n"}
+,{"stream_name":"stdout","time":2745.622299826,"data":"轮次:·20/·20 || cls:0.616 || im:-0.686 || 耗时：16.43s\n"}
+,{"stream_name":"stdout","time":2751.719060821,"data":"测试集任务: (B1)N15_M01_F10→(B2)N15_M07_F10; 总正确率 = 68.57%\n"}
+,{"stream_name":"stdout","time":2751.719094648,"data":"类型1 正确率： 100.00% -\u003e 1   99.90%, 2    0.00%, 3    0.10%\n"}
+,{"stream_name":"stdout","time":2751.719100906,"data":"类型2 正确率：  53.00% -\u003e 1   13.75%, 2   53.15%, 3   33.10%\n"}
+,{"stream_name":"stdout","time":2751.719105806,"data":"类型3 正确率：  53.00% -\u003e 1    0.15%, 2   47.20%, 3   52.65%\n"}
+,{"stream_name":"stdout","time":2751.719115469,"data":"\n"}
+,{"stream_name":"stdout","time":2751.719118524,"data":"\n"}
+,{"stream_name":"stdout","time":2751.737532545,"data":"[tar_adaptation_RES_PU.py --folder_root /kaggle/working/shot/sdalr_PU_shot/DATA_foldA --seed 2024 --class_num 3 --data_name PU_M1_L3 --output /kaggle/working/shot/weight_PU_M1_shot_FBtoA_s2024 --s 0 --t 1 --lr 0.0005 --threshold 0.4 --K 0.6] 347s\n"}
+,{"stream_name":"stdout","time":2751.765831728,"data":"读取源域路径：/kaggle/working/shot/weight_PU_M1_shot_FBtoA_s2024/NEW_PU/Source-源域/log\u0026pt/(B1)N15_M01_F10\n"}
+,{"stream_name":"stdout","time":2751.76584911,"data":"excel输出位置：/kaggle/working/shot/weight_PU_M1_shot_FBtoA_s2024/NEW_PU/Target-目标域\n"}
+,{"stream_name":"stdout","time":2751.765968171,"data":"特征图片输出位置：/kaggle/working/shot/weight_PU_M1_shot_FBtoA_s2024/NEW_PU/Picture-特征图/2026年09月15日21时14分/(B1)N15_M01_F10\n"}
+,{"stream_name":"stderr","time":2751.805379283,"data":"/usr/local/lib/python3.12/dist-packages/torch/nn/utils/weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.\n"}
+,{"stream_name":"stderr","time":2751.805400543,"data":"  WeightNorm.apply(module, name, dim)\n"}
+,{"stream_name":"stdout","time":2751.842319479,"data":"现在选取:(B1)N15_M01_F10 进行训练的源模型\n"}
+,{"stream_name":"stdout","time":2751.842343341,"data":"现在进行：(B1)N15_M01_F10→(B3)N15_M07_F04 的迁移任务\n"}
+,{"stream_name":"stdout","time":2751.842348347,"data":"log\u0026pt输出位置：/kaggle/working/shot/weight_PU_M1_shot_FBtoA_s2024/NEW_PU/Target-目标域/log\u0026pt/(B1)N15_M01_F10→(B3)N15_M07_F04\n"}
+,{"stream_name":"stderr","time":2751.843609573,"data":"sh: 1: Syntax error: word unexpected (expecting \")\")\n"}
+,{"stream_name":"stdout","time":2762.895779615,"data":"任务: (B1)N15_M01_F10→(B3)N15_M07_F04; 批次:····0/·1880;  总正确率: 50.40%\n"}
+,{"stream_name":"stdout","time":2762.895837783,"data":"类型1 正确率： 100.00% -\u003e 1   99.80%, 2    0.00%, 3    0.20%\n"}
+,{"stream_name":"stdout","time":2762.89584276,"data":"类型2 正确率：  39.00% -\u003e 1   24.90%, 2   39.25%, 3   35.85%\n"}
+,{"stream_name":"stdout","time":2762.895846039,"data":"类型3 正确率：  12.00% -\u003e 1    0.75%, 2   87.10%, 3   12.15%\n"}
+,{"stream_name":"stdout","time":2762.895849377,"data":"\n"}
+,{"stream_name":"stdout","time":2762.895852203,"data":"\n"}
+,{"stream_name":"stdout","time":2766.189177048,"data":"SHOT pseudo-labels: model 50.40% -\u003e centroid 55.02%\n"}
+,{"stream_name":"stdout","time":2779.379858952,"data":"轮次:··1/·20 || cls:1.412 || im:-0.885 || 耗时：22.53s\n"}
+,{"stream_name":"stdout","time":2782.737084174,"data":"SHOT pseudo-labels: model 45.93% -\u003e centroid 55.27%\n"}
+,{"stream_name":"stdout","time":2796.030999785,"data":"轮次:··2/·20 || cls:1.609 || im:-0.901 || 耗时：16.65s\n"}
+,{"stream_name":"stdout","time":2799.344040966,"data":"SHOT pseudo-labels: model 47.92% -\u003e centroid 55.20%\n"}
+,{"stream_name":"stdout","time":2812.574883287,"data":"轮次:··3/·20 || cls:1.144 || im:-0.761 || 耗时：16.54s\n"}
+,{"stream_name":"stdout","time":2815.867054067,"data":"SHOT pseudo-labels: model 54.05% -\u003e centroid 55.13%\n"}
+,{"stream_name":"stdout","time":2828.930843423,"data":"轮次:··4/·20 || cls:0.873 || im:-0.780 || 耗时：16.36s\n"}
+,{"stream_name":"stdout","time":2832.213011791,"data":"SHOT pseudo-labels: model 59.12% -\u003e centroid 54.90%\n"}
+,{"stream_name":"stdout","time":2845.237664714,"data":"轮次:··5/·20 || cls:0.754 || im:-0.791 || 耗时：16.31s\n"}
+,{"stream_name":"stdout","time":2848.529072707,"data":"SHOT pseudo-labels: model 59.93% -\u003e centroid 54.67%\n"}
+,{"stream_name":"stdout","time":2861.637014636,"data":"轮次:··6/·20 || cls:0.789 || im:-0.723 || 耗时：16.40s\n"}
+,{"stream_name":"stdout","time":2864.935069562,"data":"SHOT pseudo-labels: model 60.87% -\u003e centroid 53.42%\n"}
+,{"stream_name":"stdout","time":2878.086527761,"data":"轮次:··7/·20 || cls:0.687 || im:-0.778 || 耗时：16.45s\n"}
+,{"stream_name":"stdout","time":2881.401041715,"data":"SHOT pseudo-labels: model 62.00% -\u003e centroid 54.93%\n"}
+,{"stream_name":"stdout","time":2894.54171633,"data":"轮次:··8/·20 || cls:0.757 || im:-0.661 || 耗时：16.46s\n"}
+,{"stream_name":"stdout","time":2897.842346381,"data":"SHOT pseudo-labels: model 62.80% -\u003e centroid 54.88%\n"}
+,{"stream_name":"stdout","time":2911.064719133,"data":"轮次:··9/·20 || cls:0.740 || im:-0.663 || 耗时：16.52s\n"}
+,{"stream_name":"stdout","time":2914.38611185,"data":"SHOT pseudo-labels: model 62.77% -\u003e centroid 54.48%\n"}
+,{"stream_name":"stdout","time":2927.621374078,"data":"轮次:·10/·20 || cls:0.565 || im:-0.661 || 耗时：16.56s\n"}
+,{"stream_name":"stdout","time":2930.943145182,"data":"SHOT pseudo-labels: model 62.50% -\u003e centroid 54.80%\n"}
+,{"stream_name":"stdout","time":2944.154496434,"data":"轮次:·11/·20 || cls:0.583 || im:-0.687 || 耗时：16.53s\n"}
+,{"stream_name":"stdout","time":2947.455023619,"data":"SHOT pseudo-labels: model 62.22% -\u003e centroid 55.07%\n"}
+,{"stream_name":"stdout","time":2960.61526121,"data":"轮次:·12/·20 || cls:0.685 || im:-0.638 || 耗时：16.46s\n"}
+,{"stream_name":"stdout","time":2963.932115831,"data":"SHOT pseudo-labels: model 62.00% -\u003e centroid 54.85%\n"}
+,{"stream_name":"stdout","time":2977.092025252,"data":"轮次:·13/·20 || cls:0.634 || im:-0.660 || 耗时：16.48s\n"}
+,{"stream_name":"stdout","time":2980.385055051,"data":"SHOT pseudo-labels: model 62.97% -\u003e centroid 52.60%\n"}
+,{"stream_name":"stdout","time":2993.519906129,"data":"轮次:·14/·20 || cls:0.648 || im:-0.616 || 耗时：16.43s\n"}
+,{"stream_name":"stdout","time":2996.818397379,"data":"SHOT pseudo-labels: model 61.50% -\u003e centroid 54.75%\n"}
+,{"stream_name":"stdout","time":3009.938033754,"data":"轮次:·15/·20 || cls:0.795 || im:-0.668 || 耗时：16.42s\n"}
+,{"stream_name":"stdout","time":3013.257632704,"data":"SHOT pseudo-labels: model 62.13% -\u003e centroid 54.75%\n"}
+,{"stream_name":"stdout","time":3026.400525416,"data":"轮次:·16/·20 || cls:0.629 || im:-0.625 || 耗时：16.46s\n"}
+,{"stream_name":"stdout","time":3029.69005595,"data":"SHOT pseudo-labels: model 62.90% -\u003e centroid 54.85%\n"}
+,{"stream_name":"stdout","time":3042.816614769,"data":"轮次:·17/·20 || cls:0.790 || im:-0.705 || 耗时：16.42s\n"}
+,{"stream_name":"stdout","time":3046.098078762,"data":"SHOT pseudo-labels: model 62.60% -\u003e centroid 54.47%\n"}
+,{"stream_name":"stdout","time":3059.244156681,"data":"轮次:·18/·20 || cls:0.774 || im:-0.671 || 耗时：16.43s\n"}
+,{"stream_name":"stdout","time":3062.549742246,"data":"SHOT pseudo-labels: model 62.43% -\u003e centroid 54.83%\n"}
+,{"stream_name":"stdout","time":3075.681821154,"data":"轮次:·19/·20 || cls:0.810 || im:-0.643 || 耗时：16.44s\n"}
+,{"stream_name":"stdout","time":3078.978448486,"data":"SHOT pseudo-labels: model 63.40% -\u003e centroid 66.97%\n"}
+,{"stream_name":"stdout","time":3092.145787159,"data":"轮次:·20/·20 || cls:0.624 || im:-0.674 || 耗时：16.46s\n"}
+,{"stream_name":"stdout","time":3098.255924611,"data":"测试集任务: (B1)N15_M01_F10→(B3)N15_M07_F04; 总正确率 = 62.10%\n"}
+,{"stream_name":"stdout","time":3098.255958601,"data":"类型1 正确率：  99.00% -\u003e 1   99.20%, 2    0.00%, 3    0.80%\n"}
+,{"stream_name":"stdout","time":3098.255964875,"data":"类型2 正确率：  45.00% -\u003e 1   10.40%, 2   45.20%, 3   44.40%\n"}
+,{"stream_name":"stdout","time":3098.255974804,"data":"类型3 正确率：  42.00% -\u003e 1    0.00%, 2   58.10%, 3   41.90%\n"}
+,{"stream_name":"stdout","time":3098.256018633,"data":"\n"}
+,{"stream_name":"stdout","time":3098.256022721,"data":"\n"}
+,{"stream_name":"stdout","time":3098.275122757,"data":"[tar_adaptation_RES_PU.py --folder_root /kaggle/working/shot/sdalr_PU_shot/DATA_foldA --seed 2024 --class_num 3 --data_name PU_M1_L3 --output /kaggle/working/shot/weight_PU_M1_shot_FBtoA_s2024 --s 0 --t 2 --lr 0.0005 --threshold 0.4 --K 0.6] 347s\n"}
+,{"stream_name":"stdout","time":3098.302848252,"data":"读取源域路径：/kaggle/working/shot/weight_PU_M1_shot_FBtoA_s2024/NEW_PU/Source-源域/log\u0026pt/(B2)N15_M07_F10\n"}
+,{"stream_name":"stdout","time":3098.302866246,"data":"excel输出位置：/kaggle/working/shot/weight_PU_M1_shot_FBtoA_s2024/NEW_PU/Target-目标域\n"}
+,{"stream_name":"stdout","time":3098.302892801,"data":"特征图片输出位置：/kaggle/working/shot/weight_PU_M1_shot_FBtoA_s2024/NEW_PU/Picture-特征图/2026年09月15日21时19分/(B2)N15_M07_F10\n"}
+,{"stream_name":"stderr","time":3098.33672852,"data":"/usr/local/lib/python3.12/dist-packages/torch/nn/utils/weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.\n"}
+,{"stream_name":"stderr","time":3098.336747495,"data":"  WeightNorm.apply(module, name, dim)\n"}
+,{"stream_name":"stdout","time":3098.37419944,"data":"现在选取:(B2)N15_M07_F10 进行训练的源模型\n"}
+,{"stream_name":"stdout","time":3098.374223635,"data":"现在进行：(B2)N15_M07_F10→(B1)N15_M01_F10 的迁移任务\n"}
+,{"stream_name":"stdout","time":3098.374228963,"data":"log\u0026pt输出位置：/kaggle/working/shot/weight_PU_M1_shot_FBtoA_s2024/NEW_PU/Target-目标域/log\u0026pt/(B2)N15_M07_F10→(B1)N15_M01_F10\n"}
+,{"stream_name":"stderr","time":3098.37552726,"data":"sh: 1: Syntax error: word unexpected (expecting \")\")\n"}
+,{"stream_name":"stdout","time":3109.483394151,"data":"任务: (B2)N15_M07_F10→(B1)N15_M01_F10; 批次:····0/·1880;  总正确率: 55.52%\n"}
+,{"stream_name":"stdout","time":3109.483431655,"data":"类型1 正确率： 100.00% -\u003e 1  100.00%, 2    0.00%, 3    0.00%\n"}
+,{"stream_name":"stdout","time":3109.483460271,"data":"类型2 正确率：  34.00% -\u003e 1   32.15%, 2   33.55%, 3   34.30%\n"}
+,{"stream_name":"stdout","time":3109.483465243,"data":"类型3 正确率：  33.00% -\u003e 1    0.00%, 2   67.00%, 3   33.00%\n"}
+,{"stream_name":"stdout","time":3109.483470686,"data":"\n"}
+,{"stream_name":"stdout","time":3109.483475321,"data":"\n"}
+,{"stream_name":"stdout","time":3112.778065446,"data":"SHOT pseudo-labels: model 55.52% -\u003e centroid 55.25%\n"}
+,{"stream_name":"stdout","time":3126.011701139,"data":"轮次:··1/·20 || cls:1.501 || im:-0.899 || 耗时：22.60s\n"}
+,{"stream_name":"stdout","time":3129.38199991,"data":"SHOT pseudo-labels: model 64.22% -\u003e centroid 55.27%\n"}
+,{"stream_name":"stdout","time":3142.683020844,"data":"轮次:··2/·20 || cls:1.370 || im:-0.952 || 耗时：16.67s\n"}
+,{"stream_name":"stdout","time":3146.003092159,"data":"SHOT pseudo-labels: model 65.92% -\u003e centroid 54.63%\n"}
+,{"stream_name":"stdout","time":3159.140945468,"data":"轮次:··3/·20 || cls:0.921 || im:-0.754 || 耗时：16.46s\n"}
+,{"stream_name":"stdout","time":3162.433180302,"data":"SHOT pseudo-labels: model 66.65% -\u003e centroid 53.83%\n"}
+,{"stream_name":"stdout","time":3175.467089159,"data":"轮次:··4/·20 || cls:0.785 || im:-0.668 || 耗时：16.33s\n"}
+,{"stream_name":"stdout","time":3178.761392854,"data":"SHOT pseudo-labels: model 65.53% -\u003e centroid 52.60%\n"}
+,{"stream_name":"stdout","time":3191.825525429,"data":"轮次:··5/·20 || cls:0.723 || im:-0.667 || 耗时：16.36s\n"}
+,{"stream_name":"stdout","time":3195.161149543,"data":"SHOT pseudo-labels: model 65.13% -\u003e centroid 51.85%\n"}
+,{"stream_name":"stdout","time":3208.382714519,"data":"轮次:··6/·20 || cls:0.607 || im:-0.650 || 耗时：16.56s\n"}
+,{"stream_name":"stdout","time":3211.721130538,"data":"SHOT pseudo-labels: model 65.92% -\u003e centroid 51.27%\n"}
+,{"stream_name":"stdout","time":3224.997363818,"data":"轮次:··7/·20 || cls:0.680 || im:-0.641 || 耗时：16.61s\n"}
+,{"stream_name":"stdout","time":3228.316136431,"data":"SHOT pseudo-labels: model 65.90% -\u003e centroid 51.92%\n"}
+,{"stream_name":"stdout","time":3241.524046951,"data":"轮次:··8/·20 || cls:0.648 || im:-0.606 || 耗时：16.53s\n"}
+,{"stream_name":"stdout","time":3244.831208662,"data":"SHOT pseudo-labels: model 66.63% -\u003e centroid 50.92%\n"}
+,{"stream_name":"stdout","time":3257.999102408,"data":"轮次:··9/·20 || cls:0.774 || im:-0.693 || 耗时：16.48s\n"}
+,{"stream_name":"stdout","time":3261.323117336,"data":"SHOT pseudo-labels: model 66.12% -\u003e centroid 51.02%\n"}
+,{"stream_name":"stdout","time":3274.461395705,"data":"轮次:·10/·20 || cls:0.495 || im:-0.634 || 耗时：16.46s\n"}
+,{"stream_name":"stdout","time":3277.773074999,"data":"SHOT pseudo-labels: model 65.60% -\u003e centroid 51.57%\n"}
+,{"stream_name":"stdout","time":3290.877307895,"data":"轮次:·11/·20 || cls:0.600 || im:-0.608 || 耗时：16.42s\n"}
+,{"stream_name":"stdout","time":3294.200020283,"data":"SHOT pseudo-labels: model 65.73% -\u003e centroid 50.93%\n"}
+,{"stream_name":"stdout","time":3307.310264521,"data":"轮次:·12/·20 || cls:0.818 || im:-0.623 || 耗时：16.43s\n"}
+,{"stream_name":"stdout","time":3310.610183143,"data":"SHOT pseudo-labels: model 65.88% -\u003e centroid 51.13%\n"}
+,{"stream_name":"stdout","time":3323.740973606,"data":"轮次:·13/·20 || cls:0.690 || im:-0.748 || 耗时：16.43s\n"}
+,{"stream_name":"stdout","time":3327.050113121,"data":"SHOT pseudo-labels: model 66.20% -\u003e centroid 50.55%\n"}
+,{"stream_name":"stdout","time":3340.152088481,"data":"轮次:·14/·20 || cls:0.733 || im:-0.647 || 耗时：16.41s\n"}
+,{"stream_name":"stdout","time":3343.467193841,"data":"SHOT pseudo-labels: model 66.22% -\u003e centroid 51.58%\n"}
+,{"stream_name":"stdout","time":3356.569273156,"data":"轮次:·15/·20 || cls:0.752 || im:-0.643 || 耗时：16.42s\n"}
+,{"stream_name":"stdout","time":3359.875069202,"data":"SHOT pseudo-labels: model 65.68% -\u003e centroid 50.63%\n"}
+,{"stream_name":"stdout","time":3372.967447282,"data":"轮次:·16/·20 || cls:0.753 || im:-0.645 || 耗时：16.40s\n"}
+,{"stream_name":"stdout","time":3376.255061189,"data":"SHOT pseudo-labels: model 64.67% -\u003e centroid 50.55%\n"}
+,{"stream_name":"stdout","time":3389.342248812,"data":"轮次:·17/·20 || cls:0.688 || im:-0.627 || 耗时：16.37s\n"}
+,{"stream_name":"stdout","time":3392.659047295,"data":"SHOT pseudo-labels: model 65.22% -\u003e centroid 50.53%\n"}
+,{"stream_name":"stdout","time":3405.755501983,"data":"轮次:·18/·20 || cls:0.799 || im:-0.693 || 耗时：16.41s\n"}
+,{"stream_name":"stdout","time":3409.069059416,"data":"SHOT pseudo-labels: model 65.25% -\u003e centroid 50.43%\n"}
+,{"stream_name":"stdout","time":3422.169147563,"data":"轮次:·19/·20 || cls:0.767 || im:-0.619 || 耗时：16.41s\n"}
+,{"stream_name":"stdout","time":3425.494135915,"data":"SHOT pseudo-labels: model 65.33% -\u003e centroid 50.33%\n"}
+,{"stream_name":"stdout","time":3438.577026786,"data":"轮次:·20/·20 || cls:0.574 || im:-0.635 || 耗时：16.41s\n"}
+,{"stream_name":"stdout","time":3444.647718019,"data":"测试集任务: (B2)N15_M07_F10→(B1)N15_M01_F10; 总正确率 = 65.52%\n"}
+,{"stream_name":"stdout","time":3444.647764039,"data":"类型1 正确率： 100.00% -\u003e 1   99.95%, 2    0.00%, 3    0.05%\n"}
+,{"stream_name":"stdout","time":3444.647782894,"data":"类型2 正确率：  47.00% -\u003e 1   20.05%, 2   46.80%, 3   33.15%\n"}
+,{"stream_name":"stdout","time":3444.647787051,"data":"类型3 正确率：  50.00% -\u003e 1    0.00%, 2   50.20%, 3   49.80%\n"}
+,{"stream_name":"stdout","time":3444.647791153,"data":"\n"}
+,{"stream_name":"stdout","time":3444.647797785,"data":"\n"}
+,{"stream_name":"stdout","time":3444.66531429,"data":"[tar_adaptation_RES_PU.py --folder_root /kaggle/working/shot/sdalr_PU_shot/DATA_foldA --seed 2024 --class_num 3 --data_name PU_M1_L3 --output /kaggle/working/shot/weight_PU_M1_shot_FBtoA_s2024 --s 1 --t 0 --lr 0.0005 --threshold 0.4 --K 0.6] 346s\n"}
+,{"stream_name":"stdout","time":3444.700672312,"data":"读取源域路径：/kaggle/working/shot/weight_PU_M1_shot_FBtoA_s2024/NEW_PU/Source-源域/log\u0026pt/(B2)N15_M07_F10\n"}
+,{"stream_name":"stdout","time":3444.700690086,"data":"excel输出位置：/kaggle/working/shot/weight_PU_M1_shot_FBtoA_s2024/NEW_PU/Target-目标域\n"}
+,{"stream_name":"stdout","time":3444.700736951,"data":"特征图片输出位置：/kaggle/working/shot/weight_PU_M1_shot_FBtoA_s2024/NEW_PU/Picture-特征图/2026年09月15日21时25分/(B2)N15_M07_F10\n"}
+,{"stream_name":"stderr","time":3444.734244666,"data":"/usr/local/lib/python3.12/dist-packages/torch/nn/utils/weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.\n"}
+,{"stream_name":"stderr","time":3444.734264746,"data":"  WeightNorm.apply(module, name, dim)\n"}
+,{"stream_name":"stdout","time":3444.773943981,"data":"现在选取:(B2)N15_M07_F10 进行训练的源模型\n"}
+,{"stream_name":"stdout","time":3444.773993273,"data":"现在进行：(B2)N15_M07_F10→(B3)N15_M07_F04 的迁移任务\n"}
+,{"stream_name":"stdout","time":3444.774002174,"data":"log\u0026pt输出位置：/kaggle/working/shot/weight_PU_M1_shot_FBtoA_s2024/NEW_PU/Target-目标域/log\u0026pt/(B2)N15_M07_F10→(B3)N15_M07_F04\n"}
+,{"stream_name":"stderr","time":3444.775275095,"data":"sh: 1: Syntax error: word unexpected (expecting \")\")\n"}
+,{"stream_name":"stdout","time":3455.852716266,"data":"任务: (B2)N15_M07_F10→(B3)N15_M07_F04; 批次:····0/·1880;  总正确率: 50.57%\n"}
+,{"stream_name":"stdout","time":3455.852775881,"data":"类型1 正确率： 100.00% -\u003e 1  100.00%, 2    0.00%, 3    0.00%\n"}
+,{"stream_name":"stdout","time":3455.852783899,"data":"类型2 正确率：  38.00% -\u003e 1   26.15%, 2   38.50%, 3   35.35%\n"}
+,{"stream_name":"stdout","time":3455.852788592,"data":"类型3 正确率：  13.00% -\u003e 1    2.15%, 2   84.65%, 3   13.20%\n"}
+,{"stream_name":"stdout","time":3455.852793456,"data":"\n"}
+,{"stream_name":"stdout","time":3455.852797592,"data":"\n"}
+,{"stream_name":"stdout","time":3459.142057261,"data":"SHOT pseudo-labels: model 50.57% -\u003e centroid 54.72%\n"}
+,{"stream_name":"stdout","time":3472.328613007,"data":"轮次:··1/·20 || cls:1.455 || im:-0.907 || 耗时：22.52s\n"}
+,{"stream_name":"stdout","time":3475.67706092,"data":"SHOT pseudo-labels: model 49.52% -\u003e centroid 55.20%\n"}
+,{"stream_name":"stdout","time":3488.964762937,"data":"轮次:··2/·20 || cls:1.544 || im:-0.855 || 耗时：16.64s\n"}
+,{"stream_name":"stdout","time":3492.332047285,"data":"SHOT pseudo-labels: model 49.75% -\u003e centroid 54.48%\n"}
+,{"stream_name":"stdout","time":3505.58264684,"data":"轮次:··3/·20 || cls:1.014 || im:-0.754 || 耗时：16.62s\n"}
+,{"stream_name":"stdout","time":3508.894071078,"data":"SHOT pseudo-labels: model 54.25% -\u003e centroid 53.60%\n"}
+,{"stream_name":"stdout","time":3521.94074321,"data":"轮次:··4/·20 || cls:0.714 || im:-0.758 || 耗时：16.36s\n"}
+,{"stream_name":"stdout","time":3525.240116288,"data":"SHOT pseudo-labels: model 56.03% -\u003e centroid 51.28%\n"}
+,{"stream_name":"stdout","time":3538.272499822,"data":"轮次:··5/·20 || cls:0.642 || im:-0.761 || 耗时：16.33s\n"}
+,{"stream_name":"stdout","time":3541.57503959,"data":"SHOT pseudo-labels: model 55.95% -\u003e centroid 50.65%\n"}
+,{"stream_name":"stdout","time":3554.676174825,"data":"轮次:··6/·20 || cls:0.674 || im:-0.654 || 耗时：16.40s\n"}
+,{"stream_name":"stdout","time":3557.982061919,"data":"SHOT pseudo-labels: model 55.73% -\u003e centroid 49.83%\n"}
+,{"stream_name":"stdout","time":3571.157868689,"data":"轮次:··7/·20 || cls:0.656 || im:-0.698 || 耗时：16.48s\n"}
+,{"stream_name":"stdout","time":3574.483069301,"data":"SHOT pseudo-labels: model 55.55% -\u003e centroid 50.52%\n"}
+,{"stream_name":"stdout","time":3587.722156831,"data":"轮次:··8/·20 || cls:0.719 || im:-0.646 || 耗时：16.56s\n"}
+,{"stream_name":"stdout","time":3591.02812581,"data":"SHOT pseudo-labels: model 56.48% -\u003e centroid 49.80%\n"}
+,{"stream_name":"stdout","time":3604.240362901,"data":"轮次:··9/·20 || cls:0.718 || im:-0.707 || 耗时：16.52s\n"}
+,{"stream_name":"stdout","time":3607.582843939,"data":"SHOT pseudo-labels: model 56.38% -\u003e centroid 49.75%\n"}
+,{"stream_name":"stdout","time":3620.788318425,"data":"轮次:·10/·20 || cls:0.639 || im:-0.664 || 耗时：16.55s\n"}
+,{"stream_name":"stdout","time":3624.120049212,"data":"SHOT pseudo-labels: model 55.78% -\u003e centroid 50.05%\n"}
+,{"stream_name":"stdout","time":3637.321633295,"data":"轮次:·11/·20 || cls:0.522 || im:-0.662 || 耗时：16.53s\n"}
+,{"stream_name":"stdout","time":3640.632065866,"data":"SHOT pseudo-labels: model 55.58% -\u003e centroid 49.73%\n"}
+,{"stream_name":"stdout","time":3653.811963398,"data":"轮次:·12/·20 || cls:0.742 || im:-0.692 || 耗时：16.49s\n"}
+,{"stream_name":"stdout","time":3657.121100197,"data":"SHOT pseudo-labels: model 55.37% -\u003e centroid 49.80%\n"}
+,{"stream_name":"stdout","time":3670.29140182,"data":"轮次:·13/·20 || cls:0.670 || im:-0.667 || 耗时：16.48s\n"}
+,{"stream_name":"stdout","time":3673.588156391,"data":"SHOT pseudo-labels: model 56.47% -\u003e centroid 49.48%\n"}
+,{"stream_name":"stdout","time":3686.741022121,"data":"轮次:·14/·20 || cls:0.738 || im:-0.643 || 耗时：16.45s\n"}
+,{"stream_name":"stdout","time":3690.050084197,"data":"SHOT pseudo-labels: model 54.97% -\u003e centroid 49.90%\n"}
+,{"stream_name":"stdout","time":3703.194638188,"data":"轮次:·15/·20 || cls:0.785 || im:-0.689 || 耗时：16.45s\n"}
+,{"stream_name":"stdout","time":3706.479058614,"data":"SHOT pseudo-labels: model 55.05% -\u003e centroid 49.73%\n"}
+,{"stream_name":"stdout","time":3719.598039708,"data":"轮次:·16/·20 || cls:0.697 || im:-0.679 || 耗时：16.40s\n"}
+,{"stream_name":"stdout","time":3722.908664454,"data":"SHOT pseudo-labels: model 55.15% -\u003e centroid 49.50%\n"}
+,{"stream_name":"stdout","time":3736.026188717,"data":"轮次:·17/·20 || cls:0.779 || im:-0.706 || 耗时：16.43s\n"}
+,{"stream_name":"stdout","time":3739.309066621,"data":"SHOT pseudo-labels: model 54.82% -\u003e centroid 49.53%\n"}
+,{"stream_name":"stdout","time":3752.439793733,"data":"轮次:·18/·20 || cls:0.775 || im:-0.720 || 耗时：16.41s\n"}
+,{"stream_name":"stdout","time":3755.744063167,"data":"SHOT pseudo-labels: model 54.30% -\u003e centroid 49.52%\n"}
+,{"stream_name":"stdout","time":3768.857554849,"data":"轮次:·19/·20 || cls:0.757 || im:-0.692 || 耗时：16.42s\n"}
+,{"stream_name":"stdout","time":3772.165057998,"data":"SHOT pseudo-labels: model 53.85% -\u003e centroid 49.52%\n"}
+,{"stream_name":"stdout","time":3785.269095837,"data":"轮次:·20/·20 || cls:0.558 || im:-0.630 || 耗时：16.41s\n"}
+,{"stream_name":"stdout","time":3791.359285106,"data":"测试集任务: (B2)N15_M07_F10→(B3)N15_M07_F04; 总正确率 = 53.50%\n"}
+,{"stream_name":"stdout","time":3791.359317382,"data":"类型1 正确率： 100.00% -\u003e 1   99.85%, 2    0.00%, 3    0.15%\n"}
+,{"stream_name":"stdout","time":3791.359325659,"data":"类型2 正确率：  27.00% -\u003e 1   12.75%, 2   26.90%, 3   60.35%\n"}
+,{"stream_name":"stdout","time":3791.359332282,"data":"类型3 正确率：  34.00% -\u003e 1    0.00%, 2   66.25%, 3   33.75%\n"}
+,{"stream_name":"stdout","time":3791.359338564,"data":"\n"}
+,{"stream_name":"stdout","time":3791.359344435,"data":"\n"}
+,{"stream_name":"stdout","time":3791.38227177,"data":"[tar_adaptation_RES_PU.py --folder_root /kaggle/working/shot/sdalr_PU_shot/DATA_foldA --seed 2024 --class_num 3 --data_name PU_M1_L3 --output /kaggle/working/shot/weight_PU_M1_shot_FBtoA_s2024 --s 1 --t 2 --lr 0.0005 --threshold 0.4 --K 0.6] 347s\n"}
+,{"stream_name":"stdout","time":3791.408343559,"data":"读取源域路径：/kaggle/working/shot/weight_PU_M1_shot_FBtoA_s2024/NEW_PU/Source-源域/log\u0026pt/(B3)N15_M07_F04\n"}
+,{"stream_name":"stdout","time":3791.408363208,"data":"excel输出位置：/kaggle/working/shot/weight_PU_M1_shot_FBtoA_s2024/NEW_PU/Target-目标域\n"}
+,{"stream_name":"stdout","time":3791.408368999,"data":"特征图片输出位置：/kaggle/working/shot/weight_PU_M1_shot_FBtoA_s2024/NEW_PU/Picture-特征图/2026年09月15日21时31分/(B3)N15_M07_F04\n"}
+,{"stream_name":"stderr","time":3791.442552853,"data":"/usr/local/lib/python3.12/dist-packages/torch/nn/utils/weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.\n"}
+,{"stream_name":"stderr","time":3791.442571254,"data":"  WeightNorm.apply(module, name, dim)\n"}
+,{"stream_name":"stdout","time":3791.483936608,"data":"现在选取:(B3)N15_M07_F04 进行训练的源模型\n"}
+,{"stream_name":"stdout","time":3791.483961541,"data":"现在进行：(B3)N15_M07_F04→(B1)N15_M01_F10 的迁移任务\n"}
+,{"stream_name":"stdout","time":3791.483965795,"data":"log\u0026pt输出位置：/kaggle/working/shot/weight_PU_M1_shot_FBtoA_s2024/NEW_PU/Target-目标域/log\u0026pt/(B3)N15_M07_F04→(B1)N15_M01_F10\n"}
+,{"stream_name":"stderr","time":3791.485343689,"data":"sh: 1: Syntax error: word unexpected (expecting \")\")\n"}
+,{"stream_name":"stdout","time":3802.556034701,"data":"任务: (B3)N15_M07_F04→(B1)N15_M01_F10; 批次:····0/·1880;  总正确率: 52.28%\n"}
+,{"stream_name":"stdout","time":3802.556072468,"data":"类型1 正确率：  91.00% -\u003e 1   91.20%, 2    0.00%, 3    8.80%\n"}
+,{"stream_name":"stdout","time":3802.55607695,"data":"类型2 正确率：  33.00% -\u003e 1   16.55%, 2   32.65%, 3   50.80%\n"}
+,{"stream_name":"stdout","time":3802.556080376,"data":"类型3 正确率：  33.00% -\u003e 1    0.00%, 2   67.00%, 3   33.00%\n"}
+,{"stream_name":"stdout","time":3802.556083621,"data":"\n"}
+,{"stream_name":"stdout","time":3802.556086587,"data":"\n"}
+,{"stream_name":"stdout","time":3805.855079605,"data":"SHOT pseudo-labels: model 52.28% -\u003e centroid 51.67%\n"}
+,{"stream_name":"stdout","time":3819.084366061,"data":"轮次:··1/·20 || cls:1.299 || im:-0.885 || 耗时：22.57s\n"}
+,{"stream_name":"stdout","time":3822.454069773,"data":"SHOT pseudo-labels: model 57.47% -\u003e centroid 54.82%\n"}
+,{"stream_name":"stdout","time":3835.766549377,"data":"轮次:··2/·20 || cls:1.168 || im:-0.879 || 耗时：16.68s\n"}
+,{"stream_name":"stdout","time":3839.097053138,"data":"SHOT pseudo-labels: model 62.00% -\u003e centroid 50.95%\n"}
+,{"stream_name":"stdout","time":3852.306544651,"data":"轮次:··3/·20 || cls:0.850 || im:-0.696 || 耗时：16.54s\n"}
+,{"stream_name":"stdout","time":3855.594137769,"data":"SHOT pseudo-labels: model 64.48% -\u003e centroid 40.30%\n"}
+,{"stream_name":"stdout","time":3868.659634855,"data":"轮次:··4/·20 || cls:0.725 || im:-0.625 || 耗时：16.35s\n"}
+,{"stream_name":"stdout","time":3871.959091829,"data":"SHOT pseudo-labels: model 65.50% -\u003e centroid 41.45%\n"}
+,{"stream_name":"stdout","time":3885.021824018,"data":"轮次:··5/·20 || cls:0.810 || im:-0.641 || 耗时：16.36s\n"}
+,{"stream_name":"stdout","time":3888.32301334,"data":"SHOT pseudo-labels: model 64.80% -\u003e centroid 41.07%\n"}
+,{"stream_name":"stdout","time":3901.500277465,"data":"轮次:··6/·20 || cls:0.846 || im:-0.644 || 耗时：16.48s\n"}
+,{"stream_name":"stdout","time":3904.796127714,"data":"SHOT pseudo-labels: model 65.87% -\u003e centroid 44.22%\n"}
+,{"stream_name":"stdout","time":3917.994036399,"data":"轮次:··7/·20 || cls:0.696 || im:-0.675 || 耗时：16.49s\n"}
+,{"stream_name":"stdout","time":3921.317076376,"data":"SHOT pseudo-labels: model 65.25% -\u003e centroid 41.18%\n"}
+,{"stream_name":"stdout","time":3934.543614009,"data":"轮次:··8/·20 || cls:0.678 || im:-0.567 || 耗时：16.55s\n"}
+,{"stream_name":"stdout","time":3937.855044637,"data":"SHOT pseudo-labels: model 66.82% -\u003e centroid 43.07%\n"}
+,{"stream_name":"stdout","time":3951.065106454,"data":"轮次:··9/·20 || cls:0.669 || im:-0.680 || 耗时：16.52s\n"}
+,{"stream_name":"stdout","time":3954.378196291,"data":"SHOT pseudo-labels: model 66.18% -\u003e centroid 46.48%\n"}
+,{"stream_name":"stdout","time":3967.54489165,"data":"轮次:·10/·20 || cls:0.610 || im:-0.634 || 耗时：16.48s\n"}
+,{"stream_name":"stdout","time":3970.850058572,"data":"SHOT pseudo-labels: model 66.20% -\u003e centroid 48.30%\n"}
+,{"stream_name":"stdout","time":3983.994104643,"data":"轮次:·11/·20 || cls:0.605 || im:-0.536 || 耗时：16.45s\n"}
+,{"stream_name":"stdout","time":3987.299061466,"data":"SHOT pseudo-labels: model 65.82% -\u003e centroid 52.00%\n"}
+,{"stream_name":"stdout","time":4000.43941243,"data":"轮次:·12/·20 || cls:0.847 || im:-0.658 || 耗时：16.45s\n"}
+,{"stream_name":"stdout","time":4003.744004143,"data":"SHOT pseudo-labels: model 65.97% -\u003e centroid 52.77%\n"}
+,{"stream_name":"stdout","time":4016.892725875,"data":"轮次:·13/·20 || cls:0.642 || im:-0.694 || 耗时：16.45s\n"}
+,{"stream_name":"stdout","time":4020.212049347,"data":"SHOT pseudo-labels: model 65.38% -\u003e centroid 53.30%\n"}
+,{"stream_name":"stdout","time":4033.340921046,"data":"轮次:·14/·20 || cls:0.724 || im:-0.647 || 耗时：16.45s\n"}
+,{"stream_name":"stdout","time":4036.644250755,"data":"SHOT pseudo-labels: model 65.12% -\u003e centroid 52.40%\n"}
+,{"stream_name":"stdout","time":4049.770826503,"data":"轮次:·15/·20 || cls:0.800 || im:-0.679 || 耗时：16.43s\n"}
+,{"stream_name":"stdout","time":4053.078088504,"data":"SHOT pseudo-labels: model 65.07% -\u003e centroid 53.35%\n"}
+,{"stream_name":"stdout","time":4066.199868553,"data":"轮次:·16/·20 || cls:0.779 || im:-0.674 || 耗时：16.43s\n"}
+,{"stream_name":"stdout","time":4069.514135963,"data":"SHOT pseudo-labels: model 63.70% -\u003e centroid 53.40%\n"}
+,{"stream_name":"stdout","time":4082.62489883,"data":"轮次:·17/·20 || cls:0.762 || im:-0.673 || 耗时：16.42s\n"}
+,{"stream_name":"stdout","time":4085.933054905,"data":"SHOT pseudo-labels: model 63.88% -\u003e centroid 53.42%\n"}
+,{"stream_name":"stdout","time":4099.056693171,"data":"轮次:·18/·20 || cls:0.821 || im:-0.660 || 耗时：16.43s\n"}
+,{"stream_name":"stdout","time":4102.375108033,"data":"SHOT pseudo-labels: model 64.20% -\u003e centroid 53.32%\n"}
+,{"stream_name":"stdout","time":4115.488755968,"data":"轮次:·19/·20 || cls:0.847 || im:-0.653 || 耗时：16.43s\n"}
+,{"stream_name":"stdout","time":4118.805064758,"data":"SHOT pseudo-labels: model 64.60% -\u003e centroid 53.03%\n"}
+,{"stream_name":"stdout","time":4131.929457613,"data":"轮次:·20/·20 || cls:0.533 || im:-0.639 || 耗时：16.44s\n"}
+,{"stream_name":"stdout","time":4138.014120559,"data":"测试集任务: (B3)N15_M07_F04→(B1)N15_M01_F10; 总正确率 = 64.42%\n"}
+,{"stream_name":"stdout","time":4138.014179328,"data":"类型1 正确率： 100.00% -\u003e 1   99.95%, 2    0.00%, 3    0.05%\n"}
+,{"stream_name":"stdout","time":4138.014188156,"data":"类型2 正确率：  43.00% -\u003e 1   11.05%, 2   43.45%, 3   45.50%\n"}
+,{"stream_name":"stdout","time":4138.01419382,"data":"类型3 正确率：  50.00% -\u003e 1    0.00%, 2   50.15%, 3   49.85%\n"}
+,{"stream_name":"stdout","time":4138.01419845,"data":"\n"}
+,{"stream_name":"stdout","time":4138.014202549,"data":"\n"}
+,{"stream_name":"stdout","time":4138.036230058,"data":"[tar_adaptation_RES_PU.py --folder_root /kaggle/working/shot/sdalr_PU_shot/DATA_foldA --seed 2024 --class_num 3 --data_name PU_M1_L3 --output /kaggle/working/shot/weight_PU_M1_shot_FBtoA_s2024 --s 2 --t 0 --lr 0.0005 --threshold 0.4 --K 0.6] 347s\n"}
+,{"stream_name":"stdout","time":4138.078592886,"data":"读取源域路径：/kaggle/working/shot/weight_PU_M1_shot_FBtoA_s2024/NEW_PU/Source-源域/log\u0026pt/(B3)N15_M07_F04\n"}
+,{"stream_name":"stdout","time":4138.078631461,"data":"excel输出位置：/kaggle/working/shot/weight_PU_M1_shot_FBtoA_s2024/NEW_PU/Target-目标域\n"}
+,{"stream_name":"stdout","time":4138.078648228,"data":"特征图片输出位置：/kaggle/working/shot/weight_PU_M1_shot_FBtoA_s2024/NEW_PU/Picture-特征图/2026年09月15日21时37分/(B3)N15_M07_F04\n"}
+,{"stream_name":"stderr","time":4138.113589327,"data":"/usr/local/lib/python3.12/dist-packages/torch/nn/utils/weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.\n"}
+,{"stream_name":"stderr","time":4138.113611565,"data":"  WeightNorm.apply(module, name, dim)\n"}
+,{"stream_name":"stdout","time":4138.151786445,"data":"现在选取:(B3)N15_M07_F04 进行训练的源模型\n"}
+,{"stream_name":"stdout","time":4138.151808645,"data":"现在进行：(B3)N15_M07_F04→(B2)N15_M07_F10 的迁移任务\n"}
+,{"stream_name":"stdout","time":4138.151815267,"data":"log\u0026pt输出位置：/kaggle/working/shot/weight_PU_M1_shot_FBtoA_s2024/NEW_PU/Target-目标域/log\u0026pt/(B3)N15_M07_F04→(B2)N15_M07_F10\n"}
+,{"stream_name":"stderr","time":4138.153068148,"data":"sh: 1: Syntax error: word unexpected (expecting \")\")\n"}
+,{"stream_name":"stdout","time":4149.276065176,"data":"任务: (B3)N15_M07_F04→(B2)N15_M07_F10; 批次:····0/·1880;  总正确率: 53.68%\n"}
+,{"stream_name":"stdout","time":4149.276102732,"data":"类型1 正确率：  95.00% -\u003e 1   94.70%, 2    0.00%, 3    5.30%\n"}
+,{"stream_name":"stdout","time":4149.27610991,"data":"类型2 正确率：  33.00% -\u003e 1   17.50%, 2   33.35%, 3   49.15%\n"}
+,{"stream_name":"stdout","time":4149.276115679,"data":"类型3 正确率：  33.00% -\u003e 1    0.00%, 2   67.00%, 3   33.00%\n"}
+,{"stream_name":"stdout","time":4149.276120553,"data":"\n"}
+,{"stream_name":"stdout","time":4149.276124724,"data":"\n"}
+,{"stream_name":"stdout","time":4152.589546657,"data":"SHOT pseudo-labels: model 53.68% -\u003e centroid 52.73%\n"}
+,{"stream_name":"stdout","time":4165.823056132,"data":"轮次:··1/·20 || cls:1.614 || im:-0.921 || 耗时：22.62s\n"}
+,{"stream_name":"stdout","time":4169.173059786,"data":"SHOT pseudo-labels: model 55.50% -\u003e centroid 54.88%\n"}
+,{"stream_name":"stdout","time":4182.494830707,"data":"轮次:··2/·20 || cls:1.292 || im:-0.897 || 耗时：16.67s\n"}
+,{"stream_name":"stdout","time":4185.821123699,"data":"SHOT pseudo-labels: model 60.77% -\u003e centroid 48.80%\n"}
+,{"stream_name":"stdout","time":4199.012561235,"data":"轮次:··3/·20 || cls:0.907 || im:-0.763 || 耗时：16.52s\n"}
+,{"stream_name":"stdout","time":4202.289090832,"data":"SHOT pseudo-labels: model 62.85% -\u003e centroid 39.40%\n"}
+,{"stream_name":"stdout","time":4215.321724673,"data":"轮次:··4/·20 || cls:0.741 || im:-0.698 || 耗时：16.31s\n"}
+,{"stream_name":"stdout","time":4218.593050477,"data":"SHOT pseudo-labels: model 64.57% -\u003e centroid 39.87%\n"}
+,{"stream_name":"stdout","time":4231.638837294,"data":"轮次:··5/·20 || cls:0.739 || im:-0.640 || 耗时：16.32s\n"}
+,{"stream_name":"stdout","time":4234.927058221,"data":"SHOT pseudo-labels: model 64.52% -\u003e centroid 38.83%\n"}
+,{"stream_name":"stdout","time":4248.046602256,"data":"轮次:··6/·20 || cls:0.860 || im:-0.694 || 耗时：16.41s\n"}
+,{"stream_name":"stdout","time":4251.356215982,"data":"SHOT pseudo-labels: model 66.00% -\u003e centroid 41.70%\n"}
+,{"stream_name":"stdout","time":4264.574082421,"data":"轮次:··7/·20 || cls:0.707 || im:-0.635 || 耗时：16.53s\n"}
+,{"stream_name":"stdout","time":4267.882174559,"data":"SHOT pseudo-labels: model 65.45% -\u003e centroid 41.15%\n"}
+,{"stream_name":"stdout","time":4281.141425901,"data":"轮次:··8/·20 || cls:0.716 || im:-0.625 || 耗时：16.57s\n"}
+,{"stream_name":"stdout","time":4284.4531341,"data":"SHOT pseudo-labels: model 66.42% -\u003e centroid 44.03%\n"}
+,{"stream_name":"stdout","time":4297.684779014,"data":"轮次:··9/·20 || cls:0.727 || im:-0.669 || 耗时：16.54s\n"}
+,{"stream_name":"stdout","time":4300.972057861,"data":"SHOT pseudo-labels: model 66.80% -\u003e centroid 46.17%\n"}
+,{"stream_name":"stdout","time":4314.136363032,"data":"轮次:·10/·20 || cls:0.605 || im:-0.691 || 耗时：16.45s\n"}
+,{"stream_name":"stdout","time":4317.430100978,"data":"SHOT pseudo-labels: model 66.50% -\u003e centroid 48.87%\n"}
+,{"stream_name":"stdout","time":4330.575664458,"data":"轮次:·11/·20 || cls:0.468 || im:-0.571 || 耗时：16.44s\n"}
+,{"stream_name":"stdout","time":4333.882053408,"data":"SHOT pseudo-labels: model 67.08% -\u003e centroid 47.57%\n"}
+,{"stream_name":"stdout","time":4347.024579953,"data":"轮次:·12/·20 || cls:0.795 || im:-0.622 || 耗时：16.45s\n"}
+,{"stream_name":"stdout","time":4350.331189134,"data":"SHOT pseudo-labels: model 67.10% -\u003e centroid 52.45%\n"}
+,{"stream_name":"stdout","time":4363.476446318,"data":"轮次:·13/·20 || cls:0.699 || im:-0.700 || 耗时：16.45s\n"}
+,{"stream_name":"stdout","time":4366.784069711,"data":"SHOT pseudo-labels: model 66.97% -\u003e centroid 51.65%\n"}
+,{"stream_name":"stdout","time":4379.922267044,"data":"轮次:·14/·20 || cls:0.698 || im:-0.620 || 耗时：16.45s\n"}
+,{"stream_name":"stdout","time":4383.246079359,"data":"SHOT pseudo-labels: model 66.95% -\u003e centroid 46.33%\n"}
+,{"stream_name":"stdout","time":4396.383741055,"data":"轮次:·15/·20 || cls:0.683 || im:-0.663 || 耗时：16.46s\n"}
+,{"stream_name":"stdout","time":4399.678045495,"data":"SHOT pseudo-labels: model 66.82% -\u003e centroid 53.83%\n"}
+,{"stream_name":"stdout","time":4412.808575417,"data":"轮次:·16/·20 || cls:0.862 || im:-0.707 || 耗时：16.42s\n"}
+,{"stream_name":"stdout","time":4416.122018177,"data":"SHOT pseudo-labels: model 66.47% -\u003e centroid 50.67%\n"}
+,{"stream_name":"stdout","time":4429.261583373,"data":"轮次:·17/·20 || cls:0.818 || im:-0.651 || 耗时：16.45s\n"}
+,{"stream_name":"stdout","time":4432.565085641,"data":"SHOT pseudo-labels: model 66.77% -\u003e centroid 54.13%\n"}
+,{"stream_name":"stdout","time":4445.693518057,"data":"轮次:·18/·20 || cls:0.683 || im:-0.593 || 耗时：16.43s\n"}
+,{"stream_name":"stdout","time":4449.016025941,"data":"SHOT pseudo-labels: model 66.87% -\u003e centroid 54.02%\n"}
+,{"stream_name":"stdout","time":4462.180521688,"data":"轮次:·19/·20 || cls:0.824 || im:-0.636 || 耗时：16.49s\n"}
+,{"stream_name":"stdout","time":4465.482072306,"data":"SHOT pseudo-labels: model 67.12% -\u003e centroid 51.95%\n"}
+,{"stream_name":"stdout","time":4478.610050313,"data":"轮次:·20/·20 || cls:0.588 || im:-0.722 || 耗时：16.43s\n"}
+,{"stream_name":"stdout","time":4484.696143356,"data":"测试集任务: (B3)N15_M07_F04→(B2)N15_M07_F10; 总正确率 = 67.07%\n"}
+,{"stream_name":"stdout","time":4484.696179267,"data":"类型1 正确率： 100.00% -\u003e 1   99.90%, 2    0.00%, 3    0.10%\n"}
+,{"stream_name":"stdout","time":4484.696184076,"data":"类型2 正确率：  47.00% -\u003e 1    8.15%, 2   47.35%, 3   44.50%\n"}
+,{"stream_name":"stdout","time":4484.696187349,"data":"类型3 正确率：  54.00% -\u003e 1    0.05%, 2   46.00%, 3   53.95%\n"}
+,{"stream_name":"stdout","time":4484.696190542,"data":"\n"}
+,{"stream_name":"stdout","time":4484.696193319,"data":"\n"}
+,{"stream_name":"stdout","time":4484.717728959,"data":"[tar_adaptation_RES_PU.py --folder_root /kaggle/working/shot/sdalr_PU_shot/DATA_foldA --seed 2024 --class_num 3 --data_name PU_M1_L3 --output /kaggle/working/shot/weight_PU_M1_shot_FBtoA_s2024 --s 2 --t 1 --lr 0.0005 --threshold 0.4 --K 0.6] 347s\n"}
+,{"stream_name":"stdout","time":4484.734708906,"data":"{\n"}
+,{"stream_name":"stdout","time":4484.73474117,"data":"  \"dataset\": \"PU_M1\",\n"}
+,{"stream_name":"stdout","time":4484.734748391,"data":"  \"variant\": \"shot\",\n"}
+,{"stream_name":"stdout","time":4484.734753406,"data":"  \"seed\": 2024,\n"}
+,{"stream_name":"stdout","time":4484.734758283,"data":"  \"smoke\": false,\n"}
+,{"stream_name":"stdout","time":4484.734762762,"data":"  \"src_fold\": \"B\",\n"}
+,{"stream_name":"stdout","time":4484.734767175,"data":"  \"tgt_fold\": \"A\",\n"}
+,{"stream_name":"stdout","time":4484.734771618,"data":"  \"leaky\": false,\n"}
+,{"stream_name":"stdout","time":4484.734776493,"data":"  \"hyperparameters\": {\n"}
+,{"stream_name":"stdout","time":4484.734781946,"data":"    \"lr\": \"0.0005\",\n"}
+,{"stream_name":"stdout","time":4484.734787026,"data":"    \"threshold\": \"0.4\",\n"}
+,{"stream_name":"stdout","time":4484.734792212,"data":"    \"K\": \"0.6\"\n"}
+,{"stream_name":"stdout","time":4484.734796666,"data":"  },\n"}
+,{"stream_name":"stdout","time":4484.734800925,"data":"  \"adapters\": [\n"}
+,{"stream_name":"stdout","time":4484.73480521,"data":"    \"npz_io\",\n"}
+,{"stream_name":"stdout","time":4484.734809616,"data":"    \"tsne_stub\",\n"}
+,{"stream_name":"stdout","time":4484.734813933,"data":"    \"shot_patch\"\n"}
+,{"stream_name":"stdout","time":4484.734824033,"data":"  ],\n"}
+,{"stream_name":"stdout","time":4484.73482759,"data":"  \"source_only\": {},\n"}
+,{"stream_name":"stdout","time":4484.734830497,"data":"  \"adapted\": {\n"}
+,{"stream_name":"stdout","time":4484.734833414,"data":"    \"A1-\u003eA3\": 68.57,\n"}
+,{"stream_name":"stdout","time":4484.734836551,"data":"    \"A1-\u003eA2\": 62.1,\n"}
+,{"stream_name":"stdout","time":4484.734839464,"data":"    \"A3-\u003eA1\": 65.52,\n"}
+,{"stream_name":"stdout","time":4484.734842294,"data":"    \"A3-\u003eA2\": 53.5,\n"}
+,{"stream_name":"stdout","time":4484.734845278,"data":"    \"A2-\u003eA1\": 64.42,\n"}
+,{"stream_name":"stdout","time":4484.73484813,"data":"    \"A2-\u003eA3\": 67.07\n"}
+,{"stream_name":"stdout","time":4484.734872487,"data":"  },\n"}
+,{"stream_name":"stdout","time":4484.734876765,"data":"  \"seconds\": {\n"}
+,{"stream_name":"stdout","time":4484.734880664,"data":"    \"A1-\u003eA3\": 347,\n"}
+,{"stream_name":"stdout","time":4484.734884634,"data":"    \"A1-\u003eA2\": 347,\n"}
+,{"stream_name":"stdout","time":4484.734888621,"data":"    \"A3-\u003eA1\": 346,\n"}
+,{"stream_name":"stdout","time":4484.734892349,"data":"    \"A3-\u003eA2\": 347,\n"}
+,{"stream_name":"stdout","time":4484.73489597,"data":"    \"A2-\u003eA1\": 347,\n"}
+,{"stream_name":"stdout","time":4484.734899423,"data":"    \"A2-\u003eA3\": 347\n"}
+,{"stream_name":"stdout","time":4484.734902802,"data":"  },\n"}
+,{"stream_name":"stdout","time":4484.734905999,"data":"  \"gate_log\": {\n"}
+,{"stream_name":"stdout","time":4484.73490932,"data":"    \"A1-\u003eA3\": [],\n"}
+,{"stream_name":"stdout","time":4484.734912919,"data":"    \"A1-\u003eA2\": [],\n"}
+,{"stream_name":"stdout","time":4484.734916228,"data":"    \"A3-\u003eA1\": [],\n"}
+,{"stream_name":"stdout","time":4484.734919605,"data":"    \"A3-\u003eA2\": [],\n"}
+,{"stream_name":"stdout","time":4484.734922975,"data":"    \"A2-\u003eA1\": [],\n"}
+,{"stream_name":"stdout","time":4484.734926373,"data":"    \"A2-\u003eA3\": []\n"}
+,{"stream_name":"stdout","time":4484.734929979,"data":"  },\n"}
+,{"stream_name":"stdout","time":4484.734933202,"data":"  \"gate\": \"none\"\n"}
+,{"stream_name":"stdout","time":4484.734941108,"data":"}\n"}
+,{"stream_name":"stdout","time":4485.847262265,"data":"{'variant': 'shot', 'src': 'B', 'tgt': 'A', 'rc': 0, 'seconds': 2089}\n"}
+,{"stream_name":"stdout","time":4485.876247191,"data":"done [{\"variant\": \"shot\", \"src\": \"B\", \"tgt\": \"B\", \"rc\": 0, \"seconds\": 2389}, {\"variant\": \"shot\", \"src\": \"B\", \"tgt\": \"A\", \"rc\": 0, \"seconds\": 2089}]\n"}
+,{"stream_name":"stderr","time":4488.384621912,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":4488.384649854,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":4488.652827134,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":4488.652855793,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":4489.33739611,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":4490.10321585,"data":"[NbConvertApp] Writing 286831 bytes to __results__.html\n"}
+]

@@ -1,0 +1,14 @@
+Source-free domain adaptation (SFDA) reports near-ceiling accuracy for rolling-bearing diagnosis, but its protocols place
+the same physical bearings on both sides of a transfer. We re-evaluate a published SFDA method (SDALR) and SHOT on the
+Paderborn data in a paired design: one source model is adapted to the same bearings and to unseen bearings at the same
+target condition. Over ten pre-registered bearing splits, unseen bearings cost a median 36.2 points (95\,\% CI 25.0--56.3,
+10 of 10 splits), and a given bearing loses a median 38.7 points when it is unseen rather than seen. The gap is already
+present before adaptation (35.1 points): neither method's adaptation creates or repairs it. SHOT, non-adaptive random
+forests and a fixed-condition control show the same loss, and a second rig, where specimen and bearing size change together, shows a loss of similar direction and size. It is not a
+fixed identity shortcut. In a random forest, accuracy on unseen
+bearings rises from \SI{46}{\percent} to \SI{75}{\percent} as the source grows from one to four bearings per class, so
+three specimens per class under-sample the damage signatures. An oracle pseudo-label filter recovers a median
+\SI{82}{\percent} of the loss. Envelope-based kinematic gates accept 0 to 9 of 480 healthy recordings as faulty, against
+214 for a raw-spectrum band rule, but certify only the specimens with the largest damage. Inside the adaptation loop the
+safe gate adds a median 4.5 points, almost all of it on the recordings it certifies. We list the evidence such results
+should carry.

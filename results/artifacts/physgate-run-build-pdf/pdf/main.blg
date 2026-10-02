@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: elsarticle-num.bst
+Database file #1: references.bib
+Warning--empty pages in liang2020shot
+Warning--can't use both volume and number fields in matania2024leakage
+Warning--empty pages in matania2024leakage
+Warning--can't use both volume and number fields in knap2026leakagesafe
+You've used 28 entries,
+            2952 wiz_defined-function locations,
+            859 strings with 11486 characters,
+and the built_in function-call counts, 10003 in all, are:
+= -- 974
+> -- 358
+< -- 6
++ -- 138
+- -- 110
+* -- 821
+:= -- 1349
+add.period$ -- 50
+call.type$ -- 28
+change.case$ -- 34
+chr.to.int$ -- 0
+cite$ -- 32
+duplicate$ -- 279
+empty$ -- 1062
+format.name$ -- 136
+if$ -- 2528
+int.to.chr$ -- 0
+int.to.str$ -- 28
+missing$ -- 27
+newline$ -- 114
+num.names$ -- 27
+pop$ -- 145
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 632
+stack$ -- 0
+substring$ -- 625
+swap$ -- 104
+text.length$ -- 6
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 4
+while$ -- 70
+width$ -- 30
+write$ -- 285
+(There were 4 warnings)

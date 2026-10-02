@@ -1,0 +1,37 @@
+\section{Physics gates}
+\label{sec:gates}
+
+Four gates are compared. All operate on a single recording, return a verdict for the label space of
+Section~\ref{sec:data}, and use kinematics resolved for that specimen (Section~\ref{sec:kinematics}) with the shaft speed
+measured for that recording. Cage slip is accommodated by searching a common relative offset $\delta$ within
+$\pm\SI{2}{\percent}$ of the nominal orders, which is the interval that contains the slips measured in
+Section~\ref{sec:res-slip}.
+
+\paragraph{Comb test (statistical).} The signal is pre-whitened by cepstrum editing to suppress deterministic shaft
+content, band-selected by the fast kurtogram \cite{antoni2007kurtogram} and converted to a squared envelope spectrum
+\cite{randall2011}. For each family (outer, inner with $\pm2$ shaft sidebands, ball with cage sidebands) the spectrum is
+normalised by a running-median floor and a harmonic comb of $K=5$ harmonics is scored at the best common offset. The score
+is ranked against 499 surrogate combs placed at non-kinematic orders, giving a record-specific null; a family is admissible
+if its surrogate $p$-value passes $\alpha/n_{\mathrm{families}}$ and at least two of its positions carry an unmistakable
+line. The surviving family with the strongest evidence becomes the verdict.
+
+\paragraph{Shaft-alias-guarded comb (comb\_v2).} As above, with two additions: a family is rejected when at least half of
+its lit positions fall within 1.5 native bins of an integer shaft order, and ties are arbitrated by the fraction of aligned
+lit positions rather than by raw excess. The guard exists because on a 6203 bearing the race lines sit close to integer
+shaft orders (Section~\ref{sec:res-slip}), so a strong shaft comb can light a fault family that is not there.
+
+\paragraph{Envelope threshold rule (PCV-style).} A deliberately simple rule with no pre-whitening and no statistical null: a
+harmonic counts as present if the median-normalised squared envelope spectrum exceeds a threshold $z$ anywhere inside that
+harmonic's slip window, and a family is declared when at least two of its first three harmonics are present. It stands for
+the family of threshold-on-envelope validators used in physics-guided adaptation.
+
+\paragraph{Raw-spectrum band rule (EAGLE-style).} Our implementation of the mechanism described for Bio-SFDA
+\cite{yoon2026biosfda}: band energy and peak-to-neighbourhood ratio at BPFO, BPFI and BSF measured on a short-time Fourier
+transform of the raw signal, robustly $z$-scored across recordings, with a fault declared when the predicates pass. It
+differs from the other three in operating on the raw spectrum rather than the envelope spectrum, which is the property under
+test.
+
+A gate is useful inside adaptation only if it is safe on healthy machinery: a verdict of ``inner race'' on a healthy bearing
+injects a wrong pseudo-label with high confidence. We therefore characterise each gate by its false acceptance on real
+healthy recordings and by its full operating curve before using any of them (Section~\ref{sec:res-gating}), rather than by
+end accuracy alone.

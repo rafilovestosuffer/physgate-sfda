@@ -1,0 +1,100 @@
+{
+ "entry": "C111",
+ "status": "pre-registered (2026-10-02), descriptive",
+ "a_all_ten": {
+  "correct": 508,
+  "records": 508,
+  "chance": 0.353018372703412,
+  "median_window_acc": 0.973022233712513,
+  "per_class": {
+   "normal": {
+    "correct": 180,
+    "records": 180,
+    "chance": 0.3333333333333333
+   },
+   "inner race": {
+    "correct": 178,
+    "records": 178,
+    "chance": 0.3333333333333333
+   },
+   "outer race": {
+    "correct": 150,
+    "records": 150,
+    "chance": 0.4
+   }
+  }
+ },
+ "b_without_mean": {
+  "correct": 508,
+  "records": 508,
+  "chance": 0.353018372703412,
+  "median_window_acc": 0.9528680419290294
+ },
+ "c_single_statistic": {
+  "mean": {
+   "correct": 311,
+   "records": 508,
+   "chance": 0.353018372703412,
+   "median_window_acc": 0.482345649654253
+  },
+  "std": {
+   "correct": 477,
+   "records": 508,
+   "chance": 0.353018372703412,
+   "median_window_acc": 0.846079380445305
+  },
+  "rms": {
+   "correct": 477,
+   "records": 508,
+   "chance": 0.353018372703412,
+   "median_window_acc": 0.8477136601759316
+  },
+  "peak": {
+   "correct": 386,
+   "records": 508,
+   "chance": 0.353018372703412,
+   "median_window_acc": 0.6783867631851086
+  },
+  "peak-to-peak": {
+   "correct": 396,
+   "records": 508,
+   "chance": 0.353018372703412,
+   "median_window_acc": 0.6801603152038777
+  },
+  "skewness": {
+   "correct": 258,
+   "records": 508,
+   "chance": 0.353018372703412,
+   "median_window_acc": 0.4519906928645295
+  },
+  "kurtosis": {
+   "correct": 392,
+   "records": 508,
+   "chance": 0.353018372703412,
+   "median_window_acc": 0.6529767321613237
+  },
+  "crest": {
+   "correct": 366,
+   "records": 508,
+   "chance": 0.353018372703412,
+   "median_window_acc": 0.4996142303969022
+  },
+  "shape": {
+   "correct": 429,
+   "records": 508,
+   "chance": 0.353018372703412,
+   "median_window_acc": 0.6842786970010342
+  },
+  "impulse": {
+   "correct": 364,
+   "records": 508,
+   "chance": 0.353018372703412,
+   "median_window_acc": 0.531468268944881
+  }
+ },
+ "d_within_bearing_early_vs_late": {
+  "correct": 285,
+  "records": 508,
+  "chance": 0.5
+ }
+}

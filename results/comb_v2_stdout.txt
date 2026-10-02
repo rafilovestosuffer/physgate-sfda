@@ -1,0 +1,354 @@
+{
+ "PU|measured": {
+  "n": 2319,
+  "c30": {
+   "healthy_FA": [
+    9,
+    480
+   ],
+   "outer_race": {
+    "says": 155,
+    "tp": 148,
+    "precision": 0.9548387096774194,
+    "recall": 0.1543274244004171,
+    "bearings_engaged": "3/12"
+   },
+   "inner_race": {
+    "says": 184,
+    "tp": 161,
+    "precision": 0.875,
+    "recall": 0.18295454545454545,
+    "bearings_engaged": "7/11"
+   },
+   "I->O": 7,
+   "O->I": 14
+  },
+  "v2": {
+   "healthy_FA": [
+    0,
+    480
+   ],
+   "outer_race": {
+    "says": 148,
+    "tp": 148,
+    "precision": 1.0,
+    "recall": 0.1543274244004171,
+    "bearings_engaged": "3/12"
+   },
+   "inner_race": {
+    "says": 167,
+    "tp": 164,
+    "precision": 0.9820359281437125,
+    "recall": 0.18636363636363637,
+    "bearings_engaged": "6/11"
+   },
+   "I->O": 0,
+   "O->I": 3
+  }
+ },
+ "CWRU|measured_in_file": {
+  "n": 54,
+  "c30": {
+   "healthy_FA": [
+    0,
+    2
+   ],
+   "outer_race": {
+    "says": 10,
+    "tp": 10,
+    "precision": 1.0,
+    "recall": 0.35714285714285715,
+    "bearings_engaged": "4/7"
+   },
+   "inner_race": {
+    "says": 7,
+    "tp": 7,
+    "precision": 1.0,
+    "recall": 0.5833333333333334,
+    "bearings_engaged": "3/3"
+   },
+   "ball": {
+    "says": 0,
+    "tp": 0,
+    "precision": null,
+    "recall": 0.0,
+    "bearings_engaged": "0/3"
+   },
+   "I->O": 0,
+   "O->I": 0
+  },
+  "v2": {
+   "healthy_FA": [
+    0,
+    2
+   ],
+   "outer_race": {
+    "says": 10,
+    "tp": 10,
+    "precision": 1.0,
+    "recall": 0.35714285714285715,
+    "bearings_engaged": "4/7"
+   },
+   "inner_race": {
+    "says": 7,
+    "tp": 7,
+    "precision": 1.0,
+    "recall": 0.5833333333333334,
+    "bearings_engaged": "3/3"
+   },
+   "ball": {
+    "says": 0,
+    "tp": 0,
+    "precision": null,
+    "recall": 0.0,
+    "bearings_engaged": "0/3"
+   },
+   "I->O": 0,
+   "O->I": 0
+  }
+ },
+ "CWRU|nominal_table": {
+  "n": 10,
+  "c30": {
+   "healthy_FA": [
+    0,
+    2
+   ],
+   "outer_race": {
+    "says": 0,
+    "tp": 0,
+    "precision": null,
+    "recall": null,
+    "bearings_engaged": "0/0"
+   },
+   "inner_race": {
+    "says": 0,
+    "tp": 0,
+    "precision": null,
+    "recall": 0.0,
+    "bearings_engaged": "0/1"
+   },
+   "ball": {
+    "says": 0,
+    "tp": 0,
+    "precision": null,
+    "recall": 0.0,
+    "bearings_engaged": "0/1"
+   },
+   "I->O": 0,
+   "O->I": 0
+  },
+  "v2": {
+   "healthy_FA": [
+    0,
+    2
+   ],
+   "outer_race": {
+    "says": 0,
+    "tp": 0,
+    "precision": null,
+    "recall": null,
+    "bearings_engaged": "0/0"
+   },
+   "inner_race": {
+    "says": 0,
+    "tp": 0,
+    "precision": null,
+    "recall": 0.0,
+    "bearings_engaged": "0/1"
+   },
+   "ball": {
+    "says": 0,
+    "tp": 0,
+    "precision": null,
+    "recall": 0.0,
+    "bearings_engaged": "0/1"
+   },
+   "I->O": 0,
+   "O->I": 0
+  }
+ },
+ "UORED|logged": {
+  "n": 60,
+  "c30": {
+   "healthy_FA": [
+    0,
+    20
+   ],
+   "outer_race": {
+    "says": 5,
+    "tp": 5,
+    "precision": 1.0,
+    "recall": 0.5,
+    "bearings_engaged": "3/5"
+   },
+   "inner_race": {
+    "says": 5,
+    "tp": 5,
+    "precision": 1.0,
+    "recall": 0.5,
+    "bearings_engaged": "4/5"
+   },
+   "ball": {
+    "says": 1,
+    "tp": 0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "bearings_engaged": "0/5"
+   },
+   "I->O": 0,
+   "O->I": 0
+  },
+  "v2": {
+   "healthy_FA": [
+    0,
+    20
+   ],
+   "outer_race": {
+    "says": 5,
+    "tp": 5,
+    "precision": 1.0,
+    "recall": 0.5,
+    "bearings_engaged": "3/5"
+   },
+   "inner_race": {
+    "says": 5,
+    "tp": 5,
+    "precision": 1.0,
+    "recall": 0.5,
+    "bearings_engaged": "4/5"
+   },
+   "ball": {
+    "says": 1,
+    "tp": 0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "bearings_engaged": "0/5"
+   },
+   "I->O": 0,
+   "O->I": 0
+  }
+ },
+ "UORED|spectral_1x": {
+  "n": 60,
+  "c30": {
+   "healthy_FA": [
+    0,
+    20
+   ],
+   "outer_race": {
+    "says": 10,
+    "tp": 4,
+    "precision": 0.4,
+    "recall": 0.4,
+    "bearings_engaged": "3/5"
+   },
+   "inner_race": {
+    "says": 0,
+    "tp": 0,
+    "precision": null,
+    "recall": 0.0,
+    "bearings_engaged": "0/5"
+   },
+   "ball": {
+    "says": 1,
+    "tp": 1,
+    "precision": 1.0,
+    "recall": 0.1,
+    "bearings_engaged": "1/5"
+   },
+   "I->O": 6,
+   "O->I": 0
+  },
+  "v2": {
+   "healthy_FA": [
+    0,
+    20
+   ],
+   "outer_race": {
+    "says": 5,
+    "tp": 3,
+    "precision": 0.6,
+    "recall": 0.3,
+    "bearings_engaged": "3/5"
+   },
+   "inner_race": {
+    "says": 0,
+    "tp": 0,
+    "precision": null,
+    "recall": 0.0,
+    "bearings_engaged": "0/5"
+   },
+   "ball": {
+    "says": 1,
+    "tp": 1,
+    "precision": 1.0,
+    "recall": 0.1,
+    "bearings_engaged": "1/5"
+   },
+   "I->O": 2,
+   "O->I": 0
+  }
+ },
+ "CWRU|all": {
+  "n": 64,
+  "c30": {
+   "healthy_FA": [
+    0,
+    4
+   ],
+   "outer_race": {
+    "says": 10,
+    "tp": 10,
+    "precision": 1.0,
+    "recall": 0.35714285714285715,
+    "bearings_engaged": "4/7"
+   },
+   "inner_race": {
+    "says": 7,
+    "tp": 7,
+    "precision": 1.0,
+    "recall": 0.4375,
+    "bearings_engaged": "3/4"
+   },
+   "ball": {
+    "says": 0,
+    "tp": 0,
+    "precision": null,
+    "recall": 0.0,
+    "bearings_engaged": "0/4"
+   },
+   "I->O": 0,
+   "O->I": 0
+  },
+  "v2": {
+   "healthy_FA": [
+    0,
+    4
+   ],
+   "outer_race": {
+    "says": 10,
+    "tp": 10,
+    "precision": 1.0,
+    "recall": 0.35714285714285715,
+    "bearings_engaged": "4/7"
+   },
+   "inner_race": {
+    "says": 7,
+    "tp": 7,
+    "precision": 1.0,
+    "recall": 0.4375,
+    "bearings_engaged": "3/4"
+   },
+   "ball": {
+    "says": 0,
+    "tp": 0,
+    "precision": null,
+    "recall": 0.0,
+    "bearings_engaged": "0/4"
+   },
+   "I->O": 0,
+   "O->I": 0
+  }
+ }
+}

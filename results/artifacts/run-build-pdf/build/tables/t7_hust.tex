@@ -1,0 +1,18 @@
+\begin{table}[htbp]
+\centering
+\caption{Second rig: SDALR on HUST bearing, six pre-registered type-disjoint splits (accuracy, \%). The source is three bearing types; the clean target is the other two at the target load.}
+\label{tab:hust}
+\begin{tabular}{llrrr}
+\toprule
+Split & Source bearings & Leaky & Clean & $\Delta_{\mathrm{leak}}$ \\
+\midrule
+H0 & 6204, 6207, 6208 & 98.1 & 63.7 & 34.5 \\
+H1 & 6204, 6205, 6207 & 100.0 & 69.1 & 30.9 \\
+H2 & 6204, 6205, 6206 & 99.8 & 49.9 & 49.9 \\
+H3 & 6205, 6206, 6207 & 100.0 & 67.5 & 32.5 \\
+H4 & 6206, 6207, 6208 & 94.3 & 68.5 & 25.8 \\
+H5 & 6205, 6206, 6208 & 100.0 & 38.9 & 61.1 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{\linewidth}\vspace{2pt}\footnotesize Median $\Delta_{\mathrm{leak}}$ 33.5~pp (range 25.8--61.1, one-sided Wilcoxon $p=0.016$ over the six splits, which is the smallest value attainable with six clusters; exact sign-flip $p=0.016$, $p_{\mathrm{BH}}=0.022$, but $p_{\mathrm{BY}}=0.065$ under arbitrary dependence), which meets the replication rule fixed before the run. On this rig the clean target changes bearing size as well as bearing identity, so the shift is stronger than Paderborn's.\end{minipage}
+\end{table}

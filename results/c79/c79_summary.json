@@ -1,0 +1,162 @@
+{
+  "CWRU_DE|measured": {
+    "kurtogram": {
+      "healthy_FA": [
+        0,
+        4
+      ],
+      "ball": [
+        0,
+        16
+      ],
+      "IO_correct": [
+        17,
+        44
+      ],
+      "wrong_family": 0
+    },
+    "iesfo": {
+      "healthy_FA": [
+        0,
+        4
+      ],
+      "ball": [
+        0,
+        16
+      ],
+      "IO_correct": [
+        17,
+        44
+      ],
+      "wrong_family": 0
+    }
+  },
+  "CWRU_FE|measured": {
+    "kurtogram": {
+      "healthy_FA": [
+        0,
+        0
+      ],
+      "ball": [
+        0,
+        12
+      ],
+      "IO_correct": [
+        10,
+        33
+      ],
+      "wrong_family": 0
+    },
+    "iesfo": {
+      "healthy_FA": [
+        0,
+        0
+      ],
+      "ball": [
+        0,
+        12
+      ],
+      "IO_correct": [
+        25,
+        33
+      ],
+      "wrong_family": 0
+    }
+  },
+  "PU_healthy|measured": {
+    "kurtogram": {
+      "healthy_FA": [
+        9,
+        480
+      ],
+      "ball": [
+        0,
+        0
+      ],
+      "IO_correct": [
+        0,
+        0
+      ],
+      "wrong_family": 0
+    },
+    "iesfo": {
+      "healthy_FA": [
+        5,
+        480
+      ],
+      "ball": [
+        0,
+        0
+      ],
+      "IO_correct": [
+        0,
+        0
+      ],
+      "wrong_family": 0
+    }
+  },
+  "UORED|ftf": {
+    "kurtogram": {
+      "healthy_FA": [
+        0,
+        5
+      ],
+      "ball": [
+        0,
+        4
+      ],
+      "IO_correct": [
+        4,
+        5
+      ],
+      "wrong_family": 0
+    },
+    "iesfo": {
+      "healthy_FA": [
+        4,
+        5
+      ],
+      "ball": [
+        0,
+        4
+      ],
+      "IO_correct": [
+        3,
+        5
+      ],
+      "wrong_family": 0
+    }
+  },
+  "UORED|logged": {
+    "kurtogram": {
+      "healthy_FA": [
+        0,
+        20
+      ],
+      "ball": [
+        0,
+        10
+      ],
+      "IO_correct": [
+        10,
+        20
+      ],
+      "wrong_family": 1
+    },
+    "iesfo": {
+      "healthy_FA": [
+        5,
+        20
+      ],
+      "ball": [
+        0,
+        10
+      ],
+      "IO_correct": [
+        12,
+        20
+      ],
+      "wrong_family": 4
+    }
+  }
+}

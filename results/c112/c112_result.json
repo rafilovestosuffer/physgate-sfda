@@ -1,0 +1,691 @@
+{
+ "entry": "C112",
+ "status": "pre-registered 2026-10-02",
+ "per_split": {
+  "S00": {
+   "tasks": [
+    {
+     "task": "A1->A3",
+     "leaky": 77.77777777777779,
+     "clean": 50.0,
+     "clean_balanced": 55.55555555555555,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A1->A2",
+     "leaky": 81.11111111111111,
+     "clean": 38.125,
+     "clean_balanced": 43.888888888888886,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A3->A1",
+     "leaky": 76.11111111111111,
+     "clean": 48.75,
+     "clean_balanced": 54.44444444444444,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A3->A2",
+     "leaky": 73.33333333333333,
+     "clean": 38.75,
+     "clean_balanced": 45.0,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A2->A1",
+     "leaky": 71.66666666666667,
+     "clean": 43.125,
+     "clean_balanced": 43.888888888888886,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A2->A3",
+     "leaky": 66.66666666666666,
+     "clean": 43.125,
+     "clean_balanced": 43.611111111111114,
+     "n_train": 180,
+     "n_clean": 160
+    }
+   ],
+   "leaky": 74.44444444444446,
+   "clean": 43.645833333333336,
+   "clean_balanced": 47.731481481481474,
+   "delta": 30.79861111111112
+  },
+  "S01": {
+   "tasks": [
+    {
+     "task": "A1->A3",
+     "leaky": 57.22222222222222,
+     "clean": 63.74999999999999,
+     "clean_balanced": 56.66666666666668,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A1->A2",
+     "leaky": 60.0,
+     "clean": 63.125,
+     "clean_balanced": 59.44444444444444,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A3->A1",
+     "leaky": 60.0,
+     "clean": 43.75,
+     "clean_balanced": 38.88888888888889,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A3->A2",
+     "leaky": 61.111111111111114,
+     "clean": 67.5,
+     "clean_balanced": 66.94444444444444,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A2->A1",
+     "leaky": 57.22222222222222,
+     "clean": 67.5,
+     "clean_balanced": 60.0,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A2->A3",
+     "leaky": 57.22222222222222,
+     "clean": 67.5,
+     "clean_balanced": 60.27777777777777,
+     "n_train": 180,
+     "n_clean": 160
+    }
+   ],
+   "leaky": 58.7962962962963,
+   "clean": 62.1875,
+   "clean_balanced": 57.03703703703704,
+   "delta": -3.3912037037037024
+  },
+  "S02": {
+   "tasks": [
+    {
+     "task": "A1->A3",
+     "leaky": 76.11111111111111,
+     "clean": 71.875,
+     "clean_balanced": 69.44444444444446,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A1->A2",
+     "leaky": 58.88888888888889,
+     "clean": 61.25000000000001,
+     "clean_balanced": 54.722222222222214,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A3->A1",
+     "leaky": 76.11111111111111,
+     "clean": 72.5,
+     "clean_balanced": 71.94444444444444,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A3->A2",
+     "leaky": 64.44444444444444,
+     "clean": 59.375,
+     "clean_balanced": 55.55555555555556,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A2->A1",
+     "leaky": 58.88888888888889,
+     "clean": 58.75,
+     "clean_balanced": 55.55555555555556,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A2->A3",
+     "leaky": 64.44444444444444,
+     "clean": 60.62499999999999,
+     "clean_balanced": 58.05555555555556,
+     "n_train": 180,
+     "n_clean": 160
+    }
+   ],
+   "leaky": 66.48148148148148,
+   "clean": 64.0625,
+   "clean_balanced": 60.879629629629626,
+   "delta": 2.418981481481481
+  },
+  "S03": {
+   "tasks": [
+    {
+     "task": "A1->A3",
+     "leaky": 96.66666666666667,
+     "clean": 46.25,
+     "clean_balanced": 45.27777777777778,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A1->A2",
+     "leaky": 85.55555555555556,
+     "clean": 41.875,
+     "clean_balanced": 41.94444444444444,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A3->A1",
+     "leaky": 95.0,
+     "clean": 43.75,
+     "clean_balanced": 40.27777777777777,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A3->A2",
+     "leaky": 84.44444444444444,
+     "clean": 43.125,
+     "clean_balanced": 40.833333333333336,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A2->A1",
+     "leaky": 71.11111111111111,
+     "clean": 43.75,
+     "clean_balanced": 40.833333333333336,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A2->A3",
+     "leaky": 73.33333333333333,
+     "clean": 47.5,
+     "clean_balanced": 46.666666666666664,
+     "n_train": 180,
+     "n_clean": 160
+    }
+   ],
+   "leaky": 84.35185185185186,
+   "clean": 44.375,
+   "clean_balanced": 42.63888888888889,
+   "delta": 39.97685185185186
+  },
+  "S04": {
+   "tasks": [
+    {
+     "task": "A1->A3",
+     "leaky": 70.55555555555556,
+     "clean": 61.875,
+     "clean_balanced": 61.66666666666667,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A1->A2",
+     "leaky": 63.888888888888886,
+     "clean": 53.75,
+     "clean_balanced": 51.66666666666666,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A3->A1",
+     "leaky": 70.55555555555556,
+     "clean": 68.75,
+     "clean_balanced": 70.55555555555556,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A3->A2",
+     "leaky": 55.55555555555556,
+     "clean": 55.625,
+     "clean_balanced": 55.27777777777777,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A2->A1",
+     "leaky": 61.111111111111114,
+     "clean": 50.625,
+     "clean_balanced": 47.77777777777778,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A2->A3",
+     "leaky": 57.22222222222222,
+     "clean": 50.625,
+     "clean_balanced": 48.61111111111111,
+     "n_train": 180,
+     "n_clean": 160
+    }
+   ],
+   "leaky": 63.148148148148145,
+   "clean": 56.875,
+   "clean_balanced": 55.925925925925924,
+   "delta": 6.273148148148145
+  },
+  "S05": {
+   "tasks": [
+    {
+     "task": "A1->A3",
+     "leaky": 79.44444444444444,
+     "clean": 63.74999999999999,
+     "clean_balanced": 56.666666666666664,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A1->A2",
+     "leaky": 53.888888888888886,
+     "clean": 50.0,
+     "clean_balanced": 44.44444444444444,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A3->A1",
+     "leaky": 78.33333333333333,
+     "clean": 53.125,
+     "clean_balanced": 47.222222222222214,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A3->A2",
+     "leaky": 55.00000000000001,
+     "clean": 39.375,
+     "clean_balanced": 35.0,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A2->A1",
+     "leaky": 50.0,
+     "clean": 54.37499999999999,
+     "clean_balanced": 52.22222222222223,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A2->A3",
+     "leaky": 49.44444444444444,
+     "clean": 67.5,
+     "clean_balanced": 65.55555555555556,
+     "n_train": 180,
+     "n_clean": 160
+    }
+   ],
+   "leaky": 61.01851851851851,
+   "clean": 54.6875,
+   "clean_balanced": 50.18518518518518,
+   "delta": 6.331018518518512
+  },
+  "S06": {
+   "tasks": [
+    {
+     "task": "A1->A3",
+     "leaky": 71.11111111111111,
+     "clean": 65.625,
+     "clean_balanced": 66.38888888888889,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A1->A2",
+     "leaky": 61.66666666666667,
+     "clean": 48.125,
+     "clean_balanced": 46.666666666666664,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A3->A1",
+     "leaky": 73.33333333333333,
+     "clean": 66.875,
+     "clean_balanced": 69.16666666666667,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A3->A2",
+     "leaky": 70.0,
+     "clean": 46.875,
+     "clean_balanced": 48.33333333333334,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A2->A1",
+     "leaky": 53.888888888888886,
+     "clean": 53.125,
+     "clean_balanced": 52.77777777777778,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A2->A3",
+     "leaky": 61.111111111111114,
+     "clean": 51.87500000000001,
+     "clean_balanced": 51.66666666666666,
+     "n_train": 180,
+     "n_clean": 160
+    }
+   ],
+   "leaky": 65.18518518518518,
+   "clean": 55.416666666666664,
+   "clean_balanced": 55.833333333333336,
+   "delta": 9.768518518518512
+  },
+  "S07": {
+   "tasks": [
+    {
+     "task": "A1->A3",
+     "leaky": 83.88888888888889,
+     "clean": 56.875,
+     "clean_balanced": 53.888888888888886,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A1->A2",
+     "leaky": 60.0,
+     "clean": 61.25000000000001,
+     "clean_balanced": 57.77777777777777,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A3->A1",
+     "leaky": 80.55555555555556,
+     "clean": 50.0,
+     "clean_balanced": 48.611111111111114,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A3->A2",
+     "leaky": 55.55555555555556,
+     "clean": 57.49999999999999,
+     "clean_balanced": 54.44444444444445,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A2->A1",
+     "leaky": 56.111111111111114,
+     "clean": 57.49999999999999,
+     "clean_balanced": 53.333333333333336,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A2->A3",
+     "leaky": 52.77777777777778,
+     "clean": 63.125,
+     "clean_balanced": 61.38888888888889,
+     "n_train": 180,
+     "n_clean": 160
+    }
+   ],
+   "leaky": 64.81481481481481,
+   "clean": 57.708333333333336,
+   "clean_balanced": 54.90740740740741,
+   "delta": 7.106481481481474
+  },
+  "S08": {
+   "tasks": [
+    {
+     "task": "A1->A3",
+     "leaky": 70.0,
+     "clean": 37.5,
+     "clean_balanced": 33.33333333333333,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A1->A2",
+     "leaky": 63.888888888888886,
+     "clean": 54.37499999999999,
+     "clean_balanced": 58.05555555555556,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A3->A1",
+     "leaky": 67.77777777777779,
+     "clean": 36.25,
+     "clean_balanced": 32.22222222222222,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A3->A2",
+     "leaky": 62.22222222222222,
+     "clean": 54.37499999999999,
+     "clean_balanced": 58.611111111111114,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A2->A1",
+     "leaky": 67.22222222222223,
+     "clean": 45.0,
+     "clean_balanced": 40.00000000000001,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A2->A3",
+     "leaky": 67.22222222222223,
+     "clean": 45.0,
+     "clean_balanced": 40.0,
+     "n_train": 180,
+     "n_clean": 160
+    }
+   ],
+   "leaky": 66.3888888888889,
+   "clean": 45.416666666666664,
+   "clean_balanced": 43.7037037037037,
+   "delta": 20.972222222222236
+  },
+  "S09": {
+   "tasks": [
+    {
+     "task": "A1->A3",
+     "leaky": 87.77777777777777,
+     "clean": 61.25000000000001,
+     "clean_balanced": 54.44444444444444,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A1->A2",
+     "leaky": 55.55555555555556,
+     "clean": 61.25000000000001,
+     "clean_balanced": 54.44444444444444,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A3->A1",
+     "leaky": 85.0,
+     "clean": 58.75,
+     "clean_balanced": 53.333333333333336,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A3->A2",
+     "leaky": 61.111111111111114,
+     "clean": 58.12500000000001,
+     "clean_balanced": 52.5,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A2->A1",
+     "leaky": 58.333333333333336,
+     "clean": 55.625,
+     "clean_balanced": 52.49999999999999,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A2->A3",
+     "leaky": 67.22222222222223,
+     "clean": 58.12500000000001,
+     "clean_balanced": 56.1111111111111,
+     "n_train": 180,
+     "n_clean": 160
+    }
+   ],
+   "leaky": 69.16666666666667,
+   "clean": 58.854166666666664,
+   "clean_balanced": 53.888888888888886,
+   "delta": 10.312500000000007
+  },
+  "fold A": {
+   "tasks": [
+    {
+     "task": "A1->A3",
+     "leaky": 82.77777777777777,
+     "clean": 43.75,
+     "clean_balanced": 40.00000000000001,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A1->A2",
+     "leaky": 63.888888888888886,
+     "clean": 41.875,
+     "clean_balanced": 39.72222222222222,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A3->A1",
+     "leaky": 80.55555555555556,
+     "clean": 43.125,
+     "clean_balanced": 41.94444444444444,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A3->A2",
+     "leaky": 52.22222222222223,
+     "clean": 51.87500000000001,
+     "clean_balanced": 51.11111111111112,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A2->A1",
+     "leaky": 60.55555555555555,
+     "clean": 43.125,
+     "clean_balanced": 41.38888888888889,
+     "n_train": 180,
+     "n_clean": 160
+    },
+    {
+     "task": "A2->A3",
+     "leaky": 55.55555555555556,
+     "clean": 52.5,
+     "clean_balanced": 50.55555555555556,
+     "n_train": 180,
+     "n_clean": 160
+    }
+   ],
+   "leaky": 65.92592592592592,
+   "clean": 46.041666666666664,
+   "clean_balanced": 44.120370370370374,
+   "delta": 19.88425925925926
+  },
+  "fold B": {
+   "tasks": [
+    {
+     "task": "A1->A3",
+     "leaky": 81.25,
+     "clean": 48.333333333333336,
+     "clean_balanced": 48.333333333333336,
+     "n_train": 160,
+     "n_clean": 180
+    },
+    {
+     "task": "A1->A2",
+     "leaky": 73.75,
+     "clean": 32.22222222222222,
+     "clean_balanced": 32.22222222222222,
+     "n_train": 160,
+     "n_clean": 180
+    },
+    {
+     "task": "A3->A1",
+     "leaky": 86.25,
+     "clean": 21.11111111111111,
+     "clean_balanced": 21.11111111111111,
+     "n_train": 160,
+     "n_clean": 180
+    },
+    {
+     "task": "A3->A2",
+     "leaky": 76.875,
+     "clean": 35.55555555555556,
+     "clean_balanced": 35.55555555555556,
+     "n_train": 160,
+     "n_clean": 180
+    },
+    {
+     "task": "A2->A1",
+     "leaky": 81.25,
+     "clean": 36.11111111111111,
+     "clean_balanced": 36.111111111111114,
+     "n_train": 160,
+     "n_clean": 180
+    },
+    {
+     "task": "A2->A3",
+     "leaky": 83.125,
+     "clean": 45.55555555555556,
+     "clean_balanced": 45.55555555555556,
+     "n_train": 160,
+     "n_clean": 180
+    }
+   ],
+   "leaky": 80.41666666666667,
+   "clean": 36.48148148148149,
+   "clean_balanced": 36.48148148148149,
+   "delta": 43.93518518518518
+  }
+ },
+ "summary": {
+  "median_delta": 8.437499999999993,
+  "ci95_median": [
+   4.762731481481477,
+   20.972222222222236
+  ],
+  "positive": 9,
+  "p_one_sided": 0.0029296875,
+  "decision": "KINEMATIC FEATURES TRANSFER",
+  "median_leaky": 65.78703703703704,
+  "median_clean": 56.14583333333333,
+  "mean_clean": 54.32291666666667
+ }
+}

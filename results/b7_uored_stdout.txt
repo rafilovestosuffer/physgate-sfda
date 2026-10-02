@@ -1,0 +1,5 @@
+none|spectral_1x {'outer_race': (23, [0.261, 0.125, 0.465], 0.6), 'inner_race': (4, [0.25, 0.046, 0.699], 0.1), 'ball': (5, [0.4, 0.118, 0.769], 0.2)} FA 9 I->O 9 H8 {'R_c': 0.8, 'R_f': 0.3, 'fisher_one_sided_p': np.float64(0.007938328821181114), 'supported': True}
+none|logged {'outer_race': (8, [0.625, 0.306, 0.863], 0.5), 'inner_race': (8, [0.875, 0.529, 0.978], 0.7), 'ball': (2, [0.0, 0.0, 0.658], 0.0)} FA 3 I->O 0 H8 {'R_c': 0.7, 'R_f': 0.6, 'fisher_one_sided_p': np.float64(0.43200933381199036), 'supported': False}
+cepstrum|spectral_1x {'outer_race': (10, [0.4, 0.168, 0.687], 0.4), 'inner_race': (0, [nan, nan, nan], 0.0), 'ball': (1, [1.0, 0.207, 1.0], 0.1)} FA 0 I->O 6 H8 {'R_c': 1.0, 'R_f': 0.6333333333333333, 'fisher_one_sided_p': np.float64(0.023629754292392866), 'supported': True}
+cepstrum|logged {'outer_race': (5, [1.0, 0.566, 1.0], 0.5), 'inner_race': (5, [1.0, 0.566, 1.0], 0.5), 'ball': (1, [0.0, 0.0, 0.793], 0.0)} FA 0 I->O 0 H8 {'R_c': 0.9, 'R_f': 0.6666666666666666, 'fisher_one_sided_p': np.float64(0.15359340290055362), 'supported': False}
+H8_supported_primary True

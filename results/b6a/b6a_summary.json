@@ -1,0 +1,98 @@
+{
+  "decision_rule": "PROTOCOL C52",
+  "alpha": 0.05,
+  "n_primary": 52,
+  "accepted": 13,
+  "rate": 0.25,
+  "wilson95": [
+    0.15233011761438864,
+    0.38206717759205233
+  ],
+  "contamination_measurable": true,
+  "by_fault_and_size": {
+    "ball|0.007": {
+      "accepted": 0,
+      "n": 4
+    },
+    "ball|0.014": {
+      "accepted": 0,
+      "n": 4
+    },
+    "ball|0.021": {
+      "accepted": 0,
+      "n": 4
+    },
+    "inner_race|0.007": {
+      "accepted": 1,
+      "n": 4
+    },
+    "inner_race|0.014": {
+      "accepted": 2,
+      "n": 4
+    },
+    "inner_race|0.021": {
+      "accepted": 2,
+      "n": 4
+    },
+    "outer_race|0.007": {
+      "accepted": 3,
+      "n": 12
+    },
+    "outer_race|0.014": {
+      "accepted": 0,
+      "n": 4
+    },
+    "outer_race|0.021": {
+      "accepted": 5,
+      "n": 12
+    }
+  },
+  "secondary": {
+    "6205|de_fault_records": {
+      "n": 52,
+      "any_fault_call": 13,
+      "rate_ci95": [
+        0.25,
+        0.15233011761438864,
+        0.38206717759205233
+      ]
+    },
+    "6205|normal_records": {
+      "n": 4,
+      "any_fault_call": 0,
+      "rate_ci95": [
+        0.0,
+        0.0,
+        0.48990002040399916
+      ]
+    },
+    "6203|de_fault_records": {
+      "n": 52,
+      "any_fault_call": 0,
+      "rate_ci95": [
+        0.0,
+        0.0,
+        0.06879459041288215
+      ]
+    },
+    "6203|normal_records": {
+      "n": 4,
+      "any_fault_call": 0,
+      "rate_ci95": [
+        0.0,
+        0.0,
+        0.48990002040399916
+      ]
+    }
+  },
+  "skipped": [
+    "3001",
+    "3005",
+    "3002",
+    "3006",
+    "3003",
+    "3007",
+    "3004",
+    "3008"
+  ]
+}

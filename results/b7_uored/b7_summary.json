@@ -1,0 +1,328 @@
+{
+  "rule": "PROTOCOL C55 + C68",
+  "arms": {
+    "none|spectral_1x": {
+      "outer_race": {
+        "says": 23,
+        "precision_wilson": [
+          0.2608695652173913,
+          0.1254844588924897,
+          0.4647039054375056
+        ],
+        "recall": 0.6,
+        "recall_by_state": {
+          "developing": 0.6,
+          "faulty": 0.6
+        }
+      },
+      "inner_race": {
+        "says": 4,
+        "precision_wilson": [
+          0.25,
+          0.045586062644636216,
+          0.6993639475573634
+        ],
+        "recall": 0.1,
+        "recall_by_state": {
+          "developing": 0.0,
+          "faulty": 0.2
+        }
+      },
+      "ball": {
+        "says": 5,
+        "precision_wilson": [
+          0.4,
+          0.1176182311592533,
+          0.769280067791163
+        ],
+        "recall": 0.2,
+        "recall_by_state": {
+          "developing": 0.2,
+          "faulty": 0.2
+        }
+      },
+      "healthy_false_acceptance": {
+        "n": 20,
+        "false": 9,
+        "wilson": [
+          0.45,
+          0.25819502085709295,
+          0.6579179916924003
+        ]
+      },
+      "inner_to_outer": 9,
+      "outer_to_inner": 0,
+      "H8": {
+        "R_c": 0.8,
+        "R_f": 0.3,
+        "fisher_one_sided_p": 0.007938328821181114,
+        "supported": true
+      },
+      "confusion_true_to_gate": {
+        "normal": {
+          "normal": 11,
+          "ball": 2,
+          "outer_race": 5,
+          "inner_race": 2
+        },
+        "inner_race": {
+          "outer_race": 9,
+          "inner_race": 1
+        },
+        "outer_race": {
+          "outer_race": 6,
+          "normal": 4
+        },
+        "ball": {
+          "normal": 5,
+          "ball": 2,
+          "outer_race": 2,
+          "inner_race": 1
+        },
+        "cage": {
+          "normal": 8,
+          "ball": 1,
+          "outer_race": 1
+        }
+      }
+    },
+    "none|logged": {
+      "outer_race": {
+        "says": 8,
+        "precision_wilson": [
+          0.625,
+          0.30573785458380187,
+          0.863158240538479
+        ],
+        "recall": 0.5,
+        "recall_by_state": {
+          "developing": 0.4,
+          "faulty": 0.6
+        }
+      },
+      "inner_race": {
+        "says": 8,
+        "precision_wilson": [
+          0.875,
+          0.5291051942301386,
+          0.9775830911367038
+        ],
+        "recall": 0.7,
+        "recall_by_state": {
+          "developing": 0.4,
+          "faulty": 1.0
+        }
+      },
+      "ball": {
+        "says": 2,
+        "precision_wilson": [
+          0.0,
+          0.0,
+          0.6576280471103807
+        ],
+        "recall": 0.0,
+        "recall_by_state": {
+          "developing": 0.0,
+          "faulty": 0.0
+        }
+      },
+      "healthy_false_acceptance": {
+        "n": 20,
+        "false": 3,
+        "wilson": [
+          0.15,
+          0.05236779195949584,
+          0.36042329588695743
+        ]
+      },
+      "inner_to_outer": 0,
+      "outer_to_inner": 0,
+      "H8": {
+        "R_c": 0.7,
+        "R_f": 0.6,
+        "fisher_one_sided_p": 0.43200933381199036,
+        "supported": false
+      },
+      "confusion_true_to_gate": {
+        "normal": {
+          "normal": 17,
+          "outer_race": 2,
+          "inner_race": 1
+        },
+        "inner_race": {
+          "normal": 3,
+          "inner_race": 7
+        },
+        "outer_race": {
+          "outer_race": 5,
+          "normal": 5
+        },
+        "ball": {
+          "normal": 10
+        },
+        "cage": {
+          "normal": 7,
+          "ball": 2,
+          "outer_race": 1
+        }
+      }
+    },
+    "cepstrum|spectral_1x": {
+      "outer_race": {
+        "says": 10,
+        "precision_wilson": [
+          0.4,
+          0.16817758120350967,
+          0.6873304525498135
+        ],
+        "recall": 0.4,
+        "recall_by_state": {
+          "developing": 0.6,
+          "faulty": 0.2
+        }
+      },
+      "inner_race": {
+        "says": 0,
+        "precision_wilson": [
+          NaN,
+          NaN,
+          NaN
+        ],
+        "recall": 0.0,
+        "recall_by_state": {
+          "developing": 0.0,
+          "faulty": 0.0
+        }
+      },
+      "ball": {
+        "says": 1,
+        "precision_wilson": [
+          1.0,
+          0.20654329147389294,
+          1.0
+        ],
+        "recall": 0.1,
+        "recall_by_state": {
+          "developing": 0.0,
+          "faulty": 0.2
+        }
+      },
+      "healthy_false_acceptance": {
+        "n": 20,
+        "false": 0,
+        "wilson": [
+          0.0,
+          -1.3877787807814457e-17,
+          0.16113012549493322
+        ]
+      },
+      "inner_to_outer": 6,
+      "outer_to_inner": 0,
+      "H8": {
+        "R_c": 1.0,
+        "R_f": 0.6333333333333333,
+        "fisher_one_sided_p": 0.023629754292392866,
+        "supported": true
+      },
+      "confusion_true_to_gate": {
+        "normal": {
+          "normal": 20
+        },
+        "inner_race": {
+          "normal": 4,
+          "outer_race": 6
+        },
+        "outer_race": {
+          "normal": 6,
+          "outer_race": 4
+        },
+        "ball": {
+          "normal": 9,
+          "ball": 1
+        },
+        "cage": {
+          "normal": 10
+        }
+      }
+    },
+    "cepstrum|logged": {
+      "outer_race": {
+        "says": 5,
+        "precision_wilson": [
+          1.0,
+          0.5655085052479191,
+          1.0000000000000002
+        ],
+        "recall": 0.5,
+        "recall_by_state": {
+          "developing": 0.4,
+          "faulty": 0.6
+        }
+      },
+      "inner_race": {
+        "says": 5,
+        "precision_wilson": [
+          1.0,
+          0.5655085052479191,
+          1.0000000000000002
+        ],
+        "recall": 0.5,
+        "recall_by_state": {
+          "developing": 0.4,
+          "faulty": 0.6
+        }
+      },
+      "ball": {
+        "says": 1,
+        "precision_wilson": [
+          0.0,
+          0.0,
+          0.7934567085261071
+        ],
+        "recall": 0.0,
+        "recall_by_state": {
+          "developing": 0.0,
+          "faulty": 0.0
+        }
+      },
+      "healthy_false_acceptance": {
+        "n": 20,
+        "false": 0,
+        "wilson": [
+          0.0,
+          -1.3877787807814457e-17,
+          0.16113012549493322
+        ]
+      },
+      "inner_to_outer": 0,
+      "outer_to_inner": 0,
+      "H8": {
+        "R_c": 0.9,
+        "R_f": 0.6666666666666666,
+        "fisher_one_sided_p": 0.15359340290055362,
+        "supported": false
+      },
+      "confusion_true_to_gate": {
+        "normal": {
+          "normal": 20
+        },
+        "inner_race": {
+          "normal": 5,
+          "inner_race": 5
+        },
+        "outer_race": {
+          "normal": 5,
+          "outer_race": 5
+        },
+        "ball": {
+          "normal": 10
+        },
+        "cage": {
+          "normal": 9,
+          "ball": 1
+        }
+      }
+    }
+  },
+  "H8_supported_primary": true
+}

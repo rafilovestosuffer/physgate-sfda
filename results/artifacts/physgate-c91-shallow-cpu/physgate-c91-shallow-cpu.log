@@ -1,0 +1,13 @@
+[{"stream_name":"stdout","time":23.412090182,"data":"features 16 s\n"}
+,{"stream_name":"stdout","time":67.601685557,"data":"T {'leaky_mean': np.float64(88.79583333333333), 'clean_mean': np.float64(63.580555555555556), 'delta': np.float64(25.21527777777778), 'wilcoxon_p': 0.001708984375, 'mean_clean_purity': 0.9499337760777712} 60 s\n"}
+,{"stream_name":"stdout","time":182.593957819,"data":"F {'leaky_mean': np.float64(93.22916666666667), 'clean_mean': np.float64(52.57916666666667), 'delta': np.float64(40.65), 'wilcoxon_p': 0.000244140625, 'mean_clean_purity': 0.916666103436324} 175 s\n"}
+,{"stream_name":"stdout","time":343.937029625,"data":"E {'leaky_mean': np.float64(76.65416666666665), 'clean_mean': np.float64(43.138888888888886), 'delta': np.float64(33.51527777777777), 'wilcoxon_p': 0.000244140625, 'mean_clean_purity': 0.7577893374100483} 336 s\n"}
+,{"stream_name":"stdout","time":484.418579746,"data":"TFE {'leaky_mean': np.float64(95.41666666666669), 'clean_mean': np.float64(60.3111111111111), 'delta': np.float64(35.10555555555558), 'wilcoxon_p': 0.000244140625, 'mean_clean_purity': 0.9213908323430382} 477 s\n"}
+,{"stream_name":"stdout","time":484.420824649,"data":"done 477 s\n"}
+,{"stream_name":"stderr","time":487.892696987,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":487.892816354,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":488.36293253,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":488.362968699,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":490.810523833,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":492.805688603,"data":"[NbConvertApp] Writing 295346 bytes to __results__.html\n"}
+]

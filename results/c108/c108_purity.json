@@ -1,0 +1,57 @@
+{
+ "entry": "C108",
+ "status": "post-hoc, descriptive",
+ "ten_splits": {
+  "leaky_per_task": {
+   "n": 540,
+   "median": 1.0,
+   "share_ge_0.99": 0.8981481481481481,
+   "share_ge_0.9": 0.937037037037037,
+   "min": 0.5073529411764706
+  },
+  "leaky_pooled_over_tasks": {
+   "n": 90,
+   "median": 1.0,
+   "share_ge_0.99": 0.6444444444444445,
+   "share_ge_0.9": 0.8,
+   "min": 0.5
+  },
+  "clean_per_task": {
+   "n": 480,
+   "median": 1.0,
+   "share_ge_0.99": 0.8916666666666667,
+   "share_ge_0.9": 0.9354166666666667,
+   "min": 0.5151515151515151
+  },
+  "clean_pooled_over_tasks": {
+   "n": 80,
+   "median": 0.9937425727866904,
+   "share_ge_0.99": 0.5125,
+   "share_ge_0.9": 0.6125,
+   "min": 0.5
+  }
+ },
+ "gating_job_directions_pooled": {
+  "source fold A": {
+   "K004": 0.667,
+   "K005": 0.667,
+   "K006": 1.0,
+   "KA22": 1.0,
+   "KA30": 0.942,
+   "KI17": 0.559,
+   "KI18": 0.619,
+   "KI21": 0.664
+  },
+  "source fold B": {
+   "K001": 1.0,
+   "K002": 1.0,
+   "K003": 1.0,
+   "KA04": 1.0,
+   "KA15": 0.999,
+   "KA16": 1.0,
+   "KI04": 1.0,
+   "KI14": 1.0,
+   "KI16": 0.999
+  }
+ }
+}

@@ -1,0 +1,45 @@
+{
+  "dataset": "HUST_M1",
+  "variant": "final_checkpoint",
+  "seed": 2024,
+  "smoke": false,
+  "src_fold": "H5",
+  "tgt_fold": "H5c",
+  "leaky": false,
+  "hyperparameters": {
+    "lr": "0.0005",
+    "threshold": "0.4",
+    "K": "0.6"
+  },
+  "adapters": [
+    "npz_io",
+    "tsne_stub",
+    "final_checkpoint_patch"
+  ],
+  "source_only": {},
+  "adapted": {
+    "H1->H3": 33.33,
+    "H1->H2": 33.33,
+    "H3->H1": 49.95,
+    "H3->H2": 49.9,
+    "H2->H1": 33.33,
+    "H2->H3": 33.33
+  },
+  "seconds": {
+    "H1->H3": 366,
+    "H1->H2": 363,
+    "H3->H1": 364,
+    "H3->H2": 363,
+    "H2->H1": 364,
+    "H2->H3": 364
+  },
+  "gate_log": {
+    "H1->H3": [],
+    "H1->H2": [],
+    "H3->H1": [],
+    "H3->H2": [],
+    "H2->H1": [],
+    "H2->H3": []
+  },
+  "gate": "none"
+}

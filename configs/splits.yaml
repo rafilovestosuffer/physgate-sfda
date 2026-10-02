@@ -1,0 +1,63 @@
+# FROZEN bearing-wise split definitions. PROTOCOL section 3.
+#
+# Assignment rule (mechanical, not hand-picked, so it cannot be accused of cherry-picking):
+#   within each (dataset, damage_origin, fault_type) group, sort bearing IDs lexicographically and
+#   put the first ceil(n/2) in fold A, the rest in fold B. Every task is run in BOTH directions
+#   (A->B and B->A) so no single assignment can carry the result.
+#
+# data_prep/split.py EXPANDS these groups and HARD-FAILS if any bearing_id lands on both sides.
+
+pu:
+  healthy:          {A: [K001, K002, K003],        B: [K004, K005, K006]}
+  real_outer:       {A: [KA04, KA15, KA16],        B: [KA22, KA30]}
+  real_inner:       {A: [KI04, KI14, KI16],        B: [KI17, KI18, KI21]}
+  artificial_outer: {A: [KA01, KA03, KA05, KA06],  B: [KA07, KA08, KA09]}
+  artificial_inner: {A: [KI01, KI03, KI05],        B: [KI07, KI08]}
+  compound:         {excluded: [KB23, KB24, KB27]}     # out-of-label-space stress test only
+
+tasks:
+
+  # ---- Track R -----------------------------------------------------------------------------------
+  M0_PU_as_published:
+    note: "SDALR's own protocol, reproduced verbatim. LEAKY BY CONSTRUCTION: 8 classes ARE bearing IDs."
+    track: R
+    leaky: true
+    bearings: [K001, KA04, KA15, KA22, KA30, KI14, KI17, KI21]
+    label: bearing_id
+    domains: {A1: N15_M01_F10, A2: N15_M07_F04, A3: N15_M07_F10}
+
+  M0_JNU_as_published:
+    note: "SDALR's protocol. LEAKY AND UNFIXABLE: one physical bearing per class (verified on files)."
+    track: R
+    leaky: true
+    label_space: L4
+    domains: {B1: 600rpm, B2: 800rpm, B3: 1000rpm}
+
+  M1_PU_L3_bearingwise:
+    note: "Same condition-transfer structure as M0, relabelled to L3, bearings disjoint across sides."
+    track: R
+    leaky: false
+    label_space: L3
+    population: [healthy, real_outer, real_inner]
+    source_fold: A
+    target_fold: B
+    run_reversed: true
+    domains: {A1: N15_M01_F10, A2: N15_M07_F04, A3: N15_M07_F10}
+
+  # ---- Track A -----------------------------------------------------------------------------------
+  B3_PU_artificial_to_real:
+    note: "Headline fidelity task. Disjoint by construction AND by healthy-bearing fold."
+    track: A
+    leaky: false
+    label_space: L3
+    source: {healthy: A, artificial_outer: [A, B], artificial_inner: [A, B]}
+    target: {healthy: B, real_outer: [A, B], real_inner: [A, B]}
+    conditions: [N15_M01_F10, N15_M07_F04, N15_M07_F10, N09_M07_F10]
+
+  B2_CWRU_to_PU:
+    track: A
+    leaky: false
+    label_space: L3
+    source: {dataset: CWRU, fault_types: [normal, inner_race, outer_race]}
+    target: {dataset: PU, groups: {healthy: B, real_outer: [A, B], real_inner: [A, B]}}
+    note: "Cross-dataset, so bearings are disjoint trivially. CWRU healthy = ONE bearing (stated limitation)."

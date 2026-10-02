@@ -1,0 +1,39 @@
+\section{Test rigs, bearings and kinematics}
+\label{sec:data}
+
+\input{tables/t1_datasets}
+
+Table~\ref{tab:datasets} lists the recordings used. \textbf{Paderborn} \cite{lessmeier2016} carries the adaptation
+experiments: its real-damage set holds 6 healthy, 5 outer-race and 6 inner-race bearings, each recorded 20 times at four
+operating conditions, which is the only public combination of several physical bearings per class \emph{and} several
+operating conditions per bearing that allows the paired design of Section~\ref{sec:protocol}. We use the three conditions
+that share a nominal speed of \SI{1500}{rpm} and differ in load and radial force, denoted A1 (N15\_M01\_F10), A2
+(N15\_M07\_F04) and A3 (N15\_M07\_F10); the fourth condition (N09, \SI{900}{rpm}) enters only the gate and slip analyses.
+\textbf{HUST bearing} \cite{thuan2023hust} provides the second-rig replication: one physical bearing per class for each of
+five bearing types (6204--6208) at three motor loads, giving the same three-domain, six-task structure with the same label
+space. \textbf{CWRU} \cite{smith2015} and \textbf{UORED-VAFCLS} \cite{sehri2023uored} appear in the slip measurement and in
+the supplementary gate study. JNU \cite{li2013jnu} is used only to reproduce the published SDALR result.
+
+Throughout, a \emph{bearing} means a physical specimen, identified by its dataset code (for example Paderborn KA04), not a
+fault class or a damage severity. The label space is $\{\text{normal},\text{inner race},\text{outer race}\}$: Paderborn's
+real-damage set contains no rolling-element damage, so a ball class cannot be formed from it, and HUST's ball recordings are
+excluded for comparability.
+
+\subsection{Kinematics are resolved per bearing}
+\label{sec:kinematics}
+
+Characteristic orders follow from the ball count $n$, ball diameter $d$, pitch diameter $D$ and contact angle $\theta$
+through $r=(d/D)\cos\theta$, giving $\mathrm{BPFO}=\tfrac{n}{2}(1-r)$, $\mathrm{BPFI}=\tfrac{n}{2}(1+r)$ and
+$\mathrm{FTF}=\tfrac{1}{2}(1-r)$ in shaft orders. A bearing designation does not determine these values. Paderborn's
+per-bearing documentation, distributed with the data as one datasheet per specimen rather than in the dataset paper, states
+``Pitch circle diameter mm 29.05'' and ``Number of rolling elements pc. 8'' for the 26 IBU and MTK bearings, and
+\SI{28.55}{\milli\metre} for the six FAG bearings, with rolling elements of \SI{6.75}{\milli\metre}. The corresponding
+outer-race orders are 3.0706 and 3.0543, neither of which equals the 3.0531 of the CWRU SKF 6203 that is frequently reused
+for Paderborn. We compute kinematics separately for each specimen, and no gate is computed for a bearing whose geometry its own rig does
+not publish. HUST is such a case: its dataset paper gives bore, outside and ball diameters and the ball count, but not the
+pitch diameter and no characteristic orders \cite{thuan2023hust}. Substituting the nominal mean diameter $(d_i+d_o)/2$
+would supply the missing number, and it is worth seeing what that costs: on Paderborn, where the true value is documented,
+the same substitution gives \SI{28.50}{\milli\metre} against \SI{29.05}{\milli\metre} and shifts the outer-race order by
+\SI{0.58}{\percent} --- roughly twice the whole cage-slip spread measured in Section~ef{sec:res-slip}, and enough to move
+a gate window off its line. We therefore use HUST for raw windows only and report no HUST gating result. Shaft speed is taken per recording from the measured speed channel on Paderborn and from the in-file value
+on CWRU; UORED's logged speed is unreliable and is discussed in Supplementary~S3.

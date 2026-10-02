@@ -1,0 +1,154 @@
+105 inner_race ['normal', 'normal']
+118 ball ['normal', 'normal']
+130 outer_race ['normal', 'normal']
+144 outer_race ['normal', 'normal']
+156 outer_race ['outer_race', 'normal']
+106 inner_race ['normal', 'normal']
+119 ball ['normal', 'normal']
+131 outer_race ['normal', 'normal']
+145 outer_race ['outer_race', 'normal']
+158 outer_race ['outer_race', 'normal']
+107 inner_race ['inner_race', 'normal']
+120 ball ['normal', 'normal']
+132 outer_race ['normal', 'normal']
+146 outer_race ['normal', 'normal']
+159 outer_race ['normal', 'normal']
+108 inner_race ['normal', 'normal']
+121 ball ['normal', 'normal']
+133 outer_race ['normal', 'normal']
+147 outer_race ['normal', 'normal']
+160 outer_race ['normal', 'normal']
+169 inner_race ['normal', 'normal']
+185 ball ['normal', 'normal']
+197 outer_race ['normal', 'normal']
+170 inner_race ['inner_race', 'normal']
+186 ball ['normal', 'normal']
+198 outer_race ['normal', 'normal']
+171 inner_race ['inner_race', 'normal']
+187 ball ['normal', 'normal']
+199 outer_race ['normal', 'normal']
+172 inner_race ['normal', 'normal']
+188 ball ['normal', 'normal']
+200 outer_race ['normal', 'normal']
+209 inner_race ['normal', 'normal']
+222 ball ['normal', 'normal']
+234 outer_race ['outer_race', 'normal']
+246 outer_race ['outer_race', 'normal']
+258 outer_race ['normal', 'normal']
+210 inner_race ['inner_race', 'normal']
+223 ball ['normal', 'normal']
+235 outer_race ['normal', 'normal']
+247 outer_race ['normal', 'normal']
+259 outer_race ['normal', 'normal']
+211 inner_race ['inner_race', 'normal']
+224 ball ['normal', 'normal']
+236 outer_race ['normal', 'normal']
+248 outer_race ['outer_race', 'normal']
+260 outer_race ['normal', 'normal']
+212 inner_race ['normal', 'normal']
+225 ball ['normal', 'normal']
+237 outer_race ['outer_race', 'normal']
+249 outer_race ['outer_race', 'normal']
+261 outer_race ['normal', 'normal']
+97 normal ['normal', 'normal']
+98 normal ['normal', 'normal']
+99 normal ['normal', 'normal']
+100 normal ['normal', 'normal']
+{
+  "decision_rule": "PROTOCOL C52",
+  "alpha": 0.05,
+  "n_primary": 52,
+  "accepted": 13,
+  "rate": 0.25,
+  "wilson95": [
+    0.15233011761438864,
+    0.38206717759205233
+  ],
+  "contamination_measurable": true,
+  "by_fault_and_size": {
+    "ball|0.007": {
+      "accepted": 0,
+      "n": 4
+    },
+    "ball|0.014": {
+      "accepted": 0,
+      "n": 4
+    },
+    "ball|0.021": {
+      "accepted": 0,
+      "n": 4
+    },
+    "inner_race|0.007": {
+      "accepted": 1,
+      "n": 4
+    },
+    "inner_race|0.014": {
+      "accepted": 2,
+      "n": 4
+    },
+    "inner_race|0.021": {
+      "accepted": 2,
+      "n": 4
+    },
+    "outer_race|0.007": {
+      "accepted": 3,
+      "n": 12
+    },
+    "outer_race|0.014": {
+      "accepted": 0,
+      "n": 4
+    },
+    "outer_race|0.021": {
+      "accepted": 5,
+      "n": 12
+    }
+  },
+  "secondary": {
+    "6205|de_fault_records": {
+      "n": 52,
+      "any_fault_call": 13,
+      "rate_ci95": [
+        0.25,
+        0.15233011761438864,
+        0.38206717759205233
+      ]
+    },
+    "6205|normal_records": {
+      "n": 4,
+      "any_fault_call": 0,
+      "rate_ci95": [
+        0.0,
+        0.0,
+        0.48990002040399916
+      ]
+    },
+    "6203|de_fault_records": {
+      "n": 52,
+      "any_fault_call": 0,
+      "rate_ci95": [
+        0.0,
+        0.0,
+        0.06879459041288215
+      ]
+    },
+    "6203|normal_records": {
+      "n": 4,
+      "any_fault_call": 0,
+      "rate_ci95": [
+        0.0,
+        0.0,
+        0.48990002040399916
+      ]
+    }
+  },
+  "skipped": [
+    "3001",
+    "3005",
+    "3002",
+    "3006",
+    "3003",
+    "3007",
+    "3004",
+    "3008"
+  ]
+}

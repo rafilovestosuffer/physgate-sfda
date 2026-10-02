@@ -1,0 +1,328 @@
+[{"stream_name":"stdout","time":0.928197098,"data":"sources: ['figures', 'main.tex', 'references.bib', 'sections', 'tables']\n"}
+,{"stream_name":"stdout","time":0.934421175,"data":"pdflatex present: False\n"}
+,{"stream_name":"stdout","time":0.934451915,"data":"$ apt-get update -qq\n"}
+,{"stream_name":"stdout","time":8.292111991,"data":"\n"}
+,{"stream_name":"stdout","time":8.292157227,"data":"$ apt-get install -y -qq texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended texlive-publishers texlive-science lmodern\n"}
+,{"stream_name":"stdout","time":81.044211587,"data":"0.3) ...\n"}
+,{"stream_name":"stdout","time":81.044250847,"data":"update-alternatives: using /usr/bin/xdvi-xaw to provide /usr/bin/xdvi.bin (xdvi.bin) in auto mode\n"}
+,{"stream_name":"stdout","time":81.044259135,"data":"update-alternatives: using /usr/bin/bibtex.original to provide /usr/bin/bibtex (bibtex) in auto mode\n"}
+,{"stream_name":"stdout","time":81.044265006,"data":"Setting up lmodern (2.004.5-6.1) ...\n"}
+,{"stream_name":"stdout","time":81.044270334,"data":"Setting up texlive-base (2021.20220204-1) ...\n"}
+,{"stream_name":"stdout","time":81.044275935,"data":"/usr/bin/ucfr\n"}
+,{"stream_name":"stdout","time":81.044280942,"data":"/usr/bin/ucfr\n"}
+,{"stream_name":"stdout","time":81.044286465,"data":"/usr/bin/ucfr\n"}
+,{"stream_name":"stdout","time":81.04429217,"data":"/usr/bin/ucfr\n"}
+,{"stream_name":"stdout","time":81.044297902,"data":"tl-paper: setting paper size for dvips to a4: /var/lib/texmf/dvips/config/config-paper.ps\n"}
+,{"stream_name":"stdout","time":81.04430387,"data":"tl-paper: setting paper size for dvipdfmx to a4: /var/lib/texmf/dvipdfmx/dvipdfmx-paper.cfg\n"}
+,{"stream_name":"stdout","time":81.044309673,"data":"tl-paper: setting paper size for xdvi to a4: /var/lib/texmf/xdvi/XDvi-paper\n"}
+,{"stream_name":"stdout","time":81.044315447,"data":"tl-paper: setting paper size for pdftex to a4: /var/lib/texmf/tex/generic/tex-ini-files/pdftexconfig.tex\n"}
+,{"stream_name":"stdout","time":81.044321697,"data":"Setting up tex-gyre (20180621-3.1) ...\n"}
+,{"stream_name":"stdout","time":81.044326482,"data":"Setting up texlive-plain-generic (2021.20220204-1) ...\n"}
+,{"stream_name":"stdout","time":81.044330162,"data":"Setting up texlive-lang-greek (2021.20220204-1) ...\n"}
+,{"stream_name":"stdout","time":81.044333929,"data":"Setting up texlive-latex-base (2021.20220204-1) ...\n"}
+,{"stream_name":"stdout","time":81.04433758,"data":"Setting up texlive-latex-recommended (2021.20220204-1) ...\n"}
+,{"stream_name":"stdout","time":81.044341296,"data":"Setting up texlive-pictures (2021.20220204-1) ...\n"}
+,{"stream_name":"stdout","time":81.044344947,"data":"Setting up texlive-fonts-recommended (2021.20220204-1) ...\n"}
+,{"stream_name":"stdout","time":81.044348745,"data":"Setting up tipa (2:1.3-21) ...\n"}
+,{"stream_name":"stdout","time":81.044353112,"data":"Setting up texlive-publishers (2021.20220204-1) ...\n"}
+,{"stream_name":"stdout","time":81.04435856,"data":"Setting up texlive-science (2021.20220204-1) ...\n"}
+,{"stream_name":"stdout","time":81.044364184,"data":"Setting up texlive-latex-extra (2021.20220204-1) ...\n"}
+,{"stream_name":"stdout","time":81.044369958,"data":"Setting up libruby3.0:amd64 (3.0.2-7ubuntu2.13) ...\n"}
+,{"stream_name":"stdout","time":81.044375833,"data":"Setting up ruby3.0 (3.0.2-7ubuntu2.13) ...\n"}
+,{"stream_name":"stdout","time":81.044381327,"data":"Setting up ruby (1:3.0~exp1) ...\n"}
+,{"stream_name":"stdout","time":81.044386534,"data":"Setting up rake (13.0.6-2) ...\n"}
+,{"stream_name":"stdout","time":81.044392066,"data":"Setting up ruby-rubygems (3.3.5-2ubuntu1.2) ...\n"}
+,{"stream_name":"stdout","time":81.04441406,"data":"Processing triggers for man-db (2.10.2-1) ...\n"}
+,{"stream_name":"stdout","time":81.044418693,"data":"Processing triggers for mailcap (3.70+nmu1ubuntu1) ...\n"}
+,{"stream_name":"stdout","time":81.044423344,"data":"Processing triggers for fontconfig (2.13.1-4.2ubuntu5) ...\n"}
+,{"stream_name":"stdout","time":81.044428125,"data":"Processing triggers for libc-bin (2.35-0ubuntu3.13) ...\n"}
+,{"stream_name":"stdout","time":81.044432874,"data":"/sbin/ldconfig.real: /usr/local/lib/libtbbbind_2_5.so.3 is not a symbolic link\n"}
+,{"stream_name":"stdout","time":81.044437423,"data":"\n"}
+,{"stream_name":"stdout","time":81.044441922,"data":"/sbin/ldconfig.real: /usr/local/lib/libur_adapter_level_zero.so.0 is not a symbolic link\n"}
+,{"stream_name":"stdout","time":81.044445972,"data":"\n"}
+,{"stream_name":"stdout","time":81.044448929,"data":"/sbin/ldconfig.real: /usr/local/lib/libtbbbind.so.3 is not a symbolic link\n"}
+,{"stream_name":"stdout","time":81.04445199,"data":"\n"}
+,{"stream_name":"stdout","time":81.044456105,"data":"/sbin/ldconfig.real: /usr/local/lib/libur_adapter_level_zero_v2.so.0 is not a symbolic link\n"}
+,{"stream_name":"stdout","time":81.044460962,"data":"\n"}
+,{"stream_name":"stdout","time":81.044466726,"data":"/sbin/ldconfig.real: /usr/local/lib/libtbbbind_2_0.so.3 is not a symbolic link\n"}
+,{"stream_name":"stdout","time":81.044471579,"data":"\n"}
+,{"stream_name":"stdout","time":81.04447579,"data":"/sbin/ldconfig.real: /usr/local/lib/libur_loader.so.0 is not a symbolic link\n"}
+,{"stream_name":"stdout","time":81.044480626,"data":"\n"}
+,{"stream_name":"stdout","time":81.044484702,"data":"/sbin/ldconfig.real: /usr/local/lib/libtbb.so.12 is not a symbolic link\n"}
+,{"stream_name":"stdout","time":81.044489512,"data":"\n"}
+,{"stream_name":"stdout","time":81.044493776,"data":"/sbin/ldconfig.real: /usr/local/lib/libumf.so.1 is not a symbolic link\n"}
+,{"stream_name":"stdout","time":81.044498452,"data":"\n"}
+,{"stream_name":"stdout","time":81.044502643,"data":"/sbin/ldconfig.real: /usr/local/lib/libtcm_debug.so.1 is not a symbolic link\n"}
+,{"stream_name":"stdout","time":81.044507407,"data":"\n"}
+,{"stream_name":"stdout","time":81.044511706,"data":"/sbin/ldconfig.real: /usr/local/lib/libur_adapter_opencl.so.0 is not a symbolic link\n"}
+,{"stream_name":"stdout","time":81.044516513,"data":"\n"}
+,{"stream_name":"stdout","time":81.044520685,"data":"/sbin/ldconfig.real: /usr/local/lib/libtbbmalloc_proxy.so.2 is not a symbolic link\n"}
+,{"stream_name":"stdout","time":81.04452516,"data":"\n"}
+,{"stream_name":"stdout","time":81.044529275,"data":"/sbin/ldconfig.real: /usr/local/lib/libtcm.so.1 is not a symbolic link\n"}
+,{"stream_name":"stdout","time":81.04453371,"data":"\n"}
+,{"stream_name":"stdout","time":81.044538113,"data":"/sbin/ldconfig.real: /usr/local/lib/libtbbmalloc.so.2 is not a symbolic link\n"}
+,{"stream_name":"stdout","time":81.044542787,"data":"\n"}
+,{"stream_name":"stdout","time":81.044546723,"data":"/sbin/ldconfig.real: /usr/local/lib/libhwloc.so.15 is not a symbolic link\n"}
+,{"stream_name":"stdout","time":81.04455085,"data":"\n"}
+,{"stream_name":"stdout","time":81.044554713,"data":"Processing triggers for tex-common (6.17) ...\n"}
+,{"stream_name":"stdout","time":81.044558803,"data":"Running updmap-sys. This may take some time... done.\n"}
+,{"stream_name":"stdout","time":81.044562983,"data":"Running mktexlsr /var/lib/texmf ... done.\n"}
+,{"stream_name":"stdout","time":81.044567033,"data":"Building format(s) --all.\n"}
+,{"stream_name":"stdout","time":81.044571365,"data":"\tThis may take some time... done.\n"}
+,{"stream_name":"stdout","time":81.04458256,"data":"\n"}
+,{"stream_name":"stdout","time":81.064672666,"data":"elsarticle.cls: /usr/share/texlive/texmf-dist/tex/latex/elsarticle/elsarticle.cls\n"}
+,{"stream_name":"stdout","time":81.064706495,"data":"$ pdflatex -interaction=nonstopmode -halt-on-error main\n"}
+,{"stream_name":"stdout","time":81.893377606,"data":" on input line 159.\n"}
+,{"stream_name":"stdout","time":81.893411674,"data":"\n"}
+,{"stream_name":"stdout","time":81.89341722,"data":"\n"}
+,{"stream_name":"stdout","time":81.893421808,"data":"LaTeX Warning: Reference `fig:gains' on page 13 undefined on input line 160.\n"}
+,{"stream_name":"stdout","time":81.893426524,"data":"\n"}
+,{"stream_name":"stdout","time":81.893430695,"data":"\n"}
+,{"stream_name":"stdout","time":81.893434617,"data":"LaTeX Warning: Reference `sec:res-decomp' on page 13 undefined on input line 16\n"}
+,{"stream_name":"stdout","time":81.893439138,"data":"7.\n"}
+,{"stream_name":"stdout","time":81.893443416,"data":"\n"}
+,{"stream_name":"stdout","time":81.893447823,"data":"[13 \u003c./figures/fig6_gains.pdf\u003e]\n"}
+,{"stream_name":"stdout","time":81.893453118,"data":"\n"}
+,{"stream_name":"stdout","time":81.893457343,"data":"Package natbib Warning: Citation `smith2015' on page 14 undefined on input line\n"}
+,{"stream_name":"stdout","time":81.893462126,"data":" 208.\n"}
+,{"stream_name":"stdout","time":81.893466322,"data":"\n"}
+,{"stream_name":"stdout","time":81.89347068,"data":"\n"}
+,{"stream_name":"stdout","time":81.893475103,"data":"Package natbib Warning: Citation `patent10168248' on page 14 undefined on input\n"}
+,{"stream_name":"stdout","time":81.893480057,"data":" line 209.\n"}
+,{"stream_name":"stdout","time":81.893484303,"data":"\n"}
+,{"stream_name":"stdout","time":81.893488436,"data":"\n"}
+,{"stream_name":"stdout","time":81.893493275,"data":"LaTeX Warning: Reference `fig:slip' on page 14 undefined on input line 214.\n"}
+,{"stream_name":"stdout","time":81.893498527,"data":"\n"}
+,{"stream_name":"stdout","time":81.893503314,"data":") (./sections/07_discussion.tex [14 \u003c./figures/fig7_slip.pdf\u003e]\n"}
+,{"stream_name":"stdout","time":81.89350867,"data":"\n"}
+,{"stream_name":"stdout","time":81.893512663,"data":"LaTeX Warning: Reference `sec:res-probe' on page 15 undefined on input line 6.\n"}
+,{"stream_name":"stdout","time":81.893517183,"data":"\n"}
+,{"stream_name":"stdout","time":81.893521273,"data":"\n"}
+,{"stream_name":"stdout","time":81.893525379,"data":"Package natbib Warning: Citation `kapoor2023leakage' on page 15 undefined on in\n"}
+,{"stream_name":"stdout","time":81.893529601,"data":"put line 44.\n"}
+,{"stream_name":"stdout","time":81.89353362,"data":"\n"}
+,{"stream_name":"stdout","time":81.893537976,"data":"\n"}
+,{"stream_name":"stdout","time":81.893542058,"data":"Package natbib Warning: Citation `geirhos2020shortcut' on page 15 undefined on \n"}
+,{"stream_name":"stdout","time":81.893546324,"data":"input line 46.\n"}
+,{"stream_name":"stdout","time":81.893550512,"data":"\n"}
+,{"stream_name":"stdout","time":81.893554537,"data":"[15]) (./sections/08_recommendations.tex\n"}
+,{"stream_name":"stdout","time":81.893558877,"data":"\n"}
+,{"stream_name":"stdout","time":81.893562848,"data":"Package natbib Warning: Citation `vieira2026' on page 16 undefined on input lin\n"}
+,{"stream_name":"stdout","time":81.893567399,"data":"e 32.\n"}
+,{"stream_name":"stdout","time":81.893571732,"data":"\n"}
+,{"stream_name":"stdout","time":81.893575859,"data":") (./sections/09_limitations.tex [16]\n"}
+,{"stream_name":"stdout","time":81.89359166,"data":"\n"}
+,{"stream_name":"stdout","time":81.893596026,"data":"LaTeX Warning: Reference `sec:res-probe' on page 17 undefined on input line 37.\n"}
+,{"stream_name":"stdout","time":81.893600735,"data":"\n"}
+,{"stream_name":"stdout","time":81.893605155,"data":"\n"}
+,{"stream_name":"stdout","time":81.893609393,"data":") (./sections/10_conclusions.tex) (./sections/99_declarations.tex [17]\n"}
+,{"stream_name":"stdout","time":81.893613834,"data":"\n"}
+,{"stream_name":"stdout","time":81.893618088,"data":"Package natbib Warning: Citation `lessmeier2016' on page 18 undefined on input \n"}
+,{"stream_name":"stdout","time":81.893622989,"data":"line 20.\n"}
+,{"stream_name":"stdout","time":81.893627407,"data":"\n"}
+,{"stream_name":"stdout","time":81.89363172,"data":"\n"}
+,{"stream_name":"stdout","time":81.89363611,"data":"Package natbib Warning: Citation `thuan2023hust' on page 18 undefined on input \n"}
+,{"stream_name":"stdout","time":81.893640834,"data":"line 21.\n"}
+,{"stream_name":"stdout","time":81.893645006,"data":"\n"}
+,{"stream_name":"stdout","time":81.893649137,"data":"\n"}
+,{"stream_name":"stdout","time":81.893653274,"data":"Package natbib Warning: Citation `smith2015' on page 18 undefined on input line\n"}
+,{"stream_name":"stdout","time":81.893658249,"data":" 21.\n"}
+,{"stream_name":"stdout","time":81.893662526,"data":"\n"}
+,{"stream_name":"stdout","time":81.893666344,"data":"\n"}
+,{"stream_name":"stdout","time":81.893670582,"data":"Package natbib Warning: Citation `sehri2023uored' on page 18 undefined on input\n"}
+,{"stream_name":"stdout","time":81.893675395,"data":" line 22.\n"}
+,{"stream_name":"stdout","time":81.893679406,"data":"\n"}
+,{"stream_name":"stdout","time":81.893683447,"data":"\n"}
+,{"stream_name":"stdout","time":81.893687443,"data":"LaTeX Warning: Reference `sec:protocol' on page 18 undefined on input line 30.\n"}
+,{"stream_name":"stdout","time":81.893692137,"data":"\n"}
+,{"stream_name":"stdout","time":81.89369645,"data":")\n"}
+,{"stream_name":"stdout","time":81.893700788,"data":"No file main.bbl.\n"}
+,{"stream_name":"stdout","time":81.893705531,"data":"\n"}
+,{"stream_name":"stdout","time":81.893710059,"data":"Package natbib Warning: There were undefined citations.\n"}
+,{"stream_name":"stdout","time":81.893714822,"data":"\n"}
+,{"stream_name":"stdout","time":81.893719173,"data":"[18] (./main.aux)\n"}
+,{"stream_name":"stdout","time":81.893723654,"data":"\n"}
+,{"stream_name":"stdout","time":81.89372804,"data":"LaTeX Warning: There were undefined references.\n"}
+,{"stream_name":"stdout","time":81.893732632,"data":"\n"}
+,{"stream_name":"stdout","time":81.893737031,"data":"\n"}
+,{"stream_name":"stdout","time":81.893741411,"data":"LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.\n"}
+,{"stream_name":"stdout","time":81.893746208,"data":"\n"}
+,{"stream_name":"stdout","time":81.893750327,"data":"\n"}
+,{"stream_name":"stdout","time":81.893754828,"data":"Package rerunfilecheck Warning: File `main.out' has changed.\n"}
+,{"stream_name":"stdout","time":81.893759336,"data":"(rerunfilecheck)                Rerun to get outlines right\n"}
+,{"stream_name":"stdout","time":81.893764432,"data":"(rerunfilecheck)                or use package `bookmark'.\n"}
+,{"stream_name":"stdout","time":81.893769149,"data":"\n"}
+,{"stream_name":"stdout","time":81.893773531,"data":" )\n"}
+,{"stream_name":"stdout","time":81.893779568,"data":"(see the transcript file for additional information){/usr/share/texlive/texmf-d\n"}
+,{"stream_name":"stdout","time":81.8937894,"data":"ist/fonts/enc/dvips/base/8r.enc}\u003c/usr/share/texlive/texmf-dist/fonts/type1/publ\n"}
+,{"stream_name":"stdout","time":81.893794794,"data":"ic/amsfonts/cm/cmtt10.pfb\u003e\u003c/usr/share/texlive/texmf-dist/fonts/type1/public/txf\n"}
+,{"stream_name":"stdout","time":81.893799917,"data":"onts/rtcxr.pfb\u003e\u003c/usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxb.p\n"}
+,{"stream_name":"stdout","time":81.893804916,"data":"fb\u003e\u003c/usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb\u003e\u003c/usr/sha\n"}
+,{"stream_name":"stdout","time":81.893810192,"data":"re/texlive/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb\u003e\u003c/usr/share/texlive/\n"}
+,{"stream_name":"stdout","time":81.893815275,"data":"texmf-dist/fonts/type1/public/txfonts/rtxr.pfb\u003e\u003c/usr/share/texlive/texmf-dist/f\n"}
+,{"stream_name":"stdout","time":81.893820207,"data":"onts/type1/public/txfonts/txex.pfb\u003e\u003c/usr/share/texlive/texmf-dist/fonts/type1/p\n"}
+,{"stream_name":"stdout","time":81.89382497,"data":"ublic/txfonts/txexa.pfb\u003e\u003c/usr/share/texlive/texmf-dist/fonts/type1/public/txfon\n"}
+,{"stream_name":"stdout","time":81.893829446,"data":"ts/txsy.pfb\u003e\u003c/usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb\u003e\u003c/u\n"}
+,{"stream_name":"stdout","time":81.893834201,"data":"sr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb\u003e\u003c/usr/share/texliv\n"}
+,{"stream_name":"stdout","time":81.893838984,"data":"e/texmf-dist/fonts/type1/urw/times/utmri8a.pfb\u003e\n"}
+,{"stream_name":"stdout","time":81.893843532,"data":"Output written on main.pdf (19 pages, 365598 bytes).\n"}
+,{"stream_name":"stdout","time":81.893848069,"data":"Transcript written on main.log.\n"}
+,{"stream_name":"stdout","time":81.893852619,"data":"\n"}
+,{"stream_name":"stdout","time":81.893856978,"data":"$ bibtex main\n"}
+,{"stream_name":"stdout","time":81.929087436,"data":"This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)\n"}
+,{"stream_name":"stdout","time":81.929116183,"data":"The top-level auxiliary file: main.aux\n"}
+,{"stream_name":"stdout","time":81.929154285,"data":"The style file: elsarticle-num.bst\n"}
+,{"stream_name":"stdout","time":81.929160322,"data":"Database file #1: references.bib\n"}
+,{"stream_name":"stdout","time":81.929165035,"data":"Warning--empty pages in liang2020shot\n"}
+,{"stream_name":"stdout","time":81.929169572,"data":"Warning--can't use both volume and number fields in matania2024leakage\n"}
+,{"stream_name":"stdout","time":81.929174676,"data":"Warning--empty pages in matania2024leakage\n"}
+,{"stream_name":"stdout","time":81.929179738,"data":"Warning--can't use both volume and number fields in knap2026leakagesafe\n"}
+,{"stream_name":"stdout","time":81.929184635,"data":"(There were 4 warnings)\n"}
+,{"stream_name":"stdout","time":81.929189256,"data":"\n"}
+,{"stream_name":"stdout","time":81.929193583,"data":"$ pdflatex -interaction=nonstopmode main\n"}
+,{"stream_name":"stdout","time":82.766736931,"data":"ntoni2007kurtogram' on page 7 undefined on i\n"}
+,{"stream_name":"stdout","time":82.766771984,"data":"nput line 11.\n"}
+,{"stream_name":"stdout","time":82.766777739,"data":"\n"}
+,{"stream_name":"stdout","time":82.766782619,"data":"\n"}
+,{"stream_name":"stdout","time":82.766787265,"data":"Package natbib Warning: Citation `randall2011' on page 7 undefined on input lin\n"}
+,{"stream_name":"stdout","time":82.76679217,"data":"e 12.\n"}
+,{"stream_name":"stdout","time":82.766796428,"data":"\n"}
+,{"stream_name":"stdout","time":82.766800929,"data":"\n"}
+,{"stream_name":"stdout","time":82.766805386,"data":"Package natbib Warning: Citation `yoon2026biosfda' on page 7 undefined on input\n"}
+,{"stream_name":"stdout","time":82.766824433,"data":" line 29.\n"}
+,{"stream_name":"stdout","time":82.766828069,"data":"\n"}
+,{"stream_name":"stdout","time":82.766831062,"data":") (./sections/06_results.tex (./tables/t3_collapse.tex) [7] [8 \u003c./figures/fig2_\n"}
+,{"stream_name":"stdout","time":82.766834632,"data":"collapse.pdf\u003e] (./tables/t4_methods.tex) (./tables/t7_hust.tex)\n"}
+,{"stream_name":"stdout","time":82.766837834,"data":"\n"}
+,{"stream_name":"stdout","time":82.766840659,"data":"Package natbib Warning: Citation `pedregosa2011sklearn' on page 9 undefined on \n"}
+,{"stream_name":"stdout","time":82.766843715,"data":"input line 56.\n"}
+,{"stream_name":"stdout","time":82.766846646,"data":"\n"}
+,{"stream_name":"stdout","time":82.76684949,"data":"[9] [10 \u003c./figures/fig3_purity.pdf\u003e] (./tables/t5_gates.tex) [11 \u003c./figures/fig\n"}
+,{"stream_name":"stdout","time":82.766852929,"data":"4_decomposition.pdf\u003e] [12 \u003c./figures/fig5_roc.pdf\u003e] (./tables/t6_gains.tex)\n"}
+,{"stream_name":"stdout","time":82.76685657,"data":"[13 \u003c./figures/fig6_gains.pdf\u003e]\n"}
+,{"stream_name":"stdout","time":82.766861287,"data":"\n"}
+,{"stream_name":"stdout","time":82.766865701,"data":"Package natbib Warning: Citation `smith2015' on page 14 undefined on input line\n"}
+,{"stream_name":"stdout","time":82.766870237,"data":" 208.\n"}
+,{"stream_name":"stdout","time":82.766874326,"data":"\n"}
+,{"stream_name":"stdout","time":82.766878551,"data":"\n"}
+,{"stream_name":"stdout","time":82.766882785,"data":"Package natbib Warning: Citation `patent10168248' on page 14 undefined on input\n"}
+,{"stream_name":"stdout","time":82.766887129,"data":" line 209.\n"}
+,{"stream_name":"stdout","time":82.766891329,"data":"\n"}
+,{"stream_name":"stdout","time":82.766895559,"data":") (./sections/07_discussion.tex [14 \u003c./figures/fig7_slip.pdf\u003e]\n"}
+,{"stream_name":"stdout","time":82.766900364,"data":"\n"}
+,{"stream_name":"stdout","time":82.766904724,"data":"Package natbib Warning: Citation `kapoor2023leakage' on page 15 undefined on in\n"}
+,{"stream_name":"stdout","time":82.766909522,"data":"put line 44.\n"}
+,{"stream_name":"stdout","time":82.766913935,"data":"\n"}
+,{"stream_name":"stdout","time":82.766918176,"data":"\n"}
+,{"stream_name":"stdout","time":82.766922501,"data":"Package natbib Warning: Citation `geirhos2020shortcut' on page 15 undefined on \n"}
+,{"stream_name":"stdout","time":82.766927342,"data":"input line 46.\n"}
+,{"stream_name":"stdout","time":82.766931772,"data":"\n"}
+,{"stream_name":"stdout","time":82.76693469,"data":"[15]) (./sections/08_recommendations.tex\n"}
+,{"stream_name":"stdout","time":82.766937619,"data":"\n"}
+,{"stream_name":"stdout","time":82.766940386,"data":"Package natbib Warning: Citation `vieira2026' on page 16 undefined on input lin\n"}
+,{"stream_name":"stdout","time":82.766943405,"data":"e 32.\n"}
+,{"stream_name":"stdout","time":82.766946157,"data":"\n"}
+,{"stream_name":"stdout","time":82.76694892,"data":") (./sections/09_limitations.tex [16]) (./sections/10_conclusions.tex)\n"}
+,{"stream_name":"stdout","time":82.76695208699999,"data":"(./sections/99_declarations.tex [17]\n"}
+,{"stream_name":"stdout","time":82.766954975,"data":"\n"}
+,{"stream_name":"stdout","time":82.766957784,"data":"Package natbib Warning: Citation `lessmeier2016' on page 18 undefined on input \n"}
+,{"stream_name":"stdout","time":82.766960846,"data":"line 20.\n"}
+,{"stream_name":"stdout","time":82.766965555,"data":"\n"}
+,{"stream_name":"stdout","time":82.76697565,"data":"\n"}
+,{"stream_name":"stdout","time":82.76698036,"data":"Package natbib Warning: Citation `thuan2023hust' on page 18 undefined on input \n"}
+,{"stream_name":"stdout","time":82.766984997,"data":"line 21.\n"}
+,{"stream_name":"stdout","time":82.766989309,"data":"\n"}
+,{"stream_name":"stdout","time":82.766993789,"data":"\n"}
+,{"stream_name":"stdout","time":82.766997977,"data":"Package natbib Warning: Citation `smith2015' on page 18 undefined on input line\n"}
+,{"stream_name":"stdout","time":82.76700292,"data":" 21.\n"}
+,{"stream_name":"stdout","time":82.767007254,"data":"\n"}
+,{"stream_name":"stdout","time":82.767011601,"data":"\n"}
+,{"stream_name":"stdout","time":82.76701588,"data":"Package natbib Warning: Citation `sehri2023uored' on page 18 undefined on input\n"}
+,{"stream_name":"stdout","time":82.76702057,"data":" line 22.\n"}
+,{"stream_name":"stdout","time":82.767025034,"data":"\n"}
+,{"stream_name":"stdout","time":82.767029494,"data":") (./main.bbl [18])\n"}
+,{"stream_name":"stdout","time":82.767060716,"data":"\n"}
+,{"stream_name":"stdout","time":82.767065382,"data":"Package natbib Warning: There were undefined citations.\n"}
+,{"stream_name":"stdout","time":82.767070077,"data":"\n"}
+,{"stream_name":"stdout","time":82.767074555,"data":"[19] (./main.aux\n"}
+,{"stream_name":"stdout","time":82.767078902,"data":"\n"}
+,{"stream_name":"stdout","time":82.767083237,"data":"Package natbib Warning: Citation(s) may have changed.\n"}
+,{"stream_name":"stdout","time":82.767087889,"data":"(natbib)                Rerun to get citations correct.\n"}
+,{"stream_name":"stdout","time":82.767092197,"data":"\n"}
+,{"stream_name":"stdout","time":82.76709669,"data":") )\n"}
+,{"stream_name":"stdout","time":82.767100901,"data":"(see the transcript file for additional information){/usr/share/texlive/texmf-d\n"}
+,{"stream_name":"stdout","time":82.767107697,"data":"ist/fonts/enc/dvips/base/8r.enc}\u003c/usr/share/texlive/texmf-dist/fonts/type1/publ\n"}
+,{"stream_name":"stdout","time":82.767112692,"data":"ic/amsfonts/cm/cmtt10.pfb\u003e\u003c/usr/share/texlive/texmf-dist/fonts/type1/public/ams\n"}
+,{"stream_name":"stdout","time":82.767117629,"data":"fonts/cm/cmtt8.pfb\u003e\u003c/usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rt\n"}
+,{"stream_name":"stdout","time":82.767122507,"data":"cxr.pfb\u003e\u003c/usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb\u003e\u003c/us\n"}
+,{"stream_name":"stdout","time":82.767127809,"data":"r/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb\u003e\u003c/usr/share/texl\n"}
+,{"stream_name":"stdout","time":82.767132804,"data":"ive/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb\u003e\u003c/usr/share/texlive/texmf-d\n"}
+,{"stream_name":"stdout","time":82.767137692,"data":"ist/fonts/type1/public/txfonts/rtxr.pfb\u003e\u003c/usr/share/texlive/texmf-dist/fonts/ty\n"}
+,{"stream_name":"stdout","time":82.767142489,"data":"pe1/public/txfonts/txex.pfb\u003e\u003c/usr/share/texlive/texmf-dist/fonts/type1/public/t\n"}
+,{"stream_name":"stdout","time":82.767147304,"data":"xfonts/txexa.pfb\u003e\u003c/usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy\n"}
+,{"stream_name":"stdout","time":82.767151865,"data":".pfb\u003e\u003c/usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb\u003e\u003c/usr/shar\n"}
+,{"stream_name":"stdout","time":82.767155177,"data":"e/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb\u003e\u003c/usr/share/texlive/texmf\n"}
+,{"stream_name":"stdout","time":82.767158403,"data":"-dist/fonts/type1/urw/times/utmri8a.pfb\u003e\n"}
+,{"stream_name":"stdout","time":82.767162862,"data":"Output written on main.pdf (20 pages, 387012 bytes).\n"}
+,{"stream_name":"stdout","time":82.767172213,"data":"Transcript written on main.log.\n"}
+,{"stream_name":"stdout","time":82.767176765,"data":"\n"}
+,{"stream_name":"stdout","time":82.767181313,"data":"$ pdflatex -interaction=nonstopmode main\n"}
+,{"stream_name":"stdout","time":83.601818586,"data":"* driver: auto-detecting\n"}
+,{"stream_name":"stdout","time":83.601868306,"data":"*geometry* detected driver: pdftex\n"}
+,{"stream_name":"stdout","time":83.601876311,"data":"(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty\n"}
+,{"stream_name":"stdout","time":83.601883193,"data":"(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)\n"}
+,{"stream_name":"stdout","time":83.601889268,"data":"(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty))\n"}
+,{"stream_name":"stdout","time":83.601895276,"data":"(./main.out) (./main.out)\n"}
+,{"stream_name":"stdout","time":83.601900816,"data":"(/usr/share/texlive/texmf-dist/tex/latex/translations/translations-basic-dictio\n"}
+,{"stream_name":"stdout","time":83.601906985,"data":"nary-english.trsl) (./sections/00_abstract.tex\n"}
+,{"stream_name":"stdout","time":83.601912791,"data":"(/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxmia.fd)\n"}
+,{"stream_name":"stdout","time":83.601918669,"data":"(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)\n"}
+,{"stream_name":"stdout","time":83.601924401,"data":"(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd)\n"}
+,{"stream_name":"stdout","time":83.601930189,"data":"(/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyc.fd))\n"}
+,{"stream_name":"stdout","time":83.601935957,"data":"(/usr/share/texlive/texmf-dist/tex/latex/txfonts/ts1txr.fd) [1{/var/lib/texmf/f\n"}
+,{"stream_name":"stdout","time":83.601940561,"data":"onts/map/pdftex/updmap/pdftex.map}] (./sections/01_introduction.tex\n"}
+,{"stream_name":"stdout","time":83.601944419,"data":"Overfull \\hbox (1.90001pt too wide) has occurred while \\output is active\n"}
+,{"stream_name":"stdout","time":83.601948396,"data":"[] \n"}
+,{"stream_name":"stdout","time":83.601951941,"data":"pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has \n"}
+,{"stream_name":"stdout","time":83.601955823,"data":"been already used, duplicate ignored\n"}
+,{"stream_name":"stdout","time":83.601959497,"data":"\u003cto be read again\u003e \n"}
+,{"stream_name":"stdout","time":83.601963614,"data":"                   \\relax \n"}
+,{"stream_name":"stdout","time":83.601967421,"data":"l.30 \n"}
+,{"stream_name":"stdout","time":83.601972956,"data":"      [1]) (./sections/02_background.tex [2]) (./sections/03_data.tex\n"}
+,{"stream_name":"stdout","time":83.601978833,"data":"(./tables/t1_datasets.tex\n"}
+,{"stream_name":"stdout","time":83.601984204,"data":"(/usr/share/texlive/texmf-dist/tex/latex/txfonts/omstxr.fd)) [3])\n"}
+,{"stream_name":"stdout","time":83.601989716,"data":"(./sections/04_protocol.tex (./tables/t2_splits.tex) [4] [5 \u003c./figures/fig1_des\n"}
+,{"stream_name":"stdout","time":83.601996028,"data":"ign.pdf\u003e]) (./sections/05_gates.tex [6]) (./sections/06_results.tex\n"}
+,{"stream_name":"stdout","time":83.602011726,"data":"(./tables/t3_collapse.tex) [7] [8 \u003c./figures/fig2_collapse.pdf\u003e]\n"}
+,{"stream_name":"stdout","time":83.602018086,"data":"(./tables/t4_methods.tex) (./tables/t7_hust.tex) [9] [10 \u003c./figures/fig3_purity\n"}
+,{"stream_name":"stdout","time":83.602024056,"data":".pdf\u003e] (./tables/t5_gates.tex) [11 \u003c./figures/fig4_decomposition.pdf\u003e] [12 \u003c./f\n"}
+,{"stream_name":"stdout","time":83.602030369,"data":"igures/fig5_roc.pdf\u003e] (./tables/t6_gains.tex) [13 \u003c./figures/fig6_gains.pdf\u003e])\n"}
+,{"stream_name":"stdout","time":83.602073924,"data":"(./sections/07_discussion.tex [14 \u003c./figures/fig7_slip.pdf\u003e] [15])\n"}
+,{"stream_name":"stdout","time":83.602081563,"data":"(./sections/08_recommendations.tex) (./sections/09_limitations.tex [16])\n"}
+,{"stream_name":"stdout","time":83.602086356,"data":"(./sections/10_conclusions.tex) (./sections/99_declarations.tex [17])\n"}
+,{"stream_name":"stdout","time":83.602091083,"data":"(./main.bbl [18]) [19] (./main.aux) )\n"}
+,{"stream_name":"stdout","time":83.602095651,"data":"(see the transcript file for additional information){/usr/share/texlive/texmf-d\n"}
+,{"stream_name":"stdout","time":83.602101941,"data":"ist/fonts/enc/dvips/base/8r.enc}\u003c/usr/share/texlive/texmf-dist/fonts/type1/publ\n"}
+,{"stream_name":"stdout","time":83.602106861,"data":"ic/amsfonts/cm/cmtt10.pfb\u003e\u003c/usr/share/texlive/texmf-dist/fonts/type1/public/ams\n"}
+,{"stream_name":"stdout","time":83.602111758,"data":"fonts/cm/cmtt8.pfb\u003e\u003c/usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rt\n"}
+,{"stream_name":"stdout","time":83.602117191,"data":"cxr.pfb\u003e\u003c/usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb\u003e\u003c/us\n"}
+,{"stream_name":"stdout","time":83.602120783,"data":"r/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb\u003e\u003c/usr/share/texl\n"}
+,{"stream_name":"stdout","time":83.602124013,"data":"ive/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb\u003e\u003c/usr/share/texlive/texmf-d\n"}
+,{"stream_name":"stdout","time":83.60212709300001,"data":"ist/fonts/type1/public/txfonts/rtxr.pfb\u003e\u003c/usr/share/texlive/texmf-dist/fonts/ty\n"}
+,{"stream_name":"stdout","time":83.602131823,"data":"pe1/public/txfonts/txex.pfb\u003e\u003c/usr/share/texlive/texmf-dist/fonts/type1/public/t\n"}
+,{"stream_name":"stdout","time":83.602136649,"data":"xfonts/txexa.pfb\u003e\u003c/usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy\n"}
+,{"stream_name":"stdout","time":83.602141475,"data":".pfb\u003e\u003c/usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb\u003e\u003c/usr/shar\n"}
+,{"stream_name":"stdout","time":83.602146202,"data":"e/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb\u003e\u003c/usr/share/texlive/texmf\n"}
+,{"stream_name":"stdout","time":83.602151136,"data":"-dist/fonts/type1/urw/times/utmri8a.pfb\u003e\n"}
+,{"stream_name":"stdout","time":83.602155541,"data":"Output written on main.pdf (20 pages, 388163 bytes).\n"}
+,{"stream_name":"stdout","time":83.602159813,"data":"Transcript written on main.log.\n"}
+,{"stream_name":"stdout","time":83.602164321,"data":"\n"}
+,{"stream_name":"stdout","time":83.602359866,"data":"PDF OK 388163 bytes\n"}
+,{"stream_name":"stdout","time":83.603102878,"data":"done ['main.bbl', 'main.blg', 'main.log', 'manuscript.pdf']\n"}
+,{"stream_name":"stderr","time":86.563126403,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":86.563187883,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":86.940210887,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":86.940264761,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":88.467681175,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":90.106919509,"data":"[NbConvertApp] Writing 286749 bytes to __results__.html\n"}
+]

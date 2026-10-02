@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the paper."
+title: "physgate-sfda: bearing-wise evaluation of source-free domain adaptation"
+authors:
+  - family-names: Rahman
+    given-names: Mohammad Rafiur
+    affiliation: "Chittagong University of Engineering & Technology"
+repository-code: "https://github.com/rafilovestosuffer/physgate-sfda"
+license: MIT
+date-released: 2026-10-02

@@ -1,0 +1,506 @@
+{
+  "CWRU_DE|6205|all": {
+    "n_records": 44,
+    "s_star": 0.1631275182402265,
+    "unmasked": {
+      "valid": 21,
+      "valid_frac": 0.4772727272727273,
+      "slip_pct_quantiles_5_25_50_75_95": [
+        -0.41,
+        -0.37,
+        -0.33,
+        -0.2,
+        -0.11
+      ],
+      "in_lock_records": 0,
+      "in_lock_frac_of_valid": 0.0,
+      "in_lock_ci95": [
+        0.0,
+        0.1610976152190796
+      ],
+      "bearings_with_any_in_lock": "0/7",
+      "at_grid_edge": 0
+    },
+    "masked": {
+      "valid": 21,
+      "valid_frac": 0.4772727272727273,
+      "slip_pct_quantiles_5_25_50_75_95": [
+        -0.41,
+        -0.37,
+        -0.33,
+        -0.2,
+        -0.11
+      ],
+      "in_lock_records": 0,
+      "in_lock_frac_of_valid": 0.0,
+      "in_lock_ci95": [
+        0.0,
+        0.1610976152190796
+      ],
+      "bearings_with_any_in_lock": "0/7",
+      "at_grid_edge": 0
+    }
+  },
+  "CWRU_DE|6205|inner_race": {
+    "n_records": 16,
+    "s_star": 0.1631275182402265,
+    "unmasked": {
+      "valid": 11,
+      "valid_frac": 0.6875,
+      "slip_pct_quantiles_5_25_50_75_95": [
+        -0.425,
+        -0.39,
+        -0.33,
+        -0.13,
+        -0.1
+      ],
+      "in_lock_records": 0,
+      "in_lock_frac_of_valid": 0.0,
+      "in_lock_ci95": [
+        0.0,
+        0.28491415291815436
+      ],
+      "bearings_with_any_in_lock": "0/3",
+      "at_grid_edge": 0
+    },
+    "masked": {
+      "valid": 11,
+      "valid_frac": 0.6875,
+      "slip_pct_quantiles_5_25_50_75_95": [
+        -0.425,
+        -0.39,
+        -0.33,
+        -0.13,
+        -0.1
+      ],
+      "in_lock_records": 0,
+      "in_lock_frac_of_valid": 0.0,
+      "in_lock_ci95": [
+        0.0,
+        0.28491415291815436
+      ],
+      "bearings_with_any_in_lock": "0/3",
+      "at_grid_edge": 0
+    }
+  },
+  "CWRU_DE|6205|outer_race": {
+    "n_records": 28,
+    "s_star": 0.1631275182402265,
+    "unmasked": {
+      "valid": 10,
+      "valid_frac": 0.35714285714285715,
+      "slip_pct_quantiles_5_25_50_75_95": [
+        -0.37,
+        -0.345,
+        -0.275,
+        -0.22,
+        -0.2
+      ],
+      "in_lock_records": 0,
+      "in_lock_frac_of_valid": 0.0,
+      "in_lock_ci95": [
+        0.0,
+        0.3084971078187629
+      ],
+      "bearings_with_any_in_lock": "0/4",
+      "at_grid_edge": 0
+    },
+    "masked": {
+      "valid": 10,
+      "valid_frac": 0.35714285714285715,
+      "slip_pct_quantiles_5_25_50_75_95": [
+        -0.37,
+        -0.345,
+        -0.275,
+        -0.22,
+        -0.2
+      ],
+      "in_lock_records": 0,
+      "in_lock_frac_of_valid": 0.0,
+      "in_lock_ci95": [
+        0.0,
+        0.3084971078187629
+      ],
+      "bearings_with_any_in_lock": "0/4",
+      "at_grid_edge": 0
+    }
+  },
+  "CWRU_FE|6203|all": {
+    "n_records": 33,
+    "s_star": 0.017398411957029455,
+    "unmasked": {
+      "valid": 10,
+      "valid_frac": 0.30303030303030304,
+      "slip_pct_quantiles_5_25_50_75_95": [
+        -0.612,
+        -0.452,
+        -0.38,
+        0.098,
+        0.421
+      ],
+      "in_lock_records": 0,
+      "in_lock_frac_of_valid": 0.0,
+      "in_lock_ci95": [
+        0.0,
+        0.3084971078187629
+      ],
+      "bearings_with_any_in_lock": "0/6",
+      "at_grid_edge": 0
+    },
+    "masked": {
+      "valid": 10,
+      "valid_frac": 0.30303030303030304,
+      "slip_pct_quantiles_5_25_50_75_95": [
+        -0.612,
+        -0.452,
+        -0.38,
+        0.098,
+        0.421
+      ],
+      "in_lock_records": 0,
+      "in_lock_frac_of_valid": 0.0,
+      "in_lock_ci95": [
+        0.0,
+        0.3084971078187629
+      ],
+      "bearings_with_any_in_lock": "0/6",
+      "at_grid_edge": 0
+    }
+  },
+  "CWRU_FE|6203|inner_race": {
+    "n_records": 12,
+    "s_star": 0.017398411957029455,
+    "unmasked": {
+      "valid": 5,
+      "valid_frac": 0.4166666666666667,
+      "slip_pct_quantiles_5_25_50_75_95": [
+        -0.622,
+        -0.59,
+        0.12,
+        0.13,
+        0.554
+      ],
+      "in_lock_records": 0,
+      "in_lock_frac_of_valid": 0.0,
+      "in_lock_ci95": [
+        0.0,
+        0.5218237501049814
+      ],
+      "bearings_with_any_in_lock": "0/3",
+      "at_grid_edge": 0
+    },
+    "masked": {
+      "valid": 5,
+      "valid_frac": 0.4166666666666667,
+      "slip_pct_quantiles_5_25_50_75_95": [
+        -0.622,
+        -0.59,
+        0.12,
+        0.13,
+        0.554
+      ],
+      "in_lock_records": 0,
+      "in_lock_frac_of_valid": 0.0,
+      "in_lock_ci95": [
+        0.0,
+        0.5218237501049814
+      ],
+      "bearings_with_any_in_lock": "0/3",
+      "at_grid_edge": 0
+    }
+  },
+  "CWRU_FE|6203|outer_race": {
+    "n_records": 21,
+    "s_star": 0.017398411957029455,
+    "unmasked": {
+      "valid": 5,
+      "valid_frac": 0.23809523809523808,
+      "slip_pct_quantiles_5_25_50_75_95": [
+        -0.454,
+        -0.43,
+        -0.42,
+        -0.34,
+        -0.044
+      ],
+      "in_lock_records": 0,
+      "in_lock_frac_of_valid": 0.0,
+      "in_lock_ci95": [
+        0.0,
+        0.5218237501049814
+      ],
+      "bearings_with_any_in_lock": "0/3",
+      "at_grid_edge": 0
+    },
+    "masked": {
+      "valid": 5,
+      "valid_frac": 0.23809523809523808,
+      "slip_pct_quantiles_5_25_50_75_95": [
+        -0.454,
+        -0.43,
+        -0.42,
+        -0.34,
+        -0.044
+      ],
+      "in_lock_records": 0,
+      "in_lock_frac_of_valid": 0.0,
+      "in_lock_ci95": [
+        0.0,
+        0.5218237501049814
+      ],
+      "bearings_with_any_in_lock": "0/3",
+      "at_grid_edge": 0
+    }
+  },
+  "PU|6203_PU_2855|all": {
+    "n_records": 320,
+    "s_star": 0.017775229357798208,
+    "unmasked": {
+      "valid": 52,
+      "valid_frac": 0.1625,
+      "slip_pct_quantiles_5_25_50_75_95": [
+        -0.307,
+        -0.142,
+        -0.065,
+        0.192,
+        0.879
+      ],
+      "in_lock_records": 3,
+      "in_lock_frac_of_valid": 0.057692307692307696,
+      "in_lock_ci95": [
+        0.012059318026738436,
+        0.15947335863858766
+      ],
+      "bearings_with_any_in_lock": "1/3",
+      "at_grid_edge": 0
+    },
+    "masked": {
+      "valid": 49,
+      "valid_frac": 0.153125,
+      "slip_pct_quantiles_5_25_50_75_95": [
+        -0.316,
+        -0.21,
+        -0.07,
+        0.14,
+        0.282
+      ],
+      "in_lock_records": 0,
+      "in_lock_frac_of_valid": 0.0,
+      "in_lock_ci95": [
+        0.0,
+        0.07251926366433227
+      ],
+      "bearings_with_any_in_lock": "0/2",
+      "at_grid_edge": 0
+    }
+  },
+  "PU|6203_PU_2855|inner_race": {
+    "n_records": 160,
+    "s_star": 0.017775229357798208,
+    "unmasked": {
+      "valid": 26,
+      "valid_frac": 0.1625,
+      "slip_pct_quantiles_5_25_50_75_95": [
+        -0.27,
+        -0.24,
+        0.195,
+        0.265,
+        1.557
+      ],
+      "in_lock_records": 3,
+      "in_lock_frac_of_valid": 0.11538461538461539,
+      "in_lock_ci95": [
+        0.0244580753179622,
+        0.30154040010756783
+      ],
+      "bearings_with_any_in_lock": "1/2",
+      "at_grid_edge": 0
+    },
+    "masked": {
+      "valid": 23,
+      "valid_frac": 0.14375,
+      "slip_pct_quantiles_5_25_50_75_95": [
+        -0.27,
+        -0.25,
+        0.16,
+        0.23,
+        0.308
+      ],
+      "in_lock_records": 0,
+      "in_lock_frac_of_valid": 0.0,
+      "in_lock_ci95": [
+        0.0,
+        0.14818512891522512
+      ],
+      "bearings_with_any_in_lock": "0/1",
+      "at_grid_edge": 0
+    }
+  },
+  "PU|6203_PU_2855|outer_race": {
+    "n_records": 160,
+    "s_star": 0.017775229357798208,
+    "unmasked": {
+      "valid": 26,
+      "valid_frac": 0.1625,
+      "slip_pct_quantiles_5_25_50_75_95": [
+        -0.348,
+        -0.118,
+        -0.08,
+        -0.053,
+        -0.04
+      ],
+      "in_lock_records": 0,
+      "in_lock_frac_of_valid": 0.0,
+      "in_lock_ci95": [
+        0.0,
+        0.1322746044977541
+      ],
+      "bearings_with_any_in_lock": "0/1",
+      "at_grid_edge": 0
+    },
+    "masked": {
+      "valid": 26,
+      "valid_frac": 0.1625,
+      "slip_pct_quantiles_5_25_50_75_95": [
+        -0.348,
+        -0.118,
+        -0.08,
+        -0.053,
+        -0.04
+      ],
+      "in_lock_records": 0,
+      "in_lock_frac_of_valid": 0.0,
+      "in_lock_ci95": [
+        0.0,
+        0.1322746044977541
+      ],
+      "bearings_with_any_in_lock": "0/1",
+      "at_grid_edge": 0
+    }
+  },
+  "PU|6203_PU_2905|all": {
+    "n_records": 1519,
+    "s_star": 0.022982062780269034,
+    "unmasked": {
+      "valid": 242,
+      "valid_frac": 0.15931533903884135,
+      "slip_pct_quantiles_5_25_50_75_95": [
+        -0.31,
+        0.0,
+        0.06,
+        0.1,
+        0.22
+      ],
+      "in_lock_records": 0,
+      "in_lock_frac_of_valid": 0.0,
+      "in_lock_ci95": [
+        0.0,
+        0.015127712453415525
+      ],
+      "bearings_with_any_in_lock": "0/6",
+      "at_grid_edge": 1
+    },
+    "masked": {
+      "valid": 242,
+      "valid_frac": 0.15931533903884135,
+      "slip_pct_quantiles_5_25_50_75_95": [
+        -0.31,
+        0.0,
+        0.06,
+        0.1,
+        0.22
+      ],
+      "in_lock_records": 0,
+      "in_lock_frac_of_valid": 0.0,
+      "in_lock_ci95": [
+        0.0,
+        0.015127712453415525
+      ],
+      "bearings_with_any_in_lock": "0/6",
+      "at_grid_edge": 1
+    }
+  },
+  "PU|6203_PU_2905|inner_race": {
+    "n_records": 720,
+    "s_star": 0.022982062780269034,
+    "unmasked": {
+      "valid": 123,
+      "valid_frac": 0.17083333333333334,
+      "slip_pct_quantiles_5_25_50_75_95": [
+        -0.33,
+        -0.025,
+        0.06,
+        0.09,
+        0.239
+      ],
+      "in_lock_records": 0,
+      "in_lock_frac_of_valid": 0.0,
+      "in_lock_ci95": [
+        0.0,
+        0.029545625527072385
+      ],
+      "bearings_with_any_in_lock": "0/4",
+      "at_grid_edge": 1
+    },
+    "masked": {
+      "valid": 123,
+      "valid_frac": 0.17083333333333334,
+      "slip_pct_quantiles_5_25_50_75_95": [
+        -0.33,
+        -0.025,
+        0.06,
+        0.09,
+        0.239
+      ],
+      "in_lock_records": 0,
+      "in_lock_frac_of_valid": 0.0,
+      "in_lock_ci95": [
+        0.0,
+        0.029545625527072385
+      ],
+      "bearings_with_any_in_lock": "0/4",
+      "at_grid_edge": 1
+    }
+  },
+  "PU|6203_PU_2905|outer_race": {
+    "n_records": 799,
+    "s_star": 0.022982062780269034,
+    "unmasked": {
+      "valid": 119,
+      "valid_frac": 0.14893617021276595,
+      "slip_pct_quantiles_5_25_50_75_95": [
+        -0.01,
+        0.015,
+        0.07,
+        0.1,
+        0.14
+      ],
+      "in_lock_records": 0,
+      "in_lock_frac_of_valid": 0.0,
+      "in_lock_ci95": [
+        0.0,
+        0.030523444853795947
+      ],
+      "bearings_with_any_in_lock": "0/2",
+      "at_grid_edge": 0
+    },
+    "masked": {
+      "valid": 119,
+      "valid_frac": 0.14893617021276595,
+      "slip_pct_quantiles_5_25_50_75_95": [
+        -0.01,
+        0.015,
+        0.07,
+        0.1,
+        0.14
+      ],
+      "in_lock_records": 0,
+      "in_lock_frac_of_valid": 0.0,
+      "in_lock_ci95": [
+        0.0,
+        0.030523444853795947
+      ],
+      "bearings_with_any_in_lock": "0/2",
+      "at_grid_edge": 0
+    }
+  }
+}

@@ -1,0 +1,54 @@
+\section{Discussion}
+\label{sec:discussion}
+
+\paragraph{Why the collapse is generic.} Two source-free methods, four non-adaptive random forests and two test rigs lose
+between 22 and 41 points when the target bearings are disjoint from the source bearings. The probe of
+Section~\ref{sec:res-probe} explains why a specific algorithm is not the culprit: the source features identify individual
+specimens within a class almost perfectly, so any classifier trained on them can separate the source classes by identity.
+With three bearings per class, identity is not a weak shortcut competing with fault physics --- it is a perfect one. Nothing
+in an unsupervised adaptation objective penalises it, because adaptation refines the source model's own decisions rather
+than questioning what they are based on. This also predicts the shape of the failure we observe: not degraded per-window
+accuracy, but a confident label applied to a whole unseen specimen.
+
+\paragraph{Why physics gating helps, and why only this much.} The gates that are safe on healthy machinery deliver 4--7
+points, in every seed, in 9 of 10 splits, and essentially never cost anything. That combination --- small, consistent,
+almost risk-free --- is what a correct but partial prior looks like. The ceiling analysis quantifies the ``partial''. First,
+a pseudo-label filter can only repair the filter-recoverable part of the collapse, a median \SI{82}{\percent} on Paderborn
+but as little as \SI{48}{\percent} on some splits. Second, a kinematic gate acts only where fault lines are actually
+detectable, which on this dataset is about a quarter of the faulty bearings. The product of those two factors is a small
+number, and no amount of tuning changes it. Reporting a gain without the oracle gap beside it hides exactly this.
+
+\paragraph{Safety is a property to measure, not to assume.} The raw-spectrum band rule accepts \SI{45}{\percent} of healthy
+recordings as faulty, and inside the adaptation loop it makes accuracy worse. The envelope rules accept at most
+\SI{2}{\percent} and help. The ordering of the two effects is the same as the ordering of the false-acceptance rates, and
+both are measurable before any adaptation experiment is run, on healthy recordings from the target rig. A physics module
+introduced into an adaptation loop should be characterised this way first; end accuracy on a leaky protocol cannot
+distinguish a safe prior from an unsafe one.
+
+\paragraph{A shallow baseline belongs in every such comparison.} On bearing-disjoint targets a random forest on ten
+time-domain statistics --- no adaptation, no target data, no deep network --- exceeds the adapted source-free method by a
+median of 8.9 points across the ten splits, and matches the gated method. We do not present this as a better diagnostic
+method; it collapses for the same reason and labels bearings as blocks in the same way. It is a calibration point. Any
+claim that an adaptation procedure has learned transferable fault structure should clear the bar set by features that
+encode no transfer mechanism at all.
+
+\paragraph{Is this leakage, or simply a different task?}
+A reader may object that adapting to the same physical bearings at a new operating condition is a legitimate task: the
+machine is the same, only its duty point has changed, and that is a real deployment scenario for a permanently instrumented
+asset. We agree, and the objection sharpens rather than weakens the argument. Two scenarios are conflated in the current
+literature. In the first, the monitored bearing is present in training, and same-bearing evaluation estimates performance
+honestly. In the second --- diagnosing a replacement bearing, a sister machine, or a fleet --- the specimen at test time was
+never seen, and same-bearing evaluation over-estimates performance by 22--41 points on the rigs measured here. The failure is
+therefore not that the published protocol is wrong in itself, but that the reported number is read as evidence for the
+second scenario while being measured under the first. We use ``leakage'' in the sense of Kapoor and Narayanan
+\cite{kapoor2023leakage}: information shared between training and evaluation that inflates the estimate relative to the
+deployment the claim addresses. What the adapted model exploits is a shortcut in exactly the sense of Geirhos et al.
+\cite{geirhos2020shortcut} --- a rule that succeeds on the benchmark and fails under the intended shift.
+
+\paragraph{Threats to validity.} Three deserve naming. The clean and leaky targets differ in their bearing sets, so a split
+where the clean bearings happen to be harder inflates $\Delta_{\mathrm{leak}}$; running both directions on the folds and ten
+random splits addresses this, and the split-level spread is reported rather than hidden. The two Paderborn folds are not
+perfectly symmetric (fold B's source has two outer-race bearings rather than three), which is visible in the decomposition
+and is why the folds are reported separately from the ten random splits. Finally, the HUST replication changes bearing size
+along with identity; it strengthens the leakage conclusion but cannot isolate identity alone, and we do not use it for any
+claim about gating.

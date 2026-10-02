@@ -1,0 +1,25 @@
+\section{Conclusions}
+\label{sec:conclusions}
+
+The source-free adaptation results we tested do not survive evaluation on bearings the source model has never seen. On
+Paderborn SDALR loses a median 36.2 points over ten pre-registered bearing splits, and a given bearing loses a median 38.7
+points when it is unseen rather than seen; SHOT loses 21.7 points, non-adaptive forests 22.7--32.1, a forest at a fixed
+operating condition 29.7, and SDALR on a second rig 33.5. Near-ceiling accuracy under the conventional protocol and roughly
+\SI{55}{\percent} under a bearing-disjoint one are the same models measured two ways.
+
+The loss is in the source model, and both adaptation methods inherit it. The source model alone already loses 35.1 points before any
+adaptation step; SDALR leaves the gap unchanged and SHOT narrows it only by losing accuracy on the seen bearings. The cause is
+mainly under-sampling rather than a fixed identity shortcut: specimens are identifiable from simple statistics, but
+a forest's unseen-bearing accuracy rises from 46 to 75\,\% as the source grows from one to four specimens per class, because faulty
+specimens differ in the size, shape and mechanism of their damage.
+
+Physics gating is safe and bounded. Envelope-based kinematic gates accept 0 to 9 of 480 healthy recordings as faulty, against
+214 for a raw-spectrum band rule, and add a median 4.5 points inside the adaptation loop, closing about a fifth of the gap that
+an oracle pseudo-label filter closes. The gain lies on the recordings the gate certifies, and the gates certify only the
+specimens with the largest damage; a classifier built on the same kinematic evidence leaks little but is no more accurate. On
+this rig, what limits physics-gated adaptation is the detectability of small damage, not the gate.
+
+For practice the implication is procedural: bearing-disjoint targets over several splits, the source-only gap beside the
+adapted one, paired differences from a shared checkpoint, an oracle reference, a shallow baseline, measured false acceptance
+and coverage for any physics module (which requires verified healthy recordings from the target machine), and a statement of whether model selection saw target labels. They cost a handful of
+extra runs, and they are what separates a transferable diagnosis from one that knows only the bearings it was trained on.

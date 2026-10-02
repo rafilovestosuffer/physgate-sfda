@@ -1,0 +1,38 @@
+\section{What a source-free bearing-diagnosis result should carry}
+\label{sec:recommendations}
+
+The measurements above suggest eight pieces of evidence that separate a transferable result from a leaky one. None requires
+new hardware; together they cost a few additional runs.
+
+\begin{enumerate}
+  \item \textbf{Bearing-disjoint targets.} Report accuracy on physical bearings absent from source training. If the dataset
+        cannot support this --- CWRU's healthy class is effectively one specimen --- say so, and treat the published number as
+        an upper bound rather than an estimate.
+  \item \textbf{A distribution over splits.} Which bearings fell in the source moved clean accuracy between \SI{36}{} and
+        \SI{74}{\percent} here. Report medians with intervals over several pre-registered draws, and a within-bearing contrast
+        where bearings rotate between source and target.
+  \item \textbf{The source-only gap beside the adapted one.} The batch-0 accuracy is already in every adaptation log. Here it
+        showed that adaptation neither created nor repaired the gap, which no adapted number alone can show.
+  \item \textbf{Paired differences for any add-on module.} Gates, regularisers and losses should be compared against the
+        base method trained from the \emph{same} source checkpoint in the same job, and reported as the distribution of
+        per-task or per-split differences.
+  \item \textbf{An oracle pseudo-label reference.} One extra run per configuration, replacing the pseudo-label rule by the
+        true label, converts a bare gain into a share of what correct labels would achieve.
+  \item \textbf{A non-adaptive shallow baseline under the identical split.} Here it beat the adapted method in 8 of 10
+        splits.
+  \item \textbf{False acceptance and coverage for any physics module, measured on healthy recordings from the target rig.}
+        A gate that certifies faults on healthy machinery injects confident wrong labels; a gate that certifies almost
+        nothing cannot help, and its gain should be reported separately on the recordings it certifies and on the rest.
+        Characterising a gate on target-rig healthy recordings is target-rig supervision, mild but real, and should be
+        declared; our operating point, safe on Paderborn, accepted 4 of 24 healthy recordings from two other rigs.
+  \item \textbf{A statement of whether model selection saw target labels.} The released selection rule was worth 0.6 points
+        on leaky and 1.0 on clean targets on average, and up to 4.1 on a single task; headline numbers should use a rule that
+        touches no target label.
+\end{enumerate}
+
+For deployment the same list reads as a risk assessment. A diagnosis system validated only with the monitored bearing present
+in training has not been validated for the bearing it will meet in service; the drop measured here was a median 22--36 points
+across methods. The most effective lever we measured is the number of distinct specimens in the source: going from one to four
+per class raised unseen-bearing accuracy by a median 15 points. Where a kinematic gate is available and its false acceptance
+has been characterised on healthy machinery, it is a low-risk addition, but it supplies labels only for damage large enough to
+be seen in the envelope spectrum.

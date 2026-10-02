@@ -1,0 +1,63 @@
+\section{Discussion}
+\label{sec:discussion}
+
+\paragraph{The error is in the source model, and both adaptation methods inherit it.} The gap between seen and unseen
+bearings is present in the source model before any adaptation step (median 35.1 points) and is of the same size afterwards.
+SDALR's self-training leaves it essentially unchanged; SHOT narrows it, but by giving up accuracy on the seen bearings rather
+than by gaining on the unseen ones; a forest that never adapts shows it too. A source-free method can only refine what its
+source model already separates, and on an unseen specimen the source model separates the wrong thing. This outcome was not
+foregone. Self-training could have repaired the gap: the oracle arm shows that the same network, adapted with correct
+pseudo-labels, recovers a median 82\,\% of it, so the network can be steered to most of the missing accuracy. The two methods' own
+pseudo-labels simply carry the source model's errors forward. The question an
+SFDA result on a bearing rig has to answer is therefore not ``how much does adaptation gain?'' but ``what did the source model
+learn that transfers to a specimen it has not seen?''.
+
+\paragraph{Under-sampling, not a fixed identity shortcut.} Individual specimens are identifiable from ten time statistics,
+but that alone explains little: healthy specimens are identifiable too and transfer almost perfectly, and adding source
+specimens raises a forest's unseen-bearing accuracy from 46 to 75\,\% with the test set fixed. Faulty specimens differ from each other in
+what matters for the label --- the size, shape and mechanism of their damage (Table~\ref{tab:bearings}) --- and three of them per
+class do not span that variation. This reading has a practical consequence the identity reading lacks: the remedy is more
+diverse source specimens, as Vieira et al.\ found for supervised models \cite{vieira2026}, rather than an adversary that hides
+specimen identity. A class-conditional identity adversary may still help at the margin, but the curve says diversity is where
+most of the missing accuracy lies. The two readings are not exclusive: with one or two specimens per class, features
+particular to those specimens separate the classes as well as any shared fault feature, and only a more diverse source makes
+the shared features the cheaper solution. In that sense source diversity breaks the reliance on specimen-specific features;
+the curve shows how much accuracy that is worth. The curve was measured with a forest; whether SDALR or SHOT follow it is
+not measured.
+
+\paragraph{Physics gating is bounded by detectability.} The safe gates help, consistently and modestly: a median 4.5 points
+over the ten splits, essentially never costing anything. Three limits follow from the measurements. First, a filter can only
+act through correct labels on the recordings it certifies, and the gain lies almost entirely there; the gate does not teach
+the model anything that carries over to recordings it is silent on. Second, the envelope gates certify only the specimens with
+the largest damage, and every envelope-based gate we tried certifies the same ones; detectability is a property of the damage, not of
+the threshold. Third, an oracle filter shows that correct pseudo-labels on every recording would recover most of the gap, so
+the room is there --- but it is room that envelope evidence cannot fill for small, early-stage damage, which is the damage a
+monitoring system most needs to detect. A kinematic representation leaks less for the same reason: it relies only on what is
+visible, and on this rig that is the large damage.
+
+\paragraph{Safety is a property to measure, not to assume.} The raw-spectrum band rule accepts \SI{45}{\percent} of healthy
+recordings as faulty; the envelope rules accept at most \SI{2}{\percent}. Inside the loop the safe gates never cost more than
+1.5 points on a split, whereas the unsafe rule moved accuracy by $+5.4$ or $-13.2$ points depending on which bearings were in
+the target. A module that injects confident wrong labels can look helpful on one target and harmful on another, and end
+accuracy on one leaky protocol cannot tell a safe prior from an unsafe one. False acceptance on healthy recordings can.
+
+\paragraph{A shallow baseline belongs in every such comparison.} On bearing-disjoint targets a forest on ten time-domain
+statistics --- no adaptation, no target data, no deep network --- is more accurate than adapted SDALR in 8 of 10 splits. It is
+not a better diagnostic method; it collapses too. It is a calibration point that any claim of transferable fault structure
+should clear.
+
+\paragraph{Is this leakage, or a different task?} Adapting to the same physical bearings at a new operating condition is a
+legitimate task for a permanently instrumented asset. Two scenarios are conflated in the current literature. In the first the
+monitored bearing is present in training, and same-bearing evaluation estimates performance honestly. In the second ---
+a replacement bearing, a sister machine, a fleet --- the specimen at test time was never seen, and same-bearing evaluation
+over-estimates performance by 22--36 points (median over splits, across the methods measured here). The problem is not the
+published protocol in itself but reading its number as evidence for the second scenario. We use ``leakage'' in the sense of
+Kapoor and Narayanan \cite{kapoor2023leakage}: information shared between training and evaluation that inflates the estimate
+relative to the deployment the claim addresses.
+
+\paragraph{Threats to validity.} The leaky and clean targets differ in their bearing sets; the within-bearing contrast holds
+the specimen fixed and gives the same answer. The splits share bearings from a pool of 17, so their $p$-values are conditional
+on this pool. The two folds are asymmetric (fold~B has two outer-race source bearings) and ran in two jobs with different
+source checkpoints, which is why the folds are descriptive. The HUST replication changes bearing size along with the
+specimen. Finally, the windows given to the networks cannot carry the kinematic signature; the kinematic-feature forest shows
+what changes when the input can.

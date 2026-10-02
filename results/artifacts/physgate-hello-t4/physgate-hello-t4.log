@@ -1,0 +1,19 @@
+[{"stream_name":"stdout","time":6.266466022,"data":"{\n"}
+,{"stream_name":"stdout","time":6.2665361090000005,"data":"  \"device_name\": \"Tesla T4\",\n"}
+,{"stream_name":"stdout","time":6.266540404,"data":"  \"capability\": [\n"}
+,{"stream_name":"stdout","time":6.26654297,"data":"    7,\n"}
+,{"stream_name":"stdout","time":6.266545202,"data":"    5\n"}
+,{"stream_name":"stdout","time":6.266547394,"data":"  ],\n"}
+,{"stream_name":"stdout","time":6.266549552,"data":"  \"torch\": \"2.10.0+cu128\",\n"}
+,{"stream_name":"stdout","time":6.266552051,"data":"  \"cuda\": \"12.8\",\n"}
+,{"stream_name":"stdout","time":6.266554297,"data":"  \"python\": \"3.12.13\",\n"}
+,{"stream_name":"stdout","time":6.26655673,"data":"  \"available\": true,\n"}
+,{"stream_name":"stdout","time":6.266559012,"data":"  \"matmul_ok\": true\n"}
+,{"stream_name":"stdout","time":6.266561304,"data":"}\n"}
+,{"stream_name":"stderr","time":9.994138621,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":9.99420111,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":10.247369779,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":10.247420165,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":10.88625931,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":12.168973585,"data":"[NbConvertApp] Writing 278509 bytes to __results__.html\n"}
+]
