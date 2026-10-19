@@ -16,7 +16,8 @@ above \SI{94}{\percent}, five reported \SI{100}{\percent}, and none split traini
 Eight split at random, nine by condition (load, speed or noise level) and one did not state its split
 \cite[Table~1]{vieira2026}. Source-free results sit at the same level: the method we re-evaluate, SDALR, reports
 \SI{96.8}{\percent} on Paderborn \cite{sdalr2025} on a task whose eight classes are eight individual bearings, the same
-specimens on the source and the target side.
+specimens on the source and the target side, and later source-free methods report averages above \SI{98}{\percent}
+\cite{li2025csad,yan2026hybrid}.
 
 A vibration dataset carries two kinds of information at once. One is the fault physics that should transfer: the impact
 train at the outer-race or inner-race passing frequency. The other is everything particular to one specimen: the extent
@@ -30,7 +31,7 @@ SFDA deserves separate scrutiny for a reason specific to how it works. Adaptatio
 predictions on target data (pseudo-labels, centroids or neighbourhood structure), refined over iterations. If the
 source model has learned the particulars of its training specimens, adaptation might sharpen that error on a new bearing,
 or it might repair it. Which one happens, how much performance is at stake, and what physics-based pseudo-label filters can
-recover are empirical questions that a leaky protocol cannot ask. Physics-based filters are increasingly proposed:
+recover are empirical questions that a leaky protocol cannot ask. Physics-based modules are increasingly built into adaptation:
 characteristic-frequency evidence gates and weights pseudo-labels in the EAGLE module of Bio-SFDA \cite{yoon2026biosfda}
 and builds physical pseudo-labels in PIUDA \cite{jia2024piuda}, and a physics consistency validator supervises confidence
 in PCTL \cite{pctl2026}. These modules are judged by end accuracy. How often they declare a fault on a healthy bearing is not
@@ -58,7 +59,9 @@ The novelty is narrow, and we state it against the nearest work. That bearing ov
 established: Hendriks et al.\ on CWRU \cite{hendriks2022}, Wheat et al.\ across run, day and part splits
 \cite{wheat2024leakage}, and Vieira et al., who also hold the training set fixed and change only the test set, including a
 same-bearing, same-condition repetition-wise split on Paderborn \cite[Section~6.2]{vieira2026}. Knap et al.\ built a
-recording-separated cross-domain benchmark with one cross-bearing scenario \cite{knap2026leakagesafe}, and concurrent
+recording-separated cross-domain benchmark with one cross-bearing scenario \cite{knap2026leakagesafe}, Farag benchmarks
+adversarial domain adaptation on CWRU and Paderborn subsets split by fault level and operating condition
+\cite{farag2025benchmark}, and concurrent
 work adapts across Paderborn conditions with held-out bearings, without a leaky baseline or a source-free method
 \cite{nagaswetha2026}. All of these are supervised, non-adaptive or source-dependent. What this paper adds is (i) the
 fixed-source design applied to SFDA, with a source-only arm that locates the loss before adaptation and a within-bearing
@@ -67,7 +70,7 @@ bear on why unseen bearings fail; (iii) the perfect-pseudo-label reference of Sc
 applied as a keep-or-withhold oracle and set against the loss; and (iv) false-acceptance curves on real healthy recordings
 for the physics gates that such methods insert, with the gates' coverage traced to the size of each specimen's damage.
 
-We claim no new network, detector or adaptation algorithm. Statistical envelope thresholds are established
-\cite{borghesani2013,randall2011} and harmonic-coordinate features close to the ones used here were published by Matania et
+We claim no new network, detector or adaptation algorithm. Envelope analysis \cite{randall2011} and statistical thresholds
+for the squared envelope spectrum \cite{borghesani2013} are established, and harmonic-coordinate features close to the ones used here were published by Matania et
 al.\ \cite{matania2025}. The contribution is knowledge about where the error of source-free bearing diagnosis lies, what
 physics-based filtering can and cannot repair, and the evidence a result in this area should carry before it is believed.

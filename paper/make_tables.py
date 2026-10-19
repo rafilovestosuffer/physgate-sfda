@@ -42,8 +42,8 @@ def t1_datasets():
     rows = [
         "Paderborn (PU) \\cite{lessmeier2016} & 6 healthy, 5 outer, 6 inner (real) & 64 & 4 & 4 (3 adapt.) & adaptation, gating, slip",
         "HUST bearing \\cite{thuan2023hust} & 5 types $\\times$ \\{healthy, inner, outer\\} & 51.2 & 10 & 3 loads & second-rig replication",
-        "CWRU \\cite{smith2015} & 6205 drive end, 6203 fan end & 12 / 48$^{a}$ & $\\approx$10 & 4 loads & slip, contamination",
-        "UORED-VAFCLS \\cite{sehri2023uored} & 20 bearings, natural faults & 42 & 10 & 1 & gate assessment",
+        "CWRU \\cite{cwrubdc,smith2015} & 6205 drive end, 6203 fan end & 12 / 48$^{a}$ & 5--10 & 4 loads & slip, contamination",
+        "UORED-VAFCLS \\cite{sehri2023uored} & 20 bearings, natural faults & 42 & 10 & 1 speed & gate assessment",
         "JNU \\cite{li2013jnu} & as published & 50 & 20 & 3 speeds & reproduction only",
     ]
     return wrap("\n".join(r + " " + BS for r in rows),

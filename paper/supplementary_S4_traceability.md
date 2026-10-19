@@ -164,7 +164,7 @@ Every script that computes a reported number, builds a table or figure, or ran o
 | `paper/make_submission.py` | `59986637ea9f846a` |
 | `paper/make_submission_documents.py` | `91d021f9904946ab` |
 | `paper/make_supplement_pdfs.py` | `1a92a16a8138ac75` |
-| `paper/make_tables.py` | `3e22d2873413c137` |
+| `paper/make_tables.py` | `fa7e88bbb6425bff` |
 | `paper/revision_reporting.py` | `a403fa39e52d3458` |
 | `runners/bist.py` | `03571366b13b4eff` |
 | `runners/sdalr_runner.py` | `9eea05d3c9899dfa` |

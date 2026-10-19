@@ -9,9 +9,9 @@ times at four operating conditions, provide several physical bearings per class 
 three conditions that share a nominal speed of \SI{1500}{rpm} (\SI{25}{Hz}) and differ in load and radial force, denoted A1
 (N15\_M01\_F10), A2 (N15\_M07\_F04) and A3 (N15\_M07\_F10); the fourth condition (N09, \SI{900}{rpm}, \SI{15}{Hz}) enters
 only the gate analyses.
-\textbf{HUST bearing} \cite{thuan2023hust} provides the second-rig replication: one physical bearing per class for each of
+\textbf{HUST bearing} \cite{thuan2023hust} provides the second-rig replication: one recording set per class and bearing type, for
 five bearing types (6204--6208) at three motor loads, giving the same three-domain, six-task structure with the same label
-space. \textbf{CWRU} \cite{smith2015} and \textbf{UORED-VAFCLS} \cite{sehri2023uored} appear only in the off-rig calibration of the
+space. \textbf{CWRU} \cite{cwrubdc,smith2015} and \textbf{UORED-VAFCLS} \cite{sehri2023uored} appear only in the off-rig calibration of the
 gate operating point and in the supplementary slip measurement. JNU \cite{li2013jnu} is used only to reproduce the published SDALR result.
 
 Throughout, a \emph{bearing} means a physical specimen, identified by its dataset code (for example Paderborn KA04), not a
@@ -26,7 +26,7 @@ Characteristic orders follow from the ball count $n$, ball diameter $d$, pitch d
 through $r=(d/D)\cos\theta$, giving $\mathrm{BPFO}=\tfrac{n}{2}(1-r)$, $\mathrm{BPFI}=\tfrac{n}{2}(1+r)$ and
 $\mathrm{FTF}=\tfrac{1}{2}(1-r)$ in shaft orders. A bearing designation does not determine these values. Paderborn's
 per-bearing documentation, distributed with the data as one ``Profile of rolling bearing damage'' datasheet per specimen
-rather than in the dataset paper, carries the geometry on page~1 of each file. Reading all 32 datasheets gives a clean
+(the dataset paper reproduces one, for KB24, as an example), carries the geometry on page~1 of each file. Reading all 32 datasheets gives a clean
 split by manufacturer: 26 specimens state ``Pitch circle diameter mm 29.05'' (IBU and MTK) and 6 state
 \SI{28.55}{\milli\metre} (FAG), all with ``Number of rolling elements pc. 8'' and rolling elements of
 \SI{6.75}{\milli\metre}. The 29.05 group contains every healthy specimen K001--K006 and the real-damage bearings KA16,
