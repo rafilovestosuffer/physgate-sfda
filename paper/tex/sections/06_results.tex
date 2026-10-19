@@ -29,7 +29,7 @@ the bearing-disjoint target (orange); ticks mark the same source model adapted w
 with the oracle pseudo-label filter (green), and diamonds a random forest on ten time-domain statistics trained on the same
 source windows without adaptation. The number at the right of each row is $\Delta_{\mathrm{leak}}$ in percentage points.
 (a) Paderborn, ten pre-specified random bearing splits above the rule and the two mechanical folds below it (fold markers show only the paired leaky and clean arms; gated and oracle results from the separate job are omitted);
-(b) HUST bearing, six type-disjoint splits. Dotted line: three-class chance level.}
+(b) HUST bearing, six type-disjoint splits. Dotted line: three-class chance level. Plotted with code written with Claude Code; see the AI-use disclosure.}
 \label{fig:collapse}
 \end{figure}
 
@@ -100,7 +100,7 @@ control uses a forest; SDALR was not run at a fixed condition.
 \caption{(a) SDALR accuracy on each Paderborn bearing over the ten splits, when it was in the source (dark) and when it was
 unseen (orange; amber for the four bearings the envelope gate can certify). (b) Pre-specified source-diversity curve: a
 random forest on ten time statistics, same-condition design, balanced accuracy on held-out recordings of the training
-bearings (dark) and on one unseen bearing per class (orange), median and interquartile range over 30 test triples.}
+bearings (dark) and on one unseen bearing per class (orange), median and interquartile range over 30 test triples. Plotted with code written with Claude Code; see the AI-use disclosure.}
 \label{fig:bearings}
 \end{figure}
 
@@ -143,7 +143,7 @@ Unlike the class-balanced window comparisons, this record-level clean target con
 \centering
 \includegraphics[width=\linewidth]{figures/fig4_decomposition.pdf}
 \caption{Decomposition~\eqref{eq:decomp} per split: the part of the collapse an oracle pseudo-label filter recovers, and the
-part it does not.}
+part it does not. Plotted with code written with Claude Code; see the AI-use disclosure.}
 \label{fig:decomp}
 \end{figure}
 
@@ -174,7 +174,7 @@ vertical axis starts at 292 verdicts: the raw-spectrum band rule returns no corr
 acceptance, and its operating point lies at \SI{45}{\percent}, off the right of the axis. (b) Per split ($n=10$), the share of
 the clean target's faulty recordings the envelope gate gives a fault verdict against its paired accuracy gain. Spearman
 $\rho = 0.95$; with the label-free share of all target recordings, $\rho = 0.93$. The line is a least-squares fit for reading
-only.}
+only. Plotted with code written with Claude Code; see the AI-use disclosure.}
 \label{fig:roc}
 \end{figure}
 
@@ -222,7 +222,7 @@ points that hides $+5.4$ with fold~A as source and $-13.2$ with fold~B: erroneou
 \caption{Paired per-task effect of inserting each envelope-based gate into the adaptation loop on the two folds, over three seeds.
 Each point is one task; positive values are gains over the ungated arm trained from the same source checkpoint in the same
 job. Horizontal mark: median; vertical bar: percentile bootstrap interval of the median over the 12 tasks (descriptive; tasks
-of a fold share a checkpoint).}
+of a fold share a checkpoint). Plotted with code written with Claude Code; see the AI-use disclosure.}
 \label{fig:gains}
 \end{figure}
 

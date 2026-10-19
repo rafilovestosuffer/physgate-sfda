@@ -6,6 +6,7 @@ authors:
   - family-names: Rahman
     given-names: Mohammad Rafiur
     affiliation: "Chittagong University of Engineering & Technology (CUET)"
+    orcid: "https://orcid.org/0009-0008-5407-7640"
 repository-code: "https://github.com/rafilovestosuffer/physgate-sfda"
 license: MIT
 version: v1.0-submission
@@ -18,4 +19,5 @@ preferred-citation:
     - family-names: Rahman
       given-names: Mohammad Rafiur
       affiliation: "Chittagong University of Engineering & Technology (CUET)"
+      orcid: "https://orcid.org/0009-0008-5407-7640"
   year: 2026

@@ -1,7 +1,7 @@
 # Supplementary S5: measured cage slip and the shaft-order coincidence of 6203 bearings
 
 This material was Section 6.8 of earlier versions. It moved here in revision 6 because it supports the gate design
-(the choice of slip window) rather than the paper's argument. Figure: `paper/tex/figures/fig7_slip.pdf`.
+(the choice of slip window) rather than the paper's argument. Figure: `paper/tex/figures/fig7_slip.pdf` (plotted with code written with Claude Code; see the AI-use disclosure).
 Artifacts: `results/c90/c90_records.csv` and `results/c90/` (PROTOCOL C90), with synthetic validation in
 `experiments/c90_synthetic.py`.
 
