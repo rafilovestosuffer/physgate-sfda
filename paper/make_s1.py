@@ -1,4 +1,4 @@
-"""Build Supplementary S1 (pre-registered vs changed) from the PROTOCOL.md change-log rows. Regenerate; never hand-edit S1."""
+"""Build Supplementary S1 (pre-specified vs changed) from the PROTOCOL.md change-log rows. Regenerate; never hand-edit S1."""
 import re
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
@@ -12,17 +12,19 @@ for line in (ROOT / "PROTOCOL.md").read_text(encoding="utf-8").splitlines():
     title = title.group(1) if title else change[:160]
     low = change.lower()
     # order matters: a row that says "post-hoc" is post-hoc even where it also discusses pre-registration, and
-    # mislabelling one as pre-registered is exactly the error this table exists to prevent.
-    kind = ("withdrawn" if "WITHDRAWN" in change
+    # mislabelling one as pre-specified is exactly the error this table exists to prevent.
+    kind = ("withdrawn in reporting audit (S6)" if cid in ("C85", "C100")
+            else "pre-specified exploratory follow-up" if cid in ("C110", "C111", "C112")
+            else "withdrawn" if "WITHDRAWN" in change
             else "post-hoc (descriptive)" if "post-hoc" in low
-            else "pre-registered before run" if "pre-registered before" in low
+            else "pre-specified before run" if any(x in low for x in ("pre-specified before", "pre-registered before"))
             else "correction" if any(w in low for w in ("wrong", "error", "correct", "fix"))
             else "specification / reporting")
     rows.append(((int(re.match(r"C(\d+)", cid).group(1)), cid), cid, title.replace("|", "/"), kind, re.sub(r"\s+", " ", why)[:220].replace("|", "/")))
 rows.sort()
-out = ["# Supplementary S1 — protocol changes: pre-registered versus changed", "",
-       "Generated from PROTOCOL.md by paper/make_s1.py. Every change was committed to version control with a timestamp before",
-       "the runs it governs, unless the row says otherwise. Full text and justification: PROTOCOL.md.", "",
+out = ["# Supplementary S1 — protocol changes: pre-specified versus changed", "",
+       "Generated from PROTOCOL.md by paper/make_s1.py. Status describes the immutable protocol log;",
+       "chronology is not independently certified by this table. Full text and justification: PROTOCOL.md. Reporting corrections are in S6.", "",
        "| ID | change | type | reason (abridged) |", "|---|---|---|---|"]
 out += [f"| {c} | {t} | {k} | {w} |" for _, c, t, k, w in rows]
 
@@ -63,7 +65,7 @@ def bh_stages():
     lines = ["", "## Multiplicity family at each stage of revision", "",
              "Benjamini--Hochberg adjustment of the exact cluster-level sign-flip p-values, over every primary cluster-level",
              "test in the paper at that stage. Generated from the version history of `results/c96/C96_RESULT.md`; a dash",
-             "means the test was not yet a member. No member was ever removed. The manuscript quotes the final stage.", "",
+             "means the test was not yet a member. The historical family is retained unchanged, including the withdrawn SHOT test (S6). Its inclusion preserves the audit trail, not valid SHOT evidence. All p-values are nominal and do not establish population-level error control.", "",
              head, "|" + "---|" * (len(fams) + 1)]
     for m in members:
         lines.append(f"| {m} | " + " | ".join(f"{f[m][0]} / {f[m][1]}" if m in f else "--" for _, _, f in fams) + " |")

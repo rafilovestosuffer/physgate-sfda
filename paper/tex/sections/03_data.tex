@@ -5,8 +5,7 @@
 
 Table~\ref{tab:datasets} lists the recordings used. \textbf{Paderborn} \cite{lessmeier2016} carries the adaptation
 experiments: its 6 healthy bearings and the 5 outer-race and 6 inner-race bearings of its real-damage set, each recorded 20
-times at four operating conditions, are the largest public combination we know of with several physical bearings per class
-\emph{and} several operating conditions per bearing, which the paired design of Section~\ref{sec:protocol} needs. We use the
+times at four operating conditions, provide several physical bearings per class and several operating conditions per bearing, as required by the paired design of Section~\ref{sec:protocol}. We use the
 three conditions that share a nominal speed of \SI{1500}{rpm} (\SI{25}{Hz}) and differ in load and radial force, denoted A1
 (N15\_M01\_F10), A2 (N15\_M07\_F04) and A3 (N15\_M07\_F10); the fourth condition (N09, \SI{900}{rpm}, \SI{15}{Hz}) enters
 only the gate analyses.
@@ -52,7 +51,6 @@ recording from the measured speed channel on Paderborn and from the in-file valu
 The adaptation experiments use SDALR's input contract: windows of 2048 samples (Section~\ref{sec:protocol}). At
 \SI{64}{kHz} and \SI{25}{Hz} shaft speed a window lasts \SI{32}{ms}, 0.8 shaft revolutions and about 2.5 outer-race
 impacts; its envelope spectrum has a resolution of \SI{31}{Hz}, so the first outer-race (\SI{77}{Hz}) and inner-race
-(\SI{123}{Hz}) lines lie about 1.5 bins apart. A window can carry the impulsiveness and energy of a fault but not its
-kinematic signature. The gates, by contrast, use the first 249\,600 samples of each recording (\SI{3.9}{s}, resolution
+(\SI{123}{Hz}) lines lie about 1.5 bins apart. A window can carry impulsiveness and fault energy, but its spectrum cannot reliably resolve the harmonic structure used by the gates; this does not rule out all kinematic information in the waveform. The gates, by contrast, use the first 249\,600 samples of each recording (\SI{3.9}{s}, resolution
 \SI{0.26}{Hz}, about twelve bins inside the slip window of the first outer-race harmonic). Section~\ref{sec:res-mechanism}
 tests what the difference is worth with a classifier built on the gates' representation.

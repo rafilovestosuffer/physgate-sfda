@@ -1,10 +1,21 @@
 cff-version: 1.2.0
-message: "If you use this repository, please cite the paper."
-title: "physgate-sfda: bearing-wise evaluation of source-free domain adaptation"
+message: "If you use this repository, please cite the archived release and the paper."
+title: "physgate-sfda: code, protocol, ledger and retained artifacts for bearing-disjoint evaluation of source-free fault diagnosis"
+type: software
 authors:
   - family-names: Rahman
     given-names: Mohammad Rafiur
-    affiliation: "Chittagong University of Engineering & Technology"
+    affiliation: "Chittagong University of Engineering & Technology (CUET)"
 repository-code: "https://github.com/rafilovestosuffer/physgate-sfda"
 license: MIT
+version: v1.0-submission
+doi: 10.5281/zenodo.23105810
 date-released: 2026-10-02
+preferred-citation:
+  type: unpublished
+  title: "Bearing-disjoint evaluation of source-free fault diagnosis: an SDALR case study with physics-gated pseudo-labels"
+  authors:
+    - family-names: Rahman
+      given-names: Mohammad Rafiur
+      affiliation: "Chittagong University of Engineering & Technology (CUET)"
+  year: 2026

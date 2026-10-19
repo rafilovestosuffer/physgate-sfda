@@ -1,11 +1,11 @@
-# Supplementary S2 — Physics gates: definitions, safety on real healthy recordings, and operating curves
+# Supplementary S2 — Physics gates: definitions, false acceptance on healthy recordings, and operating curves
 
 Every number traces to a retained artifact (paths given). Gate verdicts are per recording and inherited by the windows of that
 recording (PROTOCOL C17).
 
 ## S2.1 Gate definitions
 
-| gate | domain | rule | pre-registered parameter |
+| gate | domain | rule | pre-specified parameter |
 |---|---|---|---|
 | Comb test (C30) | squared envelope spectrum after cepstrum pre-whitening, fast-kurtogram band | harmonic comb (K = 5; inner-race sidebands J = 2) scored at a common slip offset within ±2 %, ranked against 499 surrogate orders; admissible if the surrogate p-value passes α / n_families and ≥ 2 positions carry unmistakable lines | α = 0.05 |
 | comb_v2 (C72) | as C30 | additionally rejects a family when ≥ 50 % of its lit positions lie within 1.5 bins of an integer shaft order; arbitration by aligned-line fraction | α = 0.05 |
@@ -15,7 +15,7 @@ recording (PROTOCOL C17).
 The last is our implementation of the mechanism described for Bio-SFDA; the authors' code was not available, so it is reported
 as the mechanism as described, as we implemented it, and never compared against their published accuracy.
 
-## S2.2 Safety at the pre-registered operating points
+## S2.2 False acceptance at the pre-specified operating points
 
 Population: 2,319 Paderborn recordings (480 healthy, 1,839 single inner/outer), 3.9 s each
 [src: results/h6_c35/, results/h7/H7_RESULT.md, results/comb_v2/COMB_V2_RESULT.md].
@@ -52,3 +52,16 @@ Recordings within a bearing are correlated, so the curve describes this dataset 
   [src: results/c79/].
 - On naturally developed faults (UORED) the cepstrum arm with logged speed gives zero healthy false acceptances and engages
   4 of 5 inner-race and 3 of 5 outer-race bearings [src: results/b7_uored/B7_UORED_RESULT.md].
+
+## S2.5 Healthy false acceptance by physical bearing
+
+Each bearing contributes 80 recordings. Counts are descriptive; repeated recordings do not supply independent new-bearing replication. Original record-level intervals for zero/one events require an independence assumption and are not deployment safety bounds.
+
+| Bearing | Envelope rule | Guarded comb | Surrogate comb | Raw-spectrum rule |
+|---|---|---|---|---|
+| K001 | 0 | 0 | 3 | 54 |
+| K002 | 1 | 0 | 0 | 15 |
+| K003 | 0 | 0 | 3 | 54 |
+| K004 | 0 | 0 | 1 | 24 |
+| K005 | 0 | 0 | 1 | 15 |
+| K006 | 0 | 0 | 1 | 52 |

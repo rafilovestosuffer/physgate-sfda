@@ -77,7 +77,7 @@ def fig2_collapse():
             ax.plot([cl, lk], [i, i], color=S.C["faint"], lw=3.2, solid_capstyle="round", zorder=1)
             ax.plot([cl], [i], "o", color=S.C["clean"], ms=4.6, zorder=3)
             ax.plot([lk], [i], "o", color=S.C["leaky"], ms=4.6, zorder=3)
-            if len(r) > 3:
+            if len(r) > 3 and not name.startswith("fold "):
                 ax.plot([r[3]], [i], "|", color=S.C["gated"], ms=8, mew=1.6, zorder=4)
                 ax.plot([r[4]], [i], "|", color=S.C["oracle"], ms=8, mew=1.6, zorder=4)
                 if rf_col and r[5] is not None:
@@ -122,7 +122,7 @@ def fig4_decomposition():
     shown = np.minimum(rec, tot)                       # a split where the oracle arm beats the leaky arm is capped here
     ax.bar(x, shown, color=S.C["oracle"], width=0.66, label="recoverable by a perfect pseudo-label filter")
     ax.bar(x, np.clip(not_rec, 0, None), bottom=shown, color=S.C["leaky"], width=0.66,
-           label="beyond any pseudo-label filter")
+           label="not recovered by this oracle filter")
     for i, (r, t_) in enumerate(zip(rec, tot)):
         ax.text(i, t_ + max(tot) * 0.035, f"{100 * r / t_:.0f}%", ha="center", fontsize=7.0, color=S.C["oracle"])
         if r > t_:                                   # oracle arm beats the leaky arm: mark it, do not overdraw
@@ -303,11 +303,11 @@ def fig3_bearings():
         rows += [["curve", key, n, f"{m:.2f}", f"{a:.2f}", f"{b:.2f}"] for n, m, a, b in zip(ns, med, q1, q3)]
     bx.axhline(100 / 3, color=S.C["grey"], ls=":", lw=0.7)
     bx.set_xticks(ns)
-    bx.set_ylim(25, 102)
+    bx.set_ylim(15, 102)
     bx.set_xlabel("source bearings per class")
     bx.set_ylabel("balanced accuracy (%)")
     bx.set_title("(b) more source specimens, better transfer", fontsize=8, loc="left", pad=6)
-    bx.legend(loc="lower right", fontsize=6.8)
+    bx.legend(loc="lower right", fontsize=7.0)
     handles = [ax.plot([], [], "o", color=S.C["leaky"], ms=4.4, label="seen (in the source)")[0],
                ax.plot([], [], "o", color=S.C["clean"], ms=4.4, label="unseen")[0],
                ax.plot([], [], "o", color=S.C["gated"], ms=4.4, label="unseen, gate-certifiable bearing")[0]]

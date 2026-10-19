@@ -42,8 +42,6 @@ def main():
         ("56.8", "results/M1_RESULT.md", "clean mean on the two folds"),
         ("36.2", "results/c88/C88_RESULT.md", "median ten-split collapse"),
         ("33.5", "results/c94/C94_RESULT.md", "median HUST collapse"),
-        ("65.1", "results/C85_RESULT.md", "SHOT clean mean"),
-        ("87.2", "results/C85_RESULT.md", "SHOT leaky mean"),
         ("507 of 508", "results/c87/N1_RESULT.md", "identity probe"),
         ("82", "results/c88/C88_RESULT.md", "median recoverable share"),
         ("8.9", "results/c88/C88_RESULT.md", "random forest minus SDALR"),
@@ -55,7 +53,6 @@ def main():
         # (manuscript form, source, what, source form) where the two are written differently
         ("$z = 36$", "results/c99/C99_RESULT.md", "off-rig zero-false-acceptance operating point", "z* = 36.0**"),
         ("333 of 1839", "results/c99/C99_RESULT.md", "Paderborn transfer at the off-rig point", "| 333/1839 | 0/480 |"),
-        ("21.7", "results/c100/C100_RESULT.md", "median ten-split SHOT collapse"),
         ("29.7", "results/c104/C104_RESULT.md", "median same-condition collapse (C104)"),
         ("28.5", "results/c104/C104B_RESULT.md", "inner-race same-condition recall drop (C104b)"),
         ("66 paired tasks", "results/c102/C102_RESULT.md", "A/A floor coverage"),
@@ -81,6 +78,22 @@ def main():
         hay = res(src).replace("507/508", "507 of 508").replace("508/508", "508 of 508")
         needle = src_form[0] if src_form else value
         check(needle in hay, f"{what}: {needle} is not in {src}")
+
+    check("10.4" in whole, "balanced kinematic sensitivity missing")
+    check("SHOT, final iterate" not in tables, "withdrawn SHOT comparator in table")
+
+    corrected = _json.loads(res("results/reporting_2026_10_09/reporting_corrections.json"))
+    original = _json.loads(res("results/c112/c112_result.json"))
+    import statistics
+    gaps = [r["leaky"] - r["clean_balanced"] for r in [original["per_split"][f"S{i:02d}"] for i in range(10)]]
+    check(abs(statistics.median(gaps) - corrected["kinematic_balanced"]["median_gap"]) < 1e-10,
+          "balanced sensitivity does not match saved split scores")
+    check(abs(corrected["diversity_monte_carlo"]["corrected_p"] - 1 / 100001) < 1e-12,
+          "Monte Carlo plus-one correction mismatch")
+    import hashlib
+    for rel, expected in corrected["source_sha256"].items():
+        check(hashlib.sha256((ROOT / rel).read_bytes()).hexdigest() == expected,
+              f"reporting source checksum mismatch: {rel}")
 
     # 2. citations
     bib = (TEX / "references.bib").read_text(encoding="utf-8")

@@ -1,29 +1,41 @@
 # Supplementary S4 — traceability of every reported number
 
-Each row is a result file cited by the manuscript, what it establishes, the Kaggle account that produced the runs behind it, and the SHA-256 (first 16 hex digits) of the file as submitted. The experiment ledger (`results/ledger/*.csv`, 1248 rows) lists every individual run with its kernel URL, git commit and retained artifact path; the artifacts themselves accompany this submission.
+Each row is a result file cited by the manuscript, what it establishes, the Kaggle account that produced the runs behind it, and the SHA-256 (first 16 hex digits) of the file as submitted. The experiment ledger (`results/ledger/*.csv`, 1259 rows) lists every individual run with its kernel URL, git commit and retained artifact path. Original run artifacts are in the public v1.0-submission archive; reporting-only corrections accompany this submission. Reporting ledger rows are labelled separately and are not new experimental runs.
+
+All SHA-256 values in this supplement are computed on file content with line endings normalised to LF, so they verify identically on any operating system (strip carriage returns before hashing).
 
 | result file | establishes | runs | sha256 |
 |---|---|---|---|
-| `results/M0_PU_RESULT.md` | Reproduction of the published method on its own tasks (Section 6.1) | 24 ledger rows (rafiurrahman01) | `fc46cc5069873403` |
+| `results/c108/c108_purity.json` | Descriptive window-label purity by specimen | deterministic analysis of retained data or artifacts; script in experiments/ | `d41f83826296fe9e` |
+| `results/c111/c111_probe_ablations.json` | Identity probe ablations on retained representations | deterministic analysis of retained data or artifacts; script in experiments/ | `4c39dfae22b1d4c3` |
+| `results/c104/C104B_RESULT.md` | Post-hoc class-specific same-condition analysis | deterministic analysis of retained data or artifacts; script in experiments/ | `d3229ef37cc7c36f` |
+| `results/c105/c105_source_only.json` | Source-only and post-adaptation contrasts | deterministic analysis of retained data or artifacts; script in experiments/ | `9ad8ab3ab3693c2c` |
+| `results/c106/c106_within_bearing.json` | Within-bearing descriptive contrasts | deterministic analysis of retained data or artifacts; script in experiments/ | `8ce0f9dc5b4428f4` |
+| `results/c107/c107_gate_spillover.json` | Gate gain accounting | deterministic analysis of retained data or artifacts; script in experiments/ | `707e195b00e2a0f0` |
+| `results/c109/c109_intervals.json` | Conditional intervals and healthy false acceptance | deterministic analysis of retained data or artifacts; script in experiments/ | `8160f1db260a9d32` |
+| `results/c110/c110_result.json` | Source expansion: diversity and volume change together | deterministic analysis of retained data or artifacts; script in experiments/ | `a9eecff7e2ad4970` |
+| `results/c112/c112_result.json` | Original ordinary and saved balanced kinematic outcomes | deterministic analysis of retained data or artifacts; script in experiments/ | `9a6e4dc189507544` |
+| `results/reporting_2026_10_09/reporting_corrections.json` | Reporting-only corrections and saved-score sensitivity (S6) | deterministic analysis of retained data or artifacts; script in experiments/ | `7fbecbe27f3e2f8e` |
+| `results/M0_PU_RESULT.md` | Reproduction of the published method on its own tasks (Section 6.1) | 24 ledger rows (rafiurrahman01) | `d7b14b5c3fb754d2` |
 | `results/M1_RESULT.md` | Collapse on the two mechanical folds (Section 6.2) | 48 ledger rows (rafiurrahman01) | `51c898427e02bc23` |
-| `results/c88/C88_RESULT.md` | Ten pre-registered random bearing splits: collapse, gating, decomposition | 240 ledger rows (rafiurrahman01, rhrhrhrhrh) | `31a3848e1920a72b` |
-| `results/c94/C94_RESULT.md` | Second rig (HUST): six type-disjoint splits | 72 ledger rows (rhrhrhrhrh) | `354e1933d0e07a7f` |
-| `results/C85_RESULT.md` | SHOT under the same paired design, two folds | 24 ledger rows (rhrhrhrhrh) | `f90484797bc2e972` |
-| `results/c100/C100_RESULT.md` | SHOT on the ten pre-registered splits (Section 6.3) | 120 ledger rows (rafiurrahman01, rhrhrhrhrh) | `9bcf9e99e96d0daa` |
-| `results/c101/C101_RESULT.md` | Random forests on the ten splits, both arms (Section 6.3) | 240 ledger rows (rafiurrahman01, rhrhrhrhrh) | `7e2f300835822250` |
-| `results/c96/C96_RESULT.md` | Cluster-level inference and the Benjamini--Hochberg family (Section 4, S1) | deterministic analysis of retained data or artifacts; script in experiments/ | `f5255985d62170ba` |
-| `results/c97/C97_RESULT.md` | Identity probe on ten handcrafted time statistics (Section 6.7) | deterministic analysis of retained data or artifacts; script in experiments/ | `4a1b8a3bd809556f` |
-| `results/c98/C98_RESULT.md` | In-loop gate coverage and the coverage-gain correlation (Section 6.6) | deterministic analysis of retained data or artifacts; script in experiments/ | `703e45e5d6df70d3` |
-| `results/c99/C99_RESULT.md` | Off-rig calibration of the envelope-rule operating point (Section 6.6) | deterministic analysis of retained data or artifacts; script in experiments/ | `ab352d55664b30ae` |
-| `results/c102/C102_RESULT.md` | A/A floor: repeated executions of one configuration (Section 4) | 54 ledger rows (rafiurrahman01) | `99ff25ec75b3f0f8` |
+| `results/c88/C88_RESULT.md` | Ten pre-specified random bearing splits: collapse, gating, decomposition | 240 ledger rows (rafiurrahman01, rhrhrhrhrh) | `5adae7364e14bf91` |
+| `results/c94/C94_RESULT.md` | Second rig (HUST): six type-disjoint splits | 72 ledger rows (rhrhrhrhrh) | `8b783e08ff147cd5` |
+| `results/C85_RESULT.md` | WITHDRAWN: local SHOT outputs, two folds; indexing defect (S6) | 24 ledger rows (rhrhrhrhrh) | `876937dafaf42695` |
+| `results/c100/C100_RESULT.md` | WITHDRAWN: local SHOT outputs, ten splits; indexing defect (S6) | 120 ledger rows (rafiurrahman01, rhrhrhrhrh) | `af67a98725aaba6a` |
+| `results/c101/C101_RESULT.md` | Random forests on the ten splits, both arms (Section 6.3) | 240 ledger rows (rafiurrahman01, rhrhrhrhrh) | `4eaa10070031bb7f` |
+| `results/c96/C96_RESULT.md` | Cluster-level inference and the Benjamini--Hochberg family (Section 4, S1) | deterministic analysis of retained data or artifacts; script in experiments/ | `038147f032201169` |
+| `results/c97/C97_RESULT.md` | Identity probe on ten handcrafted time statistics (Section 6.4) | deterministic analysis of retained data or artifacts; script in experiments/ | `41a4e6cb63f2cf04` |
+| `results/c98/C98_RESULT.md` | In-loop gate coverage and the coverage-gain correlation (Section 6.6) | deterministic analysis of retained data or artifacts; script in experiments/ | `ec919225fcbcae9b` |
+| `results/c99/C99_RESULT.md` | Off-rig calibration of the envelope-rule operating point (Section 6.6) | deterministic analysis of retained data or artifacts; script in experiments/ | `ee65f7201e38d584` |
+| `results/c102/C102_RESULT.md` | A/A floor: repeated executions of one configuration (Section 4) | 54 ledger rows (rafiurrahman01) | `233854d98d7336fa` |
 | `results/c103/C103_RESULT.md` | Cross-job gap: pretraining-state test and code diagnosis (Section 4) | 12 ledger rows (rafiurrahman01) | `c71812aaadf26ee3` |
-| `results/c104/C104_RESULT.md` | Same-condition, bearing-disjoint control (Section 6.3) | deterministic analysis of retained data or artifacts; script in experiments/ | `12553a9433bc2628` |
+| `results/c104/C104_RESULT.md` | Same-condition, bearing-disjoint control (Section 6.3) | deterministic analysis of retained data or artifacts; script in experiments/ | `fad3938a1c9285a0` |
 | `results/c91/C91_RESULT.md` | Non-adaptive random-forest baselines on the two folds | 96 ledger rows (rafiurrahman01) | `992f0750b825c38d` |
-| `results/C83_RESULT.md` | Gating inside adaptation across three seeds | 198 ledger rows (rafiurrahman01, rhrhrhrhrh) | `efb31e44a2a92f75` |
-| `results/PAIRED_GATING.md` | Pairing proof and the collapse decomposition | 198 ledger rows (rafiurrahman01, rhrhrhrhrh) | `0a80efe5348680c4` |
+| `results/C83_RESULT.md` | Gating inside adaptation across three seeds | 198 ledger rows (rafiurrahman01, rhrhrhrhrh) | `43122531adb92c56` |
+| `results/PAIRED_GATING.md` | Pairing configuration and the collapse decomposition | 198 ledger rows (rafiurrahman01, rhrhrhrhrh) | `3afb7ef3b31c6d5f` |
 | `results/c87/N1_RESULT.md` | Within-class bearing-identity probe | kernel artifact retained; probe outputs, not per-task accuracy rows | `504e0d8e374623e4` |
-| `results/roc/ROC_RESULT.md` | Gate operating curves on Paderborn | deterministic analysis of retained data or artifacts; script in experiments/ | `97d0a59ecd22445e` |
-| `results/h7/H7_RESULT.md` | Gate false acceptance at the pre-registered operating points | deterministic analysis of retained data or artifacts; script in experiments/ | `4831ae489e77cfc5` |
+| `results/roc/ROC_RESULT.md` | Gate operating curves on Paderborn | deterministic analysis of retained data or artifacts; script in experiments/ | `a63cd5e875efb765` |
+| `results/h7/H7_RESULT.md` | Gate false acceptance at the pre-specified operating points | deterministic analysis of retained data or artifacts; script in experiments/ | `4831ae489e77cfc5` |
 | `results/comb_v2/COMB_V2_RESULT.md` | Shaft-alias-guarded comb beside the frozen comb test | deterministic analysis of retained data or artifacts; script in experiments/ | `c8f3b2e0baf42669` |
 | `results/c90/C90_RESULT.md` | Measured cage slip and the shaft-order lock | deterministic analysis of retained data or artifacts; script in experiments/ | `12bd22125e105b1c` |
 | `results/b6a/B6A_RESULT.md` | CWRU cross-end contamination (Supplementary S3) | deterministic analysis of retained data or artifacts; script in experiments/ | `e5dd75b25fb743ff` |
@@ -36,13 +48,14 @@ The exact values plotted in each figure are provided as CSV so that any figure c
 
 | figure | data file | rows | sha256 |
 |---|---|---|---|
-| fig2 collapse | `paper/figures/data/fig2_collapse.csv` | 18 | `e0718e337901206c` |
-| fig3 bearings | `paper/figures/data/fig3_bearings.csv` | 25 | `e71b51b600d99f0d` |
-| fig3 purity | `paper/figures/data/fig3_purity.csv` | 18 | `b0ca869e04bef308` |
-| fig4 decomposition | `paper/figures/data/fig4_decomposition.csv` | 10 | `160881e818b2aaa1` |
-| fig5 roc | `paper/figures/data/fig5_roc.csv` | 43 | `e187c1883fd137d7` |
-| fig6 gains | `paper/figures/data/fig6_gains.csv` | 72 | `4a4118b87a2e9188` |
-| fig7 slip | `paper/figures/data/fig7_slip.csv` | 304 | `33d93f5895c00468` |
+| fig1 design | `paper/figures/data/fig1_design.csv` | 5 | `5ac0670db979239e` |
+| fig2 collapse | `paper/figures/data/fig2_collapse.csv` | 18 | `b58b11870aa8e5df` |
+| fig3 bearings | `paper/figures/data/fig3_bearings.csv` | 25 | `ad3bd2ecc8eb941a` |
+| fig3 purity | `paper/figures/data/fig3_purity.csv` | 18 | `c33c4b419bfddeec` |
+| fig4 decomposition | `paper/figures/data/fig4_decomposition.csv` | 10 | `4a2862eebfd56c73` |
+| fig5 roc | `paper/figures/data/fig5_roc.csv` | 43 | `4ef7464fb495f361` |
+| fig6 gains | `paper/figures/data/fig6_gains.csv` | 72 | `2ebbf5d4c99499da` |
+| fig7 slip | `paper/figures/data/fig7_slip.csv` | 304 | `7d5d84e6dfbbe2af` |
 
 ## Analysis, evaluation, figure and kernel scripts
 
@@ -56,29 +69,29 @@ Every script that computes a reported number, builds a table or figure, or ran o
 | `experiments/b7_uored.py` | `800ae9a2c818ccaf` |
 | `experiments/b7_uored_ftf.py` | `590fe5acc740eb1a` |
 | `experiments/c100_shot_splits.py` | `fabd5d775b48368a` |
-| `experiments/c101_rf_splits.py` | `e9a21001113c7914` |
-| `experiments/c102_aa_floor.py` | `c9ae7d874c56bf10` |
+| `experiments/c101_rf_splits.py` | `ee809bf119282e9b` |
+| `experiments/c102_aa_floor.py` | `e3ba22f66a35f9ab` |
 | `experiments/c104_same_condition.py` | `58cb7b6d6fede41e` |
 | `experiments/c104b_per_class.py` | `8fdfd15384bf70ba` |
 | `experiments/c105_source_only.py` | `ce7f4f5bc9cebce2` |
 | `experiments/c106_within_bearing.py` | `be2141fd6fb1140b` |
 | `experiments/c107_gate_spillover.py` | `8f63cf0c0f9ea999` |
 | `experiments/c108_purity.py` | `da7f8bdc43809f0d` |
-| `experiments/c109_intervals.py` | `b07de55dbc5e26bd` |
+| `experiments/c109_intervals.py` | `1fd51679cd4867c7` |
 | `experiments/c111_probe_ablations.py` | `2ce2db872e2f683c` |
 | `experiments/c112_kinematic_rf.py` | `7966e786bb7dd9e9` |
 | `experiments/c77_ball_sidebands.py` | `c3bc867c93d888c8` |
 | `experiments/c78_fe_de_control.py` | `d72453819d41b136` |
 | `experiments/c79_iesfo_eval.py` | `d141cd4bf3f6a78c` |
 | `experiments/c87_eval.py` | `3d163ebe4bc40f6c` |
-| `experiments/c88_eval.py` | `3b79f8be9f3a8dc2` |
-| `experiments/c90_slip.py` | `d4402279fc8de7a6` |
+| `experiments/c88_eval.py` | `58ea0258800f1ceb` |
+| `experiments/c90_slip.py` | `54b86a44359de2d4` |
 | `experiments/c90_synthetic.py` | `8ddede18642e8170` |
 | `experiments/c94_eval.py` | `f12e53f285d1bca0` |
 | `experiments/c95_gate_population.py` | `2f58303c83e02330` |
-| `experiments/c96_clustered_stats.py` | `c1fd5f51ed37576c` |
+| `experiments/c96_clustered_stats.py` | `fba48d6db4b63155` |
 | `experiments/c97_probe_baseline.py` | `6159cc589f4f8e8e` |
-| `experiments/c98_inloop_coverage.py` | `35ef8842ad55869c` |
+| `experiments/c98_inloop_coverage.py` | `6c6439bd99185969` |
 | `experiments/c99_crossrig_calibration.py` | `7b4db92bca319748` |
 | `experiments/comb_v2_eval.py` | `698135b8231b8f90` |
 | `experiments/final_decisions.py` | `92e27b4bbac7e041` |
@@ -87,9 +100,9 @@ Every script that computes a reported number, builds a table or figure, or ran o
 | `experiments/h6_prewhitening.py` | `73a91a6ffe195b73` |
 | `experiments/h7_rules.py` | `45b510d1e8929b45` |
 | `experiments/ladder_input_dims.py` | `f88d50bdb031efa2` |
-| `experiments/m4_stratification.py` | `5cc296f5122b3e54` |
-| `experiments/null_calibration_drs.py` | `393a69c45732234e` |
-| `experiments/paired_gating.py` | `b488ee4559eec52c` |
+| `experiments/m4_stratification.py` | `e21f97d6cf81b177` |
+| `experiments/null_calibration_drs.py` | `4d14cfe98bcdee6c` |
+| `experiments/paired_gating.py` | `2a29bef79c842852` |
 | `experiments/rev6_load.py` | `539b8e59671823ca` |
 | `experiments/window_contract.py` | `a4b73e6696d84ac0` |
 | `kaggle/kernels/_make_k10.py` | `9bd6e334266fe744` |
@@ -103,12 +116,12 @@ Every script that computes a reported number, builds a table or figure, or ran o
 | `kaggle/kernels/c86_bist_FA.py` | `6453ae22fdd3a9a0` |
 | `kaggle/kernels/c86_bist_FB.py` | `ccfc1cf0d2f236ad` |
 | `kaggle/kernels/c91_shallow_cpu.py` | `3c222bdfd256977c` |
-| `kaggle/kernels/c92_rf_splits_cpu.py` | `46af5eff45795a2a` |
-| `kaggle/kernels/hust_k6.py` | `faca3fd4f577698a` |
-| `kaggle/kernels/k10_g1.py` | `093da1745350296d` |
-| `kaggle/kernels/k10_g2.py` | `46258ab7a040096e` |
-| `kaggle/kernels/k10_g3.py` | `2ecd4e76a4656d03` |
-| `kaggle/kernels/k10_g4.py` | `5b54984ab083fe90` |
+| `kaggle/kernels/c92_rf_splits_cpu.py` | `6e8307d39b9abc9c` |
+| `kaggle/kernels/hust_k6.py` | `6538d6809a4b1509` |
+| `kaggle/kernels/k10_g1.py` | `d79c0c91d366d778` |
+| `kaggle/kernels/k10_g2.py` | `c5d5deae5a0fc4ea` |
+| `kaggle/kernels/k10_g3.py` | `60be7e29c6ef787d` |
+| `kaggle/kernels/k10_g4.py` | `e016227367998214` |
 | `kaggle/kernels/m0_pu_diag.py` | `92b6b49f4d7cafe1` |
 | `kaggle/kernels/m0_sdalr.py` | `487b43092fece2bc` |
 | `kaggle/kernels/m0_sdalr_pu.py` | `c17f956ef755374f` |
@@ -130,43 +143,44 @@ Every script that computes a reported number, builds a table or figure, or ran o
 | `kaggle/kernels/n1_probe.py` | `c290e3bb4ba42e8f` |
 | `kaggle/kernels/shot_FA.py` | `1f6796b36929c56d` |
 | `kaggle/kernels/shot_FB.py` | `32410f94ff3fe736` |
-| `kaggle/kernels/shot_k10_g1.py` | `b4b37194c83f5114` |
-| `kaggle/kernels/shot_k10_g2.py` | `aa90d9ab41db6a85` |
-| `kaggle/kernels/shot_k10_g3.py` | `7987e12c8456bcb9` |
-| `kaggle/kernels/shot_k10_g4.py` | `aba9d796ad465ac7` |
-| `paper/check_manuscript.py` | `65bfe2e38566da19` |
-| `paper/figures/build_figures.py` | `08ae7350014e0119` |
-| `paper/figures/build_schematics.py` | `85add8952be90e3f` |
+| `kaggle/kernels/shot_k10_g1.py` | `6ea15b7edc7ec3a6` |
+| `kaggle/kernels/shot_k10_g2.py` | `a8e1448057ff553f` |
+| `kaggle/kernels/shot_k10_g3.py` | `d422c016022ca162` |
+| `kaggle/kernels/shot_k10_g4.py` | `24173d1423a5e6ea` |
+| `paper/check_manuscript.py` | `fb99c6e677b641c8` |
+| `paper/figures/build_figures.py` | `b933a8122f238a25` |
+| `paper/figures/build_schematics.py` | `726c3eab767ebc99` |
+| `paper/figures/fig1_design.py` | `1d2c54cda18ad78b` |
 | `paper/figures/fig_6203_lock.py` | `391c66d5cfc50244` |
 | `paper/figures/fig_m1_leakage.py` | `64aeab3af6cee0b9` |
-| `paper/figures/fig_splits.py` | `895c752b05fd7d6a` |
-| `paper/figures/qa_layout.py` | `a1368d014982ba1f` |
+| `paper/figures/fig_splits.py` | `aebfc76283ac2af8` |
+| `paper/figures/qa_layout.py` | `557f3de37bab2f57` |
 | `paper/figures/style.py` | `1fb214879875a584` |
 | `paper/figures/validate_figures.py` | `c583c898cbc5f17f` |
-| `paper/make_s1.py` | `54b25aecd36052cf` |
+| `paper/make_highlights.py` | `44a5ab79019b670a` |
+| `paper/make_s1.py` | `296569aabad53943` |
 | `paper/make_s3_table.py` | `f2553d13064ce12f` |
-| `paper/make_s4.py` | `8631a7512d45685d` |
-| `paper/make_submission.py` | `e7d7dd997444d880` |
-| `paper/make_tables.py` | `58dc8f12cf9933c2` |
-| `runners/bist.py` | `7a0608d3ad353c8a` |
-| `runners/sdalr_runner.py` | `7da58ad865c2b0eb` |
+| `paper/make_s4.py` | `cf76b40921f3080d` |
+| `paper/make_submission.py` | `59986637ea9f846a` |
+| `paper/make_submission_documents.py` | `91d021f9904946ab` |
+| `paper/make_supplement_pdfs.py` | `1a92a16a8138ac75` |
+| `paper/make_tables.py` | `3e22d2873413c137` |
+| `paper/revision_reporting.py` | `a403fa39e52d3458` |
+| `runners/bist.py` | `03571366b13b4eff` |
+| `runners/sdalr_runner.py` | `9eea05d3c9899dfa` |
 | `runners/shot_patch.py` | `166bc6bf5aa5b465` |
 
-## Regenerating everything
+## Regenerating reporting files only
+
+Use the archived experiment repository plus this revision overlay; preserve the directory layout. No training is required. Historical experiment scripts remain available for audit; the withdrawn SHOT outputs must not be interpreted as valid SHOT performance.
 
 ```
-python experiments/c88_eval.py        # ten-split decisions
-python experiments/c94_eval.py        # second-rig replication
-python experiments/c100_shot_splits.py # SHOT on the ten splits
-python experiments/c101_rf_splits.py  # random forests on the ten splits
-python experiments/append_ledger.py; python experiments/append_ledger_rf.py  # ledger (idempotent)
-python experiments/c102_aa_floor.py   # A/A floor
-python experiments/c96_clustered_stats.py # cluster-level tests and BH family
-python paper/make_s1.py               # S1, including the BH family by stage
-python experiments/final_decisions.py # seed robustness and SHOT
-python experiments/paired_gating.py   # pairing proof and decomposition
-python paper/make_tables.py           # all LaTeX tables
-python paper/figures/build_figures.py && python paper/figures/build_schematics.py
-python paper/figures/validate_figures.py && python paper/figures/qa_layout.py
+python paper/revision_reporting.py
+python paper/make_tables.py
+python paper/figures/build_figures.py
+python paper/figures/build_schematics.py
+python paper/make_s1.py
+python paper/make_s4.py
+python paper/check_manuscript.py
 ```
 

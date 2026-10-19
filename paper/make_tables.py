@@ -43,12 +43,12 @@ def t1_datasets():
         "Paderborn (PU) \\cite{lessmeier2016} & 6 healthy, 5 outer, 6 inner (real) & 64 & 4 & 4 (3 adapt.) & adaptation, gating, slip",
         "HUST bearing \\cite{thuan2023hust} & 5 types $\\times$ \\{healthy, inner, outer\\} & 51.2 & 10 & 3 loads & second-rig replication",
         "CWRU \\cite{smith2015} & 6205 drive end, 6203 fan end & 12 / 48$^{a}$ & $\\approx$10 & 4 loads & slip, contamination",
-        "UORED-VAFCLS \\cite{sehri2023uored} & 20 bearings, natural faults & 42 & 10 & 1 & gate safety (suppl.)",
+        "UORED-VAFCLS \\cite{sehri2023uored} & 20 bearings, natural faults & 42 & 10 & 1 & gate assessment",
         "JNU \\cite{li2013jnu} & as published & 50 & 20 & 3 speeds & reproduction only",
     ]
     return wrap("\n".join(r + " " + BS for r in rows),
                 "Test rigs and recordings used in this study. Bearings are physical bearings, not fault classes.",
-                "datasets", "lllrrl",
+                "datasets", "lp{3.85cm}lrrl",
                 "Dataset & Bearings used & $f_s$ (kHz) & Record (s) & Conditions & Role " + BS,
                 "$^{a}$ Fault recordings 12~kHz; the four normal baselines used for off-rig calibration 48~kHz. Paderborn: "
                 "three conditions at 1500~rpm (25~Hz) for adaptation, all four for the gate and slip analyses. JNU: the "
@@ -106,11 +106,11 @@ def t3_collapse():
     sp = c105["sdalr_ten_splits"]["summary"]
     cd, cg, cr = (ci[k]["ci95_median"] for k in ("sdalr_collapse_ten_splits", "envelope_gate_gain_ten_splits",
                                                 "recoverable_share_pct_ten_splits"))
-    note = (f"Medians over the ten random splits, with split-cluster bootstrap 95\\,\\% intervals: "
+    note = (f"Medians over the ten random splits, with conditional split-cluster bootstrap 95\\,\\% intervals: "
             f"$\\Delta_{{\\mathrm{{leak}}}}$ {np.median(d):.1f}~pp [{cd[0]:.1f}, {cd[1]:.1f}] (range {d.min():.1f}--"
-            f"{d.max():.1f}, 10/10, exact sign-flip $p = 0.001$); source-only $\\Delta$, before any adaptation step, "
+            f"{d.max():.1f}, 10/10); source-only $\\Delta$, before any adaptation step, "
             f"{sp['median_pre_delta']:.1f}~pp [{sp['ci_pre_delta'][0]:.1f}, {sp['ci_pre_delta'][1]:.1f}]; gate gain "
-            f"{np.median(g):+.1f}~pp [{cg[0]:.1f}, {cg[1]:.1f}] (positive in {int((g > 0).sum())}/10, $p={pG:.3f}$); "
+            f"{np.median(g):+.1f}~pp [{cg[0]:.1f}, {cg[1]:.1f}] (positive in {int((g > 0).sum())}/10); "
             f"recoverable share {100 * np.median((a[:, 3] - a[:, 1]) / d):.0f}\\,\\% [{cr[0]:.0f}, {cr[1]:.0f}]. Below the "
             f"rule, the two mechanical folds: leaky, clean and source-only columns from the fold job; gated and oracle "
             f"from the gating job, with the gain taken against that job's own ungated clean arm ({REF['A']:.1f} and "
@@ -141,7 +141,7 @@ def t4_methods():
         return lk, cl
     rows = []
     for variant, name in (("as_released", "SDALR, as released (target-label checkpoint)"),
-                          ("final_checkpoint", "SDALR, final checkpoint"), ("shot", "SHOT, final iterate")):
+                          ("final_checkpoint", "SDALR, final checkpoint")):
         lk, cl = pair(variant)
         rows.append(f"{name} & {lk.mean():.1f} & {cl.mean():.1f} & {lk.mean() - cl.mean():.1f} " + BS)
     rows.append("\\midrule")
@@ -154,11 +154,9 @@ def t4_methods():
     split_rows, split_note = t4_split_rows()
     rows += ["\\midrule"] + split_rows
     note = ("All rows above the second rule use the same windows, the same two mechanical folds and the same 12 paired "
-            "tasks; the random forests use no adaptation and no target data. No $p$-value is quoted for them: the tasks "
-            "of a fold share a source checkpoint, so the unit is the fold, and two clusters cannot reach below "
-            "$p = 0.25$ (Section~\\ref{sec:protocol}). " + split_note + " Differences are computed before rounding.")
+            "tasks; the random forests use no adaptation and no target data. Tasks share source checkpoints; fold comparisons are descriptive (Section~\\ref{sec:protocol}). " + split_note + " Differences are computed before rounding.")
     return wrap("\n".join(rows),
-                "The collapse is not specific to one method: two source-free methods and four non-adaptive random forests "
+                "SDALR and non-adaptive random-forest controls "
                 "on Paderborn, leaky versus bearing-disjoint targets (accuracy, \\%).", "methods", "lrrr",
                 "Method & Leaky & Clean & $\\Delta_{\\mathrm{leak}}$ " + BS, note)
 
@@ -177,9 +175,8 @@ def t4_split_rows():
                 cl = np.mean([r[s]["clean"] for s in d[fs]["splits"]])
                 rows.append(f"{label} & {lk:.1f} & {cl:.1f} & {lk - cl:.1f} " + BS)
         rf_bh = max(bh_of("RF (10 time"), bh_of("RF (time"))
-        notes.append("The rows below the second rule are means over the ten pre-registered splits, where the split is "
-                     "the unit; the time-statistics and combined forests collapse in 10 of 10 splits (exact sign-flip $p = 0.001$, "
-                     f"$p_{{\\mathrm{{BH}}}} = {rf_bh:.3f}$).")
+        notes.append("The rows below the second rule are means over the ten pre-specified splits, where the split is "
+                     "the summary unit; the time-statistics and combined forests lose accuracy in 10 of 10 splits. Nominal tests are in S6.")
     c105 = json.load(open(ROOT / "results" / "c105" / "c105_source_only.json", encoding="utf-8"))["sdalr_ten_splits"]
     s5 = c105["summary"]
     rows.insert(0, f"Source model only (before adaptation), ten splits & {s5['mean_pre_leaky']:.1f} & "
@@ -188,20 +185,19 @@ def t4_split_rows():
     ks = [f"S{i:02d}" for i in range(10)]
     klk = np.mean([kin["per_split"][x]["leaky"] for x in ks])
     kcl = np.mean([kin["per_split"][x]["clean"] for x in ks])
-    rows.append(f"Random forest, 13 kinematic envelope features, ten splits & {klk:.1f} & {kcl:.1f} & "
+    rows.append(f"Random forest, kinematic features, ordinary accuracy & {klk:.1f} & {kcl:.1f} & "
                 f"{klk - kcl:.1f} " + BS)
-    notes.append("Source model only: batch-0 accuracy of the SDALR/SHOT source checkpoint before any adaptation step "
+    notes.append("Source model only: batch-0 accuracy of the SDALR source checkpoint before any adaptation step "
                  f"(median $\\Delta$ {s5['median_pre_delta']:.1f}~pp). Kinematic forest: record-level, maxima of the "
                  "normalised envelope spectrum at the specimen's own BPFO/BPFI harmonics and shaft orders (median "
                  f"$\\Delta_{{\\mathrm{{leak}}}}$ {kin['summary']['median_delta']:.1f}~pp).")
-    shot = ROOT / "results" / "c100" / "c100_shot_splits.json"
-    if shot.exists():
-        d = json.load(open(shot, encoding="utf-8"))
-        rows.append(f"SHOT, final iterate, {len(d['splits'])} splits & {d['leaky_mean']:.1f} & {d['clean_mean']:.1f} & "
-                    f"{d['leaky_mean'] - d['clean_mean']:.1f} " + BS)
-        notes.append(f"SHOT over {len(d['splits'])} splits: median $\\Delta_{{\\mathrm{{leak}}}}$ "
-                     f"{d['median']:.1f}~pp, positive in {d['positive']} of {len(d['splits'])} "
-                     f"(exact sign-flip $p = {d['p']:.3f}$, $p_{{\\mathrm{{BH}}}} = {bh_of('SHOT collapse'):.3f}$).")
+    corrected = json.load(open(ROOT / "results/reporting_2026_10_09/reporting_corrections.json", encoding="utf-8"))["kinematic_balanced"]
+    rows.append(f"Kinematic forest, balanced accuracy (sensitivity) & {corrected['mean_leaky']:.1f} & "
+                f"{corrected['mean_clean']:.1f} & {corrected['mean_leaky'] - corrected['mean_clean']:.1f} " + BS)
+    notes.append("Kinematic rows use full recordings: ordinary accuracy above, balanced accuracy below. "
+                 "The clean record-level class ratio is 3 healthy : 3 inner : 2 outer bearings. "
+                 "The post-hoc balanced sensitivity has median gap 10.4 pp (S6). "
+                 "Intervals are conditional on reused bearings (Section 4).")
     return rows, " ".join(notes)
 
 
@@ -214,36 +210,28 @@ def bh_of(prefix: str, key: str = "bh") -> float:
 
 
 def t5_gates():
-    roc = json.load(open(ROOT / "results" / "roc" / "roc_pu.json", encoding="utf-8"))
-    label = {"pcv": "Envelope threshold rule (PCV-like), $z$", "v2": "Shaft-alias-guarded comb (comb\\_v2), $\\alpha$",
-             "c30": "Surrogate-null comb test, $\\alpha$", "eagle": "Raw-spectrum band rule (EAGLE-style), $z$"}
+    roc = json.load(open(ROOT / "results/roc/roc_pu.json", encoding="utf-8"))
+    fa = json.load(open(ROOT / "results/reporting_2026_10_09/reporting_corrections.json", encoding="utf-8"))["healthy_false_acceptance"]
+    labels = {"pcv": "Envelope threshold", "v2": "Alias-guarded comb", "c30": "Surrogate-null comb", "eagle": "Raw-spectrum rule"}
+    names = {"pcv": "envelope threshold rule", "v2": "shaft-alias-guarded comb", "c30": "surrogate-null comb", "eagle": "raw-spectrum band rule"}
     op = {"pcv": 10, "v2": 0.05, "c30": 0.05, "eagle": 2}
-    FA = json.load(open(ROOT / "results" / "c109" / "c109_intervals.json", encoding="utf-8"))["healthy_false_acceptance"]
-    FANAME = {"pcv": "envelope threshold rule", "v2": "shaft-alias-guarded comb", "c30": "surrogate-null comb",
-              "eagle": "raw-spectrum band rule"}
-    rows = []
-    for g in ("pcv", "v2", "c30", "eagle"):
-        pts = roc[g]
-        key = "z" if "z" in pts[0] else "alpha"
-        here = min(pts, key=lambda r: abs(r[key] - op[g]))
-        zero = [r["correct"] for r in pts if r["healthy_FA"] == 0]
-        fa = FA[FANAME[g]]
-        lo, hi = fa["ci95_bearing_cluster"] if fa["false_accepts"] > 1 else fa["ci95_clopper_pearson_records"]
-        rows.append(f"{label[g]} & {here[key]:g} & {here['healthy_FA']}/{here['n_healthy']} & "
-                    f"{100 * lo:.1f}--{100 * hi:.1f} & {here['correct']} & {max(zero) if zero else '--'} " + BS)
-    note = ("Population: 2{,}319 Paderborn recordings (480 healthy, 1{,}839 single inner- or outer-race). Operating points "
-            "are the values fixed before the gates were evaluated. The last column sweeps each gate's parameter and reports "
-            "the largest number of correct fault verdicts reachable while accepting no healthy recording. Intervals: bootstrap "
-            "over the 6 healthy bearings where the count exceeds one, exact Clopper--Pearson over records otherwise. "
-            "Full operating "
-            "curves: Supplementary~S2. The population spans 29 physical bearings -- 6 healthy, 11 real-damage and 12 "
-            "artificial-damage -- at all four operating conditions; coverage by damage origin is given in "
-            "Section~\\ref{sec:res-gating}.")
+    rows=[]
+    for g in labels:
+        pts=roc[g]; key="z" if "z" in pts[0] else "alpha"
+        here=min(pts,key=lambda r:abs(r[key]-op[g]))
+        counts=fa[names[g]]["per_bearing"]
+        assert sum(counts.values()) == here['healthy_FA']
+        by=', '.join(str(counts[f'K{i:03d}']) for i in range(1,7))
+        zero=[r['correct'] for r in pts if r['healthy_FA']==0]
+        rows.append(f"{labels[g]} & ${'z' if key=='z' else chr(92)+'alpha'}={op[g]:g}$ & {here['healthy_FA']}/480 & {by} & {here['correct']} & {max(zero) if zero else '--'} " + BS)
+    note=("Six healthy bearings (K001--K006) contribute 80 recordings each, for 480 records. The per-bearing column follows that order. "
+          "Correct verdicts are counted over 1{,}839 single-fault recordings; the full pool comprises 29 bearings (6 healthy, 11 real-damage, 12 artificial-damage) at four conditions. "
+          "Operating points were fixed before evaluation. The final column is the largest correct-verdict count over the parameter sweep with no observed healthy false acceptance. "
+          "Zero observed errors is not a new-bearing safety bound. Assumption-dependent intervals are in S6; operating curves are in S2.")
     return wrap("\n".join(rows),
-                "Gate safety on real healthy bearings. A false acceptance is a healthy recording given a fault verdict.",
-                "gates", "lrrrrr",
-                "Gate (swept parameter) & Op.\\ point & Healthy FA & 95\\,\\% CI (\\%) & Correct verdicts & At zero FA " + BS,
-                note, small=True)
+                "Observed gate performance: false acceptance (FA) on 480 recordings from six healthy bearings, and correct fault verdicts.",
+                "gates", "llrlrr",
+                "Gate & Op. point & Healthy FA & FA by bearing & Correct & At zero FA " + BS, note, small=True)
 
 
 def t6_gains():
@@ -269,11 +257,10 @@ def t6_gains():
     rows.append("\\midrule")
     raw_note = (f" Raw-spectrum band rule: seed 2024 only and never run on the ten splits; its fold means are "
                 f"{dA.mean():+.2f} (fold A source) and {dB.mean():+.2f}~pp (fold B source).")
-    note = ("Every arm of a comparison runs in one job on the same source checkpoint, verified from identical pre-update "
-            "target accuracy in each adaptation log, so these are paired differences. The between-seed spread of the "
+    note = ("Every arm of a comparison runs in one job on the same source checkpoint according to the job configuration, with identical pre-update "
+            "target accuracy as a consistency check, not a checkpoint-hash proof. The between-seed spread of the "
             "per-task gain is 1.7~pp (comb) and 2.4~pp (envelope), against 2.8~pp for ungated per-task accuracy. "
-            "No $p$-value is quoted: the 12 tasks of a seed come from two source folds, so the unit is the fold "
-            "and two clusters cannot reach below $p = 0.25$. The inferential test is the ten-split comparison in "
+            "The 12 tasks of a seed share two source folds and are descriptive. The conditional split-level comparison is reported in "
             "Table~\\ref{tab:collapse}." + raw_note)
     return wrap("\n".join(rows[:-1]),
                 "Paired per-task effect of gating inside SDALR on the 12 bearing-disjoint tasks of the two mechanical folds "
@@ -297,13 +284,11 @@ def t7_hust():
     lk, cl = np.array(lk), np.array(cl)
     p = wilcoxon(lk, cl, alternative="greater", zero_method="zsplit").pvalue
     note = (f"Median $\\Delta_{{\\mathrm{{leak}}}}$ {np.median(lk - cl):.1f}~pp (range {np.min(lk - cl):.1f}--"
-            f"{np.max(lk - cl):.1f}, one-sided Wilcoxon $p={p:.3f}$ over the six splits, which is the smallest value "
-            f"attainable with six clusters; exact sign-flip $p=0.016$, $p_{{\\mathrm{{BH}}}}={bh_of('HUST'):.3f}$, but $p_{{\\mathrm{{BY}}}}={bh_of('HUST', 'by'):.3f}$ under arbitrary dependence), which meets the "
-            f"replication rule fixed before the run. "
-            f"On this rig the clean target changes bearing size as well as bearing identity, so the shift is stronger than "
-            f"Paderborn's.")
+            f"{np.max(lk - cl):.1f}); positive in all six splits. These are descriptive results from a fixed pool of bearing types. "
+            "The clean target changes bearing size together with specimen. Nominal tests and the pre-specified "
+            "replication-rule assessment are in Supplementary~S6.")
     return wrap("\n".join(rows),
-                "Second rig: SDALR on HUST bearing, six pre-registered type-disjoint splits (accuracy, \\%). The source is "
+                "Second rig: SDALR on HUST bearing, six pre-specified type-disjoint splits (accuracy, \\%). The source is "
                 "three bearing types; the clean target is the other two at the target load.", "hust", "llrrr",
                 "Split & Source bearings & Leaky & Clean & $\\Delta_{\\mathrm{leak}}$ " + BS, note)
 
@@ -332,7 +317,7 @@ def t8_bearings():
             "plastic deformation. Seen / unseen: SDALR window accuracy (\\%) on that bearing over the ten splits in which it "
             "was in the source (scored in the leaky arm) or in the clean target. Gate: correct fault verdicts of the envelope "
             "threshold rule at the three adaptation conditions. $^{b}$ False acceptances. Over all 17 bearings the "
-            f"within-bearing difference has median {s_['median_diff']:.1f}~pp (95\\,\\% CI {s_['ci_median_diff'][0]:.1f}--"
+            f"within-bearing difference has median {s_['median_diff']:.1f}~pp (conditional 95\\,\\% CI {s_['ci_median_diff'][0]:.1f}--"
             f"{s_['ci_median_diff'][1]:.1f}): {s_['positive']} positive, {s_['ties_abs_lt_0.05']} ties, {s_['negative']} "
             "negative.")
     return wrap("\n".join(rows),
@@ -359,7 +344,7 @@ def t9_gate_accounting():
             f"splits, certified windows gain a median {s['certified']['median_change_pp']:.0f}~pp, silent faulty windows "
             f"{s['uncovered_faulty']['median_change_pp']:+.1f}~pp; certified windows carry "
             f"{100 * s['share_of_summed_gain_from_certified']:.0f}\\,\\% of the summed gain. SFDA is scored on the windows it "
-            "adapts on, so the certified column partly returns the gate's own labels (C107).")
+            "adapts on, so the certified column reflects selective supervision on those same records; the gate filters existing pseudo-labels (C107).")
     return wrap("\n".join(rows),
                 "Where the envelope-gate gain comes from: clean-target accuracy (\\%) on certified and silent recordings.",
                 "gateacc", "lrrrrrrr",

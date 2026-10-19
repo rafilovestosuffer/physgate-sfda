@@ -16,15 +16,26 @@ OUT = ROOT / "paper" / "supplementary_S4_traceability.md"
 
 # result file -> (what it establishes in the paper, ledger run_id prefix that produced it)
 CLAIMS = [
+    ("results/c108/c108_purity.json", "Descriptive window-label purity by specimen", ""),
+    ("results/c111/c111_probe_ablations.json", "Identity probe ablations on retained representations", ""),
+    ("results/c104/C104B_RESULT.md", "Post-hoc class-specific same-condition analysis", ""),
+    ("results/c105/c105_source_only.json", "Source-only and post-adaptation contrasts", ""),
+    ("results/c106/c106_within_bearing.json", "Within-bearing descriptive contrasts", ""),
+    ("results/c107/c107_gate_spillover.json", "Gate gain accounting", ""),
+    ("results/c109/c109_intervals.json", "Conditional intervals and healthy false acceptance", ""),
+    ("results/c110/c110_result.json", "Source expansion: diversity and volume change together", ""),
+    ("results/c112/c112_result.json", "Original ordinary and saved balanced kinematic outcomes", ""),
+    ("results/reporting_2026_10_09/reporting_corrections.json", "Reporting-only corrections and saved-score sensitivity (S6)", ""),
+
     ("results/M0_PU_RESULT.md", "Reproduction of the published method on its own tasks (Section 6.1)", "m0-pu"),
     ("results/M1_RESULT.md", "Collapse on the two mechanical folds (Section 6.2)", "physgate-m1"),
-    ("results/c88/C88_RESULT.md", "Ten pre-registered random bearing splits: collapse, gating, decomposition", "physgate-run-k10"),
+    ("results/c88/C88_RESULT.md", "Ten pre-specified random bearing splits: collapse, gating, decomposition", "physgate-run-k10"),
     ("results/c94/C94_RESULT.md", "Second rig (HUST): six type-disjoint splits", "physgate-run-hust"),
-    ("results/C85_RESULT.md", "SHOT under the same paired design, two folds", "physgate-shot-f"),
-    ("results/c100/C100_RESULT.md", "SHOT on the ten pre-registered splits (Section 6.3)", "physgate-shot-k10"),
+    ("results/C85_RESULT.md", "WITHDRAWN: local SHOT outputs, two folds; indexing defect (S6)", "physgate-shot-f"),
+    ("results/c100/C100_RESULT.md", "WITHDRAWN: local SHOT outputs, ten splits; indexing defect (S6)", "physgate-shot-k10"),
     ("results/c101/C101_RESULT.md", "Random forests on the ten splits, both arms (Section 6.3)", "physgate-run-c92"),
     ("results/c96/C96_RESULT.md", "Cluster-level inference and the Benjamini--Hochberg family (Section 4, S1)", ""),
-    ("results/c97/C97_RESULT.md", "Identity probe on ten handcrafted time statistics (Section 6.7)", ""),
+    ("results/c97/C97_RESULT.md", "Identity probe on ten handcrafted time statistics (Section 6.4)", ""),
     ("results/c98/C98_RESULT.md", "In-loop gate coverage and the coverage-gain correlation (Section 6.6)", ""),
     ("results/c99/C99_RESULT.md", "Off-rig calibration of the envelope-rule operating point (Section 6.6)", ""),
     ("results/c102/C102_RESULT.md", "A/A floor: repeated executions of one configuration (Section 4)", "physgate-m2rep"),
@@ -32,10 +43,10 @@ CLAIMS = [
     ("results/c104/C104_RESULT.md", "Same-condition, bearing-disjoint control (Section 6.3)", ""),
     ("results/c91/C91_RESULT.md", "Non-adaptive random-forest baselines on the two folds", "physgate-c91"),
     ("results/C83_RESULT.md", "Gating inside adaptation across three seeds", "physgate-m2"),
-    ("results/PAIRED_GATING.md", "Pairing proof and the collapse decomposition", "physgate-m2"),
+    ("results/PAIRED_GATING.md", "Pairing configuration and the collapse decomposition", "physgate-m2"),
     ("results/c87/N1_RESULT.md", "Within-class bearing-identity probe", "physgate-run-n1"),
     ("results/roc/ROC_RESULT.md", "Gate operating curves on Paderborn", ""),
-    ("results/h7/H7_RESULT.md", "Gate false acceptance at the pre-registered operating points", ""),
+    ("results/h7/H7_RESULT.md", "Gate false acceptance at the pre-specified operating points", ""),
     ("results/comb_v2/COMB_V2_RESULT.md", "Shaft-alias-guarded comb beside the frozen comb test", ""),
     ("results/c90/C90_RESULT.md", "Measured cage slip and the shaft-order lock", ""),
     ("results/b6a/B6A_RESULT.md", "CWRU cross-end contamination (Supplementary S3)", ""),
@@ -44,8 +55,12 @@ CLAIMS = [
 ]
 
 
+CRLF, LF = bytes((13, 10)), bytes((10,))
+
+
 def sha(p: Path) -> str:
-    return hashlib.sha256(p.read_bytes()).hexdigest()[:16]
+    """SHA-256 of the content with CRLF normalised to LF, so the value is the same on every operating system."""
+    return hashlib.sha256(p.read_bytes().replace(CRLF, LF)).hexdigest()[:16]
 
 
 def main():
@@ -60,7 +75,9 @@ def main():
         "Each row is a result file cited by the manuscript, what it establishes, the Kaggle account that produced the runs "
         "behind it, and the SHA-256 (first 16 hex digits) of the file as submitted. The experiment ledger "
         f"(`results/ledger/*.csv`, {ledger_rows} rows) lists every individual run with its kernel URL, git commit and "
-        "retained artifact path; the artifacts themselves accompany this submission.", "",
+        "retained artifact path. Original run artifacts are in the public v1.0-submission archive; reporting-only corrections accompany this submission. Reporting ledger rows are labelled separately and are not new experimental runs.", "",
+        "All SHA-256 values in this supplement are computed on file content with line endings normalised to LF, so they "
+        "verify identically on any operating system (strip carriage returns before hashing).", "",
         "| result file | establishes | runs | sha256 |", "|---|---|---|---|",
     ]
     for rel, what, prefix in CLAIMS:
@@ -85,27 +102,18 @@ def main():
 
     # every script that produces a reported number, table or figure, hashed like the results it produces (review round 4)
     scripts = sorted(set((ROOT / "experiments").glob("*.py")) | set((ROOT / "paper").glob("make_*.py"))
-                     | {ROOT / "paper" / "check_manuscript.py"} | set((ROOT / "paper" / "figures").glob("*.py"))
+                     | {ROOT / "paper" / "check_manuscript.py", ROOT / "paper" / "revision_reporting.py"} | set((ROOT / "paper" / "figures").glob("*.py"))
                      | set((ROOT / "kaggle" / "kernels").glob("*.py")) | set((ROOT / "runners").glob("*.py")))
     lines += ["", "## Analysis, evaluation, figure and kernel scripts", "",
               "Every script that computes a reported number, builds a table or figure, or ran on Kaggle, with the SHA-256 "
               "(first 16 hex digits) of the file as submitted.", "", "| script | sha256 |", "|---|---|"]
     lines += [f"| `{p.relative_to(ROOT).as_posix()}` | `{sha(p)}` |" for p in scripts if p.name != "__init__.py"]
 
-    lines += ["", "## Regenerating everything", "",
-              "```", "python experiments/c88_eval.py        # ten-split decisions",
-              "python experiments/c94_eval.py        # second-rig replication",
-              "python experiments/c100_shot_splits.py # SHOT on the ten splits",
-              "python experiments/c101_rf_splits.py  # random forests on the ten splits",
-              "python experiments/append_ledger.py; python experiments/append_ledger_rf.py  # ledger (idempotent)",
-              "python experiments/c102_aa_floor.py   # A/A floor",
-              "python experiments/c96_clustered_stats.py # cluster-level tests and BH family",
-              "python paper/make_s1.py               # S1, including the BH family by stage",
-              "python experiments/final_decisions.py # seed robustness and SHOT",
-              "python experiments/paired_gating.py   # pairing proof and decomposition",
-              "python paper/make_tables.py           # all LaTeX tables",
-              "python paper/figures/build_figures.py && python paper/figures/build_schematics.py",
-              "python paper/figures/validate_figures.py && python paper/figures/qa_layout.py", "```", ""]
+    lines += ["", "## Regenerating reporting files only", "",
+              "Use the archived experiment repository plus this revision overlay; preserve the directory layout. No training is required. Historical experiment scripts remain available for audit; the withdrawn SHOT outputs must not be interpreted as valid SHOT performance.", "",
+              "```", "python paper/revision_reporting.py", "python paper/make_tables.py",
+              "python paper/figures/build_figures.py", "python paper/figures/build_schematics.py",
+              "python paper/make_s1.py", "python paper/make_s4.py", "python paper/check_manuscript.py", "```", ""]
     OUT.write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(f"{OUT.name}: {len(CLAIMS)} result files, {len(figs)} figure data files, {ledger_rows} ledger rows")
 

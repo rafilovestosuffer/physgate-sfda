@@ -59,7 +59,7 @@ giving outer-race orders 3.0706 (29.05 mm) and 3.0543 (28.55 mm).
 The logged Hall reading disagrees with the cage-comb estimate by −5.2 % to +25 % in several files, and the strong spectral peak
 near 29.7 Hz is not the shaft rate [src: results/b7_uored/B7_UORED_RESULT.md]. Speed on this rig is therefore treated as
 unresolved: both arms are reported, six files are a declared sensitivity exclusion, and UORED is excluded from any analysis that
-needs an independent speed (including the slip measurement of Section 6.8).
+needs an independent speed (including the slip measurement of Supplementary S5).
 
 ## S3.3 CWRU cross-end contamination
 
@@ -72,7 +72,7 @@ et al. conservatively assume.
 
 Comparing fan-end (6203, lock-affected) with drive-end (6205, immune) recordings gave 6/33 versus 3/44 confusions,
 one-sided Fisher p = 0.12, and 5 of the 6 fan-end confusions were not shaft-aliased [src: results/c78/C78_RESULT.md]. The
-population-level effect is not supported, which is why Section 6.8 rests on the direct slip measurement instead.
+population-level effect is not supported, which is why Supplementary S5 rests on the direct slip measurement instead.
 
 ## S3.5 Blocked items
 

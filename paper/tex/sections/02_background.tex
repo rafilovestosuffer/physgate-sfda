@@ -55,6 +55,25 @@ Schlachter et al.\ simulate pseudo-labelling with ground truth in source-free un
 level that perfect pseudo-labels reach \cite{schlachter2025}; our oracle filter is the keep-or-withhold version of that
 instrument.
 
+\begin{table}[htbp]
+\centering
+\small
+\caption{Closest work and the specific question added by this study. The present SFDA evidence is limited to SDALR.}
+\label{tab:positioning}
+\begin{tabular}{>{\raggedright\arraybackslash}p{3.0cm}>{\raggedright\arraybackslash}p{5.1cm}>{\raggedright\arraybackslash}p{5.5cm}}
+\toprule
+Study & Established contribution & Additional question in this paper \\
+\midrule
+Vieira et al.\ \cite{vieira2026} & Bearing-wise evaluation, fixed-training comparisons and source diversity in supervised diagnosis & How much of the paired gap precedes source-free adaptation, and how much can filtering recover? \\
+Nagaswetha and Pathak \cite{nagaswetha2026} (preprint) & Held-out-bearing, source-accessible adaptation and representation sensitivity & What happens under a source-free protocol with paired same-bearing and unseen-bearing targets? \\
+SDALR \cite{sdalr2025} & Adaptation using reliable and unreliable pseudo-labels on conventional tasks & How does the released method behave when physical target bearings were absent from source training? \\
+Present study & Paired SDALR/source-only evaluation and oracle versus physical keep-or-withhold filters & Non-adaptive controls support interpretation; no method-general SFDA or new-algorithm claim \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:positioning} separates established evaluation principles from the narrower question studied here.
+
 \subsection{Envelope analysis and the statistics of detection}
 
 The squared envelope spectrum is the standard carrier of second-order cyclostationary bearing signatures \cite{randall2011},

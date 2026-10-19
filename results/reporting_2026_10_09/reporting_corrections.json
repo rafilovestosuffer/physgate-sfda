@@ -1,0 +1,217 @@
+{
+  "status": "post-hoc reporting only; no new runs or training",
+  "date": "2026-10-09",
+  "source_sha256": {
+    "results/c112/c112_result.json": "fa30b9f4b6a058b62bcd3d0afe0bdac04250c8b5e918d5e2d8c91f1636f0b108",
+    "results/c110/c110_result.json": "a9eecff7e2ad497025b2371fd66006431b37f5e844fb4e7c8c1648cfd56f8dc4",
+    "results/c109/c109_intervals.json": "d7ef299d00911761beef78dc17868126b350af32fb86fc2d4dde1d5aa84bf940",
+    "runners/shot_patch.py": "166bc6bf5aa5b465ffba5e35b3a1748b98d91da5f59bd68203ce2677bb2d2850",
+    "third_party/SDALR/tools.py": "c63eb710c2e26e1976e81eaede8a2eb3e50dc77f895bc5bb35836469006db506"
+  },
+  "kinematic_original": {
+    "median_delta": 8.437499999999993,
+    "ci95_median": [
+      4.762731481481477,
+      20.972222222222236
+    ],
+    "positive": 9,
+    "p_one_sided": 0.0029296875,
+    "decision": "KINEMATIC FEATURES TRANSFER",
+    "median_leaky": 65.78703703703704,
+    "median_clean": 56.14583333333333,
+    "mean_clean": 54.32291666666667
+  },
+  "kinematic_balanced": {
+    "mean_leaky": 67.37962962962963,
+    "mean_clean": 52.27314814814814,
+    "median_clean": 54.39814814814815,
+    "median_gap": 10.370370370370363,
+    "ci95_conditional": [
+      7.222222222222221,
+      22.685185185185198
+    ],
+    "nominal_sign_flip_p": 0.0009765625,
+    "positive": 10,
+    "rows": [
+      {
+        "split": "S00",
+        "leaky_balanced": 74.44444444444446,
+        "clean_balanced": 47.731481481481474,
+        "gap": 26.712962962962983
+      },
+      {
+        "split": "S01",
+        "leaky_balanced": 58.7962962962963,
+        "clean_balanced": 57.03703703703704,
+        "gap": 1.7592592592592595
+      },
+      {
+        "split": "S02",
+        "leaky_balanced": 66.48148148148148,
+        "clean_balanced": 60.879629629629626,
+        "gap": 5.601851851851855
+      },
+      {
+        "split": "S03",
+        "leaky_balanced": 84.35185185185186,
+        "clean_balanced": 42.63888888888889,
+        "gap": 41.71296296296297
+      },
+      {
+        "split": "S04",
+        "leaky_balanced": 63.148148148148145,
+        "clean_balanced": 55.925925925925924,
+        "gap": 7.222222222222221
+      },
+      {
+        "split": "S05",
+        "leaky_balanced": 61.01851851851851,
+        "clean_balanced": 50.18518518518518,
+        "gap": 10.833333333333329
+      },
+      {
+        "split": "S06",
+        "leaky_balanced": 65.18518518518518,
+        "clean_balanced": 55.833333333333336,
+        "gap": 9.35185185185184
+      },
+      {
+        "split": "S07",
+        "leaky_balanced": 64.81481481481481,
+        "clean_balanced": 54.90740740740741,
+        "gap": 9.907407407407398
+      },
+      {
+        "split": "S08",
+        "leaky_balanced": 66.3888888888889,
+        "clean_balanced": 43.7037037037037,
+        "gap": 22.685185185185198
+      },
+      {
+        "split": "S09",
+        "leaky_balanced": 69.16666666666667,
+        "clean_balanced": 53.888888888888886,
+        "gap": 15.277777777777786
+      }
+    ]
+  },
+  "diversity_training_windows": {
+    "1": {
+      "median": 1043.0,
+      "min": 924,
+      "max": 1254
+    },
+    "2": {
+      "median": 2129.0,
+      "min": 1848,
+      "max": 2452
+    },
+    "3": {
+      "median": 3210.0,
+      "min": 2934,
+      "max": 3463
+    },
+    "4": {
+      "median": 4265.0,
+      "min": 3945,
+      "max": 4461
+    }
+  },
+  "diversity_monte_carlo": {
+    "draws": 100000,
+    "exceedances": 0,
+    "original_p": 0.0,
+    "corrected_p": 9.99990000099999e-06,
+    "interpretation": "nominal exploratory sign-flip result, conditional on its assumptions"
+  },
+  "healthy_false_acceptance": {
+    "envelope threshold rule": {
+      "false_accepts": 1,
+      "healthy_records": 480,
+      "rate": 0.0020833333333333333,
+      "ci95_bearing_cluster": [
+        0.0,
+        0.00625
+      ],
+      "ci95_clopper_pearson_records": [
+        5.2744042284693564e-05,
+        0.011552464158797926
+      ],
+      "per_bearing": {
+        "K001": 0,
+        "K002": 1,
+        "K003": 0,
+        "K004": 0,
+        "K005": 0,
+        "K006": 0
+      }
+    },
+    "shaft-alias-guarded comb": {
+      "false_accepts": 0,
+      "healthy_records": 480,
+      "rate": 0.0,
+      "ci95_bearing_cluster": [
+        0.0,
+        0.0
+      ],
+      "ci95_clopper_pearson_records": [
+        0.0,
+        0.007655710149586598
+      ],
+      "per_bearing": {
+        "K001": 0,
+        "K002": 0,
+        "K003": 0,
+        "K004": 0,
+        "K005": 0,
+        "K006": 0
+      }
+    },
+    "surrogate-null comb": {
+      "false_accepts": 9,
+      "healthy_records": 480,
+      "rate": 0.01875,
+      "ci95_bearing_cluster": [
+        0.008333333333333333,
+        0.029166666666666667
+      ],
+      "ci95_clopper_pearson_records": [
+        0.008608652853948361,
+        0.0352939734759989
+      ],
+      "per_bearing": {
+        "K001": 3,
+        "K002": 0,
+        "K003": 3,
+        "K004": 1,
+        "K005": 1,
+        "K006": 1
+      }
+    },
+    "raw-spectrum band rule": {
+      "false_accepts": 214,
+      "healthy_records": 480,
+      "rate": 0.44583333333333336,
+      "ci95_bearing_cluster": [
+        0.26875,
+        0.6083333333333333
+      ],
+      "ci95_clopper_pearson_records": [
+        0.40077817731405607,
+        0.49155972434133616
+      ],
+      "per_bearing": {
+        "K001": 54,
+        "K002": 15,
+        "K003": 54,
+        "K004": 24,
+        "K005": 15,
+        "K006": 52
+      }
+    }
+  },
+  "shot_status": {
+    "status": "WITHDRAWN as evidence about SHOT",
+    "reason": "obtain_label returns predictions in shuffled loader traversal order, while training indexes them by dataset sample index; no index restoration occurs. Original artifacts retained; no corrected run exists."
+  }
+}

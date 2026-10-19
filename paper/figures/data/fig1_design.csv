@@ -1,0 +1,6 @@
+kind,split,condition,condition_code,class_or_bearing,bearing_or_record,record_or_verdict,windows_or_same_verdict,bpfo_z_h1_h3,bpfi_z_h1_h3,z_gate
+trace,S00,A2,N15_M07_F04,normal,K001,N15_M07_F04_K001_1,34,,,
+trace,S00,A2,N15_M07_F04,outer_race,KA16,N15_M07_F04_KA16_1,34,,,
+trace,S00,A2,N15_M07_F04,inner_race,KI04,N15_M07_F04_KI04_1,34,,,
+spectrum,S00,A1,N15_M01_F10,KA04,N15_M01_F10_KA04_1,outer_race,20/20,188.4;653.4;234.4,3.7;4.4;2.3,10.0
+spectrum,S00,A1,N15_M01_F10,KI17,N15_M01_F10_KI17_1,normal,20/20,1.7;2.8;1.8,1.6;2.3;4.0,10.0

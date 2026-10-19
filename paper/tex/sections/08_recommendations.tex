@@ -1,38 +1,14 @@
 \section{What a source-free bearing-diagnosis result should carry}
 \label{sec:recommendations}
-
-The measurements above suggest eight pieces of evidence that separate a transferable result from a leaky one. None requires
-new hardware; together they cost a few additional runs.
-
+The measurements motivate the following reporting requirements.
 \begin{enumerate}
-  \item \textbf{Bearing-disjoint targets.} Report accuracy on physical bearings absent from source training. If the dataset
-        cannot support this --- CWRU's healthy class is effectively one specimen --- say so, and treat the published number as
-        an upper bound rather than an estimate.
-  \item \textbf{A distribution over splits.} Which bearings fell in the source moved clean accuracy between \SI{36}{} and
-        \SI{74}{\percent} here. Report medians with intervals over several pre-registered draws, and a within-bearing contrast
-        where bearings rotate between source and target.
-  \item \textbf{The source-only gap beside the adapted one.} The batch-0 accuracy is already in every adaptation log. Here it
-        showed that adaptation neither created nor repaired the gap, which no adapted number alone can show.
-  \item \textbf{Paired differences for any add-on module.} Gates, regularisers and losses should be compared against the
-        base method trained from the \emph{same} source checkpoint in the same job, and reported as the distribution of
-        per-task or per-split differences.
-  \item \textbf{An oracle pseudo-label reference.} One extra run per configuration, replacing the pseudo-label rule by the
-        true label, converts a bare gain into a share of what correct labels would achieve.
-  \item \textbf{A non-adaptive shallow baseline under the identical split.} Here it beat the adapted method in 8 of 10
-        splits.
-  \item \textbf{False acceptance and coverage for any physics module, measured on healthy recordings from the target rig.}
-        A gate that certifies faults on healthy machinery injects confident wrong labels; a gate that certifies almost
-        nothing cannot help, and its gain should be reported separately on the recordings it certifies and on the rest.
-        Characterising a gate on target-rig healthy recordings is target-rig supervision, mild but real, and should be
-        declared; our operating point, safe on Paderborn, accepted 4 of 24 healthy recordings from two other rigs.
-  \item \textbf{A statement of whether model selection saw target labels.} The released selection rule was worth 0.6 points
-        on leaky and 1.0 on clean targets on average, and up to 4.1 on a single task; headline numbers should use a rule that
-        touches no target label.
+\item \textbf{Bearing-disjoint targets for unseen-bearing claims.} Keep physical specimens out of the source, including healthy specimens. If a dataset cannot support this, state which deployment scenario its evaluation estimates.
+\item \textbf{A distribution over source splits.} Report paired effects and conditional intervals over pre-specified draws, plus per-bearing outcomes where specimens rotate between seen and unseen roles. Distinguish partition variability from uncertainty for new bearings.
+\item \textbf{A source-only comparison.} Report the gap before adaptation beside the adapted one, and the adaptation effect on each target arm. Non-significance alone does not establish no effect.
+\item \textbf{Paired module comparisons.} Use the same source checkpoint and job for ungated, gated and oracle arms; retain checkpoint hashes where possible. Report the distribution of differences, not only separate averages.
+\item \textbf{A precisely defined oracle reference.} Our oracle withholds incorrect existing pseudo-labels and retains correct ones; it does not replace predictions with true labels. Report which intervention is used and avoid treating a non-convex oracle run as a proven upper bound.
+\item \textbf{A non-adaptive baseline and comparable metrics.} Use identical splits, report class weighting and evaluation units, and include balanced accuracy when class proportions differ.
+\item \textbf{False acceptance, fault-family precision and coverage.} Report healthy counts by bearing and distinguish silence from a healthy verdict. Give downstream gains on certified and silent records separately. Any calibration or validation with verified healthy target-rig recordings is target-rig supervision and must be declared.
+\item \textbf{Model-selection and implementation checks.} State whether source or target labels select checkpoints, document hyperparameters and validate sample-index alignment in pseudo-label pipelines. The released target-label selection rule added 0.6 points on leaky and 1.0 on clean targets on average here.
 \end{enumerate}
-
-For deployment the same list reads as a risk assessment. A diagnosis system validated only with the monitored bearing present
-in training has not been validated for the bearing it will meet in service; the drop measured here was a median 22--36 points
-across methods. The most effective lever we measured is the number of distinct specimens in the source: going from one to four
-per class raised unseen-bearing accuracy by a median 15 points. Where a kinematic gate is available and its false acceptance
-has been characterised on healthy machinery, it is a low-risk addition, but it supplies labels only for damage large enough to
-be seen in the envelope spectrum.
+For practice, the central implication is to validate the intended unseen-bearing use case explicitly. More source specimens together with more training data improved the forest in this study; whether diversity alone supplies that benefit is unresolved. A kinematic gate with low observed false acceptance may improve the measured transductive result, but limited coverage and off-rig false alarms preclude a general safety claim.

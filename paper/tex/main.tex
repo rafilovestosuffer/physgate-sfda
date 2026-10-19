@@ -4,7 +4,7 @@
 \documentclass[preprint,3p,times]{elsarticle}
 
 \usepackage{amsmath,amssymb}
-\usepackage{booktabs}
+\usepackage{booktabs,array}
 \usepackage{graphicx}
 \usepackage[table]{xcolor}
 \usepackage{url}
@@ -18,7 +18,7 @@
 
 \begin{frontmatter}
 
-\title{Bearing leakage survives source-free adaptation: a bearing-wise evaluation of SDALR and SHOT with physics-gated pseudo-labels}
+\title{Bearing-disjoint evaluation of source-free fault diagnosis: an SDALR case study with physics-gated pseudo-labels}
 
 \author[a]{Mohammad Rafiur Rahman\corref{cor1}}
 \ead{u2303064@student.cuet.ac.bd}
@@ -29,13 +29,16 @@
 \input{sections/00_abstract}
 \end{abstract}
 
+% Highlights are supplied as a separate submission file.
+\iffalse
 \begin{highlights}
-\item Unseen bearings cut SDALR accuracy by a median 36 points and SHOT accuracy by 22.
-\item The gap exists before adaptation; SDALR and SHOT neither create nor repair it.
-\item On unseen bearings a forest scores 46\% with 1 source bearing per class, 75\% with 4.
-\item Envelope gates are safe on healthy bearings but certify only the largest damages.
-\item A pseudo-label oracle and a shallow baseline belong in every SFDA comparison.
+\item Unseen bearings reduce SDALR accuracy by a median 36 percentage points.
+\item The large seen-unseen gap is already present before adaptation.
+\item More source bearings and training data improve a forest on unseen bearings.
+\item Envelope gates rarely flag healthy records but cover few faulty records.
+\item Oracle filtering recovers 82\% of the gap; envelope gating adds 4.5 points.
 \end{highlights}
+\fi
 
 \begin{keyword}
 rolling bearing \sep source-free domain adaptation \sep data leakage \sep bearing-wise evaluation \sep

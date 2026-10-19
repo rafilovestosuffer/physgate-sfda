@@ -1,0 +1,9 @@
+# Store text with LF so that the SHA-256 values in Supplementary S4 verify on every platform.
+* text=auto eol=lf
+*.pdf binary
+*.png binary
+*.npz binary
+*.npy binary
+*.pt binary
+*.mat binary
+*.zip binary

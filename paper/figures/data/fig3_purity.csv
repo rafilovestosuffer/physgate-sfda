@@ -1,0 +1,19 @@
+arm,bearing,true_class,share_normal,share_inner,share_outer,n_windows
+"SDALR, no gate",K001,normal,1.000,0.000,0.000,4080
+"SDALR, no gate",K002,normal,1.000,0.000,0.000,3960
+"SDALR, no gate",K003,normal,1.000,0.000,0.000,3960
+"SDALR, no gate",KI04,inner race,1.000,0.000,0.000,4080
+"SDALR, no gate",KI14,inner race,0.000,0.000,1.000,3960
+"SDALR, no gate",KI16,inner race,0.000,0.999,0.001,3960
+"SDALR, no gate",KA04,outer race,0.000,1.000,0.000,4080
+"SDALR, no gate",KA15,outer race,0.000,0.001,0.999,3960
+"SDALR, no gate",KA16,outer race,0.000,1.000,0.000,3960
++ envelope threshold gate,K001,normal,1.000,0.000,0.000,4080
++ envelope threshold gate,K002,normal,1.000,0.000,0.000,3960
++ envelope threshold gate,K003,normal,1.000,0.000,0.000,3960
++ envelope threshold gate,KI04,inner race,1.000,0.000,0.000,4080
++ envelope threshold gate,KI14,inner race,0.000,0.000,1.000,3960
++ envelope threshold gate,KI16,inner race,0.000,0.997,0.003,3960
++ envelope threshold gate,KA04,outer race,0.003,0.711,0.286,4080
++ envelope threshold gate,KA15,outer race,0.000,0.000,1.000,3960
++ envelope threshold gate,KA16,outer race,0.146,0.512,0.342,3960
