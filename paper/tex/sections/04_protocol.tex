@@ -43,9 +43,9 @@ that ignores its input scores \SI{33.3}{\percent}.
 
 \input{tables/t2_splits}
 
-Two families of splits are used on Paderborn (Table~\ref{tab:splits}). The two \emph{mechanical folds} follow a fixed rule
---- within each (damage origin, fault type) group, sort bearing codes lexicographically and assign the first half to fold A
---- and are run in both directions, which gives 12 paired tasks. To extend beyond the two mechanical folds, we drew ten source sets uniformly without replacement from the 4000 possible
+Two families of splits are used on Paderborn (Table~\ref{tab:splits}). The two \emph{mechanical folds} follow a fixed rule:
+within each (damage origin, fault type) group, bearing codes are sorted lexicographically and the first half is assigned to
+fold A. The folds are run in both directions, which gives 12 paired tasks. To extend beyond the two mechanical folds, we drew ten source sets uniformly without replacement from the 4000 possible
 3/3/3 sets, excluding fold A, with the seed
 and the draw list committed before any of these runs. The \emph{split} is the statistical unit for the ten-split analyses;
 tasks are descriptive observations within a fold, not independent replicates. On HUST the same construction uses bearing types: the source is three of the five types
@@ -69,7 +69,7 @@ window, keeping only correct pseudo-labels. It is a reference, not a proven boun
 that also withheld some correct labels could in principle do better. Like every arm, it is scored on the target windows it
 adapts on, as is standard in SFDA.
 
-All arms of a comparison --- ungated, each gate, oracle --- run in one job from the same source checkpoint with the same
+All arms of a comparison (ungated, each gate and oracle) run in one job from the same source checkpoint with the same
 seed; identical batch-0 accuracy in the adaptation logs is a consistency check, not a checkpoint-hash proof. Write $a_{\mathrm{leaky}}$,
 $a_{\mathrm{clean}}$ and $a_{\mathrm{oracle}}$ for the ungated leaky, ungated clean and oracle-filtered clean accuracy, each
 the mean over the six condition pairs of a split. The collapse is split as
@@ -95,7 +95,7 @@ Healthy false-acceptance counts are reported by bearing in Table~\ref{tab:gates}
 \subsection{Reproducibility, jobs and pre-specification}
 
 Every effect here is a difference between two runs, so we measured the difference produced by no change at all: every
-retained re-execution of the gating configuration --- eleven arm pairs over 66 paired tasks on both folds --- reproduces the
+retained re-execution of the gating configuration (eleven arm pairs over 66 paired tasks on both folds) reproduces the
 first execution to the last reported decimal. These retained reruns are numerically reproducible under their fixed seed and code path, and the
 relevant null for a single comparison is the random trajectory itself, whose between-seed range for the ungated clean fold
 mean is 3.2 points on fold~A and 1.9 on fold~B.

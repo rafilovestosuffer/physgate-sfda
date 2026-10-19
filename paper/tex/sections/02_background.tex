@@ -9,8 +9,8 @@ al.\ compared run-to-run, day-to-day and part-to-part splits for classical pipel
 40\,\% between the most and least separated splits \cite{wheat2024leakage}. Vieira et al.\ generalised bearing-wise
 partitioning, reformulated diagnosis as multi-label detection, and measured the inflation caused by segmentation-level and
 bearing-level leakage on UORED, Paderborn and CWRU with the training set held fixed and only the test set changed
-\cite{vieira2026}. On Paderborn their repetition-wise split --- training and test recordings from the same bearing at the
-same condition --- scores near-perfect Macro-AUROC against 54--77\,\% without leakage \cite[Table~12]{vieira2026}. Their study
+\cite{vieira2026}. On Paderborn their repetition-wise split (training and test recordings from the same bearing at the
+same condition) scores near-perfect Macro-AUROC against 54--77\,\% without leakage \cite[Table~12]{vieira2026}. Their study
 is supervised and, in their words, concerns ``training and testing within a single testbench''; it does not evaluate
 adaptation. Matania et al.\ \cite{matania2024leakage} show how test--training separation should be constructed for bearing
 fault classification. Knap et al.\ published a leakage-safe cross-domain benchmark on CWRU and Paderborn with six fixed
@@ -48,8 +48,8 @@ and BSF computed on a short-time Fourier transform, with thresholds rescaled onl
 \cite{yoon2026biosfda}. PCTL scores the envelope spectrum predicted from the model's features against characteristic
 frequencies and uses that score to supervise a confidence predictor while fine-tuning on a small labelled target set
 \cite{pctl2026}; it does not filter pseudo-labels. In none of these works is the rate at which the module accepts a fault on
-a healthy bearing reported. Because the Bio-SFDA task definition for Paderborn cannot be reconstructed from the article --- a
-ball class is listed although the Paderborn real-damage set contains no rolling-element damage --- we evaluate the gating
+a healthy bearing reported. Because the Bio-SFDA task definition for Paderborn cannot be reconstructed from the article (a
+ball class is listed although the Paderborn real-damage set contains no rolling-element damage), we evaluate the gating
 \emph{mechanism as described, as we implemented it}, and make no comparison against the accuracy reported there.
 Schlachter et al.\ simulate pseudo-labelling with ground truth in source-free universal adaptation and report the upper
 level that perfect pseudo-labels reach \cite{schlachter2025}; our oracle filter is the keep-or-withhold version of that

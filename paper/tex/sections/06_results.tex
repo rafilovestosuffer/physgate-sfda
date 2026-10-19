@@ -149,13 +149,13 @@ part it does not.}
 
 On the ten random splits, where all four arms ran in one job, the oracle filter recovers a median \SI{82}{\percent} of the
 collapse (conditional CI 68--94, interquartile range 70--\SI{90}{\percent}, Fig.~\ref{fig:decomp}). The share varies: at
-\SI{48}{\percent} on S03 half the collapse is not recovered, while on S04 --- the mildest collapse, 8.2 points --- the oracle
+\SI{48}{\percent} on S03 half the collapse is not recovered, while on S04, the mildest collapse (8.2 points), the oracle
 arm exceeds the leaky arm, a share of \SI{222}{\percent}. The fold-level decomposition is not reported, because the gating job
 that produced the oracle arm has no leaky arm (Section~\ref{sec:protocol}).
 
 The oracle withholds every incorrect pseudo-label and keeps every correct one; it is the keep-or-withhold counterpart of the
 perfect-pseudo-label level of Schlachter et al.\ \cite{schlachter2025}. It is a reference for filters acting on this
-method's pseudo-label step --- the family to which all four gates belong --- not a proven bound, and it says nothing about
+method's pseudo-label step (the family to which all four gates belong), not a proven bound, and it says nothing about
 methods that relabel, reweight continuously or change the representation. The part it does not recover mixes what the
 source model carries with the difference in difficulty between the two bearing sets, as S04 shows. With that reading,
 correct pseudo-labels alone would close most of the gap on this rig; the question for physics gating is how many correct labels it can retain without retaining incorrect ones.
@@ -187,7 +187,7 @@ before evaluation (Table~\ref{tab:gates}) the envelope threshold rule accepts a 
 of 1839) before false acceptance passes \SI{10}{\percent}. The comb tests, which add cepstral pre-whitening and a
 record-specific null to the same kurtogram band selection, reach 323--349 below \SI{10}{\percent} false acceptance,
 so low coverage persists across these implementations, which share substantial preprocessing. Table~\ref{tab:bearings} shows where it lies. At the three adaptation conditions the envelope rule certifies 4 of the
-11 real-damage bearings on more than one recording --- KA04 (41 of 60), KA16 (40), KI16 (32) and KI18 (45) --- and these are the
+11 real-damage bearings on more than one recording: KA04 (41 of 60), KA16 (40), KI16 (32) and KI18 (45). These are the
 specimens with the largest damage: extent class 2 or 3, or a pit \SI{2}{mm} long and \SI{3}{mm} wide (KA04), with the damage
 spanning the full raceway width on three of them. Every bearing it does not certify has extent class 1 and damage no larger
 than \SI{2}{mm} in either dimension. The two comb tests certify the same four bearings (both also fire on a few recordings of
@@ -196,8 +196,8 @@ envelope signature and on healthy ones. Coverage is associated with damage size 
 
 \textbf{Inside the adaptation loop.} Over the ten splits the envelope gate adds a median 4.5 points to bearing-disjoint
 accuracy (conditional CI 2.5--15.7, positive in 9 of 10) and closes a median \SI{19}{\percent} of the
-oracle gap (conditional CI 10--41). Where it acts it changes what the model says --- with fold~B as source, KA04 moves from
-\SI{100}{\percent} inner-race predictions to 71/29 inner/outer --- but the gain lies almost entirely on the recordings it
+oracle gap (conditional CI 10--41). Where it acts it changes what the model says: with fold~B as source, KA04 moves from
+\SI{100}{\percent} inner-race predictions to 71/29 inner/outer. The gain, however, lies almost entirely on the recordings it
 certifies (Table~\ref{tab:gateacc}). Splitting each split's clean windows by gate verdict, certified windows gain a median 47 points, uncovered faulty
 windows a median 0.3 (sum over splits slightly negative) and healthy windows a median 0; certified windows carry
 \SI{104}{\percent} of the summed gain, so the remaining windows have a net negative contribution. This is a transductive filtering benefit, not demonstrated improvement on independent future target recordings. Because SFDA is scored on the windows it adapts on, a gain on certified windows partly reflects selective supervision on the same records used for evaluation; the gate only filters existing labels. The size of the gain therefore follows coverage closely: across the splits it tracks
@@ -227,7 +227,7 @@ of a fold share a checkpoint).}
 \end{figure}
 
 \textbf{Does the operating point need the target rig?} Gate verdicts use no target labels, but the evidence of low healthy false acceptance at $z = 10$ comes from Paderborn's own healthy recordings, which is target-rig supervision. Swept on 24 healthy recordings
-from two rigs that appear nowhere in the adaptation experiments --- 20 from UORED and 4 CWRU baselines, truncated to
-Paderborn's spectral resolution --- the same rule needs $z = 36$ for zero false acceptance and accepts 4 of the 24 at $z = 10$.
+from two rigs that appear nowhere in the adaptation experiments (20 from UORED and 4 CWRU baselines, truncated to
+Paderborn's spectral resolution), the same rule needs $z = 36$ for zero false acceptance and accepts 4 of the 24 at $z = 10$.
 On Paderborn the nearest swept point, $z = 40$, certifies 333 of 1839 fault recordings against 366 at $z = 10$
 (\SI{91}{\percent} of the verdicts) with no healthy false acceptance. These measurements do not establish transfer of the operating point; it requires characterisation on healthy recordings at the deployment rig; the adaptation arms were run at $z = 10$ only.

@@ -3,23 +3,23 @@
 
 Rolling-element bearings fail in service, and the vibration signature of a spall or a crack is well understood: an impact
 train at a kinematic frequency fixed by the bearing geometry and the shaft speed, modulated by load and smeared by cage slip
-\cite{randall2011}. Condition-monitoring practice turns that signature into a decision --- replace the bearing, or leave it
---- and the value of an automated diagnosis is the reliability of that decision on a bearing the diagnostic system has not
-seen before.
+\cite{randall2011}. Condition-monitoring practice turns that signature into a decision: replace the bearing, or leave it.
+The value of an automated diagnosis is the reliability of that decision on a bearing the diagnostic system has not seen
+before.
 
 Data-driven diagnosis has moved towards transfer learning to meet that requirement. Unsupervised domain adaptation
 transfers a model trained under one operating condition to another without target labels \cite{zhao2021udtl}, and source-free
 domain adaptation (SFDA) goes further: during adaptation only the trained source model and unlabelled target recordings are
 available, which suits an operator who cannot ship raw data between sites \cite{liang2020shot,sdalr2025}. Reported
 accuracies are high. Vieira et al.\ sampled 18 supervised bearing-diagnosis papers published in 2025: every one reported
-above \SI{94}{\percent}, five reported \SI{100}{\percent}, and none split training and test data by physical bearing ---
-eight split at random, nine by condition (load, speed or noise level) and one did not state its split
+above \SI{94}{\percent}, five reported \SI{100}{\percent}, and none split training and test data by physical bearing.
+Eight split at random, nine by condition (load, speed or noise level) and one did not state its split
 \cite[Table~1]{vieira2026}. Source-free results sit at the same level: the method we re-evaluate, SDALR, reports
 \SI{96.8}{\percent} on Paderborn \cite{sdalr2025} on a task whose eight classes are eight individual bearings, the same
 specimens on the source and the target side.
 
 A vibration dataset carries two kinds of information at once. One is the fault physics that should transfer: the impact
-train at the outer-race or inner-race passing frequency. The other is everything particular to one specimen --- the extent
+train at the outer-race or inner-race passing frequency. The other is everything particular to one specimen: the extent
 and shape of its damage, its mechanism, its mounting, clearance and resonances. When the same physical bearing appears in
 training and in test, the particulars are sufficient to score well, and no experiment in that protocol can tell the two
 apart. Splitting by physical bearing removes direct physical-bearing overlap between source and target, and in supervised settings it has been shown to change
@@ -27,14 +27,14 @@ conclusions \cite{hendriks2022,wheat2024leakage,vieira2026,kaya2026}; the same l
 learning, where record-wise rather than subject-wise splits overestimate accuracy \cite{saeb2017}.
 
 SFDA deserves separate scrutiny for a reason specific to how it works. Adaptation is driven by the source model's own
-predictions on target data --- pseudo-labels, centroids or neighbourhood structure --- refined over iterations. If the
+predictions on target data (pseudo-labels, centroids or neighbourhood structure), refined over iterations. If the
 source model has learned the particulars of its training specimens, adaptation might sharpen that error on a new bearing,
 or it might repair it. Which one happens, how much performance is at stake, and what physics-based pseudo-label filters can
 recover are empirical questions that a leaky protocol cannot ask. Physics-based filters are increasingly proposed:
 characteristic-frequency evidence gates and weights pseudo-labels in the EAGLE module of Bio-SFDA \cite{yoon2026biosfda}
 and builds physical pseudo-labels in PIUDA \cite{jia2024piuda}, and a physics consistency validator supervises confidence
-in PCTL \cite{pctl2026}. These modules are judged by end accuracy; how often they declare a fault on a healthy bearing ---
-which is one condition for their use inside an adaptation loop --- is not reported in those works.
+in PCTL \cite{pctl2026}. These modules are judged by end accuracy. How often they declare a fault on a healthy bearing is not
+reported in those works, although it is one condition for their use inside an adaptation loop.
 
 This paper follows one thread through those questions, with decision rules documented in a versioned protocol and post-hoc analyses identified separately.
 
