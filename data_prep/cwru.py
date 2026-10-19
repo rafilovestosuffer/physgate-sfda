@@ -21,8 +21,8 @@ from records import Record
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data" / "cwru"
-OPS = ROOT / "notes" / "_pmmcp_records_ops.json"
-LABELS = ROOT / "notes" / "_pmmcp_labels.json"
+OPS = ROOT / "metadata" / "cwru_records_ops.json"
+LABELS = ROOT / "metadata" / "cwru_labels.json"
 
 
 def _bearing_id(lab: dict) -> str:

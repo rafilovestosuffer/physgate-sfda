@@ -8,8 +8,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data" / "cwru"
-OPS = json.load(io.open(ROOT / "notes" / "_pmmcp_records_ops.json", encoding="utf-8"))
-SUMS = json.load(io.open(ROOT / "notes" / "_pmmcp_checksums.json", encoding="utf-8"))
+OPS = json.load(io.open(ROOT / "metadata" / "cwru_records_ops.json", encoding="utf-8"))
+SUMS = json.load(io.open(ROOT / "metadata" / "cwru_checksums.json", encoding="utf-8"))
 
 
 def sha256(p: Path) -> str:

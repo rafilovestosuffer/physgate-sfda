@@ -1,5 +1,6 @@
 import sys, time
-sys.path.insert(0, r'C:/Users/Rafi/Desktop/claude research/physics')
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / 'physics'))
 import numpy as np, ses, gate
 from scipy.ndimage import median_filter
 from scipy.signal import lfilter

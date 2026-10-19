@@ -37,6 +37,7 @@ behind it in the ledger, and SHA-256 checksums.
 ```
 PROTOCOL.md          pre-specified hypotheses, decision rules and change log (C1-C112)
 DATA_MANIFEST.csv    raw-data file list with sizes and sources
+metadata/            CWRU record tables (operational fields, labels, checksums) and the Smith-Randall CWRU classes
 configs/             bearings, datasets, splits (incl. the ten drawn splits) and window settings
 data_prep/           dataset readers, download helpers, split drawing and window extraction
 physics/             bearing kinematics, envelope spectrum, band selection and the four gates
