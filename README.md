@@ -1,12 +1,12 @@
-# Bearing-disjoint evaluation of source-free fault diagnosis
+# Bearing-disjoint evaluation of source-free bearing fault diagnosis
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23105810.svg)](https://doi.org/10.5281/zenodo.23105810)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23105809.svg)](https://doi.org/10.5281/zenodo.23105809)
 [![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg)](LICENSE)
 [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](requirements.txt)
 
 Code, pre-specified protocol, run ledger and retained results for
 
-> **Bearing-disjoint evaluation of source-free fault diagnosis: an SDALR case study with physics-gated pseudo-labels**<br>
+> **Bearing-disjoint evaluation of source-free bearing fault diagnosis: the unseen-bearing loss, its source-model origin and the limits of physics-gated pseudo-labels**<br>
 > Mohammad Rafiur Rahman, Chittagong University of Engineering & Technology (CUET), 2026.
 
 Source-free domain adaptation (SFDA) benchmarks for rolling-bearing diagnosis can place the same physical bearings in the
@@ -41,7 +41,7 @@ metadata/            CWRU record tables (operational fields, labels, checksums) 
 configs/             bearings, datasets, splits (incl. the ten drawn splits) and window settings
 data_prep/           dataset readers, download helpers, split drawing and window extraction
 physics/             bearing kinematics, envelope spectrum, band selection and the four gates
-runners/             SDALR runner with declared adapters and the gate hook; SHOT patch (audited in S6); C87 variant
+runners/             SDALR runner with declared adapters and the gate hook; SHOT patch v2 (v1 defect in S6; corrected run C113); C87 variant
 models/              backbones for the input-dimension check
 experiments/         analysis and evaluation scripts; each writes to results/<id>/
 kaggle/kernels/      the GPU/CPU jobs that produced the runs; kaggle/*.py submit and collect them
@@ -113,15 +113,17 @@ change-log entry records what changed and when. The experiments were archived as
 [v1.0-submission](https://github.com/rafilovestosuffer/physgate-sfda/releases/tag/v1.0-submission)
 ([doi:10.5281/zenodo.23105810](https://doi.org/10.5281/zenodo.23105810)), which also preserves the full development
 record (execution plan, decision log and working notes) referred to by some code comments and by Supplementary S1.
-Commit identifiers quoted in `PROTOCOL.md` and the supplements refer to that development history. This branch adds the
-reporting revision of the manuscript (Supplementary S6); no experiment was re-run for it.
+Commit identifiers quoted in `PROTOCOL.md` and the supplements refer to that development history. Release v1.1 adds the
+reporting revision of the manuscript (Supplementary S6) and the corrected SHOT run on the ten splits (PROTOCOL C113:
+`runners/shot_patch.py` v2, `results/c113/`, artifacts `results/artifacts/physgate-shot2-k10-g1..g4`); no other
+experiment was re-run. The concept DOI 10.5281/zenodo.23105809 resolves to the latest release.
 
 ## Citation
 
 ```bibtex
 @unpublished{rahman2026bearing,
   author = {Rahman, Mohammad Rafiur},
-  title  = {Bearing-disjoint evaluation of source-free fault diagnosis: an {SDALR} case study with physics-gated pseudo-labels},
+  title  = {Bearing-disjoint evaluation of source-free bearing fault diagnosis: the unseen-bearing loss, its source-model origin and the limits of physics-gated pseudo-labels},
   year   = {2026},
   note   = {Manuscript}
 }
@@ -129,10 +131,10 @@ reporting revision of the manuscript (Supplementary S6); no experiment was re-ru
 @software{rahman2026physgate,
   author    = {Rahman, Mohammad Rafiur},
   title     = {physgate-sfda: code, protocol, ledger and retained artifacts},
-  version   = {v1.0-submission},
+  version   = {v1.1},
   year      = {2026},
   publisher = {Zenodo},
-  doi       = {10.5281/zenodo.23105810}
+  doi       = {10.5281/zenodo.23105809}
 }
 ```
 

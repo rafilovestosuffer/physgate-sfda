@@ -9,12 +9,12 @@ authors:
     orcid: "https://orcid.org/0009-0008-5407-7640"
 repository-code: "https://github.com/rafilovestosuffer/physgate-sfda"
 license: MIT
-version: v1.0-submission
-doi: 10.5281/zenodo.23105810
-date-released: 2026-10-02
+version: v1.1
+doi: 10.5281/zenodo.23105809
+date-released: 2026-10-24
 preferred-citation:
   type: unpublished
-  title: "Bearing-disjoint evaluation of source-free fault diagnosis: an SDALR case study with physics-gated pseudo-labels"
+  title: "Bearing-disjoint evaluation of source-free bearing fault diagnosis: the unseen-bearing loss, its source-model origin and the limits of physics-gated pseudo-labels"
   authors:
     - family-names: Rahman
       given-names: Mohammad Rafiur

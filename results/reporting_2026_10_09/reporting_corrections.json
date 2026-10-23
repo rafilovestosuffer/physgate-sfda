@@ -211,7 +211,25 @@
     }
   },
   "shot_status": {
-    "status": "WITHDRAWN as evidence about SHOT",
-    "reason": "obtain_label returns predictions in shuffled loader traversal order, while training indexes them by dataset sample index; no index restoration occurs. Original artifacts retained; no corrected run exists."
+    "status": "CORRECTED (C113, 2026-10-22)",
+    "withdrawn_run": "C100 (patch v1): obtain_label returned shuffled-loader order; audit only",
+    "corrected_run": {
+      "kernels": "physgate-shot2-k10-g1..g4",
+      "median_delta_pp": 36.56666666666668,
+      "ci_median": [
+        22.451666666666682,
+        59.1
+      ],
+      "positive": 10,
+      "p": 0.0009765625,
+      "decision": "GENERALISES"
+    }
+  },
+  "source_sha256_updates": {
+    "runners/shot_patch.py": {
+      "audited_2026_10_09": "166bc6bf5aa5b465ffba5e35b3a1748b98d91da5f59bd68203ce2677bb2d2850",
+      "current": "a52d8b73d7d2e34d563817fc8d9ed9cf749b3549d42e13c9bfe9c4f8b4ac05b0",
+      "reason": "C113 (2026-10-22): index-aligned pseudo-labels, SHOT_PATCH_VERSION = 2; the 9 October audit object was v1 and its hash is kept above"
+    }
   }
 }

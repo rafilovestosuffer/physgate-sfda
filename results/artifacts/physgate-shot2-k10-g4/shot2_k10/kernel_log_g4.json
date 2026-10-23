@@ -1,0 +1,38 @@
+{
+  "env": {
+    "device": "Tesla T4",
+    "capability": [
+      7,
+      5
+    ],
+    "group": "g4",
+    "shot_patch_version": 2,
+    "experiment": "C113"
+  },
+  "runs": [
+    {
+      "split": "S08",
+      "tgt": "S08",
+      "rc": 0,
+      "seconds": 2388
+    },
+    {
+      "split": "S08",
+      "tgt": "S08c",
+      "rc": 0,
+      "seconds": 2088
+    },
+    {
+      "split": "S09",
+      "tgt": "S09",
+      "rc": 0,
+      "seconds": 2385
+    },
+    {
+      "split": "S09",
+      "tgt": "S09c",
+      "rc": 0,
+      "seconds": 2088
+    }
+  ]
+}

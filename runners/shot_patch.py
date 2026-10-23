@@ -7,14 +7,27 @@ format, epochs, batch size and learning rate. Faithful to SHOT:
   * pseudo-labels from weighted centroids in the (L2-normalised, bias-augmented) feature space, cosine distance, then one
     refinement with hard assignments; recomputed at the start of every epoch;
   * no reliability filtering, no mix-up, no auxiliary losses; the LAST iterate is evaluated (no checkpoint selection).
+
+Version 2 (PROTOCOL C113, 2026-10-22): pseudo-labels are returned in DATASET order. Version 1 (C85, C100) returned them
+in the order of a shuffled loader pass, so `mem_label[tar_idx]` in `train_target` supervised the wrong samples; its
+outputs are retained for audit only (Supplementary S6.1) and are not SHOT results.
 """
 
+SHOT_PATCH_VERSION = 2
+
 SHOT_CODE = r'''
+SHOT_PATCH_VERSION = 2   # C113 index-aligned pseudo-labels
+
+
 def obtain_label(loader, networks, args):
+    # C113: the loader is SHUFFLED (tools.args_data_load), so rows are collected in traversal order together with
+    # their dataset indices (data[-1], as SDALR's own tools.obtain_bank does) and the pseudo-labels are scattered back
+    # into dataset order before train_target indexes them with tar_idx. The C85/C100 version returned traversal order.
     start_test = True
+    order = []
     with torch.no_grad():
         for data in loader:
-            inputs = data[0].cuda(); labels = data[1]
+            inputs = data[0].cuda(); labels = data[1]; order.append(data[-1].clone())
             feas = inputs
             for net in networks[:-1]:
                 feas = net(feas)
@@ -25,6 +38,10 @@ def obtain_label(loader, networks, args):
                 all_fea = torch.cat((all_fea, feas.float().cpu()), 0)
                 all_output = torch.cat((all_output, outputs.float().cpu()), 0)
                 all_label = torch.cat((all_label, labels.float()), 0)
+    index = torch.cat(order).long().numpy()
+    n = len(loader.dataset)
+    if not np.array_equal(np.sort(index), np.arange(n)):
+        raise RuntimeError(f"SHOT obtain_label: loader pass did not visit every sample exactly once ({index.size} of {n})")
     all_output = nn.Softmax(dim=1)(all_output)
     _, predict = torch.max(all_output, 1)
     all_fea = torch.cat((all_fea, torch.ones(all_fea.size(0), 1)), 1)
@@ -41,9 +58,12 @@ def obtain_label(loader, networks, args):
         pred_label = dd.argmin(axis=1)
     acc_before = float(np.mean(predict.numpy() == all_label.numpy()))
     acc_after = float(np.mean(pred_label == all_label.numpy()))
-    log_str = f'SHOT pseudo-labels: model {acc_before * 100:.2f}% -> centroid {acc_after * 100:.2f}%'
+    log_str = f'SHOT pseudo-labels (index-aligned, patch v{SHOT_PATCH_VERSION}): model {acc_before * 100:.2f}% -> centroid {acc_after * 100:.2f}%'
     args.out_file.write(log_str + '\n'); args.out_file.flush(); print(log_str)
-    return pred_label.astype('int')
+    aligned = np.full(n, -1, dtype='int64')
+    aligned[index] = pred_label.astype('int64')          # dataset order: aligned[i] is the label of dataset sample i
+    assert (aligned >= 0).all()
+    return aligned
 
 
 def train_target(args, dset_loaders, networks):

@@ -48,7 +48,11 @@ within each (damage origin, fault type) group, bearing codes are sorted lexicogr
 fold A. The folds are run in both directions, which gives 12 paired tasks. To extend beyond the two mechanical folds, we drew ten source sets uniformly without replacement from the 4000 possible
 3/3/3 sets, excluding fold A, with the seed
 and the draw list committed before any of these runs. The \emph{split} is the statistical unit for the ten-split analyses;
-tasks are descriptive observations within a fold, not independent replicates. On HUST the same construction uses bearing types: the source is three of the five types
+tasks are descriptive observations within a fold, not independent replicates. Every random split therefore trains on three
+distinct specimens per class and is scored on three healthy, two outer-race and three inner-race specimens it has not seen.
+The number of distinct source bearings, which Vieira et al.\ find decisive for supervised transfer \cite{vieira2026}, is
+held at three in every adaptation experiment and is varied from one to four only in the source-diversity curve of
+Section~\ref{sec:res-mechanism}. On HUST the same construction uses bearing types: the source is three of the five types
 and the clean target the other two, for six pre-specified splits.
 
 \subsection{Adaptation variants}
@@ -56,7 +60,17 @@ and the clean target the other two, for six pre-specified splits.
 SDALR is run from its released code with two checkpoint policies. \texttt{as\_released} keeps the released selection rule,
 which compares target accuracy against its initial value and therefore consults target labels; \texttt{final\_checkpoint}
 takes the last iterate without target labels for training or checkpoint selection (except the explicitly labelled oracle arm). All headline numbers use \texttt{final\_checkpoint};
-\texttt{as\_released} is reported once, in Section~\ref{sec:res-collapse}. The architecture and training settings are listed in Supplementary~S6. A planned SHOT comparison is not reported: a source-code audit found that its local implementation did not restore pseudo-label order after a shuffled loader pass, so its outputs do not measure SHOT, and no corrected experiment was run (Supplementary~S6).
+\texttt{as\_released} is reported once, in Section~\ref{sec:res-collapse}. The architecture and training settings are listed in Supplementary~S6.
+
+SDALR was chosen because it is a recent source-free method with a Paderborn benchmark and released code; SHOT
+\cite{liang2020shot} because SDALR's objective reduces to SHOT's when its reliability split is removed (the first row of its
+ablation) and because SHOT is the generic source-free comparator this literature uses. Later bearing-specific methods
+report higher same-bearing Paderborn accuracy than SDALR \cite{li2025csad,yan2026hybrid}, but we found no released
+implementation of them and did not reimplement them from their descriptions, so the adaptation evidence here is limited to
+these two methods. No hyper-parameter of any arm was tuned on any target: SDALR and SHOT use SDALR's released values
+(Supplementary~S6), the forests use fixed defaults stated per experiment in the protocol, and the gate operating points were
+fixed before evaluation. SHOT runs from our own implementation of its objective on SDALR's backbone, data and schedule.
+A first SHOT implementation returned pseudo-labels in the order of a shuffled loader pass rather than in dataset order, an indexing defect found by code audit; its outputs are retained for audit only (Supplementary~S6). Every SHOT result reported here comes from the corrected implementation, whose pseudo-label alignment is checked by a unit test, run on the ten splits from the same source checkpoints as SDALR.
 
 \subsection{Gating and the oracle reference}
 
@@ -86,11 +100,11 @@ can be negative.
 
 Effects are paired differences. We report medians and percentile bootstrap intervals over source folds or splits (20\,000 resamples), rather than treating tasks sharing a source checkpoint as independent. The fold experiments are descriptive. The ten-split summaries describe sensitivity to the source-set draw within the fixed Paderborn pool; they do not quantify uncertainty for a population of new bearings.
 
-Nominal sign-flip tests with Benjamini--Hochberg and Benjamini--Yekutieli adjustments \cite{benjamini1995,benjamini2001} are given in Supplementary~S6. Enumerating signs is computationally exact, but inferential validity requires joint sign symmetry that overlapping bearing sets do not establish. Multiplicity adjustment cannot repair this limitation. Conclusions therefore rely on observed paired effects and directions, not population-level significance claims.
+Exact sign-flip tests, one-sided in the pre-specified direction, with Benjamini--Hochberg and Benjamini--Yekutieli adjustments \cite{benjamini1995,benjamini2001} are given in Supplementary~S6; with ten splits the smallest attainable one-sided $p$ is $1/1024$. Because splits share bearings, the sign-symmetry assumption of these tests holds only conditionally on the pool, so conclusions rest on the paired effects and their directions and the nominal $p$-values are reported for completeness. Each random split was run with one seed: in benchmark studies the variance due to the data split exceeds that due to initialisation \cite{bouthillier2021}, the two folds carry three seeds each, and the between-seed range of the ungated clean fold mean (1.9--3.2 points, below) is an order of magnitude smaller than the effect studied.
 
 Source-only, within-bearing, spillover, purity and interval analyses are post-hoc and descriptive. Source-expansion and kinematic-feature studies are exploratory follow-ups whose decisions were specified before their own runs. Supplementary~S6 gives the balanced-accuracy sensitivity analysis and the Monte Carlo test details, computed from saved values.
 
-Healthy false-acceptance counts are reported by bearing in Table~\ref{tab:gates} and Supplementary~S2. Bearing-bootstrap and record-binomial intervals are given in Supplementary~S6 with their assumptions. Repeated recordings from one bearing are not independent specimens; six healthy bearings provide limited evidence about new-bearing false alarms.
+Healthy false-acceptance counts are reported by bearing in Table~\ref{tab:gates} and Supplementary~S2. Bearing-bootstrap and record-binomial intervals are given in Supplementary~S6 with their assumptions. Repeated recordings from one bearing are not independent specimens, and zero observed false acceptances bound the rate only weakly: the exact one-sided 95\,\% upper limit is \SI{0.6}{\percent} per recording if the 480 recordings were independent, and \SI{39}{\percent} per bearing for 0 of 6 bearings (Supplementary~S6). Six healthy bearings provide limited evidence about new-bearing false alarms.
 
 \subsection{Reproducibility, jobs and pre-specification}
 
@@ -111,10 +125,12 @@ the gating job's own ungated arm, and the fold-level oracle decomposition, which
 ran, is not reported. All ten random splits ran every arm in one job.
 
 Prospective hypotheses, decision rules, arms and budgets were written into a version-controlled protocol before their corresponding runs; post-hoc analyses are identified separately. The fixed gate operating points were ($z = 10$ for the envelope rule, $\alpha = 0.05$ for the comb tests). The protocol
-is a file in the project repository rather than a registry entry, so we call it pre-specification; each entry carries the
+is a file in the project repository rather than a registry entry, so we call it pre-specification and the study was not registered; each entry carries the
 commit that introduced it, every result artifact the commit that produced it, and the experimental release is archived publicly (Data availability). Results that failed their rule are reported as such, one planned remedy experiment was cut
 for budget before any of its outcomes were seen, and every reported number carries a run identifier in an append-only ledger
-with the retained artifact and its checksum (Supplementary~S4).
+with the retained artifact and its checksum (Supplementary~S4). Supplementary~S7 lists the REFORMS reporting items for
+machine-learning-based science \cite{kapoor2024reforms} with the location of each in this paper, and the three leakage
+arguments of Kapoor and Narayanan \cite{kapoor2023leakage}.
 
 \paragraph{AI-assisted execution} An AI coding assistant (Claude, Anthropic, model \texttt{claude-opus-5-5}, used through the Claude Code agent) wrote and ran analysis, evaluation and figure code, prepared and
 submitted compute jobs, and cross-checked numbers against the retained artifacts. Hypotheses, decision rules and operating

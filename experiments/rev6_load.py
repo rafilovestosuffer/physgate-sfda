@@ -54,8 +54,9 @@ def arm(result_json: str | Path) -> dict:
 
 @lru_cache(maxsize=1)
 def load() -> dict:
-    """{'k10': {(src, tgt, gate): arm}, 'shot': {(src, tgt): arm}, 'fold': {(job, stem): arm}}"""
-    D = {"k10": {}, "shot": {}, "fold": {}}
+    """{'k10': {(src, tgt, gate): arm}, 'shot': {(src, tgt): arm}, 'shot2': {(src, tgt): arm}, 'fold': {(job, stem): arm}}
+    'shot' is the withdrawn C100 run (patch v1, audit only); 'shot2' is the corrected C113 run (patch v2)."""
+    D = {"k10": {}, "shot": {}, "shot2": {}, "fold": {}}
     for p in glob.glob(str(ART / "physgate-run-k10-*" / "k10" / "S*" / "result_PU_M1_*.json")):
         d = json.loads(Path(p).read_text(encoding="utf-8"))
         if d.get("smoke") or len(d["adapted"]) < 6:
@@ -64,6 +65,11 @@ def load() -> dict:
     for p in glob.glob(str(ART / "physgate-shot-k10-*" / "shot_k10" / "S*" / "result_PU_M1_*.json")):
         d = json.loads(Path(p).read_text(encoding="utf-8"))
         D["shot"][(d["src_fold"], d["tgt_fold"])] = arm(p)
+    for p in glob.glob(str(ART / "physgate-shot2-k10-*" / "shot2_k10" / "S*" / "result_PU_M1_*.json")):
+        d = json.loads(Path(p).read_text(encoding="utf-8"))
+        if d.get("smoke") or len(d["adapted"]) < 6:
+            continue
+        D["shot2"][(d["src_fold"], d["tgt_fold"])] = arm(p)
     for job in ("m1-fa", "m1-fb", "m2-fa", "m2-fb"):
         for p in glob.glob(str(ART / f"physgate-{job}" / "*" / "result_*.json")):
             D["fold"][(job, Path(p).stem)] = arm(p)

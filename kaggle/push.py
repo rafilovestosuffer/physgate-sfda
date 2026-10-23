@@ -56,6 +56,8 @@ def main() -> int:
     p.add_argument("--dataset", action="append", default=[], help="owner/slug, repeatable")
     p.add_argument("--dry-run", action="store_true")
     p.add_argument("--timeout-s", type=int, default=None, help="hard runtime cap passed to kaggle")
+    p.add_argument("--allow-concurrent", action="store_true",
+                   help="push a GPU kernel even if another kernel on the account is queued/running (user-authorised only)")
     a = p.parse_args()
 
     code = Path(a.code).resolve()
@@ -81,7 +83,7 @@ def main() -> int:
 
     import preflight
     # CPU kernels (--no-gpu) may run beside a GPU kernel; the one-at-a-time guard protects GPU sessions only.
-    if md["enable_gpu"] and not preflight.clear_to_push(user):
+    if md["enable_gpu"] and not a.allow_concurrent and not preflight.clear_to_push(user):
         raise SystemExit("REFUSED: a kernel is already queued or running. See kaggle/preflight.py")
 
     args = ["kernels", "push", "-p", str(stage)]
@@ -92,7 +94,12 @@ def main() -> int:
     if a.timeout_s:
         args += ["-t", str(a.timeout_s)]
     cp = _cli.run(*args)
-    print(cp.stdout.strip())
+    out = (cp.stdout + cp.stderr).strip()
+    print(out)
+    # The CLI exits 0 even when the push is refused (e.g. "Kernel push error: Maximum weekly GPU quota of 30.00 hours
+    # reached", 2026-10-22). Treat anything other than an explicit success line as a failed push.
+    if "successfully pushed" not in out.lower() or "push error" in out.lower():
+        raise SystemExit(f"REFUSED: push of {slug} did not report success; nothing to poll")
     print(f"pushed. poll with: python kaggle/poll.py --name {a.name}")
     return 0
 

@@ -20,7 +20,8 @@ COLS = ["run_id", "runner_id", "kaggle_account", "git_sha", "config_hash", "task
 COAUTHOR = {"physgate-m2seed-fa-s1", "physgate-m2seed-fb-s1", "physgate-shot-fa", "physgate-shot-fb",
             "physgate-run-n1-probe", "physgate-run-k10-g1", "physgate-run-k10-g2", "physgate-run-k10-g3",
             "physgate-run-c92-rf-g12", "physgate-run-c92-rf-g3", "physgate-run-hust-k6",
-            "physgate-shot-k10-g1", "physgate-shot-k10-g3"}  # g2, g4 ran on the primary account (verified by kernels status, 2026-09-29)
+            "physgate-shot-k10-g1", "physgate-shot-k10-g3",  # g2, g4 ran on the primary account (verified by kernels status, 2026-09-29)
+            "physgate-shot2-k10-g2"}  # C113: g2 on the co-author account; g1, g3, g4 on the third account (both quotas exhausted, 2026-10-22)
 SHA = subprocess.run(["git", "rev-parse", "--short", "HEAD"], cwd=ROOT, capture_output=True, text=True).stdout.strip()
 
 
@@ -29,7 +30,10 @@ def rows_for(path: Path):
     if d.get("smoke") or not d.get("adapted"):
         return []
     run = path.parts[path.parts.index("artifacts") + 1]
-    acct = "rhrhrhrhrh" if run in COAUTHOR else "rafiurrahman01"
+    if run == "physgate-c103-pretrain-state":   # C103 diagnostic re-runs (rejected explanation), not results: never ledger rows
+        return []
+    K4 = {"physgate-shot2-k10-g1", "physgate-shot2-k10-g3", "physgate-shot2-k10-g4"}   # C113 amendment: third account
+    acct = "shahedtheboss" if run in K4 else ("rhrhrhrhrh" if run in COAUTHOR else "rafiurrahman01")
     gate = d.get("gate") or "none"
     src, tgt = d.get("src_fold"), d.get("tgt_fold")
     leaky = src == tgt
@@ -38,7 +42,7 @@ def rows_for(path: Path):
     for task, acc in d["adapted"].items():
         rid = f"{run}-{d['variant']}-{src}to{tgt}-{gate}-{task.replace('->', 'to')}-s{d['seed']}"
         out.append({"run_id": rid, "runner_id": acct, "kaggle_account": acct, "git_sha": SHA, "config_hash": "",
-                    "task": f"{ds} {task} {src}->{tgt}", "method": f"SDALR {d['variant']} gate={gate}" if d["variant"] != "shot" else "SHOT",
+                    "task": f"{ds} {task} {src}->{tgt}", "method": f"SDALR {d['variant']} gate={gate}" if d["variant"] != "shot" else ("SHOT v2 (C113)" if run.startswith("physgate-shot2-") else "SHOT"),
                     "rung": "", "seed": d["seed"], "split_type": "leaky" if leaky else "bearing-wise", "label_space": "L3",
                     "track": "R", "window_samples": 2048, "n_records": "", "acc": acc, "macro_f1": "", "ece": "", "nll": "",
                     "oracle_gap_closure": "", "expected_false_accepts": "", "wall_clock_s": d.get("seconds", {}).get(task, ""),

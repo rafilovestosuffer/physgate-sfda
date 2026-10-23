@@ -9,13 +9,13 @@ All SHA-256 values in this supplement are computed on file content with line end
 | `results/c108/c108_purity.json` | Descriptive window-label purity by specimen | deterministic analysis of retained data or artifacts; script in experiments/ | `d41f83826296fe9e` |
 | `results/c111/c111_probe_ablations.json` | Identity probe ablations on retained representations | deterministic analysis of retained data or artifacts; script in experiments/ | `4c39dfae22b1d4c3` |
 | `results/c104/C104B_RESULT.md` | Post-hoc class-specific same-condition analysis | deterministic analysis of retained data or artifacts; script in experiments/ | `d3229ef37cc7c36f` |
-| `results/c105/c105_source_only.json` | Source-only and post-adaptation contrasts | deterministic analysis of retained data or artifacts; script in experiments/ | `9ad8ab3ab3693c2c` |
+| `results/c105/c105_source_only.json` | Source-only and post-adaptation contrasts | deterministic analysis of retained data or artifacts; script in experiments/ | `49b0d0a8f1091755` |
 | `results/c106/c106_within_bearing.json` | Within-bearing descriptive contrasts | deterministic analysis of retained data or artifacts; script in experiments/ | `8ce0f9dc5b4428f4` |
 | `results/c107/c107_gate_spillover.json` | Gate gain accounting | deterministic analysis of retained data or artifacts; script in experiments/ | `707e195b00e2a0f0` |
 | `results/c109/c109_intervals.json` | Conditional intervals and healthy false acceptance | deterministic analysis of retained data or artifacts; script in experiments/ | `8160f1db260a9d32` |
 | `results/c110/c110_result.json` | Source expansion: diversity and volume change together | deterministic analysis of retained data or artifacts; script in experiments/ | `a9eecff7e2ad4970` |
 | `results/c112/c112_result.json` | Original ordinary and saved balanced kinematic outcomes | deterministic analysis of retained data or artifacts; script in experiments/ | `9a6e4dc189507544` |
-| `results/reporting_2026_10_09/reporting_corrections.json` | Reporting-only corrections and saved-score sensitivity (S6) | deterministic analysis of retained data or artifacts; script in experiments/ | `7fbecbe27f3e2f8e` |
+| `results/reporting_2026_10_09/reporting_corrections.json` | Reporting-only corrections and saved-score sensitivity (S6) | deterministic analysis of retained data or artifacts; script in experiments/ | `2aa642ad46dea497` |
 | `results/M0_PU_RESULT.md` | Reproduction of the published method on its own tasks (Section 6.1) | 24 ledger rows (rafiurrahman01) | `d7b14b5c3fb754d2` |
 | `results/M1_RESULT.md` | Collapse on the two mechanical folds (Section 6.2) | 48 ledger rows (rafiurrahman01) | `51c898427e02bc23` |
 | `results/c88/C88_RESULT.md` | Ten pre-specified random bearing splits: collapse, gating, decomposition | 240 ledger rows (rafiurrahman01, rhrhrhrhrh) | `5adae7364e14bf91` |
@@ -63,7 +63,7 @@ Every script that computes a reported number, builds a table or figure, or ran o
 
 | script | sha256 |
 |---|---|
-| `experiments/append_ledger.py` | `9ecfefe061f9d8da` |
+| `experiments/append_ledger.py` | `bb4644d0a351b391` |
 | `experiments/append_ledger_rf.py` | `404370540ae1b64d` |
 | `experiments/b6a_cross_end.py` | `5255ce88829a4736` |
 | `experiments/b7_uored.py` | `800ae9a2c818ccaf` |
@@ -73,13 +73,14 @@ Every script that computes a reported number, builds a table or figure, or ran o
 | `experiments/c102_aa_floor.py` | `e3ba22f66a35f9ab` |
 | `experiments/c104_same_condition.py` | `58cb7b6d6fede41e` |
 | `experiments/c104b_per_class.py` | `8fdfd15384bf70ba` |
-| `experiments/c105_source_only.py` | `ce7f4f5bc9cebce2` |
+| `experiments/c105_source_only.py` | `df26d1ff4fdb5c31` |
 | `experiments/c106_within_bearing.py` | `be2141fd6fb1140b` |
 | `experiments/c107_gate_spillover.py` | `8f63cf0c0f9ea999` |
 | `experiments/c108_purity.py` | `da7f8bdc43809f0d` |
 | `experiments/c109_intervals.py` | `1fd51679cd4867c7` |
 | `experiments/c111_probe_ablations.py` | `2ce2db872e2f683c` |
 | `experiments/c112_kinematic_rf.py` | `7966e786bb7dd9e9` |
+| `experiments/c113_shot_splits.py` | `dfb210b8e0a55dcc` |
 | `experiments/c77_ball_sidebands.py` | `c3bc867c93d888c8` |
 | `experiments/c78_fe_de_control.py` | `d72453819d41b136` |
 | `experiments/c79_iesfo_eval.py` | `d141cd4bf3f6a78c` |
@@ -103,10 +104,10 @@ Every script that computes a reported number, builds a table or figure, or ran o
 | `experiments/m4_stratification.py` | `e21f97d6cf81b177` |
 | `experiments/null_calibration_drs.py` | `4d14cfe98bcdee6c` |
 | `experiments/paired_gating.py` | `2a29bef79c842852` |
-| `experiments/rev6_load.py` | `539b8e59671823ca` |
+| `experiments/rev6_load.py` | `fc9f6fa8b723d4b0` |
 | `experiments/window_contract.py` | `a4b73e6696d84ac0` |
 | `kaggle/kernels/_make_k10.py` | `9bd6e334266fe744` |
-| `kaggle/kernels/_make_shot_k10.py` | `1e8ddb49fae9d037` |
+| `kaggle/kernels/_make_shot_k10.py` | `8780bdb25eabcbd0` |
 | `kaggle/kernels/bistw_FA.py` | `9fa807a596dd5565` |
 | `kaggle/kernels/bistw_FB.py` | `58e3d7120b8b15bb` |
 | `kaggle/kernels/build_pdf.py` | `84c3bce294bd51e3` |
@@ -141,13 +142,17 @@ Every script that computes a reported number, builds a table or figure, or ran o
 | `kaggle/kernels/m2seed_FB_s0.py` | `54f2dac26168c96e` |
 | `kaggle/kernels/m2seed_FB_s1.py` | `348abc169e9b0c53` |
 | `kaggle/kernels/n1_probe.py` | `c290e3bb4ba42e8f` |
+| `kaggle/kernels/shot2_k10_g1.py` | `53a4fb416c7cf0db` |
+| `kaggle/kernels/shot2_k10_g2.py` | `60a69d62db603aa5` |
+| `kaggle/kernels/shot2_k10_g3.py` | `bcc13018b6181ec1` |
+| `kaggle/kernels/shot2_k10_g4.py` | `4963084c2ba9a507` |
 | `kaggle/kernels/shot_FA.py` | `1f6796b36929c56d` |
 | `kaggle/kernels/shot_FB.py` | `32410f94ff3fe736` |
 | `kaggle/kernels/shot_k10_g1.py` | `6ea15b7edc7ec3a6` |
 | `kaggle/kernels/shot_k10_g2.py` | `a8e1448057ff553f` |
 | `kaggle/kernels/shot_k10_g3.py` | `d422c016022ca162` |
 | `kaggle/kernels/shot_k10_g4.py` | `24173d1423a5e6ea` |
-| `paper/check_manuscript.py` | `fb99c6e677b641c8` |
+| `paper/check_manuscript.py` | `8e5256ea9420ff55` |
 | `paper/figures/build_figures.py` | `b933a8122f238a25` |
 | `paper/figures/build_schematics.py` | `726c3eab767ebc99` |
 | `paper/figures/fig1_design.py` | `1d2c54cda18ad78b` |
@@ -161,14 +166,14 @@ Every script that computes a reported number, builds a table or figure, or ran o
 | `paper/make_s1.py` | `296569aabad53943` |
 | `paper/make_s3_table.py` | `f2553d13064ce12f` |
 | `paper/make_s4.py` | `cf76b40921f3080d` |
-| `paper/make_submission.py` | `59986637ea9f846a` |
+| `paper/make_submission.py` | `fff79915fdad68c1` |
 | `paper/make_submission_documents.py` | `91d021f9904946ab` |
-| `paper/make_supplement_pdfs.py` | `1a92a16a8138ac75` |
-| `paper/make_tables.py` | `fa7e88bbb6425bff` |
+| `paper/make_supplement_pdfs.py` | `50801a3571a00b5e` |
+| `paper/make_tables.py` | `0f5335210571eb47` |
 | `paper/revision_reporting.py` | `a403fa39e52d3458` |
 | `runners/bist.py` | `03571366b13b4eff` |
 | `runners/sdalr_runner.py` | `9eea05d3c9899dfa` |
-| `runners/shot_patch.py` | `166bc6bf5aa5b465` |
+| `runners/shot_patch.py` | `a0d94196b59aa20b` |
 
 ## Regenerating reporting files only
 

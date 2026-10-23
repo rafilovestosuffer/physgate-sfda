@@ -181,6 +181,15 @@ def t4_split_rows():
     s5 = c105["summary"]
     rows.insert(0, f"Source model only (before adaptation), ten splits & {s5['mean_pre_leaky']:.1f} & "
                    f"{s5['mean_pre_clean']:.1f} & {s5['mean_pre_leaky'] - s5['mean_pre_clean']:.1f} " + BS)
+    c113 = ROOT / "results" / "c113" / "c113_shot_splits.json"   # corrected SHOT (patch v2); the C100 run is withdrawn
+    if c113.exists():
+        d13 = json.load(open(c113, encoding="utf-8"))
+        assert len(d13["splits"]) == 10 and not d13["missing"], "C113 incomplete: not all ten splits have both arms"
+        rows.insert(1, f"SHOT (corrected implementation), ten splits & {d13['leaky_mean']:.1f} & "
+                       f"{d13['clean_mean']:.1f} & {d13['leaky_mean'] - d13['clean_mean']:.1f} " + BS)
+        notes.append(rf"SHOT: our implementation of its objective on SDALR's backbone (Section~\ref{{sec:protocol}}), "
+                     rf"final iterate, same source checkpoints as SDALR; median $\Delta_{{\mathrm{{leak}}}}$ "
+                     f"{d13['median']:.1f}~pp, positive in {d13['positive']} of 10 splits.")
     kin = json.load(open(ROOT / "results" / "c112" / "c112_result.json", encoding="utf-8"))
     ks = [f"S{i:02d}" for i in range(10)]
     klk = np.mean([kin["per_split"][x]["leaky"] for x in ks])

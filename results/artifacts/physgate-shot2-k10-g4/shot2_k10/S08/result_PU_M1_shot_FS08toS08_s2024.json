@@ -1,0 +1,53 @@
+{
+  "dataset": "PU_M1",
+  "variant": "shot",
+  "seed": 2024,
+  "smoke": false,
+  "src_fold": "S08",
+  "tgt_fold": "S08",
+  "leaky": true,
+  "hyperparameters": {
+    "lr": "0.0005",
+    "threshold": "0.4",
+    "K": "0.6"
+  },
+  "adapters": [
+    "npz_io",
+    "tsne_stub",
+    "shot_patch"
+  ],
+  "source_only": {
+    "A1->A3": 99.75,
+    "A1->A2": 89.57,
+    "A3->A1": 94.13,
+    "A3->A2": 94.39,
+    "A2->A1": 95.5,
+    "A2->A3": 99.67
+  },
+  "adapted": {
+    "A1->A3": 99.63,
+    "A1->A2": 92.18,
+    "A3->A1": 98.3,
+    "A3->A2": 96.45,
+    "A2->A1": 98.18,
+    "A2->A3": 99.87
+  },
+  "seconds": {
+    "pretrain": 295,
+    "A1->A3": 345,
+    "A1->A2": 346,
+    "A3->A1": 346,
+    "A3->A2": 346,
+    "A2->A1": 346,
+    "A2->A3": 347
+  },
+  "gate_log": {
+    "A1->A3": [],
+    "A1->A2": [],
+    "A3->A1": [],
+    "A3->A2": [],
+    "A2->A1": [],
+    "A2->A3": []
+  },
+  "gate": "none"
+}

@@ -8,7 +8,7 @@ experiments: its 6 healthy bearings and the 5 outer-race and 6 inner-race bearin
 times at four operating conditions, provide several physical bearings per class and several operating conditions per bearing, as required by the paired design of Section~\ref{sec:protocol}. We use the
 three conditions that share a nominal speed of \SI{1500}{rpm} (\SI{25}{Hz}) and differ in load and radial force, denoted A1
 (N15\_M01\_F10), A2 (N15\_M07\_F04) and A3 (N15\_M07\_F10); the fourth condition (N09, \SI{900}{rpm}, \SI{15}{Hz}) enters
-only the gate analyses.
+only the gate analyses. In the distributed files, five A2 recordings of bearing KA04 carry byte-identical vibration signals in two groups (recordings 5 and 19; 6, 15 and 20). All copies belong to one bearing and so stay on one side of every split; scoring each identical window once changes the median SHOT loss by 0.03 points.
 \textbf{HUST bearing} \cite{thuan2023hust} provides the second-rig replication: one recording set per class and bearing type, for
 five bearing types (6204--6208) at three motor loads, giving the same three-domain, six-task structure with the same label
 space. \textbf{CWRU} \cite{cwrubdc,smith2015} and \textbf{UORED-VAFCLS} \cite{sehri2023uored} appear only in the off-rig calibration of the
@@ -52,5 +52,5 @@ The adaptation experiments use SDALR's input contract: windows of 2048 samples (
 \SI{64}{kHz} and \SI{25}{Hz} shaft speed a window lasts \SI{32}{ms}, 0.8 shaft revolutions and about 2.5 outer-race
 impacts; its envelope spectrum has a resolution of \SI{31}{Hz}, so the first outer-race (\SI{77}{Hz}) and inner-race
 (\SI{123}{Hz}) lines lie about 1.5 bins apart. A window can carry impulsiveness and fault energy, but its spectrum cannot reliably resolve the harmonic structure used by the gates; this does not rule out all kinematic information in the waveform. The gates, by contrast, use the first 249\,600 samples of each recording (\SI{3.9}{s}, resolution
-\SI{0.26}{Hz}, about twelve bins inside the slip window of the first outer-race harmonic). Section~\ref{sec:res-mechanism}
+\SI{0.26}{Hz}, at least six bins inside the slip window of the first outer-race harmonic). Section~\ref{sec:res-mechanism}
 tests what the difference is worth with a classifier built on the gates' representation.

@@ -291,7 +291,8 @@
    "median_leaky_adapt_gain": -5.348333333333336,
    "mean_pre_leaky": 90.53566666666667,
    "mean_pre_clean": 54.722
-  }
+  },
+  "status": "WITHDRAWN: patch v1 (C100) pseudo-labels misaligned; audit only"
  },
  "sdalr_folds_fold_job": [
   {
@@ -362,5 +363,152 @@
    "fold_job_adapted_mean": 55.31166666666667,
    "gating_job_adapted_mean": 55.31166666666667
   }
+ },
+ "shot2_ten_splits": {
+  "rows": [
+   {
+    "split": "S00",
+    "pre_leaky": 90.29333333333334,
+    "pre_clean": 55.49,
+    "pre_delta": 34.803333333333335,
+    "adapted_leaky": 92.79833333333335,
+    "adapted_clean": 70.34666666666666,
+    "adapted_delta": 22.451666666666682,
+    "amplification": -12.351666666666652,
+    "clean_adapt_gain": 14.856666666666662,
+    "leaky_adapt_gain": 2.5050000000000097
+   },
+   {
+    "split": "S01",
+    "pre_leaky": 93.91333333333334,
+    "pre_clean": 43.31166666666667,
+    "pre_delta": 50.601666666666674,
+    "adapted_leaky": 95.38,
+    "adapted_clean": 36.279999999999994,
+    "adapted_delta": 59.1,
+    "amplification": 8.498333333333328,
+    "clean_adapt_gain": -7.031666666666673,
+    "leaky_adapt_gain": 1.4666666666666544
+   },
+   {
+    "split": "S02",
+    "pre_leaky": 88.53166666666665,
+    "pre_clean": 53.11666666666667,
+    "pre_delta": 35.414999999999985,
+    "adapted_leaky": 88.72666666666667,
+    "adapted_clean": 52.375,
+    "adapted_delta": 36.351666666666674,
+    "amplification": 0.9366666666666887,
+    "clean_adapt_gain": -0.7416666666666671,
+    "leaky_adapt_gain": 0.1950000000000216
+   },
+   {
+    "split": "S03",
+    "pre_leaky": 91.10000000000001,
+    "pre_clean": 61.84166666666667,
+    "pre_delta": 29.25833333333334,
+    "adapted_leaky": 91.52000000000002,
+    "adapted_clean": 61.35833333333333,
+    "adapted_delta": 30.161666666666697,
+    "amplification": 0.9033333333333573,
+    "clean_adapt_gain": -0.4833333333333414,
+    "leaky_adapt_gain": 0.4200000000000159
+   },
+   {
+    "split": "S04",
+    "pre_leaky": 77.96833333333333,
+    "pre_clean": 75.925,
+    "pre_delta": 2.0433333333333366,
+    "adapted_leaky": 80.295,
+    "adapted_clean": 70.30333333333333,
+    "adapted_delta": 9.991666666666674,
+    "amplification": 7.948333333333338,
+    "clean_adapt_gain": -5.62166666666667,
+    "leaky_adapt_gain": 2.326666666666668
+   },
+   {
+    "split": "S05",
+    "pre_leaky": 96.23666666666666,
+    "pre_clean": 31.931666666666672,
+    "pre_delta": 64.30499999999999,
+    "adapted_leaky": 98.44666666666667,
+    "adapted_clean": 35.913333333333334,
+    "adapted_delta": 62.53333333333334,
+    "amplification": -1.771666666666654,
+    "clean_adapt_gain": 3.981666666666662,
+    "leaky_adapt_gain": 2.210000000000008
+   },
+   {
+    "split": "S06",
+    "pre_leaky": 88.01833333333333,
+    "pre_clean": 66.85833333333333,
+    "pre_delta": 21.159999999999997,
+    "adapted_leaky": 88.36666666666667,
+    "adapted_clean": 68.62666666666667,
+    "adapted_delta": 19.74000000000001,
+    "amplification": -1.4199999999999875,
+    "clean_adapt_gain": 1.7683333333333309,
+    "leaky_adapt_gain": 0.3483333333333434
+   },
+   {
+    "split": "S07",
+    "pre_leaky": 96.19333333333334,
+    "pre_clean": 55.04666666666666,
+    "pre_delta": 41.14666666666668,
+    "adapted_leaky": 98.91000000000001,
+    "adapted_clean": 45.39833333333334,
+    "adapted_delta": 53.51166666666667,
+    "amplification": 12.364999999999988,
+    "clean_adapt_gain": -9.64833333333332,
+    "leaky_adapt_gain": 2.7166666666666686
+   },
+   {
+    "split": "S08",
+    "pre_leaky": 95.34166666666668,
+    "pre_clean": 40.300000000000004,
+    "pre_delta": 55.04166666666668,
+    "adapted_leaky": 97.435,
+    "adapted_clean": 35.43833333333333,
+    "adapted_delta": 61.99666666666667,
+    "amplification": 6.954999999999991,
+    "clean_adapt_gain": -4.861666666666672,
+    "leaky_adapt_gain": 2.0933333333333195
+   },
+   {
+    "split": "S09",
+    "pre_leaky": 87.76,
+    "pre_clean": 63.39833333333334,
+    "pre_delta": 24.361666666666665,
+    "adapted_leaky": 91.29166666666667,
+    "adapted_clean": 54.50999999999999,
+    "adapted_delta": 36.78166666666668,
+    "amplification": 12.420000000000016,
+    "clean_adapt_gain": -8.88833333333335,
+    "leaky_adapt_gain": 3.5316666666666663
+   }
+  ],
+  "summary": {
+   "median_pre_delta": 35.10916666666666,
+   "ci_pre_delta": [
+    24.361666666666665,
+    50.601666666666674
+   ],
+   "pre_delta_positive": 10,
+   "p_pre_delta_greater": 0.0009765625,
+   "median_adapted_delta": 36.56666666666668,
+   "median_amplification": 3.94583333333334,
+   "ci_amplification": [
+    -1.4199999999999875,
+    10.156666666666663
+   ],
+   "amplification_positive": 7,
+   "p_amplification_two_sided": 0.189453125,
+   "median_clean_adapt_gain": -2.8016666666666694,
+   "clean_adapt_gain_positive": 3,
+   "median_leaky_adapt_gain": 2.1516666666666637,
+   "mean_pre_leaky": 90.53566666666667,
+   "mean_pre_clean": 54.722
+  },
+  "status": "C113 corrected SHOT (patch v2)"
  }
 }

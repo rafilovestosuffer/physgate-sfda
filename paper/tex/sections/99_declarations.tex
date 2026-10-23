@@ -32,7 +32,7 @@ artifacts that back every number in this paper. The audit scripts and result sum
 The evaluation protocol, gate implementations, analysis and figure scripts are released with the research data. SDALR is
 run from its authors' released code (BdLab405/SDALR, commit fb9c379), which the repository fetches by script because
 it carries no licence for redistribution; the evaluation wrapper and the gate hook described in Section~\ref{sec:protocol} are
-added around it without changing its training code. The local SHOT implementation is retained for audit only; its indexing defect is documented in Supplementary~S6 and its outputs are not used.
+added around it without changing its training code. SHOT runs from our implementation of its objective on the same backbone (runners/shot\_patch.py, version 2); the first version, whose indexing defect is documented in Supplementary~S6, is retained for audit only and its outputs are not used.
 
 \section*{Declaration of generative AI and AI-assisted technologies in the manuscript preparation process}
 

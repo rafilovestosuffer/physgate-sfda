@@ -91,7 +91,9 @@ def main():
     check(abs(corrected["diversity_monte_carlo"]["corrected_p"] - 1 / 100001) < 1e-12,
           "Monte Carlo plus-one correction mismatch")
     import hashlib
+    updates = corrected.get("source_sha256_updates", {})   # files legitimately changed after the 9 Oct audit (C113)
     for rel, expected in corrected["source_sha256"].items():
+        expected = updates.get(rel, {}).get("current", expected)
         check(hashlib.sha256((ROOT / rel).read_bytes()).hexdigest() == expected,
               f"reporting source checksum mismatch: {rel}")
 

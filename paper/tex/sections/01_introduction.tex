@@ -55,22 +55,22 @@ This paper follows one thread through those questions, with decision rules docum
         (Section~\ref{sec:res-gating}).
 \end{enumerate}
 
-The novelty is narrow, and we state it against the nearest work. That bearing overlap inflates diagnosis accuracy is
-established: Hendriks et al.\ on CWRU \cite{hendriks2022}, Wheat et al.\ across run, day and part splits
-\cite{wheat2024leakage}, and Vieira et al., who also hold the training set fixed and change only the test set, including a
-same-bearing, same-condition repetition-wise split on Paderborn \cite[Section~6.2]{vieira2026}. Knap et al.\ built a
-recording-separated cross-domain benchmark with one cross-bearing scenario \cite{knap2026leakagesafe}, Farag benchmarks
-adversarial domain adaptation on CWRU and Paderborn subsets split by fault level and operating condition
-\cite{farag2025benchmark}, and concurrent
-work adapts across Paderborn conditions with held-out bearings, without a leaky baseline or a source-free method
-\cite{nagaswetha2026}. All of these are supervised, non-adaptive or source-dependent. What this paper adds is (i) the
-fixed-source design applied to SFDA, with a source-only arm that locates the loss before adaptation and a within-bearing
-contrast that holds the specimen fixed; (ii) a pre-specified source-diversity curve and a kinematic-feature control that
-bear on why unseen bearings fail; (iii) the perfect-pseudo-label reference of Schlachter et al.\ \cite{schlachter2025},
-applied as a keep-or-withhold oracle and set against the loss; and (iv) false-acceptance curves on real healthy recordings
-for the physics gates that such methods insert, with the gates' coverage traced to the size of each specimen's damage.
+This paper adds four things, each stated against its nearest neighbour. (i) The fixed-source design is applied to
+source-free adaptation on two rigs, with a source-only arm that locates the loss before adaptation and a within-bearing
+contrast that holds the specimen fixed. (ii) A pre-specified source-diversity curve and a kinematic-feature control bear
+on why unseen bearings fail. (iii) The perfect-pseudo-label reference of Schlachter et al.\ \cite{schlachter2025} is
+applied as a keep-or-withhold oracle and set against the loss. (iv) False-acceptance curves on real healthy recordings are
+measured for the physics gates that such methods insert, with the gates' coverage traced to the size of each specimen's
+damage. The contribution is knowledge about where the error of source-free bearing diagnosis lies, what physics-based
+filtering can and cannot repair, and the evidence a result in this area should carry before it is believed.
 
-We claim no new network, detector or adaptation algorithm. Envelope analysis \cite{randall2011} and statistical thresholds
-for the squared envelope spectrum \cite{borghesani2013} are established, and harmonic-coordinate features close to the ones used here were published by Matania et
-al.\ \cite{matania2025}. The contribution is knowledge about where the error of source-free bearing diagnosis lies, what
-physics-based filtering can and cannot repair, and the evidence a result in this area should carry before it is believed.
+That bearing overlap inflates diagnosis accuracy is established: Hendriks et al.\ on CWRU \cite{hendriks2022}, Wheat et
+al.\ across run, day and part splits \cite{wheat2024leakage}, and Vieira et al., who also hold the training set fixed and
+change only the test set, including a same-bearing, same-condition repetition-wise split on Paderborn
+\cite[Section~6.2]{vieira2026}. Knap et al.\ built a recording-separated cross-domain benchmark with one cross-bearing
+scenario \cite{knap2026leakagesafe}, Farag benchmarks adversarial domain adaptation on CWRU and Paderborn subsets split by
+fault level and operating condition \cite{farag2025benchmark}, and concurrent work adapts across Paderborn conditions with
+held-out bearings, without a leaky baseline or a source-free method \cite{nagaswetha2026}. All of these are supervised,
+non-adaptive or source-dependent. We claim no new network, detector or adaptation algorithm: envelope analysis
+\cite{randall2011} and statistical thresholds for the squared envelope spectrum \cite{borghesani2013} are established, and
+harmonic-coordinate features close to the ones used here were published by Matania et al.\ \cite{matania2025}.

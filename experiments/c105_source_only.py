@@ -44,6 +44,8 @@ def main():
     K, S, F = D["k10"], D["shot"], D["fold"]
     sdalr = [row(K[(s, s, "none")], K[(s, s + "c", "none")], s) for s in SPLITS]
     shot = [row(S[(s, s)], S[(s, s + "c")], s) for s in SPLITS]
+    S2 = D["shot2"]                                    # C113 corrected SHOT; included only when all ten splits are in
+    shot2 = [row(S2[(s, s)], S2[(s, s + "c")], s) for s in SPLITS] if all((s, s) in S2 and (s, s + "c") in S2 for s in SPLITS) else None
     folds = []
     for f, o in (("A", "B"), ("B", "A")):
         job = f"m1-f{f.lower()}"
@@ -58,10 +60,13 @@ def main():
                              "fold_job_adapted_mean": mean6(a, "adapted"), "gating_job_adapted_mean": mean6(b, "adapted")}
     out = {"entry": "C105", "status": "post-hoc, descriptive",
            "sdalr_ten_splits": {"rows": sdalr, "summary": summarise(sdalr)},
-           "shot_ten_splits": {"rows": shot, "summary": summarise(shot)},
+           "shot_ten_splits": {"rows": shot, "summary": summarise(shot),
+                               "status": "WITHDRAWN: patch v1 (C100) pseudo-labels misaligned; audit only"},
            "sdalr_folds_fold_job": folds, "cross_job_pre_update": prov}
+    if shot2 is not None:
+        out["shot2_ten_splits"] = {"rows": shot2, "summary": summarise(shot2), "status": "C113 corrected SHOT (patch v2)"}
     dump(out, ROOT / "results" / "c105" / "c105_source_only.json")
-    for k in ("sdalr_ten_splits", "shot_ten_splits"):
+    for k in ("sdalr_ten_splits", "shot_ten_splits") + (("shot2_ten_splits",) if shot2 is not None else ()):
         print(k, {a: (round(b, 3) if isinstance(b, float) else b) for a, b in out[k]["summary"].items()})
     for r in folds:
         print(r["split"], {a: round(b, 2) for a, b in r.items() if isinstance(b, float)})

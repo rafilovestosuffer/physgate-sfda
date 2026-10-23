@@ -117,6 +117,7 @@ chronology is not independently certified by this table. Full text and justifica
 | C110 | Source-diversity learning curve (pre-registered 2026-10-02, before any run; Kaggle CPU). | pre-specified exploratory follow-up | Internal review round 6 asked whether 3 specimens per class under-sample damage-signature variability; Vieira et al. report that the number of training bearings is decisive for supervised models. |
 | C111 | Identity-probe ablations (pre-registered 2026-10-02, before any run; local CPU, seconds). | pre-specified exploratory follow-up | Identifiability by a probe is not use by a classifier; the reviewer asked what the probe actually keys on. |
 | C112 | Kinematic-feature forest under the leakage design (pre-registered 2026-10-02, before any run; local CPU, single process). | pre-specified exploratory follow-up | The networks see 2,048-sample windows (32 ms, ~2.5 outer-race impacts, ~31 Hz envelope resolution) and cannot represent the kinematic signature; "any source-trained classifier" must be tested on one that can. |
+| C113 | Corrected SHOT on the ten C88 splits (pre-registered 2026-10-22, before any run; Kaggle T4, both accounts). | correction | Internal review round 7 (paper/review_2026-10-22/REVIEW.md): MSSP's guideline treats a single-method application as a case study; the manuscript's SFDA evidence is limited to SDALR only because of this defect, and the co |
 
 ## Multiplicity family at each stage of revision
 

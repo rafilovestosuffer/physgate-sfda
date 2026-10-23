@@ -24,7 +24,10 @@ def list_kernels(user: str, page_size: int = 50) -> list[dict]:
                   "--page-size", str(page_size), "--sort-by", "dateRun", check=False)
     if cp.returncode != 0:
         raise RuntimeError(f"kaggle kernels list failed: {cp.stderr.strip()}")
-    text = "\n".join(line for line in cp.stdout.splitlines() if line.strip())
+    lines = [line for line in cp.stdout.splitlines() if line.strip()]
+    # the CLI may print an "outdated kaggle version" warning before the CSV header; start at the header
+    start = next((i for i, line in enumerate(lines) if line.startswith("ref,")), 0)
+    text = "\n".join(lines[start:])
     return list(csv.DictReader(io.StringIO(text)))
 
 

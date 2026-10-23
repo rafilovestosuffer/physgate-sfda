@@ -47,7 +47,7 @@ accuracy before any update. On the ten splits the source model alone already los
 (conditional CI 24.4--50.6, 10 of 10; Table~\ref{tab:collapse}, column ``Source-only $\Delta$''). SDALR's adaptation then changes the gap
 by a median $+4.7$ points (positive in 8 of 10): it raises leaky accuracy by a median 2.0 points and
 lowers clean accuracy in 7 of 10 splits (median $-2.3$). On the folds adaptation adds 3.4 and 2.2 points on clean targets,
-so the folds alone would suggest that adaptation helps. The gap therefore precedes adaptation and remains substantial afterwards. The 4.7-point median of paired gap changes is not the difference between the separate 36.2- and 35.1-point medians. These descriptive outcomes do not establish a population-level amplification effect or equivalence to no change.
+so the folds alone would suggest that adaptation helps. The gap therefore precedes adaptation and remains substantial afterwards. The 4.7-point median of paired gap changes is not the difference between the separate 36.2- and 35.1-point medians.
 
 \textbf{The same bearing, seen and unseen.} Leaky and clean targets hold different bearings, so $\Delta_{\mathrm{leak}}$ also
 contains the difference in difficulty between two bearing sets. Across the ten splits every bearing is in the source in some
@@ -66,7 +66,9 @@ the leaky--clean contrast cannot.
 
 \input{tables/t7_hust}
 
-Table~\ref{tab:methods} places SDALR beside non-adaptive controls under the same bearing splits. No second SFDA method is reported (Section~\ref{sec:protocol}); method-generality claims are restricted accordingly.
+Table~\ref{tab:methods} places SDALR beside SHOT and non-adaptive controls under the same bearing splits.
+
+\textbf{SHOT.} Run from the same source checkpoints, SHOT loses a median 36.6 points on bearing-disjoint targets (conditional CI 22.5--59.1; positive in 10 of 10 splits), meeting the pre-specified rule (median at least 10 points, sign-flip $p<0.05$). Its source-only gap is the 35.1 points of the shared source model; adaptation raises the gap by a median 3.9 points and lowers clean accuracy by a median 2.8 points (leaky accuracy changes by a median 2.2). On bearing-disjoint targets SHOT is lower than SDALR by a median 1.4 points (4 of 10 splits higher). SHOT is SDALR's own base rather than an independent family, so the two do not establish method generality.
 
 Random forests \cite{pedregosa2011sklearn} trained on the same source windows with no adaptation at all lose a median 22.7
 points on ten time-domain statistics (conditional CI 16.4--32.5) and 32.1 points on the combined feature set (conditional CI 25.5--43.3), each in 10
@@ -104,7 +106,7 @@ bearings (dark) and on one unseen bearing per class (orange), median and interqu
 \label{fig:bearings}
 \end{figure}
 
-Specimen-associated features and inadequate coverage of damage variation can both contribute to poor transfer, and these explanations are not mutually exclusive. We use probes and a source-expansion curve to describe the available information and sensitivity to the training set; these controls do not isolate a causal mechanism for SDALR.
+Specimen-associated features and inadequate coverage of damage variation can both contribute to poor transfer, and these explanations are not mutually exclusive. Probes and a source-expansion curve describe the available information and the sensitivity to the training set.
 
 \textbf{Specimens are identifiable, but reliance on identity is not established.} A logistic-regression probe fitted within each
 class on record-disjoint halves identifies the physical bearing in 507 of 508 held-out recordings from the frozen SDALR source
@@ -120,7 +122,7 @@ bearings per class and tested on a fixed unseen bearing per class, for 30 test t
 (Fig.~\ref{fig:bearings}b). Balanced accuracy on the unseen bearings rises from a median \SI{45.9}{\percent} with one
 specimen per class to 57.9, 66.9 and \SI{74.6}{\percent} with two, three and four, while accuracy on held-out recordings of
 the training bearings stays at 95--100\,\%. The paired gain from one to four specimens has a median of 15.4 points over the
-triples (25 of 30 positive). This is exploratory evidence conditional on the shared bearing pool; the Monte Carlo calculation is in Supplementary~S6.
+triples (25 of 30 positive). The Monte Carlo calculation is in Supplementary~S6.
 
 The intervention increases both source diversity and training volume: median training-window counts are 1043, 2129, 3210 and 4265 as the number of bearings per class rises from one to four. Source subsets at successive sizes were drawn separately rather than nested. The curve is consistent with inadequate source coverage, as in the supervised observations of Vieira et al.\ \cite{vieira2026}, but does not isolate diversity from sample count or rule out reliance on specimen-associated features. It is a forest result, not a source-diversity intervention on SDALR. The 28.8-point difference between endpoint medians and the 15.4-point median paired gain are different summaries of the same outcomes.
 
