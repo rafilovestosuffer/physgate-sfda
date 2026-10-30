@@ -31,7 +31,7 @@ CLAIMS = [
     ("results/c114/c114_unseen_labels.json", "Labels given to seen and unseen bearings; KI04/KI14 sensitivity (Sections 3, 6.4; S6.10)", ""),
     ("results/c115/c115_intervals.json", "Order-statistic intervals for every reported median; leave-one-bearing-out (Sections 4.5, 6; S6.11)", ""),
     ("results/c116/c116_gate_override.json", "Gate-override comparison, gain by certifiable bearings, SDALR reliability split (Section 6.6, Table 8)", ""),
-    ("results/m4b/M4B_RESULT.md", "Comb gate against Smith and Randall's CWRU diagnosability grades (Section 6.6, S2.6)", ""),
+    ("results/m4b/M4b_RESULT.md", "Comb gate against Smith and Randall's CWRU diagnosability grades (Section 6.6, S2.6)", ""),
 
     ("results/M0_PU_RESULT.md", "Reproduction of the published method on its own tasks (Section 6.1)", "m0-pu"),
     ("results/M1_RESULT.md", "Collapse on the two mechanical folds (Section 6.2)", "physgate-m1"),

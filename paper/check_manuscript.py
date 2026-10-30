@@ -69,7 +69,7 @@ def main():
         ("44.6 rather than", "results/c114/c114_unseen_labels.json", "median gap without KI04 and KI14 (C114)", "44.63"),
         ("8.7 points", "results/c116/c116_gate_override.json", "median gate-override gain (C116)", "8.70"),
         ("29.3 and 43.5", "results/c115/c115_intervals.json", "leave-one-bearing-out range of the median gap (C115)", "29.31"),
-        ("Spearman 0.57", "results/m4b/M4B_RESULT.md", "comb gate against Smith-Randall grades (M4b)", "0.565"),
+        ("Spearman 0.57", "results/m4b/M4b_RESULT.md", "comb gate against Smith-Randall grades (M4b)", "0.565"),
         ("95th percentile 3.9", "results/c116/c116_gate_override.json", "SDALR unreliable share per round (C116)", "3.929"),
         ("+10.3 to +10.9", "results/c116/c116_gate_override.json", "override gain over fold seeds (C116)", "10.263"),
         ("8 times in 374", "results/roc/roc_pu.json", "envelope-rule wrong-family verdicts", "\"wrong_family\": 8"),

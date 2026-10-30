@@ -19,7 +19,7 @@ All SHA-256 values in this supplement are computed on file content with line end
 | `results/c114/c114_unseen_labels.json` | Labels given to seen and unseen bearings; KI04/KI14 sensitivity (Sections 3, 6.4; S6.10) | deterministic analysis of retained data or artifacts; script in experiments/ | `001e82e6acd7a6d6` |
 | `results/c115/c115_intervals.json` | Order-statistic intervals for every reported median; leave-one-bearing-out (Sections 4.5, 6; S6.11) | deterministic analysis of retained data or artifacts; script in experiments/ | `64d4c48005139ea4` |
 | `results/c116/c116_gate_override.json` | Gate-override comparison, gain by certifiable bearings, SDALR reliability split (Section 6.6, Table 8) | deterministic analysis of retained data or artifacts; script in experiments/ | `2be59ad4e32aa5ff` |
-| `results/m4b/M4B_RESULT.md` | Comb gate against Smith and Randall's CWRU diagnosability grades (Section 6.6, S2.6) | deterministic analysis of retained data or artifacts; script in experiments/ | `a838450a672fc484` |
+| `results/m4b/M4b_RESULT.md` | Comb gate against Smith and Randall's CWRU diagnosability grades (Section 6.6, S2.6) | deterministic analysis of retained data or artifacts; script in experiments/ | `a838450a672fc484` |
 | `results/M0_PU_RESULT.md` | Reproduction of the published method on its own tasks (Section 6.1) | 24 ledger rows (rafiurrahman01) | `d7b14b5c3fb754d2` |
 | `results/M1_RESULT.md` | Collapse on the two mechanical folds (Section 6.2) | 48 ledger rows (rafiurrahman01) | `51c898427e02bc23` |
 | `results/c88/C88_RESULT.md` | Ten pre-specified random bearing splits: collapse, gating, decomposition | 240 ledger rows (rafiurrahman01, rhrhrhrhrh) | `5adae7364e14bf91` |
@@ -163,7 +163,7 @@ Every script that computes a reported number, builds a table or figure, or ran o
 | `kaggle/kernels/shot_k10_g2.py` | `a8e1448057ff553f` |
 | `kaggle/kernels/shot_k10_g3.py` | `d422c016022ca162` |
 | `kaggle/kernels/shot_k10_g4.py` | `24173d1423a5e6ea` |
-| `paper/check_manuscript.py` | `4a8230f83acf0da6` |
+| `paper/check_manuscript.py` | `0f4f95a4b2128b4a` |
 | `paper/figures/build_figures.py` | `a904e051b275bd98` |
 | `paper/figures/build_schematics.py` | `726c3eab767ebc99` |
 | `paper/figures/fig1_design.py` | `1d2c54cda18ad78b` |
@@ -175,7 +175,7 @@ Every script that computes a reported number, builds a table or figure, or ran o
 | `paper/figures/validate_figures.py` | `1bbb423e947c7d71` |
 | `paper/make_s1.py` | `a23f202fcd30c2cd` |
 | `paper/make_s3_table.py` | `b9a62c87629200db` |
-| `paper/make_s4.py` | `4f7edb12060e42f0` |
+| `paper/make_s4.py` | `f52ef9e50ee59eed` |
 | `paper/make_tables.py` | `da25baf97c227e6a` |
 | `paper/revision_reporting.py` | `a403fa39e52d3458` |
 | `runners/bist.py` | `03571366b13b4eff` |
