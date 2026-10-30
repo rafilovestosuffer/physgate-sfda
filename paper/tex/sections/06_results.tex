@@ -91,8 +91,8 @@ is \SI{98.7}{\percent} and mean clean accuracy \SI{59.6}{\percent}, a median spl
 
 \subsubsection{Without any condition shift}
 
-Every task considered so far crosses operating conditions. In a pre-specified control the time-
-statistics forest is trained, at each condition separately, on half of the source bearings' recordings and tested at the
+Every task considered so far crosses operating conditions. In a pre-specified control the
+time-statistics forest is trained, at each condition separately, on half of the source bearings' recordings and tested at the
 \emph{same} condition on the held-out recordings of the same bearings and on recordings of the complementary bearings;
 recordings never cross the split, which is the separation used by recording-level benchmarks \cite{knap2026leakagesafe} and
 the repetition-wise split of Vieira et al.\ \cite{vieira2026}. Balanced accuracy falls by a median of 29.7 points (conditional CI
@@ -150,7 +150,7 @@ In a post-hoc purity analysis, an adapted model that misclassifies an unseen bea
 does so for all its windows: with fold~B as source every clean bearing receives a single label on at least
 \SI{99.9}{\percent} of its windows over the six tasks (in the gating job's per-window predictions), and in four of the tasks
 the resulting \SI{55.33}{\percent} is exact arithmetic (three healthy and two fault bearings right,
-$(2\,000 + 660 + 660)/6\,000$).
+$(2000 + 660 + 660)/6000$).
 But block labelling is equally common when the bearing was seen: per task, \SI{90}{\percent} of seen and \SI{89}{\percent} of
 unseen bearing--task pairs receive one label for at least \SI{99}{\percent} of their windows, and the fold~A direction is not
 pure (K004 0.67, KI17 0.56). A specimen's windows are similar to each other, so a classifier decides the specimen as a whole;

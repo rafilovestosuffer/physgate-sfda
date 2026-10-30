@@ -2,6 +2,8 @@
 
 Generated from PROTOCOL.md by paper/make_s1.py. Status describes the immutable protocol log;
 chronology is not independently certified by this table. Full text and justification: PROTOCOL.md. Reporting corrections are in S6.
+Protocol entries quoted here use 'pre-registered' for decisions committed to the version-controlled protocol before
+the corresponding run; the study was not registered with an external registry (main text, Section 4.6).
 
 | ID | change | type | reason (abridged) |
 |---|---|---|---|
@@ -121,6 +123,8 @@ chronology is not independently certified by this table. Full text and justifica
 | C115 | Order-statistic intervals for every reported median, and leave-one-bearing-out influence (post-hoc reporting change; no new test; written 2026-10-24 before the script ran). | post-hoc (descriptive) | The review's arithmetic was correct; order-statistic intervals are the standard distribution-free interval for a median and cost nothing. |
 | C116 | Gate-override comparison and gate gain by certifiable bearings (post-hoc, descriptive; no decision rule; written 2026-10-24 before the script ran). | post-hoc (descriptive) | The external review asked whether adaptation adds anything beyond the gate's own verdicts. |
 | C117 | Disclosure of a departure from the §5 seed rule (reporting; no frozen item changed; written 2026-10-24). | specification / reporting | The external review asked whether the unseen-bearing error is a missed fault or a family confusion; verifying its damage-table point found the second damages. |
+| C118 | Corrections from the external review of 2026-10-30 (reporting; no new run, no changed result; no frozen item changed). | correction | The external review's arithmetic and code reading were checked independently (exact enumeration; third_party/SDALR/tar_adaptation_RES_PU.py) and found correct. |
+| C119 | Corrections from the external review v3 of 2026-10-30 (reporting; no new run, no changed result; no frozen item changed). | correction | Each point was checked independently (draw script data_prep/draw_splits_k10.py: uniform without replacement over 3,999 sets; scipy hypergeometric and exact binomial coefficients; rev6_load.boot_median_ci rerun in split o |
 
 ## Multiplicity family at each stage of revision
 

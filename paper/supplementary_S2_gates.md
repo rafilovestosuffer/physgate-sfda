@@ -70,7 +70,7 @@ Each bearing contributes 80 recordings. Counts are descriptive; repeated recordi
 
 The surrogate-null comb (cepstrum arm, alpha = 0.05) against the per-record diagnosability grade of the CWRU benchmark of
 Smith and Randall (2015), as collapsed in predictive-maintenance-mcp, on 64 drive-end records (60 fault, 4 normal), first
-5.000 s, per-file speed [src: results/m4b/M4B_RESULT.md; pre-registered as PROTOCOL C29, re-specified onto this detector by
+5.000 s, per-file speed [src: results/m4b/M4B_RESULT.md; pre-specified as PROTOCOL C29, re-specified onto this detector by
 C31]. Spearman rho between grade and agreement +0.565 (one-sided p < 0.0001).
 
 | Grade | Records | Gate agreement |

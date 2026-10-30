@@ -1,6 +1,6 @@
 # Supplementary S4 — traceability of every reported number
 
-Each row is a result file cited by the manuscript, what it establishes, the Kaggle account that produced the runs behind it, and the SHA-256 (first 16 hex digits) of the file as submitted. The experiment ledger (`results/ledger/*.csv`, 1379 rows) lists every individual run with its kernel URL, git commit and retained artifact path. Run artifacts and every script listed here are in the public archive release v1.3 (https://doi.org/10.5281/zenodo.23105809), which contains the original runs of v1.0-submission, the corrected SHOT run (C113) and the post-hoc analyses C114-C116; reporting-only corrections are included in it. Reporting ledger rows are labelled separately and are not new experimental runs.
+Each row is a result file cited by the manuscript, what it establishes, the Kaggle account that produced the runs behind it, and the SHA-256 (first 16 hex digits) of the file as submitted. The experiment ledger (`results/ledger/*.csv`, 1379 rows) lists every individual run with its kernel URL, git commit and retained artifact path. Run artifacts and every script listed here are in the public archive release v1.4 (https://doi.org/10.5281/zenodo.23105809), which contains the original runs of v1.0-submission, the corrected SHOT run (C113) and the post-hoc analyses C114-C116; reporting-only corrections are included in it. Reporting ledger rows are labelled separately and are not new experimental runs.
 
 All SHA-256 values in this supplement are computed on file content with line endings normalised to LF, so they verify identically on any operating system (strip carriage returns before hashing).
 
@@ -173,15 +173,9 @@ Every script that computes a reported number, builds a table or figure, or ran o
 | `paper/figures/qa_layout.py` | `557f3de37bab2f57` |
 | `paper/figures/style.py` | `9688f04c419e17df` |
 | `paper/figures/validate_figures.py` | `1bbb423e947c7d71` |
-| `paper/make_em_source.py` | `9f1af2eb951ed56e` |
-| `paper/make_highlights.py` | `44a5ab79019b670a` |
-| `paper/make_s1.py` | `296569aabad53943` |
+| `paper/make_s1.py` | `a23f202fcd30c2cd` |
 | `paper/make_s3_table.py` | `b9a62c87629200db` |
-| `paper/make_s4.py` | `5f6f9d3f5fdba051` |
-| `paper/make_submission.py` | `0b7c134b66936ffa` |
-| `paper/make_submission_documents.py` | `198601a49b1900fd` |
-| `paper/make_submission_pdfs.py` | `b4a82aa08b3b61ce` |
-| `paper/make_supplement_pdfs.py` | `a70e595258d2c6d7` |
+| `paper/make_s4.py` | `4f7edb12060e42f0` |
 | `paper/make_tables.py` | `da25baf97c227e6a` |
 | `paper/revision_reporting.py` | `a403fa39e52d3458` |
 | `runners/bist.py` | `03571366b13b4eff` |
@@ -190,7 +184,7 @@ Every script that computes a reported number, builds a table or figure, or ran o
 
 ## Regenerating reporting files only
 
-Use the archived experiment repository (v1.3); preserve the directory layout. No training is required. Historical experiment scripts remain available for audit; the withdrawn SHOT outputs must not be interpreted as valid SHOT performance.
+Use the archived experiment repository (v1.4); preserve the directory layout. No training is required. Historical experiment scripts remain available for audit; the withdrawn SHOT outputs must not be interpreted as valid SHOT performance.
 
 ```
 python paper/revision_reporting.py

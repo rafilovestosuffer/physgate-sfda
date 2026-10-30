@@ -15,7 +15,7 @@ Date: 22 October 2026. This supplement maps the 32 items of the REFORMS checklis
 | 2d | Documentation for reproduction | repo README and PROTOCOL.md; S4 traceability |
 | 2e | Reproduction script | repo: experiments/*.py regenerate every result file; paper/make_tables.py regenerates every table; paper/check_manuscript.py verifies the headline numbers |
 | 3a | Data sources | Main 3, Table 2 |
-| 3b | Sampling frame | Main 3: all 6 healthy, 5 real outer-race and 6 real inner-race Paderborn bearings; HUST types 6204-6208; Main 4.2: splits drawn uniformly from the 4,000 possible 3/3/3 source sets |
+| 3b | Sampling frame | Main 3: all 6 healthy, 5 real outer-race and 6 real inner-race Paderborn bearings; HUST types 6204-6208; Main 4.2 and 4.5: splits drawn uniformly without replacement from the 3,999 eligible 3/3/3 source sets (the 4,000 possible sets minus mechanical fold A) |
 | 3c | Why the dataset is useful for the task | Main 3: several physical bearings per class and several conditions per bearing, as the paired design requires |
 | 3d | Outcome variable and descriptive statistics | Main 3: label space {normal, inner race, outer race}; Main 4.1: 2,000 windows per class, so window accuracy equals balanced accuracy |
 | 3e | Sample size and outcome frequencies | Main 4.1 (windows per class and per recording), Table 2 (recordings), Table 7 (480 healthy recordings, 1,839 single-fault recordings) |

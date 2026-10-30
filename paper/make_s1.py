@@ -24,7 +24,9 @@ for line in (ROOT / "PROTOCOL.md").read_text(encoding="utf-8").splitlines():
 rows.sort()
 out = ["# Supplementary S1 — protocol changes: pre-specified versus changed", "",
        "Generated from PROTOCOL.md by paper/make_s1.py. Status describes the immutable protocol log;",
-       "chronology is not independently certified by this table. Full text and justification: PROTOCOL.md. Reporting corrections are in S6.", "",
+       "chronology is not independently certified by this table. Full text and justification: PROTOCOL.md. Reporting corrections are in S6.",
+       "Protocol entries quoted here use 'pre-registered' for decisions committed to the version-controlled protocol before",
+       "the corresponding run; the study was not registered with an external registry (main text, Section 4.6).", "",
        "| ID | change | type | reason (abridged) |", "|---|---|---|---|"]
 out += [f"| {c} | {t} | {k} | {w} |" for _, c, t, k, w in rows]
 

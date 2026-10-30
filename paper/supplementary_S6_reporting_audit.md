@@ -2,11 +2,11 @@
 
 Revision date: 9 October 2026. No model was fitted, no training job was submitted and no new experiment was conducted for this revision. That statement covers the reporting revision of 9-10 October; the corrected SHOT run of 22-24 October (PROTOCOL C113, S6.1) is the only experiment added after it, and the sections marked as added later analyse retained outputs only. All numerical corrections below use saved outputs. The original PROTOCOL.md, experimental outputs and original ledgers remain unchanged. A separate reporting ledger identifies the derived summaries.
 
-## S6.1 Withdrawn local SHOT comparison
+## S6.1 Withdrawn first SHOT implementation and its correction
 
-The intended SHOT comparator is withdrawn as evidence about SHOT. In runners/shot_patch.py, obtain_label concatenates features in loader traversal order and returns the resulting pseudo-label array in that order. The shared SDALR tools.args_data_load creates shuffled loaders. train_target later accesses mem_label[tar_idx], where tar_idx is the dataset sample index. The local patch neither restores dataset order nor uses a sequential loader for the pseudo-label pass. Consequently the assigned pseudo-labels need not belong to the samples receiving them.
+The first local SHOT implementation (C85 and C100) is withdrawn as evidence about SHOT; the corrected run (C113) below replaces it. In runners/shot_patch.py, obtain_label concatenates features in loader traversal order and returns the resulting pseudo-label array in that order. The shared SDALR tools.args_data_load creates shuffled loaders. train_target later accesses mem_label[tar_idx], where tar_idx is the dataset sample index. The local patch neither restores dataset order nor uses a sequential loader for the pseudo-label pass. Consequently the assigned pseudo-labels need not belong to the samples receiving them.
 
-This is a static code finding. Results in C85 and C100 cannot establish SHOT performance; their code and outputs remain in the experimental archive for audit only. The defect was corrected on 22 October 2026 (shot_patch v2, PROTOCOL C113: pseudo-labels scattered into dataset order, loader pass checked, unit-tested) and SHOT was re-run on the ten splits from the same source checkpoints (kernels physgate-shot2-k10-g1 to g4). Corrected result: median split-level loss 36.6 pp (conditional order-statistic interval 19.7--62.0), positive in 10 of 10; nominal one-sided sign-flip p = 0.0010; pre-registered rule met. The manuscript reports only the corrected run. The historical C96 multiplicity family is retained unchanged, including its withdrawn member, solely for traceability. Adjusted p-values remain nominal, not validation of the withdrawn comparison.
+This is a static code finding. Results in C85 and C100 cannot establish SHOT performance; their code and outputs remain in the experimental archive for audit only. The defect was corrected on 22 October 2026 (shot_patch v2, PROTOCOL C113: pseudo-labels scattered into dataset order, loader pass checked, unit-tested) and SHOT was re-run on the ten splits from the same source checkpoints (kernels physgate-shot2-k10-g1 to g4). Corrected result: median split-level loss 36.6 pp (conditional order-statistic interval 19.7--62.0), positive in 10 of 10; nominal one-sided sign-flip p = 0.0010; pre-specified rule met. The manuscript reports only the corrected run. The historical C96 multiplicity family is retained unchanged, including its withdrawn member, solely for traceability. Adjusted p-values remain nominal, not validation of the withdrawn comparison.
 
 ## S6.2 Architecture and optimisation
 
@@ -78,7 +78,7 @@ Paired arms use the same source checkpoint according to job construction. Identi
 
 ## S6.7 Revision provenance and availability
 
-Reaggregation: paper/revision_reporting.py. Derived output: results/reporting_2026_10_09/reporting_corrections.json. Reporting lineage: results/ledger/reporting_2026_10_09.csv. Source SHA-256 checksums are recorded in that JSON. The original experimental release v1.0-submission is archived at https://doi.org/10.5281/zenodo.23105810. Release v1.1, archived at https://doi.org/10.5281/zenodo.23603189, adds this reporting revision and the corrected SHOT run (C113); the revised tables and figures regenerate from v1.1 directly. Release v1.2, archived at https://doi.org/10.5281/zenodo.23799514, adds the post-hoc analyses C114-C116 (scripts and result summaries) and the reporting changes of 30 October 2026; release v1.3, archived at https://doi.org/10.5281/zenodo.23105809, adds the corrections of the external review of 30 October 2026 (PROTOCOL C118). Supplementary S4 and the package manifest enumerate sources.
+Reaggregation: paper/revision_reporting.py. Derived output: results/reporting_2026_10_09/reporting_corrections.json. Reporting lineage: results/ledger/reporting_2026_10_09.csv. Source SHA-256 checksums are recorded in that JSON. The original experimental release v1.0-submission is archived at https://doi.org/10.5281/zenodo.23105810. Release v1.1, archived at https://doi.org/10.5281/zenodo.23603189, adds this reporting revision and the corrected SHOT run (C113); the revised tables and figures regenerate from v1.1 directly. Release v1.2, archived at https://doi.org/10.5281/zenodo.23799514, adds the post-hoc analyses C114-C116 (scripts and result summaries) and the reporting changes of 30 October 2026; release v1.3, archived at https://doi.org/10.5281/zenodo.23803399, adds the corrections of the external review of 30 October 2026 (PROTOCOL C118); release v1.4, archived at https://doi.org/10.5281/zenodo.23105809, adds the corrections of its reassessment (PROTOCOL C119). Supplementary S4 and the package manifest enumerate sources.
 
 
 ## S6.8 Historical nominal tests (main-text reporting finalized 10 October 2026)
@@ -148,17 +148,23 @@ section said it equals the 3rd and 8th order statistics, with coverage 89.1 %; t
 gains, exact enumeration of all 92,378 resample multisets gives [2.12, 15.66], against [3.15, 9.35] for the 3rd and 8th
 values, and 89.1 % is the sign-model coverage of the latter interval; PROTOCOL C118.) The main text therefore reports, for
 every split-level median, the narrowest symmetric order-statistic
-interval with at least 95 % coverage under the sign model (for ten splits also 97.87 % for the median over the 3,999
-eligible source sets, sampled without replacement), computed from the same saved values; the bootstrap intervals it
-replaces are listed here. Both are conditional on the fixed bearing pool [src: results/c115/c115_intervals.json;
+interval with at least 95 % coverage under the sign model (for ten splits also at least 97.87 % for the median over the
+3,999 eligible source sets, sampled without replacement, with equality when that median is unique), computed from the
+same saved values; the bootstrap intervals it replaces are listed here. For the 17 within-bearing contrasts and the six
+HUST splits the same order statistics are given as descriptive ranges only: these summaries reuse specimens or come from
+ten possible splits, so the sign-model coverage (95.1 % and 96.9 %) is not a sampling guarantee for them. The replaced
+bootstrap intervals are the original Monte Carlo estimates (20,000 resamples, seed 0, splits in their listed order),
+which can differ from the exact bootstrap percentiles: for the envelope-gate gain the retained estimate is [2.48, 15.66]
+pp, printed below as 2.5 to 15.7, whereas exact enumeration gives [2.12, 15.66] pp. Both kinds of interval are
+conditional on the fixed bearing pool [src: results/c115/c115_intervals.json;
 experiments/c115_exact_intervals.py; PROTOCOL C115].
 
-| Effect | n | Median | Order-statistic interval (coverage) | Bootstrap interval replaced |
+| Effect | n | Median | Order-statistic interval (coverage) | Bootstrap interval replaced (20,000 resamples, seed 0) |
 |---|---|---|---|---|
 | SDALR loss, ten splits | 10 | 36.2 | 21.6 to 59.4 (97.9 %) | 25.0 to 56.3 |
 | Source-only loss | 10 | 35.1 | 21.2 to 55.0 (97.9 %) | 24.4 to 50.6 |
 | SHOT loss (corrected) | 10 | 36.6 | 19.7 to 62.0 (97.9 %) | 22.5 to 59.1 |
-| Within-bearing difference (17 bearings; descriptive) | 17 | 38.7 | 9.5 to 62.5 (95.1 %) | 9.5 to 62.5 |
+| Within-bearing difference (17 bearings; descriptive) | 17 | 38.7 | 9.5 to 62.5 (descriptive range) | 9.5 to 62.5 |
 | Kinematic forest gap, ordinary | 10 | 8.4 | 2.4 to 30.8 (97.9 %) | 4.8 to 21.0 |
 | Kinematic forest gap, balanced | 10 | 10.4 | 5.6 to 26.7 (97.9 %) | 7.2 to 22.7 |
 | Envelope-gate gain | 10 | 4.5 | 0.7 to 22.3 (97.9 %) | 2.5 to 15.7 |
@@ -168,7 +174,7 @@ experiments/c115_exact_intervals.py; PROTOCOL C115].
 | Forest loss, all features | 10 | 32.1 | 24.1 to 43.9 (97.9 %) | 25.5 to 43.3 |
 | Forest minus SDALR, unseen targets | 10 | 8.9 | -0.2 to 16.7 (97.9 %) | 0.4 to 16.1 |
 | Same-condition forest loss | 10 | 29.7 | 16.5 to 42.0 (97.9 %) | 18.7 to 40.5 |
-| HUST loss, six splits (descriptive) | 6 | 33.5 | 25.8 to 61.1 (96.9 %) | 28.4 to 55.5 |
+| HUST loss, six splits (descriptive) | 6 | 33.5 | 25.8 to 61.1 (descriptive range) | 28.4 to 55.5 |
 
 Leave-one-bearing-out: with the windows of one bearing dropped from both targets of every split, the median SDALR gap
 is 36.2 pp with all bearings and ranges from 29.3 pp (without KA30) to 43.5 pp (without KA22); it is positive in at least 9 of 10 splits for every bearing.

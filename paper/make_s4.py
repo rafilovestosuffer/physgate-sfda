@@ -119,7 +119,10 @@ def main():
     lines += ["", "## Analysis, evaluation, figure and kernel scripts", "",
               "Every script that computes a reported number, builds a table or figure, or ran on Kaggle, with the SHA-256 "
               "(first 16 hex digits) of the file as submitted.", "", "| script | sha256 |", "|---|---|"]
-    lines += [f"| `{p.relative_to(ROOT).as_posix()}` | `{sha(p)}` |" for p in scripts if p.name != "__init__.py"]
+    packaging = {"make_em_source.py", "make_highlights.py", "make_submission.py", "make_submission_documents.py",
+                 "make_submission_pdfs.py", "make_supplement_pdfs.py"}   # submission packaging only; not archived
+    lines += [f"| `{p.relative_to(ROOT).as_posix()}` | `{sha(p)}` |" for p in scripts
+              if p.name != "__init__.py" and not (p.parent.name == "paper" and p.name in packaging)]
 
     lines += ["", "## Regenerating reporting files only", "",
               f"Use the archived experiment repository ({release['version']}); preserve the directory layout. No training is required. Historical experiment scripts remain available for audit; the withdrawn SHOT outputs must not be interpreted as valid SHOT performance.", "",
