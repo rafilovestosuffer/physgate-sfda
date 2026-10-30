@@ -1,7 +1,6 @@
 \begin{table}[htbp]
 \centering
-\caption{Paderborn: accuracy (\%) of SDALR (final checkpoint, seed 2024) on leaky and bearing-disjoint (clean) targets, the same gap for the source model before adaptation, and the clean target with the envelope threshold gate and with the oracle pseudo-label filter. Each entry is the mean over the six condition pairs of that split.}
-\label{tab:collapse}
+\begingroup
 \small
 \setlength{\tabcolsep}{4pt}
 \begin{tabular}{lrrrrrrrr}
@@ -19,9 +18,13 @@ S07 & 99.2 & 51.5 & 47.8 & 41.1 & 52.1 & +0.7 & 91.9 & 85 \\
 S08 & 97.1 & 37.6 & 59.4 & 55.0 & 60.0 & +22.3 & 91.1 & 90 \\
 S09 & 89.5 & 60.1 & 29.4 & 24.4 & 64.4 & +4.3 & 82.5 & 76 \\
 \midrule
-fold A & 88.3 & 58.4 & 30.0 & 32.6 & 61.2 & +4.4 & 88.5 & -- \\
-fold B & 99.9 & 55.3 & 44.6 & 45.8 & 62.3 & +7.0 & 76.8 & -- \\
+fold A, fold job & 88.3 & 58.4 & 30.0 & 32.6 & -- & -- & -- & -- \\
+fold A, gating job & -- & 56.8 & -- & -- & 61.2 & +4.4 & 88.5 & -- \\
+fold B, fold job & 99.9 & 55.3 & 44.6 & 45.8 & -- & -- & -- & -- \\
+fold B, gating job & -- & 55.3 & -- & -- & 62.3 & +7.0 & 76.8 & -- \\
 \bottomrule
-\end{tabular}
-\begin{minipage}{\linewidth}\vspace{2pt}\footnotesize Medians over the ten random splits, with conditional split-cluster bootstrap 95\,\% intervals: $\Delta_{\mathrm{leak}}$ 36.2~pp [25.0, 56.3] (range 8.2--61.6, 10/10); source-only $\Delta$, before any adaptation step, 35.1~pp [24.4, 50.6]; gate gain +4.5~pp [2.5, 15.7] (positive in 9/10); recoverable share 82\,\% [68, 94]. Below the rule, the two mechanical folds: leaky, clean and source-only columns from the fold job; gated and oracle from the gating job, with the gain taken against that job's own ungated clean arm (56.8 and 55.3\,\%). The two jobs trained different source checkpoints (Section~\ref{sec:protocol}) and the gating job has no leaky arm, so no recoverable share is given for the folds. A share above 100\,\% (S04) means the oracle arm beats the leaky arm. Differences are computed before rounding.\end{minipage}
+\end{tabular}\par
+\endgroup
+\caption{SDALR accuracy on seen-bearing and unseen-bearing targets. Each row gives the accuracy (\%) of SDALR on the leaky and bearing-disjoint (clean) targets of one Paderborn split, as the mean over its six condition pairs. Source-only $\Delta$ is the same gap for the source model before adaptation, Gated and Oracle are the clean target with the envelope threshold gate and with the oracle pseudo-label filter, Gain is Gated minus Clean, and Recov.\ is the share of $\Delta_{\mathrm{leak}}$ that the oracle recovers. Each fold has one row per job, because its two jobs trained different source checkpoints (Section~\ref{sec:protocol}).}
+\label{tab:collapse}
 \end{table}

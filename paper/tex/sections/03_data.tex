@@ -5,19 +5,26 @@
 
 Table~\ref{tab:datasets} lists the recordings used. \textbf{Paderborn} \cite{lessmeier2016} carries the adaptation
 experiments: its 6 healthy bearings and the 5 outer-race and 6 inner-race bearings of its real-damage set, each recorded 20
-times at four operating conditions, provide several physical bearings per class and several operating conditions per bearing, as required by the paired design of Section~\ref{sec:protocol}. We use the
+times at four operating conditions, provide several physical bearings per class and several operating conditions per bearing, as required by the paired design of Section~\ref{sec:protocol}. These 17 are all of its healthy bearings and all of its real-damage bearings coded as outer-race (KA) or inner-race (KI) damage; the three coded KB, which the dataset classifies as damaged on both rings, are excluded. The dataset paper's own real-damage experiment uses 15 of the 17, without K006 and KI17 \cite[Table~10]{lessmeier2016}, and Vieira et al.\ use the same 17 \cite{vieira2026}. We use the
 three conditions that share a nominal speed of \SI{1500}{rpm} (\SI{25}{Hz}) and differ in load and radial force, denoted A1
 (N15\_M01\_F10), A2 (N15\_M07\_F04) and A3 (N15\_M07\_F10); the fourth condition (N09, \SI{900}{rpm}, \SI{15}{Hz}) enters
-only the gate analyses. In the distributed files, five A2 recordings of bearing KA04 carry byte-identical vibration signals in two groups (recordings 5 and 19; 6, 15 and 20). All copies belong to one bearing and so stay on one side of every split; scoring each identical window once changes the median SHOT loss by 0.03 points.
+only the gate analyses. In the distributed files, five A2 recordings of bearing KA04 carry byte-identical vibration signals in two groups (recordings 5 and 19; 6, 15 and 20). All copies belong to one bearing and so stay on one side of every split; scoring each identical window once changes the median SHOT loss by 0.03 points. The gate analyses count each copy as a separate recording; Supplementary~S3 lists the files and the checksums of their signals.
 \textbf{HUST bearing} \cite{thuan2023hust} provides the second-rig replication: one recording set per class and bearing type, for
 five bearing types (6204--6208) at three motor loads, giving the same three-domain, six-task structure with the same label
-space. \textbf{CWRU} \cite{cwrubdc,smith2015} and \textbf{UORED-VAFCLS} \cite{sehri2023uored} appear only in the off-rig calibration of the
+space. With one 10-s recording per class, bearing type and load, its 2000 windows per class overlap within a recording
+(by 63\,\% in the seen-bearing and 75\,\% in the bearing-disjoint targets) but never cross recordings; the six
+type-disjoint splits were drawn from the ten possible with a seed fixed before any run. \textbf{CWRU} \cite{cwrubdc,smith2015} and \textbf{UORED-VAFCLS} \cite{sehri2023uored} appear only in the off-rig calibration of the
 gate operating point and in the supplementary slip measurement. JNU \cite{li2013jnu} is used only to reproduce the published SDALR result.
 
 Throughout, a \emph{bearing} means a physical specimen, identified by its dataset code (for example Paderborn KA04), not a
 fault class or a damage severity. The label space is $\{\text{normal},\text{inner race},\text{outer race}\}$: Paderborn's
 real-damage set contains no rolling-element damage, so a ball class cannot be formed from it, and HUST's ball recordings are
-excluded for comparability.
+excluded for comparability. A specimen with several damages is labelled by its largest damage, as in the dataset
+documentation \cite{lessmeier2016}. For two inner-race specimens these damages lie on different rings: KI04 and KI14
+carry particle-caused indentations on the outer ring besides fatigue pitting on the inner ring (Supplementary~S3). They are labelled inner race,
+as in the dataset paper's own real-damage experiment and in Vieira et al.\ \cite{vieira2026}. In a post-hoc check with the windows of
+both dropped from every target, the median SDALR loss over the ten splits of Section~\ref{sec:protocol} is 44.6 rather than
+36.2 points, positive in all ten (Supplementary~S6).
 
 \subsection{Kinematics are resolved per bearing}
 \label{sec:kinematics}
@@ -32,15 +39,17 @@ split by manufacturer: 26 specimens state ``Pitch circle diameter mm 29.05'' (IB
 \SI{6.75}{\milli\metre}. The 29.05 group contains every healthy specimen K001--K006 and the real-damage bearings KA16,
 KA22, KA30, KI04, KI14, KI17 and KI18 (e.g.\ \texttt{data/pu/K001/K001.pdf}); the 28.55 group contains KA04, KA15, KI16
 and KI21 (e.g.\ \texttt{data/pu/KA04/KA04.pdf}) together with KB24 and KB27, which this study excludes. Per-specimen
-geometry and damage mode are listed in Supplementary~S3; the damage modes are used in Section~\ref{sec:limitations}. The corresponding
+geometry and every listed damage are given in Supplementary~S3; the damage modes are used in Sections~\ref{sec:res-second},
+\ref{sec:res-gating} and~\ref{sec:limitations}. The corresponding
 outer-race orders are 3.0706 and 3.0543, neither of which equals the 3.0531 of the CWRU SKF 6203 that is frequently reused
 for Paderborn. We compute kinematics separately for each specimen, and no gate is computed for a bearing whose geometry its own rig does
 not publish. HUST is such a case: its dataset paper gives bore, outside and ball diameters and the ball count, but not the
 pitch diameter and no characteristic orders \cite{thuan2023hust}. Substituting the nominal mean diameter $(d_i+d_o)/2$
 would supply the missing number, and it is worth seeing what that costs: on Paderborn, where the true value is documented,
-the same substitution gives \SI{28.50}{\milli\metre} against \SI{29.05}{\milli\metre} and shifts the outer-race order by
-\SI{0.58}{\percent}, a systematic error larger than the 5--95\,\% range of slip we measure on that geometry
-(\SI{0.53}{\percent}, Supplementary~S5). The gate's $\pm\SI{2}{\percent}$ slip window would absorb such an error, but only by
+the same substitution gives \SI{28.50}{\milli\metre} and shifts the outer-race order of the \SI{29.05}{\milli\metre}
+specimens by \SI{0.58}{\percent} (of the \SI{28.55}{\milli\metre} FAG specimens by \SI{0.05}{\percent}), a systematic error
+larger than the 5--95\,\% range of slip we measure on the \SI{29.05}{\milli\metre} geometry (\SI{0.53}{\percent},
+Supplementary~S5). The gate's $\pm\SI{2}{\percent}$ slip window would absorb such an error, but only by
 spending its tolerance on a geometry guess rather than on slip, and a guessed geometry would make every HUST verdict
 untraceable. We therefore use HUST for raw windows only and report no HUST gating result. Shaft speed is taken per
 recording from the measured speed channel on Paderborn and from the in-file value on CWRU.
@@ -51,6 +60,7 @@ recording from the measured speed channel on Paderborn and from the in-file valu
 The adaptation experiments use SDALR's input contract: windows of 2048 samples (Section~\ref{sec:protocol}). At
 \SI{64}{kHz} and \SI{25}{Hz} shaft speed a window lasts \SI{32}{ms}, 0.8 shaft revolutions and about 2.5 outer-race
 impacts; its envelope spectrum has a resolution of \SI{31}{Hz}, so the first outer-race (\SI{77}{Hz}) and inner-race
-(\SI{123}{Hz}) lines lie about 1.5 bins apart. A window can carry impulsiveness and fault energy, but its spectrum cannot reliably resolve the harmonic structure used by the gates; this does not rule out all kinematic information in the waveform. The gates, by contrast, use the first 249\,600 samples of each recording (\SI{3.9}{s}, resolution
-\SI{0.26}{Hz}, at least six bins inside the slip window of the first outer-race harmonic). Section~\ref{sec:res-mechanism}
+(\SI{123}{Hz}) lines lie about 1.5 bins apart. A window can carry impulsiveness and fault energy, but its spectrum cannot reliably resolve the harmonic structure used by the gates; this does not rule out all kinematic information in the waveform. The gates, by contrast, use the first 249\,600 samples of each recording of about \SI{4}{s} (\SI{3.9}{s}, the length every
+readable recording reaches; resolution \SI{0.26}{Hz}, at least six bins inside the slip window of the first outer-race
+harmonic). Section~\ref{sec:res-mechanism}
 tests what the difference is worth with a classifier built on the gates' representation.

@@ -1,19 +1,25 @@
 \section{Discussion}
 \label{sec:discussion}
-\paragraph{The large gap precedes adaptation}
+\subsection{The large gap precedes adaptation}
+
 The source model already has a median 35.1-point gap between seen and unseen bearings, and SDALR leaves a substantial gap after adaptation. Its median gap amplification is +4.7 points (positive in 8 of 10 splits). The oracle-filtered arm recovers a median 82\,\% of the observed loss, showing that selective use of correct pseudo-labels can improve this network under the transductive protocol. SHOT, run from the same checkpoints, loses a median 36.6 points on the same splits, so the loss is not specific to SDALR's reliability mechanism; other SFDA families remain untested. A source-only comparison is therefore necessary beside any adapted result.
 
-\paragraph{Expanding the source helps the forest, but the cause is unresolved}
-Healthy and faulty specimens are identifiable from simple statistics, yet healthy specimens transfer much better. Identifiability alone therefore does not establish harmful reliance on identity. Expanding the forest's source from one to four bearings per class improves unseen-bearing accuracy with the test triples fixed, consistently with the importance of source coverage reported by Vieira et al.\ \cite{vieira2026}. However, training volume grows at the same time. The experiment does not separate sample count, specimen diversity and damage coverage, nor does it show that a source-diversity intervention would improve SDALR. Reliance on specimen-associated features and insufficient source coverage remain compatible explanations.
+\subsection{Expanding the source helps the forest, but the cause is unresolved}
 
-\paragraph{Gate benefits are concentrated where the tested pipeline detects evidence}
-The envelope threshold gate adds a median 4.5 points over ten splits, with one negative split (-1.5 points). Almost all aggregate gain occurs on certified recordings; silent faulty recordings have a slightly negative summed change. Coverage is concentrated on four larger-damage specimens under the tested preprocessing. Because size, geometry, manufacturer and session are not independently crossed, and the gates share preprocessing, these observations do not prove that smaller damage is intrinsically undetectable or that detector design cannot improve. The kinematic forest likewise offers a smaller observed gap, but limited accuracy and metric sensitivity prevent a claim of robust transfer.
+Healthy and faulty specimens are identifiable from simple statistics, yet healthy specimens transfer much better. Identifiability alone therefore does not establish harmful reliance on identity. All six healthy specimens come from one manufacturer (IBU), so a healthy decision could partly be a manufacturer decision; but KA22, the one damaged IBU/IBB specimen, is never labelled healthy when unseen, and the unseen-bearing error is a confusion between the two fault families (Section~\ref{sec:res-mechanism}). Expanding the forest's source from one to four bearings per class improves unseen-bearing accuracy with the test triples fixed, consistently with the importance of source coverage reported by Vieira et al.\ \cite{vieira2026}. However, training volume grows at the same time. The experiment does not separate sample count, specimen diversity and damage coverage, nor does it show that a source-diversity intervention would improve SDALR. Reliance on specimen-associated features and insufficient source coverage remain compatible explanations.
 
-\paragraph{Low observed false acceptance is only one requirement}
+\subsection{Gate benefits are concentrated where the tested pipeline detects evidence}
+
+The envelope threshold gate adds a median 4.5 points over ten splits, with one negative split (-1.5 points). Almost all aggregate gain occurs on certified recordings; silent faulty recordings have a slightly negative summed change. In a post-hoc comparison, its verdicts used directly add a median 8.7 points, more than inside adaptation in every split, so in this pipeline the physics evidence is worth more as a record-level diagnosis than as a pseudo-label filter. Coverage is concentrated on four larger-damage specimens under the tested preprocessing. Because size, geometry, manufacturer and session are not independently crossed, and the gates share preprocessing, these observations do not prove that smaller damage is intrinsically undetectable or that detector design cannot improve. The kinematic forest likewise offers a smaller observed gap, but limited accuracy and metric sensitivity prevent a claim of robust transfer.
+
+\subsection{Low observed false acceptance is only one requirement}
+
 The raw-spectrum rule flags \SI{45}{\percent} of healthy recordings, compared with at most \SI{2}{\percent} for the envelope rules on Paderborn. These are empirical counts from six healthy specimens, not a deployment safety guarantee. Coverage, incorrect fault-family verdicts and transfer of the operating point matter as well. In the implemented keep-or-withhold hook, an erroneous verdict can preserve a wrong agreeing label and suppress a correct disagreeing one. The raw-spectrum rule's fold effects of +5.4 and -13.2 points illustrate why an end-accuracy gain alone cannot validate a physics module. We do not infer the performance of the full Bio-SFDA controller from this simplified implementation.
 
-\paragraph{A shallow baseline is informative}
+\subsection{A shallow baseline is informative}
+
 On bearing-disjoint targets the time-statistics forest exceeds adapted SDALR in 8 of 10 splits. It also suffers a large seen-unseen gap, so it is a useful comparator rather than a validated deployment solution. The within-bearing contrast and same-condition control strengthen the evidence that the benchmark overstates performance on unseen specimens, but do not independently identify the cause.
 
-\paragraph{Leakage depends on the deployment question}
+\subsection{Leakage depends on the deployment question}
+
 Adapting to the same physical bearing at a new condition is a legitimate task for a permanently instrumented asset. It does not validate performance on a replacement or previously unseen bearing. In the latter setting, SDALR's same-bearing evaluation exceeds its bearing-disjoint result by a median 36.2 points in this study. We use leakage in this deployment-relative sense \cite{kapoor2023leakage}, rather than treating every same-bearing protocol as intrinsically invalid.

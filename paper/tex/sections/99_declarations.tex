@@ -1,5 +1,5 @@
 \section*{Supplementary material}
-Supplementary S1 records protocol changes; S2 gate definitions and operating curves; S3 dataset geometry; S4 result-to-artifact traceability; S5 slip analysis; and S6 the implementation audit, nominal statistical tests and sensitivity analyses. A reproducibility package with the scripts and result summaries behind S6 accompanies the submission.
+Supplementary S1 records protocol changes; S2 gate definitions and operating curves; S3 dataset geometry; S4 result-to-artifact traceability; S5 slip analysis; S6 the implementation audit, nominal statistical tests, sensitivity analyses and the per-split HUST and fold gate-gain values; and S7 the REFORMS reporting checklist and leakage statement.
 
 \section*{CRediT authorship contribution statement}
 \textbf{Mohammad Rafiur Rahman:} Conceptualization, Methodology, Software, Validation, Formal analysis, Investigation,
@@ -22,10 +22,10 @@ All raw data are public. Paderborn bearing data are distributed by the KAt-DataC
 UORED-VAFCLS from the University of Ottawa \cite{sehri2023uored}; and the JNU data are the Jiangnan University bearing data
 commonly cited to Li et al.\ \cite{li2013jnu}.
 The research data produced in this study are available at \url{https://github.com/rafilovestosuffer/physgate-sfda} and archived
-on Zenodo as the experimental release v1.0-submission, \url{https://doi.org/10.5281/zenodo.23105810} \cite{rahman2026physgate}.
+on Zenodo as release v1.2, \url{https://doi.org/10.5281/zenodo.23105809} \cite{rahman2026physgate}.
 They comprise the frozen split definitions, the per-run experiment ledger (one row per run and task, each with its kernel,
 commit and artifact path), the analysis scripts with their checksums, the version-controlled protocol and the retained run
-artifacts that back every number in this paper. The audit scripts and result summaries behind Supplementary~S6 were prepared after that release and are supplied with this submission.
+artifacts that back every number in this paper, including the post-hoc analyses and the scripts and result summaries behind Supplementary~S6.
 
 \section*{Code availability}
 
@@ -36,9 +36,6 @@ added around it without changing its training code. SHOT runs from our implement
 
 \section*{Declaration of generative AI and AI-assisted technologies in the manuscript preparation process}
 
-During the preparation of this work the author used Claude (Anthropic; through the Claude Code agent, with the model
-claude-opus-5-5) in order to draft and edit text, write analysis and figure code, draw the schematic
-figures with plotting code, and check numerical consistency and references against the retained artifacts and primary
-sources. OpenAI Codex was used to audit the implementation, reaggregate retained results, revise the text and rebuild the submission files; it ran no training or experiment. After using these tools, the author reviewed and edited the content as needed and takes full responsibility for the
-content of the publication. Because the Claude workflow also executed analyses and compute jobs, that use forms part of the
-research method and is described in Section~\ref{sec:protocol}.
+During the preparation of this work, the author used Claude (Anthropic) and ChatGPT (OpenAI) to improve the language and
+readability of the manuscript and to assist with coding. After using these tools, the author reviewed and edited the content as
+needed and takes full responsibility for the content of the published article.

@@ -68,7 +68,7 @@ def fig2_collapse():
     pu, hu = pu_splits(), hust_splits()
     pu_sorted = sorted(pu[:10], key=lambda r: r[1] - r[2]) + list(reversed(pu[10:]))
     hu_sorted = sorted(hu, key=lambda r: r[1] - r[2])
-    fig, axes = S.grid("double", 95, 1, 2, gridspec_kw={"width_ratios": [1, 0.58]})
+    fig, axes = S.grid("text", 95, 1, 2, gridspec_kw={"width_ratios": [1, 0.58]})
     rows_csv = []
 
     def draw(ax, rows, ylabels, title, rf_col=True):
@@ -272,7 +272,7 @@ def fig3_bearings():
     """(a) per-bearing accuracy when seen vs unseen (C106); (b) clean/leaky accuracy vs source bearings per class (C110)."""
     d = json.load(open(ROOT / "results" / "c106" / "c106_within_bearing.json", encoding="utf-8"))["rows"]
     c110 = json.load(open(ROOT / "results" / "c110" / "c110_result.json", encoding="utf-8"))
-    fig, axes = S.grid("double", 78, 1, 2, gridspec_kw={"width_ratios": [1, 0.8]})
+    fig, axes = S.grid("text", 78, 1, 2, gridspec_kw={"width_ratios": [1, 0.8]})
     ax = axes[0]
     order = sorted(d, key=lambda r: (r["bearing"][:2], r["bearing"]))
     rows = []
@@ -284,7 +284,7 @@ def fig3_bearings():
         ax.plot([r["unseen_acc"]], [i], "o", color=col, ms=4.4, zorder=3)
         rows.append(["bearing", r["bearing"], f"{r['seen_acc']:.2f}", f"{r['unseen_acc']:.2f}", cert])
     ax.set_yticks(range(len(order)))
-    ax.set_yticklabels([r["bearing"] for r in order], fontsize=6.8)
+    ax.set_yticklabels([r["bearing"] for r in order], fontsize=7.0)
     ax.invert_yaxis()
     ax.set_xlim(-3, 103)
     ax.set_xlabel("SDALR window accuracy on the bearing (%)")

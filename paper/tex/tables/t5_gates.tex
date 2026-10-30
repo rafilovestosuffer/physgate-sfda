@@ -1,18 +1,19 @@
 \begin{table}[htbp]
 \centering
-\caption{Observed gate performance: false acceptance (FA) on 480 recordings from six healthy bearings, and correct fault verdicts.}
-\label{tab:gates}
+\begingroup
 \small
 \setlength{\tabcolsep}{4pt}
-\begin{tabular}{llrlrr}
+\begin{tabular}{llrlrrr}
 \toprule
-Gate & Op. point & Healthy FA & FA by bearing & Correct & At zero FA \\
+Gate & Op. point & Healthy FA & FA by bearing & Correct & Wrong family & At zero FA \\
 \midrule
-Envelope threshold & $z=10$ & 1/480 & 0, 1, 0, 0, 0, 0 & 366 & 351 \\
-Alias-guarded comb & $\alpha=0.05$ & 0/480 & 0, 0, 0, 0, 0, 0 & 312 & 312 \\
-Surrogate-null comb & $\alpha=0.05$ & 9/480 & 3, 0, 3, 1, 1, 1 & 309 & -- \\
-Raw-spectrum rule & $z=2$ & 214/480 & 54, 15, 54, 24, 15, 52 & 429 & 0 \\
+Envelope threshold & $z=10$ & 1/480 & 0, 1, 0, 0, 0, 0 & 366 & 8 & 351 \\
+Alias-guarded comb & $\alpha=0.05$ & 0/480 & 0, 0, 0, 0, 0, 0 & 312 & 3 & 312 \\
+Surrogate-null comb & $\alpha=0.05$ & 9/480 & 3, 0, 3, 1, 1, 1 & 309 & 21 & -- \\
+Raw-spectrum rule & $z=2$ & 214/480 & 54, 15, 54, 24, 15, 52 & 429 & 147 & 0 \\
 \bottomrule
-\end{tabular}
-\begin{minipage}{\linewidth}\vspace{2pt}\footnotesize Six healthy bearings (K001--K006) contribute 80 recordings each, for 480 records. The per-bearing column follows that order. Correct verdicts are counted over 1{,}839 single-fault recordings; the full pool comprises 29 bearings (6 healthy, 11 real-damage, 12 artificial-damage) at four conditions. Operating points were fixed before evaluation. The final column is the largest correct-verdict count over the parameter sweep with no observed healthy false acceptance. Zero observed errors is not a new-bearing safety bound. Assumption-dependent intervals are in S6; operating curves are in S2.\end{minipage}
+\end{tabular}\par
+\endgroup
+\caption{Gate verdicts at the fixed operating points. Each row gives one gate at its operating point, fixed before evaluation, on 480 healthy and 1839 faulty Paderborn recordings. Healthy FA is the number of fault verdicts on healthy recordings, also given by bearing for K001--K006 (80 recordings each), and Wrong family the number of fault verdicts that name the other fault family. At zero FA is the largest number of correct verdicts over the gate's parameter sweep with no healthy false acceptance.}
+\label{tab:gates}
 \end{table}

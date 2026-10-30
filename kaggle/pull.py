@@ -15,7 +15,8 @@ def main() -> int:
     user = _cli.username(); ref = f"{user}/{a.name}"
     dest = Path(a.out) if a.out else ROOT / "results" / "artifacts" / a.name
     dest.mkdir(parents=True, exist_ok=True)
-    cp = _cli.run("kernels", "output", ref, "-p", str(dest), check=False)
+    # --force: without it the CLI silently skips files whose local copy is newer, leaving a mixed artifact (2026-10-24)
+    cp = _cli.run("kernels", "output", ref, "-p", str(dest), "--force", check=False)
     print(cp.stdout.strip() or cp.stderr.strip())
     got = sorted(x.name for x in dest.iterdir())
     print(f"artifact retained at {dest.relative_to(ROOT)}: {got}")

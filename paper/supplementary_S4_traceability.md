@@ -1,6 +1,6 @@
 # Supplementary S4 — traceability of every reported number
 
-Each row is a result file cited by the manuscript, what it establishes, the Kaggle account that produced the runs behind it, and the SHA-256 (first 16 hex digits) of the file as submitted. The experiment ledger (`results/ledger/*.csv`, 1259 rows) lists every individual run with its kernel URL, git commit and retained artifact path. Original run artifacts are in the public v1.0-submission archive; reporting-only corrections accompany this submission. Reporting ledger rows are labelled separately and are not new experimental runs.
+Each row is a result file cited by the manuscript, what it establishes, the Kaggle account that produced the runs behind it, and the SHA-256 (first 16 hex digits) of the file as submitted. The experiment ledger (`results/ledger/*.csv`, 1379 rows) lists every individual run with its kernel URL, git commit and retained artifact path. Run artifacts and every script listed here are in the public archive release v1.2 (https://doi.org/10.5281/zenodo.23105809), which contains the original runs of v1.0-submission, the corrected SHOT run (C113) and the post-hoc analyses C114-C116; reporting-only corrections are included in it. Reporting ledger rows are labelled separately and are not new experimental runs.
 
 All SHA-256 values in this supplement are computed on file content with line endings normalised to LF, so they verify identically on any operating system (strip carriage returns before hashing).
 
@@ -9,19 +9,25 @@ All SHA-256 values in this supplement are computed on file content with line end
 | `results/c108/c108_purity.json` | Descriptive window-label purity by specimen | deterministic analysis of retained data or artifacts; script in experiments/ | `d41f83826296fe9e` |
 | `results/c111/c111_probe_ablations.json` | Identity probe ablations on retained representations | deterministic analysis of retained data or artifacts; script in experiments/ | `4c39dfae22b1d4c3` |
 | `results/c104/C104B_RESULT.md` | Post-hoc class-specific same-condition analysis | deterministic analysis of retained data or artifacts; script in experiments/ | `d3229ef37cc7c36f` |
-| `results/c105/c105_source_only.json` | Source-only and post-adaptation contrasts | deterministic analysis of retained data or artifacts; script in experiments/ | `49b0d0a8f1091755` |
+| `results/c105/c105_source_only.json` | Source-only and post-adaptation contrasts | deterministic analysis of retained data or artifacts; script in experiments/ | `97424f0911c2d443` |
 | `results/c106/c106_within_bearing.json` | Within-bearing descriptive contrasts | deterministic analysis of retained data or artifacts; script in experiments/ | `8ce0f9dc5b4428f4` |
 | `results/c107/c107_gate_spillover.json` | Gate gain accounting | deterministic analysis of retained data or artifacts; script in experiments/ | `707e195b00e2a0f0` |
 | `results/c109/c109_intervals.json` | Conditional intervals and healthy false acceptance | deterministic analysis of retained data or artifacts; script in experiments/ | `8160f1db260a9d32` |
 | `results/c110/c110_result.json` | Source expansion: diversity and volume change together | deterministic analysis of retained data or artifacts; script in experiments/ | `a9eecff7e2ad4970` |
 | `results/c112/c112_result.json` | Original ordinary and saved balanced kinematic outcomes | deterministic analysis of retained data or artifacts; script in experiments/ | `9a6e4dc189507544` |
-| `results/reporting_2026_10_09/reporting_corrections.json` | Reporting-only corrections and saved-score sensitivity (S6) | deterministic analysis of retained data or artifacts; script in experiments/ | `2aa642ad46dea497` |
+| `results/reporting_2026_10_09/reporting_corrections.json` | Reporting-only corrections and saved-score sensitivity (S6) | deterministic analysis of retained data or artifacts; script in experiments/ | `8b2dfa43578eff18` |
+| `results/c114/c114_unseen_labels.json` | Labels given to seen and unseen bearings; KI04/KI14 sensitivity (Sections 3, 6.4; S6.10) | deterministic analysis of retained data or artifacts; script in experiments/ | `001e82e6acd7a6d6` |
+| `results/c115/c115_intervals.json` | Order-statistic intervals for every reported median; leave-one-bearing-out (Sections 4.5, 6; S6.11) | deterministic analysis of retained data or artifacts; script in experiments/ | `64d4c48005139ea4` |
+| `results/c116/c116_gate_override.json` | Gate-override comparison, gain by certifiable bearings, SDALR reliability split (Section 6.6, Table 8) | deterministic analysis of retained data or artifacts; script in experiments/ | `2be59ad4e32aa5ff` |
+| `results/m4b/M4B_RESULT.md` | Comb gate against Smith and Randall's CWRU diagnosability grades (Section 6.6, S2.6) | deterministic analysis of retained data or artifacts; script in experiments/ | `a838450a672fc484` |
 | `results/M0_PU_RESULT.md` | Reproduction of the published method on its own tasks (Section 6.1) | 24 ledger rows (rafiurrahman01) | `d7b14b5c3fb754d2` |
 | `results/M1_RESULT.md` | Collapse on the two mechanical folds (Section 6.2) | 48 ledger rows (rafiurrahman01) | `51c898427e02bc23` |
 | `results/c88/C88_RESULT.md` | Ten pre-specified random bearing splits: collapse, gating, decomposition | 240 ledger rows (rafiurrahman01, rhrhrhrhrh) | `5adae7364e14bf91` |
 | `results/c94/C94_RESULT.md` | Second rig (HUST): six type-disjoint splits | 72 ledger rows (rhrhrhrhrh) | `8b783e08ff147cd5` |
 | `results/C85_RESULT.md` | WITHDRAWN: local SHOT outputs, two folds; indexing defect (S6) | 24 ledger rows (rhrhrhrhrh) | `876937dafaf42695` |
 | `results/c100/C100_RESULT.md` | WITHDRAWN: local SHOT outputs, ten splits; indexing defect (S6) | 120 ledger rows (rafiurrahman01, rhrhrhrhrh) | `af67a98725aaba6a` |
+| `results/c113/c113_shot_splits.json` | Corrected SHOT (patch v2) on the ten splits, both arms (Section 6.3, C113) | 120 ledger rows (rhrhrhrhrh, shahedtheboss) | `0234891821a8e50f` |
+| `results/c113/c113_dedup_check.json` | C113 loss with byte-identical Paderborn windows scored once (Section 3) | deterministic analysis of retained data or artifacts; script in experiments/ | `fb51747cbcdb5f25` |
 | `results/c101/C101_RESULT.md` | Random forests on the ten splits, both arms (Section 6.3) | 240 ledger rows (rafiurrahman01, rhrhrhrhrh) | `4eaa10070031bb7f` |
 | `results/c96/C96_RESULT.md` | Cluster-level inference and the Benjamini--Hochberg family (Section 4, S1) | deterministic analysis of retained data or artifacts; script in experiments/ | `038147f032201169` |
 | `results/c97/C97_RESULT.md` | Identity probe on ten handcrafted time statistics (Section 6.4) | deterministic analysis of retained data or artifacts; script in experiments/ | `41a4e6cb63f2cf04` |
@@ -63,7 +69,7 @@ Every script that computes a reported number, builds a table or figure, or ran o
 
 | script | sha256 |
 |---|---|
-| `experiments/append_ledger.py` | `bb4644d0a351b391` |
+| `experiments/append_ledger.py` | `b77651451ceb5319` |
 | `experiments/append_ledger_rf.py` | `404370540ae1b64d` |
 | `experiments/b6a_cross_end.py` | `5255ce88829a4736` |
 | `experiments/b7_uored.py` | `800ae9a2c818ccaf` |
@@ -80,7 +86,12 @@ Every script that computes a reported number, builds a table or figure, or ran o
 | `experiments/c109_intervals.py` | `1fd51679cd4867c7` |
 | `experiments/c111_probe_ablations.py` | `2ce2db872e2f683c` |
 | `experiments/c112_kinematic_rf.py` | `7966e786bb7dd9e9` |
+| `experiments/c113_dedup_check.py` | `7208bc0e89f4b579` |
+| `experiments/c113_manuscript_edits.py` | `18ab580fa19cce56` |
 | `experiments/c113_shot_splits.py` | `dfb210b8e0a55dcc` |
+| `experiments/c114_unseen_labels.py` | `e443b987a114cdec` |
+| `experiments/c115_exact_intervals.py` | `d89b4059e64851ff` |
+| `experiments/c116_gate_override.py` | `9cde21288dd2c284` |
 | `experiments/c77_ball_sidebands.py` | `c3bc867c93d888c8` |
 | `experiments/c78_fe_de_control.py` | `d72453819d41b136` |
 | `experiments/c79_iesfo_eval.py` | `d141cd4bf3f6a78c` |
@@ -152,24 +163,26 @@ Every script that computes a reported number, builds a table or figure, or ran o
 | `kaggle/kernels/shot_k10_g2.py` | `a8e1448057ff553f` |
 | `kaggle/kernels/shot_k10_g3.py` | `d422c016022ca162` |
 | `kaggle/kernels/shot_k10_g4.py` | `24173d1423a5e6ea` |
-| `paper/check_manuscript.py` | `8e5256ea9420ff55` |
-| `paper/figures/build_figures.py` | `b933a8122f238a25` |
+| `paper/check_manuscript.py` | `4a8230f83acf0da6` |
+| `paper/figures/build_figures.py` | `86858fd50232da63` |
 | `paper/figures/build_schematics.py` | `726c3eab767ebc99` |
 | `paper/figures/fig1_design.py` | `1d2c54cda18ad78b` |
 | `paper/figures/fig_6203_lock.py` | `391c66d5cfc50244` |
 | `paper/figures/fig_m1_leakage.py` | `64aeab3af6cee0b9` |
 | `paper/figures/fig_splits.py` | `aebfc76283ac2af8` |
 | `paper/figures/qa_layout.py` | `557f3de37bab2f57` |
-| `paper/figures/style.py` | `1fb214879875a584` |
-| `paper/figures/validate_figures.py` | `c583c898cbc5f17f` |
+| `paper/figures/style.py` | `9688f04c419e17df` |
+| `paper/figures/validate_figures.py` | `1bbb423e947c7d71` |
+| `paper/make_em_source.py` | `3abf8621e956b754` |
 | `paper/make_highlights.py` | `44a5ab79019b670a` |
 | `paper/make_s1.py` | `296569aabad53943` |
-| `paper/make_s3_table.py` | `f2553d13064ce12f` |
-| `paper/make_s4.py` | `cf76b40921f3080d` |
-| `paper/make_submission.py` | `fff79915fdad68c1` |
-| `paper/make_submission_documents.py` | `91d021f9904946ab` |
-| `paper/make_supplement_pdfs.py` | `50801a3571a00b5e` |
-| `paper/make_tables.py` | `0f5335210571eb47` |
+| `paper/make_s3_table.py` | `b9a62c87629200db` |
+| `paper/make_s4.py` | `5f6f9d3f5fdba051` |
+| `paper/make_submission.py` | `24a1534bdf1f82b1` |
+| `paper/make_submission_documents.py` | `198601a49b1900fd` |
+| `paper/make_submission_pdfs.py` | `b4a82aa08b3b61ce` |
+| `paper/make_supplement_pdfs.py` | `a70e595258d2c6d7` |
+| `paper/make_tables.py` | `3e809250b403058a` |
 | `paper/revision_reporting.py` | `a403fa39e52d3458` |
 | `runners/bist.py` | `03571366b13b4eff` |
 | `runners/sdalr_runner.py` | `9eea05d3c9899dfa` |
@@ -177,7 +190,7 @@ Every script that computes a reported number, builds a table or figure, or ran o
 
 ## Regenerating reporting files only
 
-Use the archived experiment repository plus this revision overlay; preserve the directory layout. No training is required. Historical experiment scripts remain available for audit; the withdrawn SHOT outputs must not be interpreted as valid SHOT performance.
+Use the archived experiment repository (v1.2); preserve the directory layout. No training is required. Historical experiment scripts remain available for audit; the withdrawn SHOT outputs must not be interpreted as valid SHOT performance.
 
 ```
 python paper/revision_reporting.py

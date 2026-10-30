@@ -6,7 +6,7 @@ Revision date: 9 October 2026. No model was fitted, no training job was submitte
 
 The intended SHOT comparator is withdrawn as evidence about SHOT. In runners/shot_patch.py, obtain_label concatenates features in loader traversal order and returns the resulting pseudo-label array in that order. The shared SDALR tools.args_data_load creates shuffled loaders. train_target later accesses mem_label[tar_idx], where tar_idx is the dataset sample index. The local patch neither restores dataset order nor uses a sequential loader for the pseudo-label pass. Consequently the assigned pseudo-labels need not belong to the samples receiving them.
 
-This is a static code finding. Results in C85 and C100 cannot establish SHOT performance; their code and outputs remain in the experimental archive for audit only. The defect was corrected on 22 October 2026 (shot_patch v2, PROTOCOL C113: pseudo-labels scattered into dataset order, loader pass checked, unit-tested) and SHOT was re-run on the ten splits from the same source checkpoints (kernels physgate-shot2-k10-g1 to g4). Corrected result: median split-level loss 36.6 pp (conditional CI 22.5--59.1), positive in 10 of 10; nominal one-sided sign-flip p = 0.0010; pre-registered rule met. The manuscript reports only the corrected run. The historical C96 multiplicity family is retained unchanged, including its withdrawn member, solely for traceability. Adjusted p-values remain nominal, not validation of the withdrawn comparison.
+This is a static code finding. Results in C85 and C100 cannot establish SHOT performance; their code and outputs remain in the experimental archive for audit only. The defect was corrected on 22 October 2026 (shot_patch v2, PROTOCOL C113: pseudo-labels scattered into dataset order, loader pass checked, unit-tested) and SHOT was re-run on the ten splits from the same source checkpoints (kernels physgate-shot2-k10-g1 to g4). Corrected result: median split-level loss 36.6 pp (conditional order-statistic interval 19.7--62.0), positive in 10 of 10; nominal one-sided sign-flip p = 0.0010; pre-registered rule met. The manuscript reports only the corrected run. The historical C96 multiplicity family is retained unchanged, including its withdrawn member, solely for traceability. Adjusted p-values remain nominal, not validation of the withdrawn comparison.
 
 ## S6.2 Architecture and optimisation
 
@@ -21,7 +21,7 @@ These settings are transcribed from the retained SDALR source and local wrapper,
 | Source checkpoint | Highest source-validation accuracy at the two evaluation points (epochs 5 and 10); later ties replace earlier checkpoints |
 | Optimiser | SGD; momentum 0.9; weight decay 0.001; Nesterov enabled |
 | Learning-rate schedule | Initial group rate multiplied by (1 + 10 i / I)^(-0.75), where i and I are current and maximum update indices |
-| Target adaptation | 20 epochs; batch 64; base learning rate 0.0005; group multipliers 0.1, 0.1, 1; mix 0; threshold 0.4; K 0.6 |
+| Target adaptation | 20 epochs; batch 64; base learning rate 0.0005; group multipliers 0.1, 0.1, 1; mix 0; threshold 0.4 (a cosine distance to the nearest prototype, the counterpart of the paper's similarity threshold 0.6); K 0.6 (the paper's beta). In the gated runs SDALR's own criterion marks a median 0.6 % of target windows unreliable per pseudo-labelling round (95th percentile 3.9 %; 2 of 240 rounds above 10 %) [src: results/c116/c116_gate_override.json] |
 | Loss coefficients | cls_par, ent_par, gen_par and aad_par all 1 in the retained target configuration |
 | Normalisation | z_score: scalar mean and standard deviation computed from the data in each loader subset; no class labels used. Each target loader covers the full target pool, so target normalisation is transductive |
 | Noise | No added noise (standard deviation 0 in the retained data loader) |
@@ -77,7 +77,7 @@ Paired arms use the same source checkpoint according to job construction. Identi
 
 ## S6.7 Revision provenance and availability
 
-Reaggregation: paper/revision_reporting.py. Derived output: results/reporting_2026_10_09/reporting_corrections.json. Reporting lineage: results/ledger/reporting_2026_10_09.csv. Source SHA-256 checksums are recorded in that JSON. The original experimental release v1.0-submission is archived at https://doi.org/10.5281/zenodo.23105810. The local reporting revision has not been represented as an update to that public deposit. The revision overlay accompanying this submission must be applied to the original repository before regenerating revised tables and figures. Supplementary S4 and the package manifest enumerate sources.
+Reaggregation: paper/revision_reporting.py. Derived output: results/reporting_2026_10_09/reporting_corrections.json. Reporting lineage: results/ledger/reporting_2026_10_09.csv. Source SHA-256 checksums are recorded in that JSON. The original experimental release v1.0-submission is archived at https://doi.org/10.5281/zenodo.23105810. Release v1.1, archived at https://doi.org/10.5281/zenodo.23603189, adds this reporting revision and the corrected SHOT run (C113); the revised tables and figures regenerate from v1.1 directly. Release v1.2, archived at https://doi.org/10.5281/zenodo.23105809, adds the post-hoc analyses C114-C116 (scripts and result summaries) and the reporting changes of 30 October 2026. Supplementary S4 and the package manifest enumerate sources.
 
 
 ## S6.8 Historical nominal tests (main-text reporting finalized 10 October 2026)
@@ -103,6 +103,112 @@ Historical healthy false-acceptance intervals: envelope threshold 0.0-1.2%, alia
 
 The 10 October finalization changes presentation, positioning and statistical interpretation only. No new result, model fit or experimental run was added.
 
-## S6.8 Zero-event bounds for healthy false acceptance (added 22 October 2026)
+## S6.9 Zero-event bounds for healthy false acceptance (added 22 October 2026)
 
-For a gate with no observed false acceptance, the exact one-sided 95 % upper confidence limit on the acceptance rate is 1 - 0.05^(1/n) (Clopper-Pearson with zero events). Per recording, n = 480 gives 0.62 %; per bearing, n = 6 gives 39.3 %. The per-recording limit assumes independent recordings, which repeated recordings of one specimen are not; the per-bearing limit is the one that bears on a new bearing. Both are arithmetic on the counts reported in Table 5 and were not computed by any experiment.
+For a gate with no observed false acceptance, the exact one-sided 95 % upper confidence limit on the acceptance rate is 1 - 0.05^(1/n) (Clopper-Pearson with zero events). Per recording, n = 480 gives 0.62 %; per bearing, n = 6 gives 39.3 %. The per-recording limit assumes independent recordings, which repeated recordings of one specimen are not; the per-bearing limit is the one that bears on a new bearing. Both are arithmetic on the counts reported in Table 7 and were not computed by any experiment.
+
+## S6.10 Labels given to seen and unseen bearings (added 24 October 2026)
+
+Share of each bearing's windows that ungated SDALR (final checkpoint, seed 2024) labels healthy, inner race and outer race,
+pooled over every task of the ten splits in which the bearing is unseen (bearing-disjoint target) or seen (leaky target)
+[src: results/c114/c114_unseen_labels.json; experiments/c114_unseen_labels.py; PROTOCOL C114, post-hoc and descriptive].
+
+| Bearing | True class | Unseen: healthy / inner / outer (%) | Seen: healthy / inner / outer (%) |
+|---|---|---|---|
+| K001 | healthy | 90.5 / 0.0 / 9.5 | 100.0 / 0.0 / 0.0 |
+| K002 | healthy | 82.3 / 11.0 / 6.7 | 100.0 / 0.0 / 0.0 |
+| K003 | healthy | 100.0 / 0.0 / 0.0 | 100.0 / 0.0 / 0.0 |
+| K004 | healthy | 100.0 / 0.0 / 0.0 | 100.0 / 0.0 / 0.0 |
+| K005 | healthy | 94.3 / 0.2 / 5.5 | 100.0 / 0.0 / 0.0 |
+| K006 | healthy | 100.0 / 0.0 / 0.0 | 100.0 / 0.0 / 0.0 |
+| KA04 | outer | 0.0 / 75.0 / 25.0 | 0.0 / 12.5 / 87.5 |
+| KA15 | outer | 0.0 / 70.6 / 29.4 | 0.0 / 31.7 / 68.3 |
+| KA16 | outer | 0.0 / 100.0 / 0.0 | 0.0 / 25.2 / 74.8 |
+| KA22 | outer | 0.0 / 44.6 / 55.4 | 0.0 / 0.1 / 99.9 |
+| KA30 | outer | 3.6 / 96.4 / 0.0 | 3.3 / 2.8 / 93.9 |
+| KI04 | inner | 5.8 / 60.8 / 33.3 | 0.1 / 84.1 / 15.8 |
+| KI14 | inner | 0.0 / 42.6 / 57.4 | 0.0 / 86.5 / 13.5 |
+| KI16 | inner | 0.0 / 41.4 / 58.6 | 0.0 / 95.1 / 4.9 |
+| KI17 | inner | 0.0 / 21.2 / 78.8 | 0.0 / 95.5 / 4.5 |
+| KI18 | inner | 0.0 / 31.1 / 68.9 | 0.0 / 96.2 / 3.8 |
+| KI21 | inner | 0.0 / 74.4 / 25.6 | 0.0 / 100.0 / 0.0 |
+
+Unseen damaged bearings are labelled healthy on at most 5.8 % of their windows (KI04); KA22, the only damaged
+IBU/IBB specimen, on 0 %. The unseen-bearing error is a confusion between the two fault families, a median
+69 % of an unseen damaged bearing's windows. KI04 and KI14 carry particle-caused indentations on the outer ring
+besides inner-ring pitting (S3.1a). With their windows dropped from both targets, the median split gap is
+44.6 pp (10 of 10 positive), against 36.2 pp with all bearings; without KI04 alone 39.5 pp, without KI14 alone
+36.9 pp.
+
+## S6.11 Order-statistic intervals and leave-one-bearing-out (added 24 October 2026)
+
+A percentile-bootstrap interval of a median over ten splits equals the 3rd and 8th order statistics, whose distribution-free
+coverage is 89.1 %. The main text therefore reports, for every split-level median, the narrowest symmetric order-statistic
+interval with at least 95 % coverage under the sign model, computed from the same saved values; the bootstrap intervals it
+replaces are listed here. Both are conditional on the fixed bearing pool [src: results/c115/c115_intervals.json;
+experiments/c115_exact_intervals.py; PROTOCOL C115].
+
+| Effect | n | Median | Order-statistic interval (coverage) | Bootstrap interval replaced |
+|---|---|---|---|---|
+| SDALR loss, ten splits | 10 | 36.2 | 21.6 to 59.4 (97.9 %) | 25.0 to 56.3 |
+| Source-only loss | 10 | 35.1 | 21.2 to 55.0 (97.9 %) | 24.4 to 50.6 |
+| SHOT loss (corrected) | 10 | 36.6 | 19.7 to 62.0 (97.9 %) | 22.5 to 59.1 |
+| Within-bearing difference (17 bearings) | 17 | 38.7 | 9.5 to 62.5 (95.1 %) | 9.5 to 62.5 |
+| Kinematic forest gap, ordinary | 10 | 8.4 | 2.4 to 30.8 (97.9 %) | 4.8 to 21.0 |
+| Kinematic forest gap, balanced | 10 | 10.4 | 5.6 to 26.7 (97.9 %) | 7.2 to 22.7 |
+| Envelope-gate gain | 10 | 4.5 | 0.7 to 22.3 (97.9 %) | 2.5 to 15.7 |
+| Oracle recoverable share (%) | 10 | 81.8 | 60.0 to 98.2 (97.9 %) | 68.0 to 94.1 |
+| Gate closure of the oracle gap (%) | 10 | 19.5 | 1.6 to 41.8 (97.9 %) | 10.4 to 40.9 |
+| Forest loss, time statistics | 10 | 22.7 | 15.0 to 35.9 (97.9 %) | 16.4 to 32.4 |
+| Forest loss, all features | 10 | 32.1 | 24.1 to 43.9 (97.9 %) | 25.5 to 43.3 |
+| Forest minus SDALR, unseen targets | 10 | 8.9 | -0.2 to 16.7 (97.9 %) | 0.4 to 16.1 |
+| Same-condition forest loss | 10 | 29.7 | 16.5 to 42.0 (97.9 %) | 18.7 to 40.5 |
+| HUST loss, six splits | 6 | 33.5 | 25.8 to 61.1 (96.9 %) | 28.4 to 55.5 |
+
+Leave-one-bearing-out: with the windows of one bearing dropped from both targets of every split, the median SDALR gap
+is 36.2 pp with all bearings and ranges from 29.3 pp (without KA30) to 43.5 pp (without KA22); it is positive in at least 9 of 10 splits for every bearing.
+
+| Bearing dropped | Median gap (pp) | Splits positive |
+|---|---|---|
+| K001 | 36.2 | 10/10 |
+| K002 | 36.2 | 10/10 |
+| K003 | 36.2 | 10/10 |
+| K004 | 36.2 | 10/10 |
+| K005 | 36.2 | 10/10 |
+| K006 | 36.2 | 10/10 |
+| KA04 | 34.5 | 9/10 |
+| KA15 | 41.8 | 10/10 |
+| KA16 | 37.5 | 10/10 |
+| KA22 | 43.5 | 10/10 |
+| KA30 | 29.3 | 10/10 |
+| KI04 | 39.5 | 10/10 |
+| KI14 | 36.9 | 10/10 |
+| KI16 | 36.3 | 10/10 |
+| KI17 | 33.0 | 10/10 |
+| KI18 | 39.4 | 10/10 |
+| KI21 | 36.0 | 10/10 |
+
+## S6.12 HUST splits and fold gate gains (moved from the main text, 30 October 2026)
+
+Accuracy (%) of SDALR on the six pre-specified type-disjoint HUST bearing splits, as the mean over the six condition pairs of each split; the source is the three listed bearing types and the clean target the other two, at the target load. The same leaky and clean values are plotted in Fig. 2b of the main text [src: results/c94; experiments/c94_eval.py; paper/make_tables.py].
+
+| Split | Source bearings | Leaky | Clean | Delta_leak |
+|---|---|---|---|---|
+| H0 | 6204, 6207, 6208 | 98.1 | 63.7 | 34.5 |
+| H1 | 6204, 6205, 6207 | 100.0 | 69.1 | 30.9 |
+| H2 | 6204, 6205, 6206 | 99.8 | 49.9 | 49.9 |
+| H3 | 6205, 6206, 6207 | 100.0 | 67.5 | 32.5 |
+| H4 | 6206, 6207, 6208 | 94.3 | 68.5 | 25.8 |
+| H5 | 6205, 6206, 6208 | 100.0 | 38.9 | 61.1 |
+
+Paired effect of each gate inside SDALR on the 12 bearing-disjoint tasks of the two mechanical folds, gated minus ungated accuracy in percentage points, at one seed per row; both arms of every comparison ran in one job from the same source checkpoint, and the 12 tasks share two source folds, so these summaries are descriptive. The per-task values of the two envelope-based gates are plotted in Fig. 6 of the main text [src: results/PAIRED_GATING.md; experiments/paired_gating.py; paper/make_tables.py].
+
+| Gate | Seed | Mean | Median | Min | Max | Tasks > 0 |
+|---|---|---|---|---|---|---|
+| Shaft-alias-guarded comb | 0 | +3.79 | +3.33 | -0.08 | +11.01 | 7/12 |
+| Shaft-alias-guarded comb | 1 | +4.56 | +3.28 | -0.08 | +15.45 | 8/12 |
+| Shaft-alias-guarded comb | 2024 | +3.73 | +3.67 | -0.05 | +8.07 | 8/12 |
+| Envelope threshold rule | 0 | +7.44 | +7.57 | -0.01 | +18.02 | 9/12 |
+| Envelope threshold rule | 1 | +7.99 | +6.65 | -0.70 | +19.44 | 10/12 |
+| Envelope threshold rule | 2024 | +5.70 | +5.59 | -0.05 | +14.52 | 10/12 |
+| Raw-spectrum band rule | 2024 | -3.93 | -4.03 | -20.01 | +6.63 | 6/12 |

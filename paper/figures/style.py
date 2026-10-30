@@ -20,7 +20,8 @@ PNG_DIR = ROOT / "paper" / "figures" / "preview"
 CSV_DIR = ROOT / "paper" / "figures" / "data"
 
 MM = 1 / 25.4
-WIDTHS = {"single": 90 * MM, "onehalf": 140 * MM, "double": 190 * MM}   # inches
+WIDTHS = {"single": 90 * MM, "onehalf": 140 * MM, "double": 190 * MM,   # inches
+          "text": 165 * MM}   # text width of the elsarticle 3p preprint (468 pt): full-width figures, not scaled in LaTeX
 MAX_HEIGHT = 230 * MM
 
 # Okabe--Ito, assigned once per experimental arm and never reused for anything else.

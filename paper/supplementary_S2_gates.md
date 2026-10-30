@@ -65,3 +65,21 @@ Each bearing contributes 80 recordings. Counts are descriptive; repeated recordi
 | K004 | 0 | 0 | 1 | 24 |
 | K005 | 0 | 0 | 1 | 15 |
 | K006 | 0 | 0 | 1 | 52 |
+
+## S2.6 Agreement with Smith and Randall's diagnosability grades on CWRU (M4b)
+
+The surrogate-null comb (cepstrum arm, alpha = 0.05) against the per-record diagnosability grade of the CWRU benchmark of
+Smith and Randall (2015), as collapsed in predictive-maintenance-mcp, on 64 drive-end records (60 fault, 4 normal), first
+5.000 s, per-file speed [src: results/m4b/M4B_RESULT.md; pre-registered as PROTOCOL C29, re-specified onto this detector by
+C31]. Spearman rho between grade and agreement +0.565 (one-sided p < 0.0001).
+
+| Grade | Records | Gate agreement |
+|---|---|---|
+| Y1 textbook | 9 | 0.89 |
+| Y2 clearly diagnosable | 35 | 0.26 |
+| P1 / P2 partial | 1 / 5 | 0.00 |
+| N1 not diagnosable | 10 | 0.00 |
+
+No fault record received a wrong family (all 43 disagreements are abstentions), and none of the 4 normal records was
+flagged. Caveat that travels with this result: this is a second run; the first (M4) exposed a detector defect on the same 64
+records, and the revisions that followed were fixed by synthetic tests before this run, but the records are not fresh.

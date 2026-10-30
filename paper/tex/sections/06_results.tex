@@ -1,6 +1,6 @@
 \section{Results}
 \label{sec:results}
-All confidence intervals (CIs) below are conditional descriptive bootstrap intervals for the retained bearing pools under the resampling scheme in Section~\ref{sec:protocol}; they are not population-level uncertainty bounds.
+All confidence intervals (CIs) in this section are the conditional order-statistic intervals of Section~\ref{sec:protocol} for the retained bearing pools; they are not population-level uncertainty bounds. Differences in the tables are computed from unrounded values.
 
 \subsection{Reproduction}
 \label{sec:res-repro}
@@ -12,8 +12,8 @@ the six condition pairs is \SI{98.03}{\percent} against \SI{98.50}{\percent} rep
 \SI{96.20}{\percent} against \SI{96.78}{\percent}. The two hardest tasks bracket the published values over four seeds
 (A3$\to$A2: $93.9\pm4.7$ against 97.84 reported; A1$\to$A2: $90.3\pm4.9$ against 87.03), and the seed standard deviation on
 those tasks, about 5 points, exceeds many differences reported between competing methods in this literature. We treat the
-method as reproduced and use the released hyper-parameters unchanged. Everything after this subsection uses the
-three-class label space with several bearings per class; the leaky baselines below are measured in that space, not
+method as reproduced and use the released hyperparameters unchanged. Everything after this subsection uses the
+three-class label space with several bearings per class; the leaky baselines in the rest of this section are measured in that space, not
 against the published number.
 
 \subsection{What survives bearing-disjoint evaluation}
@@ -24,34 +24,37 @@ against the published number.
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{figures/fig2_collapse.pdf}
-\caption{Accuracy by split on both rigs, rows sorted by the size of the collapse. Each row joins the leaky target (dark) to
-the bearing-disjoint target (orange); ticks mark the same source model adapted with the envelope threshold gate (amber) and
-with the oracle pseudo-label filter (green), and diamonds a random forest on ten time-domain statistics trained on the same
-source windows without adaptation. The number at the right of each row is $\Delta_{\mathrm{leak}}$ in percentage points.
-(a) Paderborn, ten pre-specified random bearing splits above the rule and the two mechanical folds below it (fold markers show only the paired leaky and clean arms; gated and oracle results from the separate job are omitted);
-(b) HUST bearing, six type-disjoint splits. Dotted line: three-class chance level. Plotted with code written with Claude Code; see the AI-use disclosure.}
+\caption{Accuracy lost on unseen bearings, per split. Each row joins SDALR's leaky-target and bearing-disjoint-target accuracy for one split of (a) Paderborn, ten
+random splits above the dashed line and two folds below it, or (b) HUST bearing; the number at the right is
+$\Delta_{\mathrm{leak}}$ in points. Ticks mark the clean-target accuracy with the envelope threshold gate and with the
+oracle filter, diamonds that of a random forest on ten time statistics without adaptation, and the dotted line the
+three-class chance level. Fold
+rows show only the leaky and clean arms, because the folds' gated and oracle arms ran in a separate job.}
 \label{fig:collapse}
 \end{figure}
 
+\input{tables/t8_bearings}
+
 Across the ten pre-specified random splits (Table~\ref{tab:collapse}, Fig.~\ref{fig:collapse}) SDALR loses a median of 36.2
-points on bearing-disjoint targets (conditional 95\,\% CI 25.0--56.3, range 8.2--61.6), positive in every split. Which bearings happen to be in the source moves clean accuracy between \SI{36.4}{} and
+points on bearing-disjoint targets (conditional 95\,\% CI 21.6--59.4, range 8.2--61.6), positive in every split. No single bearing carries it: in a post-hoc check with the windows of any one bearing dropped from every target, the median stays between 29.3 and 43.5 points, positive in at least 9 of 10 splits (Supplementary~S6). Which bearings happen to be in the source moves clean accuracy between \SI{36.4}{} and
 \SI{74.0}{\percent}, illustrating the sensitivity of a performance estimate to the selected bearing set. On
-the two mechanical folds the leaky arm reaches \SI{94.1}{\percent} and the clean arm \SI{56.8}{\percent}, a loss of 30.0
+the two mechanical folds (fold job, mean of the two directions) the leaky arm reaches \SI{94.1}{\percent} and the clean arm
+\SI{56.8}{\percent}, a loss of 30.0
 points with fold~A as source and 44.6 with fold~B; with fold~B as source all six leaky tasks exceed \SI{99.7}{\percent} while
 all six clean tasks fall between \SI{55.27}{} and \SI{55.33}{\percent}. The released checkpoint policy, which consults target
 labels, gives \SI{94.7}{\percent} against \SI{57.8}{\percent} on the folds: target-label selection is worth 0.6 points on leaky
 and 1.0 points on clean targets on average (per task 0.0--4.1), so it does not account for the gap.
 
-\textbf{The gap is there before adaptation.} The batch-0 accuracy recorded in every adaptation log is the source model's
-accuracy before any update. On the ten splits the source model alone already loses a median 35.1 points on unseen bearings
-(conditional CI 24.4--50.6, 10 of 10; Table~\ref{tab:collapse}, column ``Source-only $\Delta$''). SDALR's adaptation then changes the gap
+\textbf{The gap is there before adaptation.} A post-hoc analysis reads the batch-0 accuracy recorded in every adaptation
+log, which is the source model's accuracy before any update. On the ten splits the source model alone already loses a median 35.1 points on unseen bearings
+(conditional CI 21.2--55.0, 10 of 10; Table~\ref{tab:collapse}, column ``Source-only $\Delta$''). SDALR's adaptation then changes the gap
 by a median $+4.7$ points (positive in 8 of 10): it raises leaky accuracy by a median 2.0 points and
 lowers clean accuracy in 7 of 10 splits (median $-2.3$). On the folds adaptation adds 3.4 and 2.2 points on clean targets,
 so the folds alone would suggest that adaptation helps. The gap therefore precedes adaptation and remains substantial afterwards. The 4.7-point median of paired gap changes is not the difference between the separate 36.2- and 35.1-point medians.
 
 \textbf{The same bearing, seen and unseen.} Leaky and clean targets hold different bearings, so $\Delta_{\mathrm{leak}}$ also
 contains the difference in difficulty between two bearing sets. Across the ten splits every bearing is in the source in some
-splits and in the clean target in others, so its accuracy when seen can be compared with its accuracy when unseen
+splits and in the clean target in others, so its accuracy when seen can be compared post hoc with its accuracy when unseen
 (Table~\ref{tab:bearings}, Fig.~\ref{fig:bearings}a). The within-bearing difference has a median of 38.7 points over the 17
 bearings (conditional CI 9.5--62.5): positive for 14 and tied for 3 (the healthy K003, K004 and K006, recognised perfectly either way); none is
 negative. By class the median is 2.9 points for healthy specimens, 62.5 for outer-race and 49.0 for inner-race ones. Two
@@ -64,45 +67,44 @@ the leaky--clean contrast cannot.
 
 \input{tables/t4_methods}
 
-\input{tables/t7_hust}
-
 Table~\ref{tab:methods} places SDALR beside SHOT and non-adaptive controls under the same bearing splits.
 
-\textbf{SHOT.} Run from the same source checkpoints, SHOT loses a median 36.6 points on bearing-disjoint targets (conditional CI 22.5--59.1; positive in 10 of 10 splits), meeting the pre-specified rule (median at least 10 points, sign-flip $p<0.05$). Its source-only gap is the 35.1 points of the shared source model; adaptation raises the gap by a median 3.9 points and lowers clean accuracy by a median 2.8 points (leaky accuracy changes by a median 2.2). On bearing-disjoint targets SHOT is lower than SDALR by a median 1.4 points (4 of 10 splits higher). SHOT is SDALR's own base rather than an independent family, so the two do not establish method generality.
+\textbf{SHOT.} Run from the same source checkpoints, SHOT loses a median 36.6 points on bearing-disjoint targets (conditional CI 19.7--62.0; positive in 10 of 10 splits), meeting the pre-specified rule (median at least 10 points, sign-flip $p<0.05$). Its source-only gap is the 35.1 points of the shared source model; adaptation raises the gap by a median 3.9 points and lowers clean accuracy by a median 2.8 points (leaky accuracy changes by a median 2.2). On bearing-disjoint targets SHOT is lower than SDALR by a median 1.4 points (4 of 10 splits higher). SHOT is SDALR's own base rather than an independent family, so the two do not establish method generality.
 
 Random forests \cite{pedregosa2011sklearn} trained on the same source windows with no adaptation at all lose a median 22.7
-points on ten time-domain statistics (conditional CI 16.4--32.5) and 32.1 points on the combined feature set (conditional CI 25.5--43.3), each in 10
+points on ten time-domain statistics (conditional CI 15.0--35.9) and 32.1 points on the combined feature set (conditional CI 24.1--43.9), each in 10
 of 10 splits. On bearing-disjoint targets the time-statistics forest is more accurate than
-adapted SDALR by a median 8.9 points (conditional CI 0.4--16.1, 8 of 10 splits).
+adapted SDALR by a median 8.9 points (conditional CI $-0.2$ to 16.7, 8 of 10 splits).
 
-The result replicates on a second rig. On HUST bearing (Table~\ref{tab:hust}, Fig.~\ref{fig:collapse}b) mean leaky accuracy
-is \SI{98.7}{\percent} and mean clean accuracy \SI{59.6}{\percent}, a median split-level loss of 33.5 points (conditional CI 28.4--55.5), positive in all six splits. Each HUST bearing type is a different size, so the clean target changes geometry as well as specimen. This supports the same direction and a similar observed magnitude within a second fixed pool; it does not isolate a specimen effect. The pre-specified replication-rule assessment is given in Supplementary~S6.
+The result replicates on a second rig. On HUST bearing (Fig.~\ref{fig:collapse}b; per-split values and source bearing types in Supplementary~S6) mean leaky accuracy
+is \SI{98.7}{\percent} and mean clean accuracy \SI{59.6}{\percent}, a median split-level loss of 33.5 points (conditional CI 25.8--61.1), positive in all six splits. Each HUST bearing type is a different size, so the clean target changes geometry as well as specimen. This supports the same direction and a similar observed magnitude within a second fixed pool; it does not isolate a specimen effect. The pre-specified replication-rule assessment is given in Supplementary~S6.
 
-\textbf{Without any condition shift.} Every task above crosses operating conditions. In a pre-specified control the time-
+\textbf{Without any condition shift.} Every task considered so far crosses operating conditions. In a pre-specified control the time-
 statistics forest is trained, at each condition separately, on half of the source bearings' recordings and tested at the
 \emph{same} condition on the held-out recordings of the same bearings and on recordings of the complementary bearings;
 recordings never cross the split, which is the separation used by recording-level benchmarks \cite{knap2026leakagesafe} and
 the repetition-wise split of Vieira et al.\ \cite{vieira2026}. Balanced accuracy falls by a median of 29.7 points (conditional CI
-18.7--40.5, 10 of 10), from a median \SI{94}{\percent} on held-out recordings of seen bearings to
+16.5--42.0, 10 of 10), from a median \SI{94}{\percent} on held-out recordings of seen bearings to
 \SI{65}{\percent} on unseen ones. A large bearing-disjoint loss can therefore occur without changing operating condition; this control and the cross-condition results use different accuracy summaries and are not an equivalence comparison. A post-hoc breakdown by class
-locates the loss: healthy recall barely moves (median 99.9 to \SI{98.2}{\percent}); inner-race recall, where every bearing
-carries the same mechanism (fatigue pitting \cite{lessmeier2016}), falls by a median 28.5 points; outer-race recall, which
-mixes pitting with plastic deformation from indentations, falls by 66 points, and on unseen indentation bearings it is a
-median \SI{23}{\percent} against \SI{64}{\percent} on pitting ones (medians over the ten and eight target sets that contain such bearings, folds included). This
-control uses a forest; SDALR was not run at a fixed condition.
+locates the loss: healthy recall barely moves (median 99.9 to \SI{98.2}{\percent}); inner-race recall, where the principal
+damage of every bearing is fatigue pitting (KI04 and KI14 also carry outer-ring indentations, Section~\ref{sec:data}
+\cite{lessmeier2016}), falls by a median 28.5 points; outer-race recall, which mixes pitting with plastic deformation from
+indentations, falls by 66 points, and on unseen indentation bearings (KA15, KA30) it is a median \SI{23}{\percent} against
+\SI{64}{\percent} on pitting ones (KA04, KA16, KA22; medians over the ten and eight target sets that contain such bearings,
+folds included). With two indentation and three pitting specimens, this contrast separates specimens as much as
+mechanisms. This control uses a forest; SDALR was not run at a fixed condition.
 
 \subsection{Specimen variation and source coverage}
 \label{sec:res-mechanism}
 
-\input{tables/t8_bearings}
-
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{figures/fig3_bearings.pdf}
-\caption{(a) SDALR accuracy on each Paderborn bearing over the ten splits, when it was in the source (dark) and when it was
-unseen (orange; amber for the four bearings the envelope gate can certify). (b) Pre-specified source-diversity curve: a
-random forest on ten time statistics, same-condition design, balanced accuracy on held-out recordings of the training
-bearings (dark) and on one unseen bearing per class (orange), median and interquartile range over 30 test triples. Plotted with code written with Claude Code; see the AI-use disclosure.}
+\caption{Accuracy of each bearing when seen and unseen, and the source-diversity curve. (a) Each row compares SDALR's window accuracy on one Paderborn bearing over the ten splits when the bearing was in
+the source and when it was unseen, with the four bearings the envelope gate can certify in amber. (b) In the pre-specified
+source-diversity curve, a random forest on ten time statistics is trained at one condition on one to four bearings per
+class and scored by balanced accuracy on held-out recordings of its training bearings and on one unseen bearing per class.
+Points are medians and bands interquartile ranges over 30 test triples; the dotted line is the three-class chance level.}
 \label{fig:bearings}
 \end{figure}
 
@@ -110,7 +112,7 @@ Specimen-associated features and inadequate coverage of damage variation can bot
 
 \textbf{Specimens are identifiable, but reliance on identity is not established.} A logistic-regression probe fitted within each
 class on record-disjoint halves identifies the physical bearing in 507 of 508 held-out recordings from the frozen SDALR source
-features and in 508 of 508 from ten elementary time statistics (pooled chance 0.35); the 508 recordings are the held-out half
+features and in 508 of 508 from ten elementary time statistics (pooled within-class chance \SI{35}{\percent}); the 508 recordings are the held-out half
 of the 1020 source recordings of the six source models. The identification survives removing the signal mean, the statistic
 most tied to sensor offset (508 of 508); the standard deviation alone identifies 477. A simple within-session drift control is much less discriminative: the
 same probe asked to separate the first ten from the last ten recordings of one bearing succeeds on 285 of 508 (chance 254).
@@ -127,16 +129,20 @@ triples (25 of 30 positive). The Monte Carlo calculation is in Supplementary~S6.
 The intervention increases both source diversity and training volume: median training-window counts are 1043, 2129, 3210 and 4265 as the number of bearings per class rises from one to four. Source subsets at successive sizes were drawn separately rather than nested. The curve is consistent with inadequate source coverage, as in the supervised observations of Vieira et al.\ \cite{vieira2026}, but does not isolate diversity from sample count or rule out reliance on specimen-associated features. It is a forest result, not a source-diversity intervention on SDALR. The 28.8-point difference between endpoint medians and the 15.4-point median paired gain are different summaries of the same outcomes.
 
 \textbf{Labelling whole specimens is not a sign of failure.} An adapted model that misclassifies an unseen bearing usually
-does so for all its windows: with fold~B as source every clean bearing receives a single label across all six tasks, and the
-resulting \SI{55.33}{\percent} is exact arithmetic (three healthy and two fault bearings right, $(2\,000 + 660 + 660)/6\,000$).
+does so for all its windows: with fold~B as source every clean bearing receives a single label on at least
+\SI{99.9}{\percent} of its windows over the six tasks (in the gating job's per-window predictions), and in four of the tasks
+the resulting \SI{55.33}{\percent} is exact arithmetic (three healthy and two fault bearings right,
+$(2\,000 + 660 + 660)/6\,000$).
 But block labelling is equally common when the bearing was seen: per task, \SI{90}{\percent} of seen and \SI{89}{\percent} of
 unseen bearing--task pairs receive one label for at least \SI{99}{\percent} of their windows, and the fold~A direction is not
 pure (K004 0.67, KI17 0.56). A specimen's windows are similar to each other, so a classifier decides the specimen as a whole;
-the failure is in which label it gives, not in how it gives it.
+the failure is in which label it gives, not in how it gives it. That label is almost never `healthy': unseen damaged
+bearings are labelled healthy on at most \SI{5.8}{\percent} of their windows, and the error is a confusion between the two
+fault families, which takes a median \SI{69}{\percent} of an unseen damaged bearing's windows (Supplementary~S6).
 
-\textbf{The kinematic control is sensitive to class weighting.} The 2048-sample windows poorly resolve the harmonic structure used by the gates (Section~\ref{sec:windows}). A pre-specified forest instead uses 13 full-recording kinematic features: floor-normalised envelope maxima at the specimen's first five outer- and inner-race harmonics and shaft orders 1--3. Its ordinary-accuracy gap has median 8.4 points (conditional CI 4.8--21.0; 9 of 10 splits), with median leaky and clean accuracies of \SI{65.8}{} and \SI{56.1}{\percent}. This meets the pre-specified point-estimate rule of a gap below 10 points, but is not evidence of equivalence or reliable transfer.
+\textbf{The kinematic control is sensitive to class weighting.} The 2048-sample windows poorly resolve the harmonic structure used by the gates (Section~\ref{sec:windows}). A pre-specified forest instead uses 13 full-recording kinematic features: floor-normalised envelope maxima at the specimen's first five outer- and inner-race harmonics and shaft orders 1--3. Its ordinary-accuracy gap has median 8.4 points (conditional CI 2.4--30.8; 9 of 10 splits), with median leaky and clean accuracies of \SI{65.8}{} and \SI{56.1}{\percent}. This meets the pre-specified rule, a median gap below 10 points in record-level ordinary accuracy, but is not evidence of equivalence or reliable transfer.
 
-Unlike the class-balanced window comparisons, this record-level clean target contains three healthy, three inner-race and two outer-race bearings. Its balanced accuracy gives a median gap of 10.4 points (conditional CI 7.2--22.7; 10 of 10 positive), median clean balanced accuracy \SI{54.4}{\percent}, and mean \SI{52.3}{\percent} (Table~\ref{tab:methods}; Supplementary~S6). Under balanced accuracy the same threshold is not met, so the conclusion depends on class weighting. The representation has a smaller observed gap than the time-statistics forest, but the wide interval, low accuracy and simultaneous changes in duration and aggregation prevent a claim of robust transfer or an isolated representation effect. Concurrent source-dependent adaptation work also finds representation important on held-out Paderborn bearings \cite{nagaswetha2026}.
+Unlike the class-balanced window comparisons, this record-level clean target contains three healthy, three inner-race and two outer-race bearings. Its balanced accuracy gives a median gap of 10.4 points (conditional CI 5.6--26.7; 10 of 10 positive), median clean balanced accuracy \SI{54.4}{\percent}, and mean \SI{52.3}{\percent} (Table~\ref{tab:methods}; Supplementary~S6). Under balanced accuracy the same threshold is not met, so the conclusion depends on class weighting. The representation has a smaller observed gap than the time-statistics forest, but the wide interval, low accuracy and simultaneous changes in duration and aggregation prevent a claim of robust transfer or an isolated representation effect. Concurrent source-dependent adaptation work also finds representation important on held-out Paderborn bearings \cite{nagaswetha2026}.
 
 \subsection{How much an oracle pseudo-label filter recovers}
 \label{sec:res-decomp}
@@ -144,13 +150,13 @@ Unlike the class-balanced window comparisons, this record-level clean target con
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{figures/fig4_decomposition.pdf}
-\caption{Decomposition~\eqref{eq:decomp} per split: the part of the collapse an oracle pseudo-label filter recovers, and the
-part it does not. Plotted with code written with Claude Code; see the AI-use disclosure.}
+\caption{Oracle decomposition of the unseen-bearing loss. Each bar divides the collapse $\Delta_{\mathrm{leak}}$ of one random split by Decomposition~\eqref{eq:decomp}
+into the part the oracle pseudo-label filter recovers and the part it does not, with the recovered share above the bar.}
 \label{fig:decomp}
 \end{figure}
 
 On the ten random splits, where all four arms ran in one job, the oracle filter recovers a median \SI{82}{\percent} of the
-collapse (conditional CI 68--94, interquartile range 70--\SI{90}{\percent}, Fig.~\ref{fig:decomp}). The share varies: at
+collapse (conditional CI 60--98, interquartile range 70--\SI{90}{\percent}, Fig.~\ref{fig:decomp}). The share varies: at
 \SI{48}{\percent} on S03 half the collapse is not recovered, while on S04, the mildest collapse (8.2 points), the oracle
 arm exceeds the leaky arm, a share of \SI{222}{\percent}. The fold-level decomposition is not reported, because the gating job
 that produced the oracle arm has no leaky arm (Section~\ref{sec:protocol}).
@@ -170,65 +176,67 @@ correct pseudo-labels alone would close most of the gap on this rig; the questio
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{figures/fig5_roc.pdf}
-\caption{(a) Gate operating curves on 2319 Paderborn recordings: correct fault verdicts against false acceptance on the 480
-recordings from six healthy bearings, as each gate's parameter is swept. Filled circles mark the operating points fixed before evaluation. The
-vertical axis starts at 292 verdicts: the raw-spectrum band rule returns no correct verdict below \SI{11.5}{\percent} false
-acceptance, and its operating point lies at \SI{45}{\percent}, off the right of the axis. (b) Per split ($n=10$), the share of
-the clean target's faulty recordings the envelope gate gives a fault verdict against its paired accuracy gain. Spearman
-$\rho = 0.95$; with the label-free share of all target recordings, $\rho = 0.93$. The line is a least-squares fit for reading
-only. Plotted with code written with Claude Code; see the AI-use disclosure.}
+\caption{Gate operating curves and the coverage--gain relation. (a) As each gate's parameter is swept, its correct fault verdicts on the 1839 faulty Paderborn recordings are
+plotted against its false acceptance on the 480 healthy ones, with filled circles at the operating points fixed before
+evaluation. The vertical axis starts at 292 verdicts; the raw-spectrum band rule has no correct verdict below
+\SI{11.5}{\percent} false acceptance, and its operating point, at \SI{45}{\percent}, lies off the axis.
+(b) Across the ten splits, the envelope gate's paired accuracy gain rises with the share of the clean target's faulty
+recordings on which it gives a fault verdict (Spearman $\rho = 0.95$; the line is a least-squares fit).}
 \label{fig:roc}
 \end{figure}
 
 \textbf{Healthy false acceptance.} Gate behaviour is characterised on all 2319 single-fault and healthy Paderborn recordings: 29 physical
-bearings (6 healthy, 11 real-damage, 12 artificial-damage) at four operating conditions. At the operating points fixed
-before evaluation (Table~\ref{tab:gates}) the envelope threshold rule accepts a fault on 1 of 480 healthy recordings from six bearings (80 recordings each), the alias-guarded comb on none, the surrogate-null comb on 9, and the raw-spectrum band rule on 214. Per-bearing counts are shown alongside these totals; assumption-dependent intervals are in Supplementary~S6. Sweeping each gate's parameter
+bearings (6 healthy, 11 real-damage, 12 artificial-damage) at four operating conditions, 80 recordings per bearing less one distributed file that cannot be read (N15\_M01\_F10\_KA08\_2). At the operating points fixed
+before evaluation (Table~\ref{tab:gates}) the envelope threshold rule accepts a fault on 1 of 480 healthy recordings from six bearings (80 recordings each), the alias-guarded comb on none, the surrogate-null comb on 9, and the raw-spectrum band rule on 214. Their fault verdicts on faulty recordings name the wrong family 8 times in 374 for the envelope rule, 3 in 315 for the alias-guarded comb, 21 in 330 for the surrogate-null comb and 147 in 576 for the raw-spectrum rule. Per-bearing counts are shown alongside these totals; assumption-dependent intervals are in Supplementary~S6. Sweeping each gate's parameter
 (Fig.~\ref{fig:roc}a) shows the envelope rule on or above the other measured curves over the displayed operating range; this comparison concerns these implementations and recordings.
 
 \textbf{Coverage, and what limits it.} No gate exceeds about \SI{20}{\percent} correct fault verdicts (the envelope rule's 373
 of 1839) before false acceptance passes \SI{10}{\percent}. The comb tests, which add cepstral pre-whitening and a
 record-specific null to the same kurtogram band selection, reach 323--349 below \SI{10}{\percent} false acceptance,
-so low coverage persists across these implementations, which share substantial preprocessing. Table~\ref{tab:bearings} shows where it lies. At the three adaptation conditions the envelope rule certifies 4 of the
+so low coverage persists across these implementations, which share substantial preprocessing. On CWRU, where Smith and Randall graded the diagnosability of every record \cite{smith2015}, the surrogate-null comb agrees with 8 of the 9 records they grade as textbook cases and with none of the 10 they grade as not diagnosable (Spearman 0.57), with no cross-family error and none of the 4 normal records flagged; the detector had been revised after an earlier run on these records (Supplementary~S2). Table~\ref{tab:bearings} shows where it lies. At the three adaptation conditions the envelope rule certifies 4 of the
 11 real-damage bearings on more than one recording: KA04 (41 of 60), KA16 (40), KI16 (32) and KI18 (45). These are the
 specimens with the largest damage: extent class 2 or 3, or a pit \SI{2}{mm} long and \SI{3}{mm} wide (KA04), with the damage
 spanning the full raceway width on three of them. Every bearing it does not certify has extent class 1 and damage no larger
-than \SI{2}{mm} in either dimension. The two comb tests certify the same four bearings (both also fire on a few recordings of
-KI04, all wrongly, and of KA30); the raw-spectrum rule fires on every recording of those four, but also on bearings with no
-envelope signature and on healthy ones. Coverage is associated with damage size in this dataset. Size, specimen, mounting and resonance are not independently varied, so this does not establish size as the sole cause or exclude improvements to the detector.
+than \SI{2}{mm} in either dimension. The two comb tests certify the same four bearings and also KI04, correctly, on 2 (alias-guarded) and
+4 (surrogate-null) of its 60 recordings; their wrong verdicts fall on one and two recordings of KA30, respectively, and for
+the surrogate-null comb also on 7 recordings of KI16. The raw-spectrum rule fires on every recording of those four, but also on bearings with no envelope signature and on healthy
+ones. Coverage is associated with damage size in this dataset. Size, specimen, mounting and resonance are not independently varied, so this does not establish size as the sole cause or exclude improvements to the detector.
 
 \textbf{Inside the adaptation loop.} Over the ten splits the envelope gate adds a median 4.5 points to bearing-disjoint
-accuracy (conditional CI 2.5--15.7, positive in 9 of 10) and closes a median \SI{19}{\percent} of the
-oracle gap (conditional CI 10--41). Where it acts it changes what the model says: with fold~B as source, KA04 moves from
+accuracy (conditional CI 0.7--22.3, positive in 9 of 10) and closes a median \SI{19}{\percent} of the
+oracle gap (conditional CI 2--42). Where it acts it changes what the model says: with fold~B as source, KA04 moves from
 \SI{100}{\percent} inner-race predictions to 71/29 inner/outer. The gain, however, lies almost entirely on the recordings it
 certifies (Table~\ref{tab:gateacc}). Splitting each split's clean windows by gate verdict, certified windows gain a median 47 points, uncovered faulty
 windows a median 0.3 (sum over splits slightly negative) and healthy windows a median 0; certified windows carry
-\SI{104}{\percent} of the summed gain, so the remaining windows have a net negative contribution. This is a transductive filtering benefit, not demonstrated improvement on independent future target recordings. Because SFDA is scored on the windows it adapts on, a gain on certified windows partly reflects selective supervision on the same records used for evaluation; the gate only filters existing labels. The size of the gain therefore follows coverage closely: across the splits it tracks
+\SI{104}{\percent} of the summed gain, so the remaining windows have a net negative contribution. This is a transductive filtering benefit, not demonstrated improvement on independent future target recordings. Because SFDA is scored on the windows it adapts on, a gain on certified windows partly reflects selective supervision on the same records used for evaluation; the gate only filters existing labels. Using the verdicts directly does more. In a post-hoc comparison, replacing the ungated model's prediction by the gate's verdict on every window of a certified recording, with no change to adaptation, adds a median 8.7 points (conditional CI 5.1--27.7, positive in 10 of 10 splits), more than the in-loop gate in every split (Table~\ref{tab:gateacc}) and, on the two folds, in each of three seeds (mean +10.3 to +10.9 against +5.7 to +8.0 points over the 12 tasks); the verdict comes from each recording alone, so this gain does not rest on scoring the adaptation windows. The size of the gain therefore follows coverage closely: across the splits it tracks
 the share of faulty target recordings the gate speaks on ($\rho = 0.95$) and the label-free share of all target recordings
 it speaks on ($\rho = 0.93$), and the corresponding descriptive association remains after partialling out headroom (oracle minus ungated clean;
 partial $\rho = 0.90$), whereas the corresponding partial association for headroom given faulty-recording coverage is small (partial $\rho = 0.04$). The
-coverage of a split is set by whether KA04, KA16, KI16 or KI18 are among its clean bearings. On S03, where the gate speaks
+coverage of a split is set by whether KA04, KA16, KI16 or KI18 are among its clean bearings: the in-loop gain is
+$-1.5$ points with none of them, 0.7 to 4.3 with one, 3.6 to 9.3 with two, and 22.3 and 22.6 with three and four. The
+ten clean targets hold 1.8 of these bearings on average, as uniform draws would, so the benefit is specimen-specific
+rather than a product of the split design. On S03, where the gate speaks
 on two recordings of KA30 and is right on one, gating costs 1.5 points.
 
 On the two mechanical folds, over three seeds, the alias-guarded comb adds a mean $+4.03$ points and the envelope rule
-$+7.05$, positive in every seed (Table~\ref{tab:gains}, Fig.~\ref{fig:gains}); the comb was never run on the splits and no
-general claim is made for it. The raw-spectrum band rule, run on the folds with one seed only, has a mean effect of $-3.9$
+$+7.05$, positive in every seed (Fig.~\ref{fig:gains}; per-seed summaries in Supplementary~S6); the comb was never run on the splits and no
+general claim is made for it. Between seeds, the standard deviation of the per-task gain, averaged over tasks, is 1.7
+points for the comb and 2.4 for the envelope rule, against 2.8 for the ungated per-task accuracy. The raw-spectrum band rule, run on the folds with one seed only, has a mean effect of $-3.9$
 points that hides $+5.4$ with fold~A as source and $-13.2$ with fold~B: erroneous verdicts can retain incorrect agreeing pseudo-labels or suppress correct disagreeing ones, and the observed effect differs between target bearing sets.
 
 \input{tables/t9_gate_accounting}
 
-\input{tables/t6_gains}
-
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{figures/fig6_gains.pdf}
-\caption{Paired per-task effect of inserting each envelope-based gate into the adaptation loop on the two folds, over three seeds.
-Each point is one task; positive values are gains over the ungated arm trained from the same source checkpoint in the same
-job. Horizontal mark: median; vertical bar: percentile bootstrap interval of the median over the 12 tasks (descriptive; tasks
-of a fold share a checkpoint). Plotted with code written with Claude Code; see the AI-use disclosure.}
+\caption{Paired effect of the envelope-based gates on the mechanical folds. Each point is the paired effect of inserting one envelope-based gate into SDALR's adaptation loop on one of the 12
+fold tasks at one seed, gated minus ungated accuracy from the same source checkpoint in the same job. Horizontal marks are
+medians over the 12 tasks and vertical bars percentile bootstrap intervals of the median. The 12 tasks share two source
+folds, so the intervals are descriptive.}
 \label{fig:gains}
 \end{figure}
 
-\textbf{Does the operating point need the target rig?} Gate verdicts use no target labels, but the evidence of low healthy false acceptance at $z = 10$ comes from Paderborn's own healthy recordings, which is target-rig supervision. Swept on 24 healthy recordings
+\textbf{Does the operating point need the target rig?} The operating point $z = 10$ was fixed before any verdict was computed, and verdicts use no target labels, but the evidence that it rarely accepts a healthy recording comes from Paderborn's own healthy recordings: its validation, though not its choice, relies on the target rig. Swept on 24 healthy recordings
 from two rigs that appear nowhere in the adaptation experiments (20 from UORED and 4 CWRU baselines, truncated to
 Paderborn's spectral resolution), the same rule needs $z = 36$ for zero false acceptance and accepts 4 of the 24 at $z = 10$.
 On Paderborn the nearest swept point, $z = 40$, certifies 333 of 1839 fault recordings against 366 at $z = 10$

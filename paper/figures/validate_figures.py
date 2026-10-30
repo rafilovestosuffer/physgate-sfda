@@ -2,7 +2,7 @@
 
 Checks
   1. every \\includegraphics in the .tex resolves to a file that exists
-  2. page width equals the declared column width (90 / 140 / 190 mm) within 0.5 mm; height <= 230 mm
+  2. page width equals the declared column width (90 / 140 / 190 mm, or the 165 mm text width) within 0.5 mm; height <= 230 mm
   3. all fonts embedded, and only the approved family used
   4. every rendered text span >= 6.9 pt (the 7 pt rule, measured rather than assumed)
   5. colour-vision-deficiency simulation (Machado et al. matrices): series colours stay separable
@@ -29,7 +29,7 @@ sys.path[:0] = [str(HERE), str(ROOT / "experiments")]
 import style as S  # noqa: E402
 
 PT_MM = 25.4 / 72
-WIDTH_OF = {"fig1_design": 190, "fig2_collapse": 190, "fig3_purity": 140, "fig4_decomposition": 140,
+WIDTH_OF = {"fig1_design": 190, "fig2_collapse": 165, "fig3_bearings": 165, "fig3_purity": 140, "fig4_decomposition": 140,
             "fig5_roc": 140, "fig6_gains": 140, "fig7_slip": 90}
 GA = "graphical_abstract"
 APPROVED_FONTS = ("Arial", "ArialMT", "Arial-BoldMT", "DejaVuSans", "DejaVu Sans")

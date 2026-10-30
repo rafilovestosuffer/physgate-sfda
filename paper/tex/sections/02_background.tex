@@ -3,31 +3,40 @@
 
 \subsection{Leakage in bearing-diagnosis evaluation}
 
-Hendriks, Dumond and Knox showed that the conventional condition-wise split of the CWRU data places the same physical
-bearings in training and test sets, and proposed benchmarking with independent sets of bearings \cite{hendriks2022}. Wheat et
-al.\ compared run-to-run, day-to-day and part-to-part splits for classical pipelines and found accuracy falling by more than
-40\,\% between the most and least separated splits \cite{wheat2024leakage}. Varej\~{a}o et al.\ showed that similarity between
-training and test samples, which they call similarity bias, inflates the performance of feature-based and deep models alike
-on public vibration datasets \cite{varejao2025similarity}. Vieira et al.\ generalised bearing-wise
-partitioning, reformulated diagnosis as multi-label detection, and measured the inflation caused by segmentation-level and
-bearing-level leakage on UORED, Paderborn and CWRU with the training set held fixed and only the test set changed
-\cite{vieira2026}. On Paderborn their repetition-wise split (training and test recordings from the same bearing at the
-same condition) scores near-perfect Macro-AUROC against 54--77\,\% without leakage \cite[Table~12]{vieira2026}. Their study
-is supervised and, in their words, concerns ``training and testing within a single testbench''; it does not evaluate
-adaptation. Matania et al.\ \cite{matania2024leakage} show how test--training separation should be constructed for bearing
-fault classification. Knap et al.\ published a leakage-safe cross-domain benchmark on CWRU and Paderborn with six fixed
-scenarios \cite{knap2026leakagesafe}; its default rule separates \emph{recordings}, and one scenario is defined by bearing
-identity, which they report among the most challenging. Farag splits CWRU and Paderborn into subsets by fault level and
-operating condition to benchmark adversarial domain adaptation, and reports accuracy falling from 99\,\% to 36\,\% and
-45\,\% under these controlled shifts \cite{farag2025benchmark}. Kaya and Jobani report a fall from about 0.86 to 0.55
-macro-F1 for their early-fusion network when Paderborn bearings are made disjoint in a supervised pipeline \cite{kaya2026}. Concurrently, Nagaswetha and Pathak adapt across
-Paderborn conditions with held-out bearings and find that an order-domain representation decides whether alignment helps
-\cite{nagaswetha2026}; they use source data and no leaky baseline.
+Two families of work bear on the question. The first evaluates supervised diagnosis with training and test data
+separated by physical specimen, run or recording, usually with the training set held fixed so that only the test data
+change. On CWRU, the conventional condition-wise split places the same physical bearings in training and test sets, and
+benchmarking with independent sets of bearings was proposed in response \cite{hendriks2022}. For classical pipelines,
+accuracy falls by more than 40\,\% between the most and least separated of run-to-run, day-to-day and part-to-part splits
+\cite{wheat2024leakage}; similarity between training and test samples, termed similarity bias, inflates the performance of
+feature-based and deep models alike on public vibration datasets \cite{varejao2025similarity}; and the construction of
+test--training separation for bearing fault classification has been set out explicitly \cite{matania2024leakage}. The
+broadest study generalises bearing-wise partitioning, reformulates diagnosis as multi-label detection and measures the
+inflation caused by segmentation-level and bearing-level leakage on UORED, Paderborn and CWRU \cite{vieira2026}. On
+Paderborn its repetition-wise split (training and test recordings from the same bearing at the same condition) scores
+near-perfect Macro-AUROC against 54--77\,\% without leakage \cite[Table~12]{vieira2026}. With an early-fusion network,
+macro-F1 on Paderborn falls from about 0.86 to 0.55 when the bearings are made disjoint \cite{kaya2026}. The strength of
+this family is that it isolates what overlap is worth with a fixed model and fixed training data. Its limit for the present
+question is that every study is supervised and, in the words of Vieira et al., concerns ``training and testing within a
+single testbench'' \cite{vieira2026}; none evaluates adaptation, in which the model is updated on the target data
+themselves.
 
-Beyond this field, Kapoor and Narayanan document leakage across 17 scientific disciplines and give a taxonomy of its forms
-\cite{kapoor2023leakage}, Saeb et al.\ show the record-wise versus subject-wise analogue in clinical prediction
-\cite{saeb2017}, and Geirhos et al.\ name the learning behaviour at stake: a shortcut that succeeds on the benchmark and fails
-under the intended shift \cite{geirhos2020shortcut}.
+The second family benchmarks domain adaptation under controlled shifts. A leakage-safe cross-domain benchmark on CWRU and
+Paderborn defines six fixed scenarios whose default rule separates \emph{recordings}; its one scenario defined by bearing
+identity is reported among the most challenging \cite{knap2026leakagesafe}. With CWRU and Paderborn split into subsets by
+fault level and operating condition, the accuracy of adversarial domain adaptation falls from 99\,\% to 36\,\% and 45\,\%
+under these controlled shifts \cite{farag2025benchmark}. Concurrent work adapts across Paderborn conditions with held-out
+bearings and finds that an order-domain representation decides whether alignment helps \cite{nagaswetha2026}, and a
+concurrent preprint evaluates seventeen methods on Paderborn, CWRU, JNU and SEU under a bearing-disjoint, inductive
+protocol and finds about five labelled target samples per class worth more than any unsupervised adaptation method it
+tested \cite{duc2026recipe}. This family measures adaptation under controlled shift, but the methods evaluated are
+supervised, non-adaptive or source-dependent, and none adapts one source model to both a seen-bearing and an unseen-bearing
+target, so none measures what bearing overlap is worth to a source-free method.
+
+Beyond this field, leakage has been documented across 17 scientific disciplines with a taxonomy of its forms
+\cite{kapoor2023leakage}, the record-wise against subject-wise split is its analogue in clinical prediction
+\cite{saeb2017}, and the learning behaviour at stake has a name: a shortcut that succeeds on the benchmark and fails under
+the intended shift \cite{geirhos2020shortcut}.
 
 \subsection{Source-free domain adaptation for bearings}
 
@@ -61,22 +70,27 @@ instrument.
 
 \begin{table}[htbp]
 \centering
+\begingroup
 \small
-\caption{Closest work and the specific question added by this study. The present SFDA evidence is limited to SDALR and SHOT.}
-\label{tab:positioning}
 \begin{tabular}{>{\raggedright\arraybackslash}p{3.0cm}>{\raggedright\arraybackslash}p{5.1cm}>{\raggedright\arraybackslash}p{5.5cm}}
 \toprule
-Study & Established contribution & Additional question in this paper \\
+Work & Established & Added here \\
 \midrule
-Vieira et al.\ \cite{vieira2026} & Bearing-wise evaluation, fixed-training comparisons and source diversity in supervised diagnosis & How much of the paired gap precedes source-free adaptation, and how much can filtering recover? \\
-Nagaswetha and Pathak \cite{nagaswetha2026} (preprint) & Held-out-bearing, source-accessible adaptation and representation sensitivity & What happens under a source-free protocol with paired same-bearing and unseen-bearing targets? \\
-SDALR \cite{sdalr2025} & Adaptation using reliable and unreliable pseudo-labels on conventional tasks & How does the released method behave when physical target bearings were absent from source training? \\
-Present study & Paired SDALR/source-only evaluation and oracle versus physical keep-or-withhold filters & Non-adaptive controls support interpretation; no method-general SFDA or new-algorithm claim \\
+Vieira et al.~\cite{vieira2026} & Bearing-wise splits and fixed-training comparisons of seen and unseen bearings in supervised diagnosis; the number of training bearings is decisive & The same paired comparison for source-free adaptation, with a source-only arm that places the gap before adaptation and a within-bearing contrast \\
+\addlinespace
+Nagaswetha and Pathak~\cite{nagaswetha2026} (preprint) & Held-out-bearing adaptation with source data; an order-domain representation decides whether alignment helps & A source-free protocol with seen-bearing and unseen-bearing targets adapted from one source model \\
+\addlinespace
+SDALR~\cite{sdalr2025} & Source-free adaptation from reliable and unreliable pseudo-labels; its Paderborn benchmark uses the same bearings as source and target & Its loss, and that of its SHOT base~\cite{liang2020shot}, when the target bearings were absent from source training; SDALR also on a second rig \\
+\addlinespace
+Schlachter et al.~\cite{schlachter2025} & Pseudo-labels simulated with ground truth give the level perfect labels reach in online source-free universal adaptation & A keep-or-withhold oracle filter set against the unseen-bearing loss \\
+\addlinespace
+Bio-SFDA~\cite{yoon2026biosfda}, PIUDA~\cite{jia2024piuda}, PCTL~\cite{pctl2026} & Characteristic-frequency evidence inside adaptation, judged by end accuracy & Healthy false acceptance, fault-family precision and coverage of four gates; the envelope gate inside adaptation against direct use of its verdicts \\
 \bottomrule
-\end{tabular}
+\end{tabular}\par
+\endgroup
+\caption{Closest prior work and the contribution of this study. Each row gives the closest prior work on one aspect of this study, what it established and what this paper adds.}
+\label{tab:positioning}
 \end{table}
-
-Table~\ref{tab:positioning} separates established evaluation principles from the narrower question studied here.
 
 \subsection{Envelope analysis and the statistics of detection}
 

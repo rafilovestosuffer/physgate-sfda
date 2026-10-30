@@ -6,7 +6,7 @@
 
 Code, pre-specified protocol, run ledger and retained results for
 
-> **Bearing-disjoint evaluation of source-free bearing fault diagnosis: the unseen-bearing loss, its source-model origin and the limits of physics-gated pseudo-labels**<br>
+> **Bearing-disjoint evaluation of source-free bearing fault diagnosis: the unseen-bearing loss, its presence before adaptation and envelope-gated pseudo-labels**<br>
 > Mohammad Rafiur Rahman, Chittagong University of Engineering & Technology (CUET), 2026.
 
 Source-free domain adaptation (SFDA) benchmarks for rolling-bearing diagnosis can place the same physical bearings in the
@@ -116,14 +116,14 @@ record (execution plan, decision log and working notes) referred to by some code
 Commit identifiers quoted in `PROTOCOL.md` and the supplements refer to that development history. Release v1.1 adds the
 reporting revision of the manuscript (Supplementary S6) and the corrected SHOT run on the ten splits (PROTOCOL C113:
 `runners/shot_patch.py` v2, `results/c113/`, artifacts `results/artifacts/physgate-shot2-k10-g1..g4`); no other
-experiment was re-run. The concept DOI 10.5281/zenodo.23105809 resolves to the latest release.
+experiment was re-run. Release v1.2 adds the post-hoc analyses of retained artifacts made before journal submission (PROTOCOL C114-C116: `experiments/c114_unseen_labels.py`, `c115_exact_intervals.py`, `c116_gate_override.py` and `results/c114/`-`c116/`) and the manuscript's author-guide revision (no new run, no changed number). The concept DOI 10.5281/zenodo.23105809 resolves to the latest release.
 
 ## Citation
 
 ```bibtex
 @unpublished{rahman2026bearing,
   author = {Rahman, Mohammad Rafiur},
-  title  = {Bearing-disjoint evaluation of source-free bearing fault diagnosis: the unseen-bearing loss, its source-model origin and the limits of physics-gated pseudo-labels},
+  title  = {Bearing-disjoint evaluation of source-free bearing fault diagnosis: the unseen-bearing loss, its presence before adaptation and envelope-gated pseudo-labels},
   year   = {2026},
   note   = {Manuscript}
 }
@@ -131,7 +131,7 @@ experiment was re-run. The concept DOI 10.5281/zenodo.23105809 resolves to the l
 @software{rahman2026physgate,
   author    = {Rahman, Mohammad Rafiur},
   title     = {physgate-sfda: code, protocol, ledger and retained artifacts},
-  version   = {v1.1},
+  version   = {v1.2},
   year      = {2026},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.23105809}

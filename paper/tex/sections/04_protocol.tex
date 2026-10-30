@@ -4,14 +4,12 @@
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{figures/fig1_design.pdf}
-\caption{The evaluation design. (a) Paired design for split S00, source condition A2, target condition A1; dark
-segments of the traces are the 2048-sample adaptation windows, and $a_{\mathrm{gated}}$ is the accuracy of the gated clean
-arm. (b) Envelope threshold rule on the first recording of two clean-target bearings at A1 ($z$: floor-normalised squared
-envelope spectrum; $v$: gate verdict; $\hat{y}$: pseudo-label). Triangles mark the first three outer-race (filled) and
-inner-race (open) harmonics, dots the harmonics above $z = 10$. Both verdicts match those used in adaptation and hold for
-all 20 recordings of each bearing at A1. (c) Decomposition~\eqref{eq:decomp}; axis positions are schematic. Drawn with
-Matplotlib from the released data, using code written with Claude Code (Anthropic; recorded model identifier
-\texttt{claude-opus-5-5}); see the AI-use disclosure.}
+\caption{Paired evaluation design, gate verdict and oracle decomposition. (a) A source model trained at A2, here of split S00, is adapted at A1 to its own nine bearings (leaky target) and
+to the other eight (clean target), the latter also with a physics gate and with the oracle filter. (b) The envelope
+threshold rule gives each recording, here two clean-target recordings at A1, one verdict $v$ from its floor-normalised
+squared envelope spectrum $z$; the verdict keeps or withholds the pseudo-label $\hat{y}$ of each window. (c)
+Decomposition~\eqref{eq:decomp} splits $\Delta_{\mathrm{leak}}$ into the part the oracle filter recovers and the rest, on
+schematic axes.}
 \label{fig:design}
 \end{figure}
 
@@ -19,8 +17,8 @@ Matplotlib from the released data, using code written with Claude Code (Anthropi
 
 For the ten random splits, a source bearing set of 3 healthy, 3 outer-race and 3 inner-race specimens is trained at one operating condition. The
 resulting source model is then adapted, without target labels, to two different targets at the same target condition
-(Fig.~\ref{fig:design}): the \emph{leaky} target, made of the same physical bearings, and the \emph{clean} target, made of
-the complementary bearings. Operating condition, window length, number of windows per class, class balance, optimiser,
+(Fig.~\ref{fig:design}): the \emph{leaky} (seen-bearing) target, made of the same physical bearings, and the \emph{clean} (unseen-bearing)
+target, made of the complementary bearings. Operating condition, window length, number of windows per class, class balance, optimiser,
 schedule and seed are held fixed, as in the fixed-training designs of Vieira et al.\ \cite{vieira2026}. The leaky--clean
 difference, written $\Delta_{\mathrm{leak}}$, therefore measures bearing overlap \emph{together with} the difference between
 the two bearing sets, which hold different specimens. Two further contrasts help characterise these components. The \emph{source-only}
@@ -31,11 +29,13 @@ others: for each bearing, its accuracy when seen minus its accuracy when unseen 
 conditions there are six ordered condition pairs, hence six tasks per split and per direction.
 
 Windows are 2048 samples with 2000 windows per class; no window crosses a recording boundary. Within each recording the
-windows start at evenly spaced positions and do not overlap: 33 or 34 windows per recording of about 256\,800 samples, a
-hop of about 7\,700--7\,900 samples. The window length and the count per class are those of SDALR \cite{sdalr2025}, which
-states neither a hop nor start positions; its preprocessed archive was not used, so the hop is our choice. Balance is per
-class, not per bearing: a class with three bearings holds 680, 660 and 660 windows. Fold~B has only two real outer-race
-bearings (KA22, KA30), so its outer-race class holds 1000 windows from each, 50 per recording. For the window-based comparisons, every target holds the same number of
+windows start at evenly spaced positions and do not overlap. The window length and the count per class are those of SDALR
+\cite{sdalr2025}, which states neither a hop nor start positions; its preprocessed archive was not used, so the hop is our
+choice. Balance is per class, not per bearing. A class with three bearings holds 680, 660 and 660 windows, 33 or 34 per
+recording of about 256\,800 samples (a hop of about 7\,700--7\,900 samples). A class with two bearings holds 1000 windows
+from each, 50 per recording (a hop of about 5\,200 samples): this is the outer-race class of fold~B (KA22, KA30), as source
+or as target, and of the bearing-disjoint target of every random split, because the real-damage pool holds five outer-race
+bearings. For the window-based comparisons, every target holds the same number of
 windows per class, so window accuracy equals balanced accuracy (the mean of the per-class recalls), so a three-class model
 that ignores its input scores \SI{33.3}{\percent}.
 
@@ -64,10 +64,13 @@ takes the last iterate without target labels for training or checkpoint selectio
 
 SDALR was chosen because it is a recent source-free method with a Paderborn benchmark and released code; SHOT
 \cite{liang2020shot} because SDALR's objective reduces to SHOT's when its reliability split is removed (the first row of its
-ablation) and because SHOT is the generic source-free comparator this literature uses. Later bearing-specific methods
-report higher same-bearing Paderborn accuracy than SDALR \cite{li2025csad,yan2026hybrid}, but we found no released
-implementation of them and did not reimplement them from their descriptions, so the adaptation evidence here is limited to
-these two methods. No hyper-parameter of any arm was tuned on any target: SDALR and SHOT use SDALR's released values
+ablation) and because SHOT is the generic source-free comparator this literature uses. On these tasks SDALR's own
+criterion marks a median 0.6\,\% of the target windows unreliable per pseudo-labelling round (95th percentile 3.9\,\%, in
+the gated runs, which log it), so its objective stays close to SHOT's; the released threshold of 0.4 is a cosine distance,
+the counterpart of the paper's similarity threshold of 0.6. A later bearing-specific method
+reports higher same-bearing Paderborn accuracy than SDALR \cite{yan2026hybrid}, and another above 98\,\% on other bearing
+data \cite{li2025csad}, but we found no released implementation of either and did not reimplement them from their descriptions, so the adaptation evidence here is limited to
+these two methods. No hyperparameter of any arm was tuned on any target: SDALR and SHOT use SDALR's released values
 (Supplementary~S6), the forests use fixed defaults stated per experiment in the protocol, and the gate operating points were
 fixed before evaluation. SHOT runs from our own implementation of its objective on SDALR's backbone, data and schedule.
 A first SHOT implementation returned pseudo-labels in the order of a shuffled loader pass rather than in dataset order, an indexing defect found by code audit; its outputs are retained for audit only (Supplementary~S6). Every SHOT result reported here comes from the corrected implementation, whose pseudo-label alignment is checked by a unit test, run on the ten splits from the same source checkpoints as SDALR.
@@ -78,7 +81,8 @@ A gate returns one verdict per \emph{recording}, in $\{\text{silent},\text{inner
 window of that recording inherits; silence is not a healthy verdict. Inside the adaptation loop the verdict acts on SDALR's
 pseudo-label step: where the gate speaks, a pseudo-label is kept only if it agrees with the verdict and is otherwise
 withheld from the supervised term (the window still enters SDALR's entropy term, as SDALR's own unreliable samples do);
-where the gate is silent, the method is unchanged. The \emph{oracle filter} replaces the verdict by the true label of each
+where the gate is silent, the method is unchanged. In Fig.~\ref{fig:design}b the gate speaks on KA04 and is silent on
+KI17; both verdicts are those used in adaptation and hold for all 20 recordings of each bearing at A1. The \emph{oracle filter} replaces the verdict by the true label of each
 window, keeping only correct pseudo-labels. It is a reference, not a proven bound: adaptation is non-convex, and a filter
 that also withheld some correct labels could in principle do better. Like every arm, it is scored on the target windows it
 adapts on, as is standard in SFDA.
@@ -98,15 +102,16 @@ can be negative.
 
 \subsection{Statistics}
 
-Effects are paired differences. We report medians and percentile bootstrap intervals over source folds or splits (20\,000 resamples), rather than treating tasks sharing a source checkpoint as independent. The fold experiments are descriptive. The ten-split summaries describe sensitivity to the source-set draw within the fixed Paderborn pool; they do not quantify uncertainty for a population of new bearings.
+Effects are paired differences. We report medians over source folds or splits, rather than treating tasks sharing a source checkpoint as independent, with order-statistic intervals: the narrowest interval between two order statistics whose coverage under the sign model is at least 95\,\% (for ten splits the second and ninth smallest values, 97.9\,\%; for six, the range). Percentile bootstrap intervals, which for ten splits cover only 89\,\%, are kept in Supplementary~S6 for comparison. The fold experiments are descriptive. The ten-split summaries describe sensitivity to the source-set draw within the fixed Paderborn pool; they do not quantify uncertainty for a population of new bearings.
 
-Exact sign-flip tests, one-sided in the pre-specified direction, with Benjamini--Hochberg and Benjamini--Yekutieli adjustments \cite{benjamini1995,benjamini2001} are given in Supplementary~S6; with ten splits the smallest attainable one-sided $p$ is $1/1024$. Because splits share bearings, the sign-symmetry assumption of these tests holds only conditionally on the pool, so conclusions rest on the paired effects and their directions and the nominal $p$-values are reported for completeness. Each random split was run with one seed: in benchmark studies the variance due to the data split exceeds that due to initialisation \cite{bouthillier2021}, the two folds carry three seeds each, and the between-seed range of the ungated clean fold mean (1.9--3.2 points, below) is an order of magnitude smaller than the effect studied.
+Exact sign-flip tests, one-sided in the pre-specified direction, with Benjamini--Hochberg and Benjamini--Yekutieli adjustments \cite{benjamini1995,benjamini2001} are given in Supplementary~S6; with ten splits the smallest attainable one-sided $p$ is $1/1024$. Because splits share bearings, the sign-symmetry assumption of these tests holds only conditionally on the pool, so conclusions rest on the paired effects and their directions and the nominal $p$-values are reported for completeness. Each random split was run with one seed: in benchmark studies the variance due to the data split exceeds that due to initialisation \cite{bouthillier2021}, the two folds carry three seeds each, and the between-seed range of the ungated clean fold mean (1.9--3.2 points, Section~\ref{sec:repro-jobs}) is an order of magnitude smaller than the effect studied. The protocol's original rule of five seeds per configuration was not followed: SDALR's released seed (2024) was adopted before the first paired run, and split-level variance replaced seed-level variance (Supplementary~S1).
 
-Source-only, within-bearing, spillover, purity and interval analyses are post-hoc and descriptive. Source-expansion and kinematic-feature studies are exploratory follow-ups whose decisions were specified before their own runs. Supplementary~S6 gives the balanced-accuracy sensitivity analysis and the Monte Carlo test details, computed from saved values.
+Source-only, within-bearing, spillover, purity and interval analyses, the KI04/KI14 sensitivity, the leave-one-bearing-out check and the gate-override comparison are post-hoc and descriptive. Source-expansion and kinematic-feature studies are exploratory follow-ups whose decisions were specified before their own runs. Supplementary~S6 gives the balanced-accuracy sensitivity analysis and the Monte Carlo test details, computed from saved values.
 
-Healthy false-acceptance counts are reported by bearing in Table~\ref{tab:gates} and Supplementary~S2. Bearing-bootstrap and record-binomial intervals are given in Supplementary~S6 with their assumptions. Repeated recordings from one bearing are not independent specimens, and zero observed false acceptances bound the rate only weakly: the exact one-sided 95\,\% upper limit is \SI{0.6}{\percent} per recording if the 480 recordings were independent, and \SI{39}{\percent} per bearing for 0 of 6 bearings (Supplementary~S6). Six healthy bearings provide limited evidence about new-bearing false alarms.
+Healthy false-acceptance counts are reported by bearing in Section~\ref{sec:res-gating} and Supplementary~S2. Bearing-bootstrap and record-binomial intervals are given in Supplementary~S6 with their assumptions. Repeated recordings from one bearing are not independent specimens, and zero observed false acceptances bound the rate only weakly: the exact one-sided 95\,\% upper limit is \SI{0.6}{\percent} per recording if the 480 recordings were independent, and \SI{39}{\percent} per bearing for 0 of 6 bearings (Supplementary~S6). Six healthy bearings provide limited evidence about new-bearing false alarms.
 
 \subsection{Reproducibility, jobs and pre-specification}
+\label{sec:repro-jobs}
 
 Every effect here is a difference between two runs, so we measured the difference produced by no change at all: every
 retained re-execution of the gating configuration (eleven arm pairs over 66 paired tasks on both folds) reproduces the
@@ -119,8 +124,9 @@ gating job, which produced the ungated, gated and oracle clean arms. The later r
 save per-window predictions; source pretraining calls that routine on its validation loader halfway through training, and
 creating the extra loader iterator advances the global random generator. From that point the source pretraining follows a
 different trajectory, and the two jobs train different source checkpoints: their batch-0 target accuracy differs by up to
-9.3 points on fold~A and 2.5 on fold~B, and their ungated clean fold-A means are \SI{58.4}{} and \SI{56.8}{\percent}. Arms are
-therefore never compared across jobs. Leaky--clean contrasts come from the fold job, gated and oracle arms are compared with
+9.3 points on fold~A and 2.5 on fold~B, and their ungated clean fold-A means are \SI{58.4}{\percent} (fold job) and
+\SI{56.8}{\percent} (gating job). Arms are therefore never compared across jobs, and Table~\ref{tab:collapse} gives each
+fold one row per job. Leaky--clean contrasts come from the fold job, gated and oracle arms are compared with
 the gating job's own ungated arm, and the fold-level oracle decomposition, which would need a leaky arm the gating job never
 ran, is not reported. All ten random splits ran every arm in one job.
 
@@ -131,10 +137,3 @@ for budget before any of its outcomes were seen, and every reported number carri
 with the retained artifact and its checksum (Supplementary~S4). Supplementary~S7 lists the REFORMS reporting items for
 machine-learning-based science \cite{kapoor2024reforms} with the location of each in this paper, and the three leakage
 arguments of Kapoor and Narayanan \cite{kapoor2023leakage}.
-
-\paragraph{AI-assisted execution} An AI coding assistant (Claude, Anthropic, model \texttt{claude-opus-5-5}, used through the Claude Code agent) wrote and ran analysis, evaluation and figure code, prepared and
-submitted compute jobs, and cross-checked numbers against the retained artifacts. Hypotheses, decision rules and operating
-points were fixed in the protocol by the author before the corresponding runs. Every result traces to a retained artifact
-produced by a recorded job, and the code is released, so each step is reproducible without the assistant. The author
-verified the analyses by re-running the analysis scripts against the artifacts and takes full responsibility for the content.
-\par OpenAI Codex was used to audit code and retained results, revise text and rebuild submission files; it ran no experiment or training. Supplementary~S6 records the audit.

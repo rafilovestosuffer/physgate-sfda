@@ -18,7 +18,7 @@
 
 \begin{frontmatter}
 
-\title{Bearing-disjoint evaluation of source-free bearing fault diagnosis: the unseen-bearing loss, its source-model origin and the limits of physics-gated pseudo-labels}
+\title{Bearing-disjoint evaluation of source-free bearing fault diagnosis: the unseen-bearing loss, its presence before adaptation and envelope-gated pseudo-labels}
 
 \author[a]{Mohammad Rafiur Rahman\corref{cor1}\fnref{orcid}}
 \ead{u2303064@student.cuet.ac.bd}
@@ -34,10 +34,10 @@
 \iffalse
 \begin{highlights}
 \item Unseen bearings cost SDALR 36 and SHOT 37 points, median over ten splits.
-\item The large seen-unseen gap is already present before adaptation.
+\item A post-hoc check finds the seen-unseen gap already present before adaptation.
 \item More source bearings and training data improve a forest on unseen bearings.
 \item Envelope gates rarely flag healthy records but cover few faulty records.
-\item Oracle filtering recovers 82\% of the gap; envelope gating adds 4.5 points.
+\item Oracle filter recovers 82\% of the gap; gate verdicts used directly add 8.7 post hoc.
 \end{highlights}
 \fi
 

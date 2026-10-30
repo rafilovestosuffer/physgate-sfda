@@ -1,0 +1,253 @@
+{
+ "entry": "C116",
+ "status": "post-hoc, descriptive",
+ "gate": "envelope threshold rule (pcv), z = 10",
+ "rows": {
+  "S00": {
+   "ungated": 66.50833333333334,
+   "gated": 69.65277777777779,
+   "override": 71.96944444444445,
+   "gated_override": 69.56111111111112,
+   "certified_pct": 11.577777777777778,
+   "verdict_precision_pct": 98.90393294648614,
+   "certifiable_in_target": [
+    "KA04"
+   ],
+   "gated_gain": 3.1444444444444457,
+   "override_gain": 5.461111111111109,
+   "gated_override_gain": 3.052777777777777
+  },
+  "S01": {
+   "ungated": 39.833333333333336,
+   "gated": 62.458333333333336,
+   "override": 72.7388888888889,
+   "gated_override": 73.31944444444444,
+   "certified_pct": 36.61666666666667,
+   "verdict_precision_pct": 100.0,
+   "certifiable_in_target": [
+    "KA04",
+    "KA16",
+    "KI16",
+    "KI18"
+   ],
+   "gated_gain": 22.625,
+   "override_gain": 32.90555555555556,
+   "gated_override_gain": 33.48611111111111
+  },
+  "S02": {
+   "ungated": 51.55555555555555,
+   "gated": 60.90277777777778,
+   "override": 65.34722222222223,
+   "gated_override": 65.65277777777777,
+   "certified_pct": 19.63888888888889,
+   "verdict_precision_pct": 100.0,
+   "certifiable_in_target": [
+    "KA04",
+    "KI18"
+   ],
+   "gated_gain": 9.347222222222229,
+   "override_gain": 13.791666666666679,
+   "gated_override_gain": 14.097222222222221
+  },
+  "S03": {
+   "ungated": 58.60833333333334,
+   "gated": 57.15833333333333,
+   "override": 58.88611111111111,
+   "gated_override": 57.43333333333334,
+   "certified_pct": 0.5555555555555556,
+   "verdict_precision_pct": 50.0,
+   "certifiable_in_target": [],
+   "gated_gain": -1.45000000000001,
+   "override_gain": 0.27777777777777146,
+   "gated_override_gain": -1.1750000000000043
+  },
+  "S04": {
+   "ungated": 74.03055555555555,
+   "gated": 77.60555555555555,
+   "override": 82.66388888888888,
+   "gated_override": 82.66666666666667,
+   "certified_pct": 17.433333333333334,
+   "verdict_precision_pct": 100.0,
+   "certifiable_in_target": [
+    "KA04",
+    "KI16"
+   ],
+   "gated_gain": 3.575000000000003,
+   "override_gain": 8.633333333333326,
+   "gated_override_gain": 8.63611111111112
+  },
+  "S05": {
+   "ungated": 36.416666666666664,
+   "gated": 45.400000000000006,
+   "override": 49.91388888888889,
+   "gated_override": 51.547222222222224,
+   "certified_pct": 14.299999999999997,
+   "verdict_precision_pct": 98.989898989899,
+   "certifiable_in_target": [
+    "KI16",
+    "KI18"
+   ],
+   "gated_gain": 8.983333333333341,
+   "override_gain": 13.497222222222227,
+   "gated_override_gain": 15.13055555555556
+  },
+  "S06": {
+   "ungated": 68.57222222222222,
+   "gated": 73.31111111111112,
+   "override": 77.34166666666668,
+   "gated_override": 77.78055555555555,
+   "certified_pct": 17.255555555555556,
+   "verdict_precision_pct": 100.0,
+   "certifiable_in_target": [
+    "KA04",
+    "KI16"
+   ],
+   "gated_gain": 4.738888888888894,
+   "override_gain": 8.76944444444446,
+   "gated_override_gain": 9.208333333333329
+  },
+  "S07": {
+   "ungated": 51.47222222222223,
+   "gated": 52.138888888888886,
+   "override": 56.52777777777779,
+   "gated_override": 55.65,
+   "certified_pct": 8.988888888888889,
+   "verdict_precision_pct": 96.27635711081201,
+   "certifiable_in_target": [
+    "KI18"
+   ],
+   "gated_gain": 0.6666666666666572,
+   "override_gain": 5.055555555555564,
+   "gated_override_gain": 4.17777777777777
+  },
+  "S08": {
+   "ungated": 37.64444444444445,
+   "gated": 59.96944444444444,
+   "override": 65.33055555555556,
+   "gated_override": 66.0,
+   "certified_pct": 30.75,
+   "verdict_precision_pct": 100.0,
+   "certifiable_in_target": [
+    "KA04",
+    "KA16",
+    "KI18"
+   ],
+   "gated_gain": 22.32499999999999,
+   "override_gain": 27.68611111111111,
+   "gated_override_gain": 28.355555555555547
+  },
+  "S09": {
+   "ungated": 60.086111111111116,
+   "gated": 64.36944444444445,
+   "override": 67.96111111111111,
+   "gated_override": 66.14999999999999,
+   "certified_pct": 8.805555555555555,
+   "verdict_precision_pct": 97.6525821596244,
+   "certifiable_in_target": [
+    "KI18"
+   ],
+   "gated_gain": 4.2833333333333385,
+   "override_gain": 7.874999999999993,
+   "gated_override_gain": 6.063888888888876
+  }
+ },
+ "summary": {
+  "gated_gain": {
+   "median_pp": 4.511111111111116,
+   "positive": 9,
+   "order_statistic_interval": {
+    "lo": 0.6666666666666572,
+    "hi": 22.32499999999999,
+    "order_stats": [
+     2,
+     9
+    ],
+    "coverage": 0.978515625
+   }
+  },
+  "override_gain": {
+   "median_pp": 8.701388888888893,
+   "positive": 10,
+   "order_statistic_interval": {
+    "lo": 5.055555555555564,
+    "hi": 27.68611111111111,
+    "order_stats": [
+     2,
+     9
+    ],
+    "coverage": 0.978515625
+   }
+  },
+  "gated_override_gain": {
+   "median_pp": 8.922222222222224,
+   "positive": 9,
+   "order_statistic_interval": {
+    "lo": 3.052777777777777,
+    "hi": 28.355555555555547,
+    "order_stats": [
+     2,
+     9
+    ],
+    "coverage": 0.978515625
+   }
+  },
+  "override_minus_gated": {
+   "median_pp": 4.4166666666666785,
+   "override_higher": 10
+  },
+  "gated_gain_by_certifiable_count": {
+   "0": [
+    -1.45
+   ],
+   "1": [
+    0.67,
+    3.14,
+    4.28
+   ],
+   "2": [
+    3.58,
+    4.74,
+    8.98,
+    9.35
+   ],
+   "3": [
+    22.32
+   ],
+   "4": [
+    22.62
+   ]
+  },
+  "certifiable_per_target_mean": 1.8,
+  "certifiable_per_target_expected": 1.8,
+  "sdalr_unreliable_share_per_round_pct": {
+   "rounds": 240,
+   "median": 0.6,
+   "p95": 3.9299999999999953,
+   "max": 92.35,
+   "rounds_above_10pct": 2
+  },
+  "fold_seed_check": {
+   "0": {
+    "tasks": 12,
+    "mean_gated_gain_pp": 7.443055555555553,
+    "mean_override_gain_pp": 10.263888888888891,
+    "tasks_override_higher": 9,
+    "tasks_tied": 2
+   },
+   "1": {
+    "tasks": 12,
+    "mean_gated_gain_pp": 7.99027777777778,
+    "mean_override_gain_pp": 10.908333333333333,
+    "tasks_override_higher": 10,
+    "tasks_tied": 0
+   },
+   "2024": {
+    "tasks": 12,
+    "mean_gated_gain_pp": 5.70138888888889,
+    "mean_override_gain_pp": 10.413888888888893,
+    "tasks_override_higher": 11,
+    "tasks_tied": 0
+   }
+  }
+ }
+}

@@ -14,10 +14,11 @@ available, which suits an operator who cannot ship raw data between sites \cite{
 accuracies are high. Vieira et al.\ sampled 18 supervised bearing-diagnosis papers published in 2025: every one reported
 above \SI{94}{\percent}, five reported \SI{100}{\percent}, and none split training and test data by physical bearing.
 Eight split at random, nine by condition (load, speed or noise level) and one did not state its split
-\cite[Table~1]{vieira2026}. Source-free results sit at the same level: the method we re-evaluate, SDALR, reports
+\cite[Table~1]{vieira2026}. Source-free results sit at the same level: the method we re-evaluate, source-free domain
+adaptation based on label reliability (SDALR), reports
 \SI{96.8}{\percent} on Paderborn \cite{sdalr2025} on a task whose eight classes are eight individual bearings, the same
-specimens on the source and the target side, and later source-free methods report averages above \SI{98}{\percent}
-\cite{li2025csad,yan2026hybrid}.
+specimens on the source and the target side, and later source-free methods report averages above \SI{98}{\percent}, on Paderborn
+\cite{yan2026hybrid} and on other bearing data \cite{li2025csad}.
 
 A vibration dataset carries two kinds of information at once. One is the fault physics that should transfer: the impact
 train at the outer-race or inner-race passing frequency. The other is everything particular to one specimen: the extent
@@ -42,8 +43,8 @@ This paper follows one thread through those questions, with decision rules docum
 \begin{enumerate}
   \item \textbf{How much survives, and where the loss arises.} One source model is adapted to the same bearings and to
         unseen bearings at the same target condition (Section~\ref{sec:protocol}). We measure the gap on ten
-        pre-specified random bearing splits, two mechanical folds and a second rig, for SDALR and for
-        non-adaptive baselines, before and after adaptation, and for each bearing when it is seen and when it is unseen
+        pre-specified random bearing splits, two mechanical folds and a second rig, for SDALR, for source hypothesis
+        transfer (SHOT) \cite{liang2020shot} on the ten splits and for non-adaptive baselines, before and after adaptation, and for each bearing when it is seen and when it is unseen
         (Sections~\ref{sec:res-collapse} and~\ref{sec:res-second}).
   \item \textbf{Characterising unseen-bearing failure.} Probes, a per-bearing table drawn from the dataset's own damage profiles and a
         pre-specified source-diversity curve describe specimen-associated variation and the effect of expanding the source;
@@ -51,7 +52,7 @@ This paper follows one thread through those questions, with decision rules docum
         (Section~\ref{sec:res-mechanism}).
   \item \textbf{What an oracle pseudo-label filter recovers.} An oracle filter that keeps only correct pseudo-labels gives a
         reference for keep-or-withhold filters (Section~\ref{sec:res-decomp}).
-  \item \textbf{What physics gating actually buys.} Four gates are compared by false acceptance on 480 recordings from six healthy bearings and over their full operating curves, with three of them evaluated in the adaptation loop as paired arms
+  \item \textbf{What physics gating actually buys.} Four gates are compared by false acceptance on 480 recordings from six healthy bearings and over their full operating curves, with three of them evaluated in the adaptation loop as paired arms and the envelope gate also, post hoc, against direct use of its verdicts
         (Section~\ref{sec:res-gating}).
 \end{enumerate}
 
@@ -61,7 +62,7 @@ contrast that holds the specimen fixed. (ii) A pre-specified source-diversity cu
 on why unseen bearings fail. (iii) The perfect-pseudo-label reference of Schlachter et al.\ \cite{schlachter2025} is
 applied as a keep-or-withhold oracle and set against the loss. (iv) False-acceptance curves on real healthy recordings are
 measured for the physics gates that such methods insert, with the gates' coverage traced to the size of each specimen's
-damage. The contribution is knowledge about where the error of source-free bearing diagnosis lies, what physics-based
+damage, and the envelope gate's use inside adaptation is compared post hoc with direct use of its verdicts. The contribution is knowledge about where the error of source-free bearing diagnosis lies, what physics-based
 filtering can and cannot repair, and the evidence a result in this area should carry before it is believed.
 
 That bearing overlap inflates diagnosis accuracy is established: Hendriks et al.\ on CWRU \cite{hendriks2022}, Wheat et
@@ -74,3 +75,4 @@ held-out bearings, without a leaky baseline or a source-free method \cite{nagasw
 non-adaptive or source-dependent. We claim no new network, detector or adaptation algorithm: envelope analysis
 \cite{randall2011} and statistical thresholds for the squared envelope spectrum \cite{borghesani2013} are established, and
 harmonic-coordinate features close to the ones used here were published by Matania et al.\ \cite{matania2025}.
+Table~\ref{tab:positioning} sets each contribution of this paper against its closest prior work.
