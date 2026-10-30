@@ -9,7 +9,7 @@ Before changing anything we reproduced the published method from its released co
 from the rest of the paper in label space: the published Paderborn task has eight classes, each one physical bearing (K001,
 KA04, KA15, KA22, KA30, KI14, KI17, KI21), so every target specimen is also a source specimen. On JNU the mean accuracy over
 the six condition pairs is \SI{98.03}{\percent} against \SI{98.50}{\percent} reported; on Paderborn it is
-\SI{96.20}{\percent} against \SI{96.78}{\percent}. The two hardest tasks bracket the published values over four seeds
+\SI{96.20}{\percent} against \SI{96.78}{\percent} (reported values from Tables~4 and~5 of the preprint, arXiv:2503.08749). The two hardest tasks bracket the published values over four seeds
 (A3$\to$A2: $93.9\pm4.7$ against 97.84 reported; A1$\to$A2: $90.3\pm4.9$ against 87.03), and the seed standard deviation on
 those tasks, about 5 points, exceeds many differences reported between competing methods in this literature. We treat the
 method as reproduced and use the released hyperparameters unchanged. Everything after this subsection uses the
@@ -36,7 +36,7 @@ rows show only the leaky and clean arms, because the folds' gated and oracle arm
 \input{tables/t8_bearings}
 
 Across the ten pre-specified random splits (Table~\ref{tab:collapse}, Fig.~\ref{fig:collapse}) SDALR loses a median of 36.2
-points on bearing-disjoint targets (conditional 95\,\% CI 21.6--59.4, range 8.2--61.6), positive in every split. No single bearing carries it: in a post-hoc check with the windows of any one bearing dropped from every target, the median stays between 29.3 and 43.5 points, positive in at least 9 of 10 splits (Supplementary~S6). Which bearings happen to be in the source moves clean accuracy between \SI{36.4}{} and
+points on bearing-disjoint targets (conditional 97.8\,\% CI 21.6--59.4, range 8.2--61.6), positive in every split. No single bearing carries it: in a post-hoc check with the windows of any one bearing dropped from every target, the median stays between 29.3 and 43.5 points, positive in at least 9 of 10 splits (Supplementary~S6). Scoring the leaky target on two of its three outer-race bearings, as many as the clean target holds, leaves the median at 36.2 points (post hoc, Supplementary~S6). Which bearings happen to be in the source moves clean accuracy between \SI{36.4}{} and
 \SI{74.0}{\percent}, illustrating the sensitivity of a performance estimate to the selected bearing set. On
 the two mechanical folds (fold job, mean of the two directions) the leaky arm reaches \SI{94.1}{\percent} and the clean arm
 \SI{56.8}{\percent}, a loss of 30.0
@@ -86,7 +86,7 @@ adapted SDALR by a median 8.9 points (conditional CI $-0.2$ to 16.7, 8 of 10 spl
 
 \subsubsection{A second rig}
 
-The result replicates on a second rig. On HUST bearing (Fig.~\ref{fig:collapse}b; per-split values and source bearing types in Supplementary~S6) mean leaky accuracy
+The direction and size of the gap replicate on a second rig. On HUST bearing (Fig.~\ref{fig:collapse}b; per-split values and source bearing types in Supplementary~S6) mean leaky accuracy
 is \SI{98.7}{\percent} and mean clean accuracy \SI{59.6}{\percent}, a median split-level loss of 33.5 points (range 25.8--61.1), positive in all six splits. Each HUST bearing type is a different size, so the clean target changes geometry as well as specimen. This supports the same direction and a similar observed magnitude within a second fixed pool; it does not isolate a specimen effect. The pre-specified replication-rule assessment is given in Supplementary~S6.
 
 \subsubsection{Without any condition shift}
@@ -126,8 +126,8 @@ Specimen-associated features and inadequate coverage of damage variation can bot
 
 A logistic-regression probe fitted within each
 class on record-disjoint halves identifies the physical bearing in 507 of 508 held-out recordings from the frozen SDALR source
-features and in 508 of 508 from ten elementary time statistics (pooled within-class chance \SI{35}{\percent}); the 508 recordings are the held-out half
-of the 1020 source recordings of the six source models. The identification survives removing the signal mean, the statistic
+features and in 508 of 508 from ten elementary time statistics (pooled within-class chance \SI{35}{\percent}); the halves are assigned by the parity of a checksum of each record
+identifier, which places 508 of the 1020 source recordings of the six source models in the held-out half. The identification survives removing the signal mean, the statistic
 most tied to sensor offset (508 of 508); the standard deviation alone identifies 477. A simple within-session drift control is much less discriminative: the
 same probe asked to separate the first ten from the last ten recordings of one bearing succeeds on 285 of 508 (chance 254).
 But healthy specimens are identified as perfectly as faulty ones (180 of 180) and still transfer (Table~\ref{tab:bearings}).
@@ -148,14 +148,14 @@ The intervention increases both source diversity and training volume: median tra
 
 In a post-hoc purity analysis, an adapted model that misclassifies an unseen bearing usually
 does so for all its windows: with fold~B as source every clean bearing receives a single label on at least
-\SI{99.9}{\percent} of its windows over the six tasks (in the gating job's per-window predictions), and in four of the tasks
+\SI{99.8}{\percent} of its windows over the six tasks (in the gating job's per-window predictions), and in four of the tasks
 the resulting \SI{55.33}{\percent} is exact arithmetic (three healthy and two fault bearings right,
 $(2000 + 660 + 660)/6000$).
 But block labelling is equally common when the bearing was seen: per task, \SI{90}{\percent} of seen and \SI{89}{\percent} of
 unseen bearing--task pairs receive one label for at least \SI{99}{\percent} of their windows, and the fold~A direction is not
 pure (K004 0.67, KI17 0.56). A specimen's windows are similar to each other, so a classifier decides the specimen as a whole;
 the failure is in which label it gives, not in how it gives it. In a post-hoc count, that label is almost never `healthy': unseen damaged
-bearings are labelled healthy on at most \SI{5.8}{\percent} of their windows, and the error is a confusion between the two
+bearings are labelled healthy on at most \SI{5.84}{\percent} of their windows, and the error is a confusion between the two
 fault families, which takes a median \SI{69}{\percent} of an unseen damaged bearing's windows (Supplementary~S6).
 
 \subsubsection{The kinematic control is sensitive to class weighting}
@@ -240,8 +240,8 @@ it speaks on ($\rho = 0.93$), and both descriptive associations remain after par
 partial $\rho = 0.93$ and 0.90), whereas the corresponding partial association for headroom given faulty-recording coverage is small (partial $\rho = 0.04$). The
 coverage of a split is set by whether KA04, KA16, KI16 or KI18 are among its clean bearings: the in-loop gain is
 $-1.5$ points with none of them, 0.7 to 4.3 with one, 3.6 to 9.3 with two, and 22.3 and 22.6 with three and four. The
-ten clean targets hold 1.8 of these bearings on average, as uniform draws would, so the benefit is specimen-specific
-rather than a product of the split design. On S03, where the gate speaks
+ten clean targets hold 1.8 of these bearings on average, as uniform draws would, so the draws are typical of the pool; the benefit is specimen-specific,
+and the median gain reflects how often these four specimens fall in a target. On S03, where the gate speaks
 on two recordings of KA30 and is right on one, gating costs 1.5 points.
 
 On the two mechanical folds, over three seeds, the alias-guarded comb adds a mean $+4.03$ points and the envelope rule

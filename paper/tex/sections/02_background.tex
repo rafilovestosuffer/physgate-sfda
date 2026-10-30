@@ -12,10 +12,10 @@ accuracy falls by more than 40\,\% between the most and least separated of run-t
 feature-based and deep models alike on public vibration datasets \cite{varejao2025similarity}; and the construction of
 test--training separation for bearing fault classification has been set out explicitly \cite{matania2024leakage}. The
 broadest study generalises bearing-wise partitioning, reformulates diagnosis as multi-label detection and measures the
-inflation caused by segmentation-level and bearing-level leakage on UORED, Paderborn and CWRU \cite{vieira2026}. On
+inflation caused by segmentation-level and bearing-level leakage on UORED, Paderborn and CWRU, and applies bearing-wise splits to HUST as well \cite{vieira2026}. On
 Paderborn its repetition-wise split (training and test recordings from the same bearing at the same condition) scores
 near-perfect Macro-AUROC against 54--77\,\% without leakage \cite[Table~12]{vieira2026}. With an early-fusion network,
-macro-F1 on Paderborn falls from about 0.86 to 0.55 when the bearings are made disjoint \cite{kaya2026}. The strength of
+macro-F1 on Paderborn is about 0.86 under an operating-condition holdout with shared bearings and 0.55 when the test bearings are excluded from training \cite{kaya2026}. A concurrent preprint finds on HUST, Paderborn and CWRU that tightening the evaluation protocol changes measured performance and, on unseen Paderborn bearings, attributes residual variation to source-bearing composition \cite{lei2026srt}. The strength of
 this family is that it isolates what overlap is worth with a fixed model and fixed training data. Its limit for the present
 question is that every study is supervised and, in the words of Vieira et al., concerns ``training and testing within a
 single testbench'' \cite{vieira2026}; none evaluates adaptation, in which the model is updated on the target data
@@ -24,14 +24,14 @@ themselves.
 The second family benchmarks domain adaptation under controlled shifts. A leakage-safe cross-domain benchmark on CWRU and
 Paderborn defines six fixed scenarios whose default rule separates \emph{recordings}; its one scenario defined by bearing
 identity is reported among the most challenging \cite{knap2026leakagesafe}. With CWRU and Paderborn split into subsets by
-fault level and operating condition, the accuracy of adversarial domain adaptation falls from 99\,\% to 36\,\% and 45\,\%
-under these controlled shifts \cite{farag2025benchmark}. Concurrent work adapts across Paderborn conditions with held-out
+fault level and operating condition, benchmarks of a CNN classifier and an adversarial domain adaptation algorithm show accuracy falling from 99\,\% to 36\,\% on CWRU and
+45\,\% on Paderborn under these controlled shifts \cite{farag2025benchmark}. Discrepancy-based adaptation on the same two datasets can also end below its source-only baseline, and this negative transfer recurs, particularly on the harder CWRU shifts \cite{knap2026negative}. Concurrent work adapts across Paderborn conditions with held-out
 bearings and finds that an order-domain representation decides whether alignment helps \cite{nagaswetha2026}, and a
 concurrent preprint evaluates seventeen methods on Paderborn, CWRU, JNU and SEU under a bearing-disjoint, inductive
-protocol and finds about five labelled target samples per class worth more than any unsupervised adaptation method it
-tested \cite{duc2026recipe}. This family measures adaptation under controlled shift, but the methods evaluated are
-supervised, non-adaptive or source-dependent, and none adapts one source model to both a seen-bearing and an unseen-bearing
-target, so none measures what bearing overlap is worth to a source-free method.
+protocol, reports that this protocol lowers shared-bearing accuracy, for one cross-condition operating point from 99.7\,\% to 26.1\,\%, and finds about five labelled target samples per class worth more than any unsupervised adaptation method it
+tested \cite{duc2026recipe}. This family measures adaptation under controlled shift. Its methods are
+supervised, non-adaptive or source-dependent (the preprint's abstract does not say whether any of its seventeen methods is source-free), and none of these studies is described as adapting one source model to both a seen-bearing and an unseen-bearing
+target, so none is shown to measure what bearing overlap is worth to a source-free method.
 
 Beyond this field, leakage has been documented across 17 scientific disciplines with a taxonomy of its forms
 \cite{kapoor2023leakage}, the record-wise against subject-wise split is its analogue in clinical prediction
@@ -42,7 +42,7 @@ the intended shift \cite{geirhos2020shortcut}.
 
 SHOT established the template on which many later methods build: freeze the source classifier, maximise information at the
 target and refine centroid-based pseudo-labels \cite{liang2020shot}. SDALR extends it by separating reliable from unreliable
-target predictions, using the reliable ones as supervision and the unreliable ones through an entropy term, and reports
+target predictions, using the reliable ones as supervision and the unreliable ones through an entropy term, and its preprint reports
 \SI{96.8}{\percent} mean accuracy across Paderborn operating conditions \cite{sdalr2025}. Its Paderborn task has eight
 classes, each a single physical bearing (K001, KA04, KA15, KA22, KA30, KI14, KI17, KI21), and the same eight specimens form
 the source and the target, so the reported transfer is between operating conditions of known bearings. Other source-free
@@ -55,13 +55,13 @@ was trained on, which is the question here.
 \subsection{Physics priors inside adaptation}
 
 Characteristic frequencies computed from geometry and speed are the natural prior for bearing diagnosis. PIUDA builds
-physical labels from fault-characteristic spectral energy and aligns them into pseudo-labels for transfer between different machines
+physical labels from fault-characteristic spectral energy and aligns them with spectral-clustering results to obtain pseudo-labels for transfer between different machines
 \cite{jia2024piuda}. Bio-SFDA gates and weights pseudo-labels with band-energy and signal-to-noise predicates at BPFO, BPFI,
-BSF and an impulse band computed on a short-time Fourier transform, with thresholds rescaled online from unlabelled target statistics
+BSF and an impulse band computed on a short-time Fourier transform, with thresholds rescaled online to keep band-activation rates within a conservative range
 \cite{yoon2026biosfda}. PCTL scores the envelope spectrum predicted from the model's features against characteristic
 frequencies and uses that score to supervise a confidence predictor while fine-tuning on a small labelled target set
 \cite{pctl2026}; it does not filter pseudo-labels. In none of these works is the rate at which the module accepts a fault on
-a healthy bearing reported. Because the Bio-SFDA task definition for Paderborn cannot be reconstructed from the article (a
+a healthy bearing reported. Two further source-free methods check pseudo-labels against physical evidence, SFDADFPC with root-mean-square, kurtosis and fundamental-harmonic energy \cite{hui2026sfdadfpc} and, in a concurrent preprint, PG-ESFA by suppressing predicted fault-order regions of an envelope order spectrum \cite{yue2026pgesfa}; their abstracts report target accuracy and no healthy false-acceptance rate. Because the Bio-SFDA task definition for Paderborn cannot be reconstructed from the article (a
 ball class is listed although the Paderborn real-damage set contains no rolling-element damage), we evaluate the gating
 \emph{mechanism as described, as we implemented it}, and make no comparison against the accuracy reported there.
 Schlachter et al.\ simulate pseudo-labelling with ground truth in online source-free universal adaptation and report the upper
@@ -79,6 +79,8 @@ Work & Established & Added here \\
 Vieira et al.~\cite{vieira2026} & Bearing-wise splits and fixed-training comparisons of seen and unseen bearings in supervised diagnosis; the number of training bearings is decisive & The same paired comparison for source-free adaptation, with a post-hoc source-only arm that places the gap before adaptation and a post-hoc within-bearing contrast \\
 \addlinespace
 Nagaswetha and Pathak~\cite{nagaswetha2026} (preprint) & Held-out-bearing adaptation with source data; an order-domain representation decides whether alignment helps & A source-free protocol with seen-bearing and unseen-bearing targets adapted from one source model \\
+\addlinespace
+Duc and Anh~\cite{duc2026recipe} (preprint) & Seventeen methods under a strict bearing-disjoint, inductive protocol, which lowers shared-bearing accuracy; about five labelled target samples per class beat unsupervised adaptation & Seen-bearing and unseen-bearing targets adapted from one source model by source-free methods, with a source-only arm and an oracle reference \\
 \addlinespace
 SDALR~\cite{sdalr2025} & Source-free adaptation from reliable and unreliable pseudo-labels; its Paderborn benchmark uses the same bearings as source and target & Its loss, and that of its SHOT base~\cite{liang2020shot}, when the target bearings were absent from source training; SDALR also on a second rig \\
 \addlinespace

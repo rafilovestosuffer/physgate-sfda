@@ -21,13 +21,31 @@ These settings are transcribed from the retained SDALR source and local wrapper,
 | Source checkpoint | Highest source-validation accuracy at the two evaluation points (epochs 5 and 10); later ties replace earlier checkpoints |
 | Optimiser | SGD; momentum 0.9; weight decay 0.001; Nesterov enabled |
 | Learning-rate schedule | Initial group rate multiplied by (1 + 10 i / I)^(-0.75), where i and I are current and maximum update indices |
-| Target adaptation | 20 epochs; batch 64; base learning rate 0.0005; group multipliers 0.1, 0.1, 1; mix 0; threshold 0.4 (a cosine distance to the nearest prototype, the counterpart of the paper's similarity threshold 0.6); K 0.6 (the paper's beta). In the gated runs SDALR's own criterion marks a median 0.6 % of target windows unreliable per pseudo-labelling round (95th percentile 3.9 %; 2 of 240 rounds above 10 %) [src: results/c116/c116_gate_override.json] |
+| Target adaptation | 20 epochs; batch 64; base learning rate 0.0005; group multipliers 0.1, 0.1, 1; mix 0; threshold 0.4 (a cosine distance to the nearest prototype, the counterpart of the paper's similarity threshold 0.6: tar_adaptation_RES_PU.py at fb9c379 computes cdist with the cosine metric, line 62, marks a window unreliable when that distance exceeds the threshold, line 69, and defaults to --distance cosine and --threshold 0.4, lines 408 and 442); K 0.6 (the paper's beta). In the gated runs SDALR's own criterion marks a median 0.6 % of target windows unreliable per pseudo-labelling round (95th percentile 3.9 %; 2 of 240 rounds above 10 %) [src: results/c116/c116_gate_override.json] |
 | Loss coefficients | cls_par, ent_par, gen_par and aad_par all 1 in the retained target configuration |
 | Normalisation | z_score: scalar mean and standard deviation computed from the data in each loader subset; no class labels used. Each target loader covers the full target pool, so target normalisation is transductive |
 | Noise | No added noise (standard deviation 0 in the retained data loader) |
-| Target checkpoint | Fixed final iterate for every headline result; target-label-selected as_released variant shown only as a diagnostic |
-| Seeds | Mechanical-fold gate runs: 0, 1, 2024; ten-split primary comparison: 2024 |
+| Target checkpoint | Fixed final iterate for every headline result; target-label-selected as_released variant shown only as a diagnostic. Released rule (tar_adaptation_RES_PU.py at fb9c379): acc_init = 0 (line 139); at each evaluation point the accuracy on the labelled target loader (line 333, tools.cal_acc) is compared with acc_init and, when higher, becomes acc_init and the networks are saved (lines 347-356); after the last update the saved networks are reloaded and scored on the target (lines 358-366). final_checkpoint replaces the comparison on line 347 by an unconditional save (runners/sdalr_runner.py) |
+| Seeds | Mechanical-fold gate runs: 0, 1, 2024; ten-split primary comparison: 2024 (the released default, tar_adaptation_RES_PU.py line 398) |
 | SHOT (corrected implementation, runners/shot_patch.py v2, C113) | Loss: 0.3 x unsmoothed cross-entropy on centroid pseudo-labels in dataset order + mean entropy - entropy of the mean prediction (information maximisation); no cohesion-repulsion or unreliable-sample term; same backbone, data, schedule, learning rates, batch size, epochs and seed as SDALR |
+
+Released SDALR code behind these settings, quoted verbatim from tar_adaptation_RES_PU.py at commit fb9c379 (https://github.com/BdLab405/SDALR/blob/fb9c379cf72d87234a260521300c3c6aab2254b2/tar_adaptation_RES_PU.py), with line numbers:
+
+| Line | Code | Role |
+|---|---|---|
+| 42-43 | `NP_fea_bank = torch.cat((fea_bank, torch.ones(fea_bank.size(0), 1)), 1)`; `NP_fea_bank = (NP_fea_bank.t() / torch.norm(NP_fea_bank, p=2, dim=1)).t()` | features get a constant dimension and are L2-normalised (cosine branch, line 40) |
+| 62 | `dd = cdist(NP_fea_bank, initc, args.distance)` | distance of every window to every class prototype; with `--distance cosine` (line 408) scipy returns 1 - cosine similarity |
+| 69 | `close_samples_indices = np.where(min_distances > args.threshold)[0]` | a window is unreliable when its distance to the nearest prototype exceeds the threshold |
+| 442 | `parser.add_argument('--threshold', type=float, default=0.4)` | the threshold is set once and used only on line 69 |
+| 398 | `parser.add_argument("--seed", type=int, default=2024, help="random seed")` | released default seed |
+| 139 | `acc_init = 0` | best accuracy so far, initialised to 0 |
+| 333 | `acc_t_te, acc_matrix, _ = tools.cal_acc(dset_loaders["val"], networks)` | accuracy on the labelled target loader at each evaluation point |
+| 347-349 | `if acc_t_te > acc_init:` ... `acc_init = acc_t_te` | the iterate is kept when it beats the best so far |
+| 354, 356 | `torch.save(best_net, ...)`; `torch.save(best_netC, ...)` | the kept iterate is saved |
+| 358-361 | `if iter_num == max_iter:` ... `networks[-1].load_state_dict(torch.load(f"{args.output_tar_logpt}/source_C.pt"))` | after the last update the saved iterate is reloaded |
+| 366 | `acc_t_te, acc_matrix, _ = tools.cal_acc(dset_loaders["test"], networks)` | and its target accuracy is reported |
+
+Why 0.4 is a distance and not the paper's threshold itself: the preprint (arXiv:2503.08749, Eq. 5) assigns a pseudo-label only when the largest cosine similarity to a prototype exceeds the threshold, and fixes that threshold at 0.6 in its experiments; the README's sweep of the threshold from 0.45 to 0.95 refers to the same similarity. Lines 62 and 69 compare a cosine distance, 1 - similarity, with 0.4, which is the same rule as similarity at least 0.6. The local copy used for every run is byte-identical to this file at fb9c379.
 
 The released short-window input and the full-recording kinematic control have different temporal support and aggregation. Their gap difference does not isolate feature representation. The withdrawn first local SHOT patch (v1; C85 and C100) is not a valid second-method replication of these settings.
 
@@ -78,7 +96,7 @@ Paired arms use the same source checkpoint according to job construction. Identi
 
 ## S6.7 Revision provenance and availability
 
-Reaggregation: paper/revision_reporting.py. Derived output: results/reporting_2026_10_09/reporting_corrections.json. Reporting lineage: results/ledger/reporting_2026_10_09.csv. Source SHA-256 checksums are recorded in that JSON. The original experimental release v1.0-submission is archived at https://doi.org/10.5281/zenodo.23105810. Release v1.1, archived at https://doi.org/10.5281/zenodo.23603189, adds this reporting revision and the corrected SHOT run (C113); the revised tables and figures regenerate from v1.1 directly. Release v1.2, archived at https://doi.org/10.5281/zenodo.23799514, adds the post-hoc analyses C114-C116 (scripts and result summaries) and the reporting changes of 30 October 2026; release v1.3, archived at https://doi.org/10.5281/zenodo.23803399, adds the corrections of the external review of 30 October 2026 (PROTOCOL C118); release v1.4, archived at https://doi.org/10.5281/zenodo.23105809, adds the corrections of its reassessment (PROTOCOL C119). Supplementary S4 and the package manifest enumerate sources.
+Reaggregation: paper/revision_reporting.py. Derived output: results/reporting_2026_10_09/reporting_corrections.json. Reporting lineage: results/ledger/reporting_2026_10_09.csv. Source SHA-256 checksums are recorded in that JSON. The original experimental release v1.0-submission is archived at https://doi.org/10.5281/zenodo.23105810. Release v1.1, archived at https://doi.org/10.5281/zenodo.23603189, adds this reporting revision and the corrected SHOT run (C113); the revised tables and figures regenerate from v1.1 directly. Release v1.2, archived at https://doi.org/10.5281/zenodo.23799514, adds the post-hoc analyses C114-C116 (scripts and result summaries) and the reporting changes of 30 October 2026; release v1.3, archived at https://doi.org/10.5281/zenodo.23803399, adds the corrections of the external review of 30 October 2026 (PROTOCOL C118); release v1.4, archived at https://doi.org/10.5281/zenodo.23813279, adds the corrections of its reassessment (PROTOCOL C119); release v1.5, archived at https://doi.org/10.5281/zenodo.23105809, adds the reporting corrections of 31 October 2026 (PROTOCOL C120, C121, C123) and the outer-race composition analysis (PROTOCOL C122). Supplementary S4 and the package manifest enumerate sources.
 
 
 ## S6.8 Historical nominal tests (main-text reporting finalized 10 October 2026)
@@ -134,7 +152,7 @@ pooled over every task of the ten splits in which the bearing is unseen (bearing
 | KI18 | inner | 0.0 / 31.1 / 68.9 | 0.0 / 96.2 / 3.8 |
 | KI21 | inner | 0.0 / 74.4 / 25.6 | 0.0 / 100.0 / 0.0 |
 
-Unseen damaged bearings are labelled healthy on at most 5.8 % of their windows (KI04); KA22, the only damaged
+Unseen damaged bearings are labelled healthy on at most 5.84 % of their windows (KI04); KA22, the only damaged
 IBU/IBB specimen, on 0 %. The unseen-bearing error is a confusion between the two fault families, a median
 69 % of an unseen damaged bearing's windows. KI04 and KI14 carry particle-caused indentations on the outer ring
 besides inner-ring pitting (S3.1a). With their windows dropped from both targets, the median split gap is
@@ -149,7 +167,8 @@ gains, exact enumeration of all 92,378 resample multisets gives [2.12, 15.66], a
 values, and 89.1 % is the sign-model coverage of the latter interval; PROTOCOL C118.) The main text therefore reports, for
 every split-level median, the narrowest symmetric order-statistic
 interval with at least 95 % coverage under the sign model (for ten splits also at least 97.87 % for the median over the
-3,999 eligible source sets, sampled without replacement, with equality when that median is unique), computed from the
+3,999 eligible source sets, sampled without replacement, with equality when no other set's effect equals that median, which is why the main text labels them conditional
+97.8 % intervals), computed from the
 same saved values; the bootstrap intervals it replaces are listed here. For the 17 within-bearing contrasts and the six
 HUST splits the same order statistics are given as descriptive ranges only: these summaries reuse specimens or come from
 ten possible splits, so the sign-model coverage (95.1 % and 96.9 %) is not a sampling guarantee for them. The replaced
@@ -198,6 +217,8 @@ is 36.2 pp with all bearings and ranges from 29.3 pp (without KA30) to 43.5 pp (
 | KI17 | 33.0 | 10/10 |
 | KI18 | 39.4 | 10/10 |
 | KI21 | 36.0 | 10/10 |
+
+**Outer-race composition (post-hoc, PROTOCOL C122, added 31 October 2026).** Every clean target holds two outer-race bearings and every leaky target three, because the pool has five real outer-race bearings. Re-scoring the retained ungated SDALR predictions with one of the leaky target's three outer-race bearings dropped, averaged over the three choices, so that both targets are scored on two outer-race bearings, gives a median gap of 36.2 points (range 8.2 to 61.6, positive in 10 of 10 splits) against 36.2 as reported. Weighting every bearing equally instead of every class, which gives the healthy class three eighths of the clean-target weight, gives a median gap of 32.6 points (range 6.4 to 59.2, positive in 10 of 10). The re-scoring uses predictions of models adapted to the three-outer-bearing leaky targets; it does not re-adapt to a two-outer-bearing target, so it does not test whether adaptation itself (prototypes, pseudo-labels) behaves differently with two outer-race bearings [src: results/c122/c122_composition.json; experiments/c122_composition.py; PROTOCOL C122].
 
 ## S6.12 HUST splits and fold gate gains (moved from the main text, 30 October 2026)
 

@@ -1,6 +1,6 @@
 # Supplementary S4 — traceability of every reported number
 
-Each row is a result file cited by the manuscript, what it establishes, the Kaggle account that produced the runs behind it, and the SHA-256 (first 16 hex digits) of the file as submitted. The experiment ledger (`results/ledger/*.csv`, 1379 rows) lists every individual run with its kernel URL, git commit and retained artifact path. Run artifacts and every script listed here are in the public archive release v1.4 (https://doi.org/10.5281/zenodo.23105809), which contains the original runs of v1.0-submission, the corrected SHOT run (C113) and the post-hoc analyses C114-C116; reporting-only corrections are included in it. Reporting ledger rows are labelled separately and are not new experimental runs.
+Each row is a result file cited by the manuscript, what it establishes, the Kaggle account that produced the runs behind it, and the SHA-256 (first 16 hex digits) of the file as submitted. The experiment ledger (`results/ledger/*.csv`, 1379 rows) lists every individual run with its kernel URL, git commit and retained artifact path. Run artifacts and every script listed here are in the public archive release v1.5 (https://doi.org/10.5281/zenodo.23105809), which contains the original runs of v1.0-submission, the corrected SHOT run (C113) and the post-hoc analyses C114-C116; reporting-only corrections are included in it. Reporting ledger rows are labelled separately and are not new experimental runs.
 
 All SHA-256 values in this supplement are computed on file content with line endings normalised to LF, so they verify identically on any operating system (strip carriage returns before hashing).
 
@@ -20,6 +20,7 @@ All SHA-256 values in this supplement are computed on file content with line end
 | `results/c115/c115_intervals.json` | Order-statistic intervals for every reported median; leave-one-bearing-out (Sections 4.5, 6; S6.11) | deterministic analysis of retained data or artifacts; script in experiments/ | `64d4c48005139ea4` |
 | `results/c116/c116_gate_override.json` | Gate-override comparison, gain by certifiable bearings, SDALR reliability split (Section 6.6, Table 8) | deterministic analysis of retained data or artifacts; script in experiments/ | `2be59ad4e32aa5ff` |
 | `results/m4b/M4b_RESULT.md` | Comb gate against Smith and Randall's CWRU diagnosability grades (Section 6.6, S2.6) | deterministic analysis of retained data or artifacts; script in experiments/ | `a838450a672fc484` |
+| `results/c122/c122_composition.json` | Outer-race composition sensitivity of the ten-split gap (Section 6.2, S6.11) | deterministic analysis of retained data or artifacts; script in experiments/ | `f57ac4f9fbcc41f9` |
 | `results/M0_PU_RESULT.md` | Reproduction of the published method on its own tasks (Section 6.1) | 24 ledger rows (rafiurrahman01) | `d7b14b5c3fb754d2` |
 | `results/M1_RESULT.md` | Collapse on the two mechanical folds (Section 6.2) | 48 ledger rows (rafiurrahman01) | `51c898427e02bc23` |
 | `results/c88/C88_RESULT.md` | Ten pre-specified random bearing splits: collapse, gating, decomposition | 240 ledger rows (rafiurrahman01, rhrhrhrhrh) | `5adae7364e14bf91` |
@@ -92,6 +93,7 @@ Every script that computes a reported number, builds a table or figure, or ran o
 | `experiments/c114_unseen_labels.py` | `e443b987a114cdec` |
 | `experiments/c115_exact_intervals.py` | `21400162e1717e7b` |
 | `experiments/c116_gate_override.py` | `9cde21288dd2c284` |
+| `experiments/c122_composition.py` | `c8aa4bd0ebdb0772` |
 | `experiments/c77_ball_sidebands.py` | `c3bc867c93d888c8` |
 | `experiments/c78_fe_de_control.py` | `d72453819d41b136` |
 | `experiments/c79_iesfo_eval.py` | `d141cd4bf3f6a78c` |
@@ -175,7 +177,7 @@ Every script that computes a reported number, builds a table or figure, or ran o
 | `paper/figures/validate_figures.py` | `1bbb423e947c7d71` |
 | `paper/make_s1.py` | `a23f202fcd30c2cd` |
 | `paper/make_s3_table.py` | `b9a62c87629200db` |
-| `paper/make_s4.py` | `f52ef9e50ee59eed` |
+| `paper/make_s4.py` | `4de924bf4ba56682` |
 | `paper/make_tables.py` | `da25baf97c227e6a` |
 | `paper/revision_reporting.py` | `a403fa39e52d3458` |
 | `runners/bist.py` | `03571366b13b4eff` |
@@ -184,7 +186,7 @@ Every script that computes a reported number, builds a table or figure, or ran o
 
 ## Regenerating reporting files only
 
-Use the archived experiment repository (v1.4); preserve the directory layout. No training is required. Historical experiment scripts remain available for audit; the withdrawn SHOT outputs must not be interpreted as valid SHOT performance.
+Use the archived experiment repository (v1.5); preserve the directory layout. No training is required. Historical experiment scripts remain available for audit; the withdrawn SHOT outputs must not be interpreted as valid SHOT performance.
 
 ```
 python paper/revision_reporting.py
