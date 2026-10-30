@@ -31,7 +31,7 @@ Population: 2,319 Paderborn recordings (480 healthy, 1,839 single inner/outer), 
 
 Sweeping each gate's parameter [src: results/roc/ROC_RESULT.md, roc_pu.png]:
 
-| gate | at zero healthy false acceptance | at ≤ 2 % false acceptance | at ≈ 11 % |
+| gate | at zero healthy false acceptance | at ≤ 2 % false acceptance | further along the curve (false acceptances of 480) |
 |---|---|---|---|
 | Envelope threshold rule (z) | **351** correct (z = 15) | 373 (z = 8, 8 FA) | 439 (z = 5, 68 FA) |
 | comb_v2 (α) | 312 | 317 (6 FA) | 325 (11 FA) |

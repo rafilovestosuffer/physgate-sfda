@@ -136,13 +136,13 @@ def t4_methods():
         b = rf[key]
         rows.append(f"{label} & {b['leaky_mean']:.1f} & {b['clean_mean']:.1f} & {b['delta']:.1f} " + BS)
     split_rows = t4_split_rows()
-    assert sum(r != "\\midrule" for r in rows) == 6 and len(split_rows) == 6, "the caption names six rows per block"
+    assert sum(r != "\\midrule" for r in rows) == 6 and len(split_rows) == 7, "the caption names six and seven rows"
     rows += ["\\midrule"] + split_rows
     return wrap("\n".join(rows),
                 "Adapted and non-adaptive methods on the same splits. Each row gives the mean accuracy (\\%) of one method on "
                 "the leaky and bearing-disjoint (clean) Paderborn "
                 "targets, over the 12 tasks of the two mechanical folds in the first six rows and over the ten random "
-                "splits in the last six. The random forests use no adaptation and no target data. The kinematic forest "
+                "splits in the last seven. The random forests use no adaptation and no target data. The kinematic forest "
                 "classifies full recordings, whose classes are not balanced, and is therefore given in ordinary and in "
                 "balanced accuracy.", "methods", "lrrr",
                 "Method & Leaky & Clean & $\\Delta_{\\mathrm{leak}}$ " + BS)
@@ -166,11 +166,15 @@ def t4_split_rows():
     s5 = c105["summary"]
     rows.insert(0, f"Source model only (before adaptation), ten splits & {s5['mean_pre_leaky']:.1f} & "
                    f"{s5['mean_pre_clean']:.1f} & {s5['mean_pre_leaky'] - s5['mean_pre_clean']:.1f} " + BS)
+    pu = pu_rows()[:10]                                         # SDALR final checkpoint on the same ten splits (C88)
+    assert [r[0] for r in pu] == [f"S{i:02d}" for i in range(10)]
+    slk, scl = np.mean([r[1] for r in pu]), np.mean([r[2] for r in pu])
+    rows.insert(1, f"SDALR, final checkpoint, ten splits & {slk:.1f} & {scl:.1f} & {slk - scl:.1f} " + BS)
     c113 = ROOT / "results" / "c113" / "c113_shot_splits.json"   # corrected SHOT (patch v2); the C100 run is withdrawn
     if c113.exists():
         d13 = json.load(open(c113, encoding="utf-8"))
         assert len(d13["splits"]) == 10 and not d13["missing"], "C113 incomplete: not all ten splits have both arms"
-        rows.insert(1, f"SHOT (corrected implementation), ten splits & {d13['leaky_mean']:.1f} & "
+        rows.insert(2, f"SHOT (corrected implementation), ten splits & {d13['leaky_mean']:.1f} & "
                        f"{d13['clean_mean']:.1f} & {d13['leaky_mean'] - d13['clean_mean']:.1f} " + BS)
     kin = json.load(open(ROOT / "results" / "c112" / "c112_result.json", encoding="utf-8"))
     ks = [f"S{i:02d}" for i in range(10)]

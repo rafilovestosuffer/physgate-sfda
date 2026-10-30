@@ -14,6 +14,7 @@ Random forest, envelope spectrum & 76.7 & 43.1 & 33.5 \\
 Random forest, all three feature sets & 95.4 & 60.3 & 35.1 \\
 \midrule
 Source model only (before adaptation), ten splits & 90.5 & 54.7 & 35.8 \\
+SDALR, final checkpoint, ten splits & 92.6 & 54.5 & 38.2 \\
 SHOT (corrected implementation), ten splits & 92.3 & 53.1 & 39.3 \\
 Random forest, 10 time statistics, ten splits & 87.0 & 63.6 & 23.4 \\
 Random forest, all three feature sets, ten splits & 93.1 & 57.6 & 35.5 \\
@@ -22,6 +23,6 @@ Kinematic forest, balanced accuracy (sensitivity) & 67.4 & 52.3 & 15.1 \\
 \bottomrule
 \end{tabular}\par
 \endgroup
-\caption{Adapted and non-adaptive methods on the same splits. Each row gives the mean accuracy (\%) of one method on the leaky and bearing-disjoint (clean) Paderborn targets, over the 12 tasks of the two mechanical folds in the first six rows and over the ten random splits in the last six. The random forests use no adaptation and no target data. The kinematic forest classifies full recordings, whose classes are not balanced, and is therefore given in ordinary and in balanced accuracy.}
+\caption{Adapted and non-adaptive methods on the same splits. Each row gives the mean accuracy (\%) of one method on the leaky and bearing-disjoint (clean) Paderborn targets, over the 12 tasks of the two mechanical folds in the first six rows and over the ten random splits in the last seven. The random forests use no adaptation and no target data. The kinematic forest classifies full recordings, whose classes are not balanced, and is therefore given in ordinary and in balanced accuracy.}
 \label{tab:methods}
 \end{table}

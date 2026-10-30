@@ -116,7 +116,7 @@ record (execution plan, decision log and working notes) referred to by some code
 Commit identifiers quoted in `PROTOCOL.md` and the supplements refer to that development history. Release v1.1 adds the
 reporting revision of the manuscript (Supplementary S6) and the corrected SHOT run on the ten splits (PROTOCOL C113:
 `runners/shot_patch.py` v2, `results/c113/`, artifacts `results/artifacts/physgate-shot2-k10-g1..g4`); no other
-experiment was re-run. Release v1.2 adds the post-hoc analyses of retained artifacts made before journal submission (PROTOCOL C114-C116: `experiments/c114_unseen_labels.py`, `c115_exact_intervals.py`, `c116_gate_override.py` and `results/c114/`-`c116/`) and the manuscript's author-guide revision (no new run, no changed number). The concept DOI 10.5281/zenodo.23105809 resolves to the latest release.
+experiment was re-run. Release v1.2 adds the post-hoc analyses of retained artifacts made before journal submission (PROTOCOL C114-C116: `experiments/c114_unseen_labels.py`, `c115_exact_intervals.py`, `c116_gate_override.py` and `results/c114/`-`c116/`) and the manuscript's author-guide revision (no new run, no changed number). Release v1.3 adds the corrections of an external review (PROTOCOL C118: the bootstrap-interval explanation, the stated estimand, the SDALR-SHOT objective description and the transductive status of the gate override), a ten-split SDALR row in Table 6 and the Fig. 4 wording; again no new run and no changed number. The concept DOI 10.5281/zenodo.23105809 resolves to the latest release.
 
 ## Citation
 
@@ -131,7 +131,7 @@ experiment was re-run. Release v1.2 adds the post-hoc analyses of retained artif
 @software{rahman2026physgate,
   author    = {Rahman, Mohammad Rafiur},
   title     = {physgate-sfda: code, protocol, ledger and retained artifacts},
-  version   = {v1.2},
+  version   = {v1.3},
   year      = {2026},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.23105809}

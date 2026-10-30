@@ -120,7 +120,7 @@ def fig4_decomposition():
     not_rec = tot - rec
     x = np.arange(len(rows))
     shown = np.minimum(rec, tot)                       # a split where the oracle arm beats the leaky arm is capped here
-    ax.bar(x, shown, color=S.C["oracle"], width=0.66, label="recoverable by a perfect pseudo-label filter")
+    ax.bar(x, shown, color=S.C["oracle"], width=0.66, label="recovered by the oracle filter")
     ax.bar(x, np.clip(not_rec, 0, None), bottom=shown, color=S.C["leaky"], width=0.66,
            label="not recovered by this oracle filter")
     for i, (r, t_) in enumerate(zip(rec, tot)):
@@ -131,7 +131,7 @@ def fig4_decomposition():
     ax.set_xticks(x); ax.set_xticklabels([r[0] for r in rows])
     ax.set_ylabel("collapse (percentage points)")
     ax.set_ylim(0, max(tot) * 1.22)
-    ax.set_title(f"Recoverable share per split: median {100 * med:.0f}% (percentages above bars)",
+    ax.set_title(f"Share recovered by the oracle filter: median {100 * med:.0f}% (percentages above bars)",
                  fontsize=8, loc="left", pad=6)
     import matplotlib.lines as mlines
     handles, labels = ax.get_legend_handles_labels()

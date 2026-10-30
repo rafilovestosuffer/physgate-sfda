@@ -2,7 +2,7 @@
 \label{sec:discussion}
 \subsection{The large gap precedes adaptation}
 
-The source model already has a median 35.1-point gap between seen and unseen bearings, and SDALR leaves a substantial gap after adaptation. Its median gap amplification is +4.7 points (positive in 8 of 10 splits). The oracle-filtered arm recovers a median 82\,\% of the observed loss, showing that selective use of correct pseudo-labels can improve this network under the transductive protocol. SHOT, run from the same checkpoints, loses a median 36.6 points on the same splits, so the loss is not specific to SDALR's reliability mechanism; other SFDA families remain untested. A source-only comparison is therefore necessary beside any adapted result.
+In a post-hoc analysis, the source model already has a median 35.1-point gap between seen and unseen bearings, and SDALR leaves a substantial gap after adaptation. Its median gap amplification is +4.7 points (positive in 8 of 10 splits). The oracle-filtered arm recovers a median 82\,\% of the observed loss, showing that selective use of correct pseudo-labels can improve this network under the transductive protocol. SHOT, run from the same checkpoints, loses a median 36.6 points on the same splits, so the loss is not specific to SDALR's reliability mechanism; other SFDA families remain untested. A source-only comparison is therefore necessary beside any adapted result.
 
 \subsection{Expanding the source helps the forest, but the cause is unresolved}
 

@@ -1,7 +1,8 @@
 """C115 - Order-statistic intervals for every reported median, and leave-one-bearing-out influence (post-hoc reporting).
 
-The percentile-bootstrap interval of a median over n = 10 splits equals the 3rd and 8th order statistics, whose
-distribution-free coverage is 89.1 %. This script gives, for every median the manuscript reports with an interval, the
+A percentile-bootstrap interval of a median over n = 10 splits has no exact coverage guarantee (C118 corrects the
+earlier statement that it equals the 3rd and 8th order statistics; 89.1 % is the coverage of [x(3), x(8)]). This
+script gives, for every median the manuscript reports with an interval, the
 narrowest symmetric order-statistic interval [x(r), x(n+1-r)] with coverage >= 95 % under the sign model
 (n = 10: x(2)..x(9), 97.9 %; n = 6: x(1)..x(6), 96.9 %; n = 17: x(5)..x(13), 95.1 %), from the same saved per-split
 values, beside the bootstrap interval it replaces. Like the bootstrap intervals, these are conditional on the fixed bearing

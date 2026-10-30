@@ -1,6 +1,6 @@
 # Supplementary S6 - Reporting audit and implementation details
 
-Revision date: 9 October 2026. No model was fitted, no training job was submitted and no new experiment was conducted for this revision. All numerical corrections below use saved outputs. The original PROTOCOL.md, experimental outputs and original ledgers remain unchanged. A separate reporting ledger identifies the derived summaries.
+Revision date: 9 October 2026. No model was fitted, no training job was submitted and no new experiment was conducted for this revision. That statement covers the reporting revision of 9-10 October; the corrected SHOT run of 22-24 October (PROTOCOL C113, S6.1) is the only experiment added after it, and the sections marked as added later analyse retained outputs only. All numerical corrections below use saved outputs. The original PROTOCOL.md, experimental outputs and original ledgers remain unchanged. A separate reporting ledger identifies the derived summaries.
 
 ## S6.1 Withdrawn local SHOT comparison
 
@@ -27,8 +27,9 @@ These settings are transcribed from the retained SDALR source and local wrapper,
 | Noise | No added noise (standard deviation 0 in the retained data loader) |
 | Target checkpoint | Fixed final iterate for every headline result; target-label-selected as_released variant shown only as a diagnostic |
 | Seeds | Mechanical-fold gate runs: 0, 1, 2024; ten-split primary comparison: 2024 |
+| SHOT (corrected implementation, runners/shot_patch.py v2, C113) | Loss: 0.3 x unsmoothed cross-entropy on centroid pseudo-labels in dataset order + mean entropy - entropy of the mean prediction (information maximisation); no cohesion-repulsion or unreliable-sample term; same backbone, data, schedule, learning rates, batch size, epochs and seed as SDALR |
 
-The released short-window input and the full-recording kinematic control have different temporal support and aggregation. Their gap difference does not isolate feature representation. The withdrawn local SHOT patch is not a valid second-method replication of these settings.
+The released short-window input and the full-recording kinematic control have different temporal support and aggregation. Their gap difference does not isolate feature representation. The withdrawn first local SHOT patch (v1; C85 and C100) is not a valid second-method replication of these settings.
 
 ## S6.3 Kinematic accuracy sensitivity from saved values
 
@@ -77,12 +78,12 @@ Paired arms use the same source checkpoint according to job construction. Identi
 
 ## S6.7 Revision provenance and availability
 
-Reaggregation: paper/revision_reporting.py. Derived output: results/reporting_2026_10_09/reporting_corrections.json. Reporting lineage: results/ledger/reporting_2026_10_09.csv. Source SHA-256 checksums are recorded in that JSON. The original experimental release v1.0-submission is archived at https://doi.org/10.5281/zenodo.23105810. Release v1.1, archived at https://doi.org/10.5281/zenodo.23603189, adds this reporting revision and the corrected SHOT run (C113); the revised tables and figures regenerate from v1.1 directly. Release v1.2, archived at https://doi.org/10.5281/zenodo.23105809, adds the post-hoc analyses C114-C116 (scripts and result summaries) and the reporting changes of 30 October 2026. Supplementary S4 and the package manifest enumerate sources.
+Reaggregation: paper/revision_reporting.py. Derived output: results/reporting_2026_10_09/reporting_corrections.json. Reporting lineage: results/ledger/reporting_2026_10_09.csv. Source SHA-256 checksums are recorded in that JSON. The original experimental release v1.0-submission is archived at https://doi.org/10.5281/zenodo.23105810. Release v1.1, archived at https://doi.org/10.5281/zenodo.23603189, adds this reporting revision and the corrected SHOT run (C113); the revised tables and figures regenerate from v1.1 directly. Release v1.2, archived at https://doi.org/10.5281/zenodo.23799514, adds the post-hoc analyses C114-C116 (scripts and result summaries) and the reporting changes of 30 October 2026; release v1.3, archived at https://doi.org/10.5281/zenodo.23105809, adds the corrections of the external review of 30 October 2026 (PROTOCOL C118). Supplementary S4 and the package manifest enumerate sources.
 
 
 ## S6.8 Historical nominal tests (main-text reporting finalized 10 October 2026)
 
-The following unchanged historical family is preserved for audit, not as population-level evidence. Overlapping splits do not establish joint sign symmetry; multiplicity adjustments do not fix that limitation. SHOT remains withdrawn.
+The following unchanged historical family is preserved for audit, not as population-level evidence. Overlapping splits do not establish joint sign symmetry; multiplicity adjustments do not fix that limitation. The SHOT row is the withdrawn first implementation (C100), kept because the family was fixed on 10 October; it is not evidence for SHOT. The corrected SHOT run (C113, S6.1) has an exact one-sided sign-flip p = 0.001 with 10 of 10 splits positive and is not part of this historical family.
 
 | Historical effect | Nominal cluster p | BH | BY |
 |---|---|---|---|
@@ -95,7 +96,7 @@ The following unchanged historical family is preserved for audit, not as populat
 | RF (time + spectral + envelope) collapse, ten splits | 0.000977 | 0.001953 | 0.005721 |
 | HUST collapse, six type-disjoint splits | 0.015625 | 0.022321 | 0.065379 |
 | Same-condition RF collapse, ten splits (C104) | 0.000977 | 0.001953 | 0.005721 |
-| SHOT collapse, 10 splits | 0.000977 | 0.001953 | 0.005721 |
+| SHOT collapse, 10 splits (withdrawn implementation, C100) | 0.000977 | 0.001953 | 0.005721 |
 
 The source-only gap-change analysis reported a two-sided nominal p = 0.18. The historical coverage-gain correlations reported nominal p = 0.0001 (label-free coverage) and p = 0.0009 (partial correlation controlling for headroom). These descriptive associations reuse the same split pool. HUST met the original nominal replication rule and BH adjustment, but not BY; this historical decision is not a population-level replication guarantee.
 
@@ -142,9 +143,13 @@ besides inner-ring pitting (S3.1a). With their windows dropped from both targets
 
 ## S6.11 Order-statistic intervals and leave-one-bearing-out (added 24 October 2026)
 
-A percentile-bootstrap interval of a median over ten splits equals the 3rd and 8th order statistics, whose distribution-free
-coverage is 89.1 %. The main text therefore reports, for every split-level median, the narrowest symmetric order-statistic
-interval with at least 95 % coverage under the sign model, computed from the same saved values; the bootstrap intervals it
+A percentile-bootstrap interval of a median over ten splits has no exact coverage guarantee. (An earlier version of this
+section said it equals the 3rd and 8th order statistics, with coverage 89.1 %; that is false. For the ten envelope-gate
+gains, exact enumeration of all 92,378 resample multisets gives [2.12, 15.66], against [3.15, 9.35] for the 3rd and 8th
+values, and 89.1 % is the sign-model coverage of the latter interval; PROTOCOL C118.) The main text therefore reports, for
+every split-level median, the narrowest symmetric order-statistic
+interval with at least 95 % coverage under the sign model (for ten splits also 97.87 % for the median over the 3,999
+eligible source sets, sampled without replacement), computed from the same saved values; the bootstrap intervals it
 replaces are listed here. Both are conditional on the fixed bearing pool [src: results/c115/c115_intervals.json;
 experiments/c115_exact_intervals.py; PROTOCOL C115].
 
@@ -153,7 +158,7 @@ experiments/c115_exact_intervals.py; PROTOCOL C115].
 | SDALR loss, ten splits | 10 | 36.2 | 21.6 to 59.4 (97.9 %) | 25.0 to 56.3 |
 | Source-only loss | 10 | 35.1 | 21.2 to 55.0 (97.9 %) | 24.4 to 50.6 |
 | SHOT loss (corrected) | 10 | 36.6 | 19.7 to 62.0 (97.9 %) | 22.5 to 59.1 |
-| Within-bearing difference (17 bearings) | 17 | 38.7 | 9.5 to 62.5 (95.1 %) | 9.5 to 62.5 |
+| Within-bearing difference (17 bearings; descriptive) | 17 | 38.7 | 9.5 to 62.5 (95.1 %) | 9.5 to 62.5 |
 | Kinematic forest gap, ordinary | 10 | 8.4 | 2.4 to 30.8 (97.9 %) | 4.8 to 21.0 |
 | Kinematic forest gap, balanced | 10 | 10.4 | 5.6 to 26.7 (97.9 %) | 7.2 to 22.7 |
 | Envelope-gate gain | 10 | 4.5 | 0.7 to 22.3 (97.9 %) | 2.5 to 15.7 |
@@ -163,7 +168,7 @@ experiments/c115_exact_intervals.py; PROTOCOL C115].
 | Forest loss, all features | 10 | 32.1 | 24.1 to 43.9 (97.9 %) | 25.5 to 43.3 |
 | Forest minus SDALR, unseen targets | 10 | 8.9 | -0.2 to 16.7 (97.9 %) | 0.4 to 16.1 |
 | Same-condition forest loss | 10 | 29.7 | 16.5 to 42.0 (97.9 %) | 18.7 to 40.5 |
-| HUST loss, six splits | 6 | 33.5 | 25.8 to 61.1 (96.9 %) | 28.4 to 55.5 |
+| HUST loss, six splits (descriptive) | 6 | 33.5 | 25.8 to 61.1 (96.9 %) | 28.4 to 55.5 |
 
 Leave-one-bearing-out: with the windows of one bearing dropped from both targets of every split, the median SDALR gap
 is 36.2 pp with all bearings and ranges from 29.3 pp (without KA30) to 43.5 pp (without KA22); it is positive in at least 9 of 10 splits for every bearing.
