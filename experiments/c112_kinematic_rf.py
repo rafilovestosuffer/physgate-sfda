@@ -7,7 +7,7 @@ speed), plus the maximum at shaft orders 1..3 (+/- 2 native bins): 13 features, 
 Random forest (500 trees, random_state 0) per C91/C92 cross-condition task on the ten C88 splits and the two folds:
 train on the source bearings' records at the source condition, test at the target condition on the same bearings (leaky)
 and on the complementary bearings (clean). Record-level accuracy. Split = unit, exact sign-flip p.
-Single process (CLAUDE.md rule 4). Writes results/c112/.
+Single process, light enough for a local CPU. Writes results/c112/.
 """
 from __future__ import annotations
 

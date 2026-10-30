@@ -2,7 +2,7 @@
 
 Reads retained artifacts only: per-arm result JSONs, the per-task adaptation logs (pre-update accuracy, i.e. the source
 model's accuracy on the target before any adaptation step) and the per-window prediction dumps (pred_NN.npz). No training,
-no GPU. Light enough to run locally (CLAUDE.md rule 4).
+no GPU. Light enough to run locally; training and heavy computation run on Kaggle.
 """
 from __future__ import annotations
 

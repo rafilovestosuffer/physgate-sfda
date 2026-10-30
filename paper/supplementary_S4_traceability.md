@@ -1,6 +1,6 @@
 # Supplementary S4 — traceability of every reported number
 
-Each row is a result file cited by the manuscript, what it establishes, the Kaggle account that produced the runs behind it, and the SHA-256 (first 16 hex digits) of the file as submitted. The experiment ledger (`results/ledger/*.csv`, 1379 rows) lists every individual run with its kernel URL, git commit and retained artifact path. Run artifacts and every script listed here are in the public archive release v1.5 (https://doi.org/10.5281/zenodo.23105809), which contains the original runs of v1.0-submission, the corrected SHOT run (C113) and the post-hoc analyses C114-C116; reporting-only corrections are included in it. Reporting ledger rows are labelled separately and are not new experimental runs.
+Each row is a result file cited by the manuscript, what it establishes, the Kaggle account that produced the runs behind it, and the SHA-256 (first 16 hex digits) of the file as submitted. The experiment ledger (`results/ledger/*.csv`, 1379 rows) lists every individual run with its kernel URL, git commit and retained artifact path. Run artifacts and every script listed here are in the public archive release v1.6 (https://doi.org/10.5281/zenodo.23105809), which contains the original runs of v1.0-submission, the corrected SHOT run (C113) and the post-hoc analyses C114-C116; reporting-only corrections are included in it. Reporting ledger rows are labelled separately and are not new experimental runs.
 
 All SHA-256 values in this supplement are computed on file content with line endings normalised to LF, so they verify identically on any operating system (strip carriage returns before hashing).
 
@@ -86,7 +86,7 @@ Every script that computes a reported number, builds a table or figure, or ran o
 | `experiments/c108_purity.py` | `da7f8bdc43809f0d` |
 | `experiments/c109_intervals.py` | `1fd51679cd4867c7` |
 | `experiments/c111_probe_ablations.py` | `2ce2db872e2f683c` |
-| `experiments/c112_kinematic_rf.py` | `7966e786bb7dd9e9` |
+| `experiments/c112_kinematic_rf.py` | `c9a0a209b6704050` |
 | `experiments/c113_dedup_check.py` | `7208bc0e89f4b579` |
 | `experiments/c113_manuscript_edits.py` | `18ab580fa19cce56` |
 | `experiments/c113_shot_splits.py` | `dfb210b8e0a55dcc` |
@@ -117,7 +117,7 @@ Every script that computes a reported number, builds a table or figure, or ran o
 | `experiments/m4_stratification.py` | `e21f97d6cf81b177` |
 | `experiments/null_calibration_drs.py` | `4d14cfe98bcdee6c` |
 | `experiments/paired_gating.py` | `2a29bef79c842852` |
-| `experiments/rev6_load.py` | `fc9f6fa8b723d4b0` |
+| `experiments/rev6_load.py` | `f04df6e338032bfb` |
 | `experiments/window_contract.py` | `a4b73e6696d84ac0` |
 | `kaggle/kernels/_make_k10.py` | `9bd6e334266fe744` |
 | `kaggle/kernels/_make_shot_k10.py` | `8780bdb25eabcbd0` |
@@ -175,7 +175,7 @@ Every script that computes a reported number, builds a table or figure, or ran o
 | `paper/figures/qa_layout.py` | `557f3de37bab2f57` |
 | `paper/figures/style.py` | `9688f04c419e17df` |
 | `paper/figures/validate_figures.py` | `1bbb423e947c7d71` |
-| `paper/make_s1.py` | `a23f202fcd30c2cd` |
+| `paper/make_s1.py` | `8c02de67d3d4b78f` |
 | `paper/make_s3_table.py` | `b9a62c87629200db` |
 | `paper/make_s4.py` | `4de924bf4ba56682` |
 | `paper/make_tables.py` | `da25baf97c227e6a` |
@@ -186,7 +186,7 @@ Every script that computes a reported number, builds a table or figure, or ran o
 
 ## Regenerating reporting files only
 
-Use the archived experiment repository (v1.5); preserve the directory layout. No training is required. Historical experiment scripts remain available for audit; the withdrawn SHOT outputs must not be interpreted as valid SHOT performance.
+Use the archived experiment repository (v1.6); preserve the directory layout. No training is required. Historical experiment scripts remain available for audit; the withdrawn SHOT outputs must not be interpreted as valid SHOT performance.
 
 ```
 python paper/revision_reporting.py

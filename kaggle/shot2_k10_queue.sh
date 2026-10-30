@@ -52,7 +52,7 @@ case "${1:-}" in
   # 2026-10-22, later: both accounts exhausted after g2; the remaining groups run on the third credential (k4 runner).
   k4) export PHYSGATE_RUNNER=k4 PHYSGATE_KAGGLE_USER=shahedtheboss
       run g1 shahedtheboss; run g3 shahedtheboss; run g4 shahedtheboss; log "k4 g1, g3, g4 done" ;;
-  # 2026-10-22, evening: the k4 bootstrap process died with the agent session while g1 was running; attach to g1, then g3, g4.
+  # 2026-10-22, evening: the k4 bootstrap process died with its terminal session while g1 was running; attach to g1, then g3, g4.
   k4-resume) export PHYSGATE_RUNNER=k4 PHYSGATE_KAGGLE_USER=shahedtheboss
              attach g1; run g3 shahedtheboss; run g4 shahedtheboss; log "k4 g1, g3, g4 done" ;;
   *) echo "usage: $0 stage|primary|coauthor|coauthor-all|k4|k4-resume"; exit 2 ;;
